@@ -193,9 +193,11 @@
             <div class="list" style="margin:12px 0 16px">
               <div style="display:flex;gap:10px;align-items:center"><span class="pill">📞 07 68 75 76 35</span><a class="pill" href="tel:+33768757635">Appeler</a></div>
               <div style="display:flex;gap:10px;align-items:center"><span class="pill">📧 domuspremium35@gmail.com</span><a class="pill" href="mailto:domuspremium35@gmail.com?subject=Demande%20devis%20Domus%20Premium">Écrire</a></div>
-              <div class="mono">SIRET : à compléter</div>
+              <div class="mono">SIRET : 904 510 716 00023</div>
             </div>
-            <form action="mailto:domuspremium35@gmail.com" method="post" enctype="text/plain">
+
+            <form action="https://formspree.io/f/xovnjjen" method="POST">
+              <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
               <div class="row">
                 <div>
                   <label class="mono" for="name">Nom</label>
@@ -207,15 +209,21 @@
                 </div>
               </div>
               <div style="margin-top:12px">
-                <label class="mono" for="message">Votre besoin</label>
-                <textarea id="message" name="Message" placeholder="Décrivez votre demande (ex. petits travaux, jardinage, accompagnement)"></textarea>
+                <label class="mono" for="email">Email</label>
+                <input id="email" name="_replyto" type="email" required />
               </div>
+              <div style="margin-top:12px">
+                <label class="mono" for="message">Votre besoin</label>
+                <textarea id="message" name="Message" required placeholder="Décrivez votre demande (ex. petits travaux, jardinage, accompagnement)"></textarea>
+              </div>
+              <input type="hidden" name="_subject" value="Demande devis — Domus Premium">
               <div style="margin-top:14px;display:flex;gap:10px;align-items:center">
                 <button class="submit" type="submit">Envoyer la demande</button>
-                <span class="muted" style="font-size:12px">En cliquant, vous acceptez d’être recontacté par Domus Premium.</span>
+                <span class="muted" style="font-size:12px">Formulaire sécurisé via HTTPS — réponse sous 24h.</span>
               </div>
             </form>
           </div>
+
           <div class="card contact-card">
             <h2>Zone d’intervention</h2>
             <p class="muted">Rennes, Saint‑Jacques‑de‑la‑Lande, Cesson‑Sévigné, Chantepie, Betton, Pacé, Bruz, et alentours.</p>
@@ -246,6 +254,7 @@
         <div class="mono">Tél : 07 68 75 76 35</div>
         <div class="mono">Email : domuspremium35@gmail.com</div>
         <div class="mono">SIRET : 904 510 716 00023</div>
+        <div class="mono"><a href="/mentions-legales.html">Mentions légales</a></div>
       </div>
     </div>
   </footer>
