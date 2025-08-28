@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Domus Premium — Services à la personne à Rennes</title>
+  <meta name="description" content="Domus Premium : petits travaux & bricolage, jardinage léger, aide et visites seniors, courses & aide administrative à Rennes. 14 €/h après crédit d'impôt.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0e2a47;--bg2:#1a3e6b;--primary:#0a7cff;--accent:#18c8b0;--text:#0f172a;--muted:#475569;--card:#ffffff;}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);}
+    a{color:var(--primary);text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{background:linear-gradient(135deg,var(--bg),var(--bg2));color:#fff;position:sticky;top:0;z-index:50;box-shadow:0 6px 20px rgba(0,0,0,.15);}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:800;letter-spacing:.2px}
+    .brand img{width:34px;height:34px}
+    .nav .cta{display:flex;gap:10px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:10px;border-radius:12px;border:1px solid transparent;padding:10px 14px;font-weight:600}
+    .btn-primary{background:#fff;color:#0c2f57;border-color:#fff}
+    .btn-outline{border-color:#ffffff44;color:#fff}
+    .badge{display:inline-block;background:rgba(255,255,255,.1);border:1px solid #ffffff33;color:#fff;border-radius:999px;padding:6px 12px;font-weight:600;font-size:12px}
+    .hero{background:linear-gradient(180deg,rgba(14,42,71,.03),#fff);padding:48px 0 24px}
+    .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .card{background:var(--card);border:1px solid #e5e7eb;border-radius:18px;box-shadow:0 10px 25px rgba(2,6,23,.06)}
+    .pricing{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .chip{background:#0a7cff10;color:#0a7cff;border:1px solid #0a7cff33;border-radius:999px;padding:8px 12px;font-weight:600;font-size:13px}
+    section{padding:56px 0}
+    h1{font-size:38px;line-height:1.1;margin:12px 0 12px}
+    h2{font-size:28px;margin:0 0 18px}
+    h3{font-size:18px;margin:0 0 8px}
+    p.lead{font-size:18px;color:var(--muted)}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .service{padding:18px}
+    .service-header{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+    .service svg{width:22px;height:22px;color:var(--primary)}
+    .muted{color:var(--muted)}
+    .list{display:grid;gap:8px;margin:0;padding:0}
+    .list li{list-style:none;display:flex;gap:10px;align-items:flex-start}
+    .list li svg{width:18px;height:18px;color:var(--accent);margin-top:2px}
+    .table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border-radius:14px;border:1px solid #e5e7eb}
+    .table th,.table td{padding:14px 16px;text-align:left}
+    .table thead th{background:#f8fafc;font-size:14px;color:#334155}
+    .table tbody tr+tr td{border-top:1px solid #e5e7eb}
+    .pill{display:inline-block;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:999px;padding:4px 10px;font-size:12px}
+    .contact-card{padding:18px}
+    .contact-card .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #e2e8f0;font:inherit}
+    textarea{min-height:120px}
+    .submit{background:#0a7cff;color:#fff;border:none;padding:12px 16px;border-radius:12px;font-weight:700;cursor:pointer}
+    footer{padding:40px 0;background:#f8fafc;color:#334155}
+    .footgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:center}
+    .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;font-size:13px}
+    @media (max-width: 900px){
+      .hero .grid, .grid-3, .grid-2, .footgrid, .contact-card .row{grid-template-columns:1fr}
+      h1{font-size:32px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand" aria-label="Domus Premium">
+        <img src="/assets/logo.svg" alt="Logo Domus Premium maison + clé">
+        <div>
+          <div style="font-size:16px;opacity:.9">DOMUS PREMIUM</div>
+          <div class="badge">Services à la personne — Rennes & alentours</div>
+        </div>
+      </div>
+      <div class="cta">
+        <a class="btn btn-outline" href="#tarifs" aria-label="Voir les tarifs">Voir les tarifs</a>
+        <a class="btn btn-primary" href="tel:+33768757635" aria-label="Appeler Domus Premium">📞 07 68 75 76 35</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero">
+        <div class="grid">
+          <div>
+            <span class="badge">Réponse sous 24h garantie</span>
+            <h1>Petit bricolage, entretien extérieur ou courses : <br>on s’occupe de tout !</h1>
+            <p class="lead">Interventions rapides, flexibles, et toujours par la même personne. 
+              <strong>14 €/h après crédit d’impôt</strong> sur les prestations éligibles.
+            </p>
+            <div class="pricing">
+              <span class="chip">Standard : 28 €/h TTC → 14 €/h net</span>
+              <span class="chip">Urgence &lt; 24h : 35 €/h TTC</span>
+              <span class="chip">Soir / Week‑end : 42 €/h TTC</span>
+            </div>
+            <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+              <a class="btn btn-primary" href="#contact">Demander un devis</a>
+              <a class="btn btn-outline" href="#services">Découvrir les services</a>
+            </div>
+          </div>
+          <div>
+            <div class="card" style="padding:20px">
+              <h3 style="margin-top:0">Forfaits populaires</h3>
+              <ul class="list">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12.5l3 3 11-11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                  <div><strong>Forfait Confort</strong> — 2h consécutives (bricolage + courses) : <strong>56 €</strong> → <span class="muted">28 € net</span></div>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12.5l3 3 11-11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                  <div><strong>Forfait Sérénité</strong> — 3h (accompagnement + administratif + courses) : <strong>84 €</strong> → <span class="muted">42 € net</span></div>
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12.5l3 3 11-11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                  <div><strong>Maison & Jardin</strong> — 4h/semaine (2h bricolage + 2h jardinage) : <strong>112 €/sem</strong> → <span class="muted">224 €/mois net</span></div>
+                </li>
+              </ul>
+              <p class="muted" style="margin-top:12px;font-size:12px">* Net pour le client après crédit d’impôt de 50 % sur prestations éligibles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2>Nos services</h2>
+        <div class="grid-3">
+          <div class="card service">
+            <div class="service-header">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10l8-6 8 6v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8Z" stroke="currentColor" stroke-width="1.5"/><path d="M9 14h6M9 17h6" stroke="currentColor" stroke-width="1.5"/></svg>
+              <h3>Petits travaux & bricolage *</h3>
+            </div>
+            <p class="muted">Montage de meubles, réparations simples, fixation d’étagères et tringles, remplacements d’ampoules, petits dépannages.</p>
+          </div>
+          <div class="card service">
+            <div class="service-header">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/><path d="M8 13h8M10 10h4" stroke="currentColor" stroke-width="1.5"/></svg>
+              <h3>Aide & visites seniors *</h3>
+            </div>
+            <p class="muted">Présence, échanges, accompagnement léger du quotidien, aide aux démarches simples et à l’organisation.</p>
+          </div>
+          <div class="card service">
+            <div class="service-header">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 20v-8l8-8 8 8v8H4Z" stroke="currentColor" stroke-width="1.5"/></svg>
+              <h3>Jardinage léger *</h3>
+            </div>
+            <p class="muted">Tonte, arrosage, désherbage, entretien extérieur simple, petites tailles (selon saison).</p>
+          </div>
+          <div class="card service">
+            <div class="service-header">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 7h12v10H6z" stroke="currentColor" stroke-width="1.5"/><path d="M8 9h8M8 12h5" stroke="currentColor" stroke-width="1.5"/></svg>
+              <h3>Courses & aide administrative *</h3>
+            </div>
+            <p class="muted">Courses (marché, pharmacie), préparation de listes, prise de rendez‑vous, classements simples, courriers.</p>
+          </div>
+          <div class="card service" style="grid-column: span 3">
+            <p class="muted">* Prestations éligibles au <strong>crédit d’impôt de 50 %</strong> (conditions légales SAP). Zone d’intervention : Rennes & alentours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tarifs">
+      <div class="container">
+        <h2>Tarifs clairs & compétitifs</h2>
+        <div class="card" style="padding:10px">
+          <table class="table">
+            <thead>
+              <tr><th>Offre</th><th>Détail</th><th>Tarif TTC</th><th>Après crédit d’impôt</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>Intervention standard</strong></td><td>1h minimum (tous services)</td><td>28 €</td><td><span class="pill">14 €</span></td></tr>
+              <tr><td><strong>Forfait Confort</strong></td><td>2h consécutives (ex. bricolage + courses)</td><td>56 €</td><td><span class="pill">28 €</span></td></tr>
+              <tr><td><strong>Forfait Sérénité</strong></td><td>3h consécutives (accompagnement + admin + courses)</td><td>84 €</td><td><span class="pill">42 €</span></td></tr>
+              <tr><td><strong>Maison & Jardin</strong></td><td>4h/semaine (2h bricolage + 2h jardinage)</td><td>112 €/sem → 448 €/mois</td><td><span class="pill">224 €/mois</span></td></tr>
+              <tr><td><strong>Urgence &lt; 24h</strong></td><td>Intervention prioritaire</td><td>35 €/h</td><td><span class="pill">17,50 €/h</span></td></tr>
+              <tr><td><strong>Soir / Week‑end</strong></td><td>Après 19h, sam./dim.</td><td>42 €/h</td><td><span class="pill">21 €/h</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted" style="margin-top:10px">Les tarifs affichés sont TTC. Le crédit d’impôt de 50 % est applicable selon la réglementation en vigueur pour les services à la personne (SAP).</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="grid-2">
+          <div class="card contact-card">
+            <h2>Contact</h2>
+            <p class="muted">Besoin d’un devis rapide ? Réponse sous 24h garantie.</p>
+            <div class="list" style="margin:12px 0 16px">
+              <div style="display:flex;gap:10px;align-items:center"><span class="pill">📞 07 68 75 76 35</span><a class="pill" href="tel:+33768757635">Appeler</a></div>
+              <div style="display:flex;gap:10px;align-items:center"><span class="pill">📧 domuspremium35@gmail.com</span><a class="pill" href="mailto:domuspremium35@gmail.com?subject=Demande%20devis%20Domus%20Premium">Écrire</a></div>
+              <div class="mono">SIRET : à compléter</div>
+            </div>
+            <form action="mailto:domuspremium35@gmail.com" method="post" enctype="text/plain">
+              <div class="row">
+                <div>
+                  <label class="mono" for="name">Nom</label>
+                  <input id="name" name="Nom" required />
+                </div>
+                <div>
+                  <label class="mono" for="phone">Téléphone</label>
+                  <input id="phone" name="Téléphone" />
+                </div>
+              </div>
+              <div style="margin-top:12px">
+                <label class="mono" for="message">Votre besoin</label>
+                <textarea id="message" name="Message" placeholder="Décrivez votre demande (ex. petits travaux, jardinage, accompagnement)"></textarea>
+              </div>
+              <div style="margin-top:14px;display:flex;gap:10px;align-items:center">
+                <button class="submit" type="submit">Envoyer la demande</button>
+                <span class="muted" style="font-size:12px">En cliquant, vous acceptez d’être recontacté par Domus Premium.</span>
+              </div>
+            </form>
+          </div>
+          <div class="card contact-card">
+            <h2>Zone d’intervention</h2>
+            <p class="muted">Rennes, Saint‑Jacques‑de‑la‑Lande, Cesson‑Sévigné, Chantepie, Betton, Pacé, Bruz, et alentours.</p>
+            <div style="border-radius:12px;overflow:hidden;border:1px solid #e5e7eb">
+              <iframe title="Carte Rennes" src="https://maps.google.com/maps?q=Rennes%20France&t=&z=11&ie=UTF8&iwloc=&output=embed" width="100%" height="280" style="border:0"></iframe>
+            </div>
+            <ul class="list" style="margin-top:14px">
+              <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12.5l3 3 11-11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Interventions planifiables sous 24–72h.</li>
+              <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12.5l3 3 11-11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Créneaux urgences possibles &lt; 24h.</li>
+              <li><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 12.5l3 3 11-11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Factures claires pour bénéficier du crédit d’impôt.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footgrid">
+      <div style="display:flex;gap:12px;align-items:center">
+        <img src="/assets/logo.svg" alt="Logo Domus Premium" style="width:28px;height:28px">
+        <div>
+          <div style="font-weight:800">Domus Premium</div>
+          <div class="muted">Toujours la même personne • Flexibilité • Transparence</div>
+        </div>
+      </div>
+      <div style="text-align:right">
+        <div class="mono">Tél : 07 68 75 76 35</div>
+        <div class="mono">Email : domuspremium35@gmail.com</div>
+        <div class="mono">SIRET : à compléter</div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Domus Premium",
+    "url": "https://domuspremium.fr",
+    "telephone": "+33 7 68 75 76 35",
+    "email": "domuspremium35@gmail.com",
+    "address": {"@type": "PostalAddress","addressLocality": "Rennes","addressCountry": "FR"},
+    "areaServed": ["Rennes", "Ille-et-Vilaine"],
+    "priceRange": "€€",
+    "description": "Petits travaux & bricolage, jardinage léger, aide et visites seniors, courses & aide administrative à Rennes. 14 €/h après crédit d'impôt.",
+    "openingHoursSpecification": [{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"19:00"}]
+  }
+  </script>
+</body>
+</html>
