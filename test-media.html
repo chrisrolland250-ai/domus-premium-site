@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="fr">
+<meta charset="utf-8">
+<title>Diagnostic médias — Domus Premium</title>
+<link rel="stylesheet" href="assets/styles.css">
+<main class="section" style="background:#f7f7fb">
+<h1>Diagnostic images & chemins</h1>
+<p>Cette page vérifie plusieurs chemins (relatif et absolu) et formats (WebP/PNG). Elle affiche un statut ✅/❌ à côté de chaque ressource.</p>
+
+<h2>Vérifications automatiques</h2>
+<ul id="checks"></ul>
+
+<h2>Rendus visuels</h2>
+<h3>Logo Domus (optimisé)</h3>
+<picture>
+  <source srcset="assets/img/logo_domus_transparent.webp" type="image/webp">
+  <img src="assets/img/logo_domus_transparent.png" alt="Domus (relatif)" width="200" loading="lazy">
+</picture>
+
+<h3>Ancien logo transparent (si présent)</h3>
+<picture>
+  <source srcset="assets/img/logo_transparent.webp" type="image/webp">
+  <img src="assets/img/logo_transparent.png" alt="Logo transparent (relatif)" width="200" loading="lazy" onerror="this.replaceWith(document.createTextNode('PNG introuvable'))">
+</picture>
+
+<h3>Ancien logo fond blanc (si présent)</h3>
+<picture>
+  <source srcset="assets/img/logo.webp" type="image/webp">
+  <img src="assets/img/logo.png" alt="Logo (relatif)" width="200" loading="lazy" onerror="this.replaceWith(document.createTextNode('PNG introuvable'))">
+</picture>
+
+<h3>Chemins absolus (test)</h3>
+<picture>
+  <source srcset="/assets/img/logo_domus_transparent.webp" type="image/webp">
+  <img src="/assets/img/logo_domus_transparent.png" alt="Domus (absolu /)" width="200" loading="lazy" onerror="this.replaceWith(document.createTextNode('Chemin absolu ne marche pas sur cet hébergement'))">
+</picture>
+
+<script>
+const resources = [
+  {label:'relatif: assets/img/logo_domus_transparent.webp', url:'assets/img/logo_domus_transparent.webp'},
+  {label:'relatif: assets/img/logo_domus_transparent.png', url:'assets/img/logo_domus_transparent.png'},
+  {label:'relatif: assets/img/logo_sap_transparent.webp', url:'assets/img/logo_sap_transparent.webp'},
+  {label:'relatif: assets/img/logo_sap_transparent.png', url:'assets/img/logo_sap_transparent.png'},
+  {label:'relatif: assets/img/logo_transparent.webp', url:'assets/img/logo_transparent.webp'},
+  {label:'relatif: assets/img/logo_transparent.png', url:'assets/img/logo_transparent.png'},
+  {label:'relatif: assets/img/logo.webp', url:'assets/img/logo.webp'},
+  {label:'relatif: assets/img/logo.png', url:'assets/img/logo.png'},
+  {label:'absolu: /assets/img/logo_domus_transparent.webp', url:'/assets/img/logo_domus_transparent.webp'},
+  {label:'absolu: /assets/img/logo_domus_transparent.png', url:'/assets/img/logo_domus_transparent.png'}
+];
+
+const ul = document.getElementById('checks');
+(async () => {
+  for (const r of resources) {
+    const li = document.createElement('li');
+    li.textContent = r.label + ' … ';
+    ul.appendChild(li);
+    try {
+      const res = await fetch(r.url, {method:'HEAD'});
+      if (res.ok) {
+        li.textContent += '✅ ' + res.status;
+      } else {
+        li.textContent += '❌ ' + res.status;
+      }
+    } catch (e) {
+      li.textContent += '❌ erreur réseau';
+    }
+  }
+})();
+</script>
+</main>
+</html>
