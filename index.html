@@ -5,19 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Domus Premium – Services à la personne à Rennes (petits travaux, jardinage, aide seniors)</title>
 <meta name="description" content="Interventions rapides à Rennes : petits travaux, jardinage léger, assistance seniors, courses. 28 €/h TTC, 14 €/h après crédit d’impôt (SAP). Réponse sous 24h.">
-<link rel="icon" href="/favicon.ico">
+<link rel="icon" href="favicon.ico">
 <meta property="og:title" content="Domus Premium – Services à la personne à Rennes">
 <meta property="og:description" content="Petits travaux, jardinage, assistance, courses. 14 €/h après crédit d’impôt (SAP).">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://domuspremium.fr/">
-<meta property="og:image" content="https://domuspremium.fr/assets/img/logo_transparent.png">
-<link rel="preload" as="image" href="/assets/img/logo_transparent.png">
-<link rel="stylesheet" href="/assets/styles.css">
+<meta property="og:image" content="assets/img/logo_transparent.png">
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 <div id="msg">✅ Votre message a bien été envoyé. Nous vous répondrons sous 24h.</div>
 <header class="header">
-  <img src="/assets/img/logo_transparent.png" alt="Domus Premium – Services à la personne à Rennes" width="80" height="80" fetchpriority="high">
+  <img src="assets/img/logo_transparent.png" alt="Domus Premium – Services à la personne à Rennes" width="80" height="80">
   <div class="title">DOMUS PREMIUM</div>
   <span class="badge">Rennes & alentours</span>
 </header>
@@ -70,11 +68,11 @@
   <div class="contact">
     <p><strong>Téléphone : </strong><a href="tel:+33768757635">07 68 75 76 35</a><br>
        <strong>Email : </strong><a href="mailto:domuspremium35@gmail.com">domuspremium35@gmail.com</a></p>
-    <form action="/" method="get" novalidate>
+    <form action="index.html" method="get" novalidate>
       <label for="name">Nom</label>
-      <input id="name" name="name" autocomplete="name" required>
+      <input id="name" name="name" required>
       <label for="email">Email</label>
-      <input id="email" name="email" type="email" autocomplete="email" required>
+      <input id="email" name="email" type="email" required>
       <label for="message">Votre besoin</label>
       <textarea id="message" name="message" rows="5" required></textarea>
       <input type="hidden" name="sent" value="1">
@@ -85,11 +83,10 @@
 </section>
 
 <footer class="footer">
-  © 2025 Domus Premium – Rennes. SIREN/SIRET à compléter. &middot; <a href="/mentions-legales.html">Mentions légales</a>
+  © 2025 Domus Premium – Rennes. SIREN/SIRET à compléter. &middot; <a href="mentions-legales.html">Mentions légales</a>
 </footer>
 
 <script>
-// Afficher le message de succès seulement si ?sent=1
 (function(){
   const ok = new URLSearchParams(location.search).get('sent') === '1';
   if (ok) document.getElementById('msg').style.display = 'block';
