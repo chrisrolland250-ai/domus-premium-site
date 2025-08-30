@@ -1,214 +1,85 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Domus Premium — Conciergerie & Services aux particuliers à Rennes</title>
-  <meta name="description" content="Domus Premium : conciergerie saisonnière (accueil, ménage/linge, états des lieux photo/vidéo) et services aux particuliers (bricolage, jardinage léger, assistance & visites seniors, courses & aide administrative). 14 €/h après crédit d'impôt.">
-  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --navy:#183b63; --navy2:#1f4e82; --sky1:#e9f4ff; --sky2:#cfe7fb; --primary:#d4af37; --text:#10253d;
-    }
-    *{box-sizing:border-box} html,body{margin:0;padding:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);}
-    a{color:var(--navy2);text-decoration:none}
-    .container{max-width:1100px;margin:0 auto;padding:0 20px}
-    header{background:linear-gradient(135deg,var(--sky1),var(--sky2));border-bottom:3px solid var(--primary);}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-    .brand{display:flex;gap:12px;align-items:center}
-    .brand img{width:42px;height:42px;border-radius:10px;background:#fff;padding:4px;border:1px solid #e6eef8}
-    .brand .t1{font-weight:800;color:var(--navy);font-size:20px;letter-spacing:.4px}
-    .brand .t2{font-weight:700;color:var(--navy);opacity:.85;font-size:14px}
-    .btn{display:inline-flex;align-items:center;gap:10px;border-radius:14px;border:2px solid transparent;padding:10px 16px;font-weight:700;letter-spacing:.2px}
-    .btn-primary{background:var(--primary);color:var(--navy)} .btn-outline{border-color:var(--navy2);color:var(--navy2)}
-    .hero{background:linear-gradient(180deg,var(--sky1),#fff);padding:54px 0 24px}
-    h1{font-size:38px;line-height:1.15;color:var(--navy);margin:12px 0 12px}
-    h2{font-size:26px;color:var(--navy)} h3{font-size:18px;color:var(--navy)}
-    .lead{font-size:18px;color:#355276}
-    .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
-    .card{background:#fff;border:1px solid #e6eef8;border-radius:18px;box-shadow:0 10px 25px rgba(24,59,99,.06)}
-    .section{padding:52px 0}
-    .chip{display:inline-block;background:#f1f6fd;border:1px solid #e0ebf9;color:var(--navy);border-radius:999px;padding:6px 10px;font-weight:700;font-size:13px}
-    .pill{display:inline-block;background:#f1f6fd;border:1px solid #e0ebf9;border-radius:999px;padding:6px 10px;color:var(--navy);font-weight:700}
-    .table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid #e6eef8;border-radius:14px;overflow:hidden}
-    .table th,.table td{padding:14px 16px;text-align:left} .table thead th{background:#f6f9fe;color:#355276;font-size:14px}
-    footer{padding:36px 0;background:linear-gradient(180deg,#f6fbff,#eef6ff);color:#2e4a6f;border-top:3px solid var(--primary)}
-    .footgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:center}
-    .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono','Courier New', monospace;font-size:13px;color:#2e4a6f}
-    @media (max-width: 900px){ .grid,.footgrid{grid-template-columns:1fr} h1{font-size:30px} }
-  </style>
-</head>
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Domus Premium — Services à la personne à Rennes (SAP + services accessoires)</title>
+<meta name="description" content="Services à la personne à Rennes : petits travaux & bricolage, jardinage léger, assistance & visites seniors, courses & aide administrative. Éligible crédit d'impôt 50 %. Services accessoires possibles (≤ 30 % CA).">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#183b63;--navy2:#1f4e82;--sky1:#e9f4ff;--sky2:#cfe7fb;--primary:#d4af37;--text:#10253d}
+*{box-sizing:border-box}html,body{margin:0;padding:0;font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text)}
+a{color:var(--navy2);text-decoration:none}.container{max-width:1100px;margin:0 auto;padding:0 20px}
+header{background:linear-gradient(135deg,var(--sky1),var(--sky2));border-bottom:3px solid var(--primary)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}.brand{display:flex;gap:14px;align-items:center}
+.brand img{width:56px;height:56px;border-radius:12px;background:#fff;padding:6px;border:1px solid #e6eef8}
+.brand .t1{font-weight:800;color:var(--navy);font-size:22px;letter-spacing:.4px}.brand .t2{font-weight:700;color:var(--navy);opacity:.85;font-size:14px}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:14px;border:2px solid transparent;padding:10px 16px;font-weight:700;letter-spacing:.2px}
+.btn-primary{background:var(--primary);color:var(--navy)}.btn-outline{border-color:var(--navy2);color:var(--navy2)}
+.hero{background:linear-gradient(180deg,var(--sky1),#fff);padding:54px 0 24px}
+h1{font-size:38px;line-height:1.15;color:var(--navy);margin:12px 0 12px}h2{font-size:26px;color:var(--navy)}h3{font-size:18px;color:var(--navy)}
+.lead{font-size:18px;color:#355276}.grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+.card{background:#fff;border:1px solid #e6eef8;border-radius:18px;box-shadow:0 10px 25px rgba(24,59,99,.06)}.section{padding:52px 0}
+.chip{display:inline-block;background:#f1f6fd;border:1px solid #e0ebf9;color:var(--navy);border-radius:999px;padding:6px 10px;font-weight:700;font-size:13px}
+.pill{display:inline-block;background:#f1f6fd;border:1px solid #e0ebf9;border-radius:999px;padding:6px 10px;color:var(--navy);font-weight:700}
+.table{width:100%;border-collapse:separate;border-spacing:0;border:1px solid #e6eef8;border-radius:14px;overflow:hidden}
+.table th,.table td{padding:14px 16px;text-align:left}.table thead th{background:#f6f9fe;color:#355276;font-size:14px}
+footer{padding:36px 0;background:linear-gradient(180deg,#f6fbff,#eef6ff);color:#2e4a6f;border-top:3px solid var(--primary)}
+.footgrid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:center}.mono{font-family:ui-monospace,Menlo,Monaco,Consolas,'Courier New',monospace;font-size:13px;color:#2e4a6f}
+.sap-banner{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid #e6eef8;border-radius:12px;padding:8px 12px}
+.sap-banner img{height:58px;width:auto;display:block}
+@media (max-width: 900px){.grid,.footgrid{grid-template-columns:1fr}h1{font-size:30px}.brand img{width:52px;height:52px}.sap-banner img{height:45px}}
+</style></head>
 <body>
-  <div id="confirmation" style="display:none;background:#d4edda;color:#155724;padding:12px;text-align:center;font-weight:600">
-    ✅ Votre message a bien été envoyé. Nous vous répondrons sous 24h.
-  </div>
-  <script>
-    if (window.location.search.includes('success=1')) {
-      document.getElementById('confirmation').style.display = 'block';
-    }
-  </script>
-
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <img src="/assets/logo.png" alt="Logo Domus Premium">
-        <div>
-          <div class="t1">Domus Premium</div>
-          <div class="t2">Conciergerie & Services à la personne — Rennes</div>
-        </div>
-      </div>
-      <div style="display:flex;gap:10px">
-        <a class="btn btn-outline" href="#tarifs">Tarifs</a>
-        <a class="btn btn-primary" href="tel:+33768757635">📞 07 68 75 76 35</a>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="grid">
-          <div>
-            <span class="pill">Réponse sous 24h garantie</span>
-            <h1>Votre location & votre maison, <br>entre de bonnes mains</h1>
-            <p class="lead">Conciergerie saisonnière (accueil/départ, ménage/linge, états des lieux photo/vidéo) et services aux particuliers (bricolage, jardinage léger, assistance & visites seniors, courses & aide administrative).</p>
-            <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
-              <span class="chip">Standard : 28 €/h TTC → 14 €/h net</span>
-              <span class="chip">Urgence &lt; 24h : 35 €/h</span>
-              <span class="chip">Soir/Week‑end : 42 €/h</span>
-            </div>
-            <div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap">
-              <a class="btn btn-primary" href="#contact">Demander un devis</a>
-              <a class="btn btn-outline" href="#services">Voir nos services</a>
-            </div>
-          </div>
-          <div>
-            <div class="card" style="padding:18px">
-              <h3 style="margin:0 0 8px;color:#183b63">Conciergerie saisonnière ✨</h3>
-              <ul>
-                <li>Accueil & départ locataires</li>
-                <li>Ménage & linge</li>
-                <li>État des lieux photo/vidéo</li>
-                <li>Petits travaux d’entretien</li>
-                <li>Gestion du courrier</li>
-                <li>Préparation avant arrivée</li>
-              </ul>
-              <p class="mono" style="margin-top:10px">Votre location, entre de bonnes mains.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="services">
-      <div class="container">
-        <h2>Services aux particuliers</h2>
-        <div class="card" style="padding:18px">
-          <ul>
-            <li>Petits travaux & bricolage *</li>
-            <li>Jardinage léger *</li>
-            <li>Assistance & visites seniors *</li>
-            <li>Dépannages du quotidien</li>
-            <li>Courses & aide administrative *</li>
-            <li>Entretien logement *</li>
-          </ul>
-          <p class="mono" style="margin-top:10px">* Prestations éligibles au crédit d’impôt de 50 % (SAP).</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="tarifs">
-      <div class="container">
-        <h2>Tarifs clairs & compétitifs</h2>
-        <div style="display:flex;align-items:center;gap:14px;margin-bottom:8px">
-          <img src="https://www.servicesalapersonne.gouv.fr/sites/default/files/2022-02/SAP_LOGO_CMJN-1.jpg" alt="Logo officiel Services à la personne" style="height:40px;width:auto">
-          <div class="mono">
-            Prestations éligibles au crédit d’impôt de 50 % — 
-            <a href="https://www.service-public.fr/particuliers/vosdroits/F12" target="_blank" rel="noopener">En savoir plus</a>
-          </div>
-        </div>
-        <div class="card" style="padding:10px">
-          <table class="table">
-            <thead>
-              <tr><th>Offre</th><th>Détail</th><th>Tarif TTC</th><th>Après crédit d’impôt</th></tr>
-            </thead>
-            <tbody>
-              <tr><td><strong>Intervention standard</strong></td><td>1h minimum (tous services)</td><td>28 €</td><td><span class="pill">14 €</span></td></tr>
-              <tr><td><strong>Forfait Confort</strong></td><td>2h consécutives</td><td>56 €</td><td><span class="pill">28 €</span></td></tr>
-              <tr><td><strong>Forfait Sérénité</strong></td><td>3h consécutives</td><td>84 €</td><td><span class="pill">42 €</span></td></tr>
-              <tr><td><strong>Maison & Jardin</strong></td><td>4h/semaine</td><td>112 €/sem</td><td><span class="pill">224 €/mois</span></td></tr>
-              <tr><td><strong>Urgence &lt; 24h</strong></td><td>Intervention prioritaire</td><td>35 €/h</td><td><span class="pill">17,50 €/h</span></td></tr>
-              <tr><td><strong>Soir / Week‑end</strong></td><td>Après 19h ou sam./dim.</td><td>42 €/h</td><td><span class="pill">21 €/h</span></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="card" style="padding:18px">
-          <h2>Contact</h2>
-          <p class="mono">Besoin d’un devis rapide ? Réponse sous 24h garantie.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 14px">
-            <span class="pill">📞 07 68 75 76 35</span>
-            <span class="pill">📧 domuspremium35@gmail.com</span>
-            <span class="pill">SIRET : 904 510 716 00023</span>
-          </div>
-          <form action="https://formspree.io/f/xovnjjen" method="POST">
-            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-              <div><label>Nom</label><input name="Nom" required style="width:100%;padding:12px;border-radius:12px;border:1px solid #e0ebf9"></div>
-              <div><label>Téléphone</label><input name="Téléphone" style="width:100%;padding:12px;border-radius:12px;border:1px solid #e0ebf9"></div>
-            </div>
-            <div style="margin-top:12px"><label>Email</label><input name="_replyto" type="email" required style="width:100%;padding:12px;border-radius:12px;border:1px solid #e0ebf9"></div>
-            <div style="margin-top:12px"><label>Votre besoin</label><textarea name="Message" required style="width:100%;min-height:120px;padding:12px;border-radius:12px;border:1px solid #e0ebf9" placeholder="Décrivez votre demande (conciergerie, bricolage, jardinage…)"></textarea></div>
-            <input type="hidden" name="_subject" value="Demande devis — Domus Premium">
-            <input type="hidden" name="_next" value="https://domuspremium.fr/index.html?success=1">
-            <div style="margin-top:14px;display:flex;gap:10px;align-items:center">
-              <button class="btn btn-primary" type="submit">Envoyer la demande</button>
-              <span class="mono" style="font-size:12px">Formulaire sécurisé via HTTPS.</span>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footgrid">
-      <div style="display:flex;gap:12px;align-items:center">
-        <img src="/assets/logo.png" alt="Logo Domus Premium" style="width:32px;height:32px;border-radius:6px;background:#fff;padding:2px;border:1px solid #e6eef8">
-        <div>
-          <div style="font-weight:800;color:#183b63">Domus Premium</div>
-          <div style="color:#355276">Des services de proximité pour votre tranquillité.</div>
-        </div>
-      </div>
-      <div style="text-align:right">
-        <div class="mono">Tél : 07 68 75 76 35 — Email : domuspremium35@gmail.com</div>
-        <div class="mono">SIRET : 904 510 716 00023 — <a href="/mentions-legales.html">Mentions légales</a></div>
-      </div>
-    </div>
-  </footer>
-  
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "name": "Domus Premium",
-  "url": "https://domuspremium.fr",
-  "telephone": "+33 7 68 75 76 35",
-  "email": "domuspremium35@gmail.com",
-  "address": {"@type": "PostalAddress","addressLocality": "Rennes","addressCountry": "FR"},
-  "areaServed": ["Rennes", "Ille-et-Vilaine"],
-  "priceRange": "€€",
-  "description": "Conciergerie saisonnière & services aux particuliers à Rennes : accueil/départ, états des lieux photo/vidéo, petits travaux, jardinage léger, assistance & visites seniors, courses & aide administrative. 14 €/h après crédit d'impôt.",
-  "openingHoursSpecification": [{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"19:00"}]
-}
-</script>
-
-</body>
-</html>
+<div id="confirmation" style="display:none;background:#d4edda;color:#155724;padding:12px;text-align:center;font-weight:600">✅ Votre message a bien été envoyé. Nous vous répondrons sous 24h.</div>
+<script>if(window.location.search.includes('success=1')){document.getElementById('confirmation').style.display='block';}</script>
+<header><div class="container nav"><div class="brand"><img src="/assets/logo.png" alt="Logo Domus Premium"><div><div class="t1">Domus Premium</div><div class="t2">Services à la personne — Rennes & alentours</div></div></div>
+<div style="display:flex;gap:10px"><a class="btn btn-outline" href="#tarifs">Tarifs</a><a class="btn btn-primary" href="tel:+33768757635">📞 07 68 75 76 35</a></div></div></header>
+<main>
+<section class="hero"><div class="container"><div class="grid"><div>
+<span class="pill">Réponse sous 24h garantie</span>
+<h1>Petits travaux, jardinage léger, <br>assistance & courses : on s’occupe de tout !</h1>
+<p class="lead">Interventions rapides, flexibles, et toujours par la même personne. <strong>14 €/h après crédit d’impôt</strong> sur prestations éligibles (SAP).</p>
+<div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap"><span class="chip">Standard : 28 €/h TTC → 14 €/h net</span><span class="chip">Urgence &lt; 24h : 35 €/h</span><span class="chip">Soir/Week‑end : 42 €/h</span></div>
+<div style="margin-top:16px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-primary" href="#contact">Demander un devis</a><a class="btn btn-outline" href="#services">Voir nos services</a></div>
+</div><div><div class="card" style="padding:18px"><h3 style="margin:0 0 8px;color:#183b63">Prestations SAP éligibles *</h3>
+<ul><li>Petits travaux & bricolage *</li><li>Jardinage léger *</li><li>Assistance & visites seniors *</li><li>Courses & aide administrative *</li></ul>
+<p class="mono" style="margin-top:10px">* Éligibles au crédit d’impôt de 50 % (conditions légales SAP).</p></div></div></div></div></section>
+<section class="section" id="services"><div class="container"><h2>Nos services (SAP)</h2><div class="card" style="padding:18px">
+<ul><li>Montage/pose simple, réparations mineures, dépannage du quotidien</li><li>Tonte, arrosage, désherbage, petites tailles</li><li>Présence & échanges, accompagnement léger, organisation</li><li>Courses (marché, pharmacie), démarches simples, classement</li></ul>
+</div></div></section>
+<section class="section" id="accessoires"><div class="container"><h2>Services accessoires (hors SAP)</h2><div class="card" style="padding:18px">
+<p class="mono">Possibles dans la limite de <strong>30 % du chiffre d’affaires annuel HT</strong>, conformément au <strong>décret n° 2024‑851</strong>. Comptabilité séparée tenue.</p>
+<ul><li>Montage de meubles complexes / sur‑mesure</li><li>Petits déménagements (manutention)</li><li>Nettoyage extérieur non éligible SAP (terrasse, garage, vitres hautes)</li><li>Livraison ponctuelle hors domicile</li></ul>
+</div></div></section>
+<section class="section" id="tarifs"><div class="container"><h2>Tarifs clairs & compétitifs</h2>
+<div class="sap-banner" style="margin-bottom:10px"><img src="/assets/logo-sap.jpg" alt="Logo officiel Services à la personne"><div class="mono">Prestations SAP éligibles au <strong>crédit d’impôt de 50 %</strong> — <a href="https://www.service-public.fr/particuliers/vosdroits/F12" target="_blank" rel="noopener">En savoir plus</a></div></div>
+<div class="card" style="padding:10px"><table class="table"><thead><tr><th>Offre</th><th>Détail</th><th>Tarif TTC</th><th>Après crédit d’impôt</th></tr></thead><tbody>
+<tr><td><strong>Intervention standard</strong></td><td>1h minimum (toutes prestations SAP)</td><td>28 €</td><td><span class="pill">14 €</span></td></tr>
+<tr><td><strong>Forfait Confort</strong></td><td>2h consécutives</td><td>56 €</td><td><span class="pill">28 €</span></td></tr>
+<tr><td><strong>Forfait Sérénité</strong></td><td>3h consécutives</td><td>84 €</td><td><span class="pill">42 €</span></td></tr>
+<tr><td><strong>Maison & Jardin</strong></td><td>4h/semaine</td><td>112 €/sem</td><td><span class="pill">224 €/mois</span></td></tr>
+<tr><td><strong>Urgence &lt; 24h</strong></td><td>Intervention prioritaire</td><td>35 €/h</td><td><span class="pill">17,50 €/h</span></td></tr>
+<tr><td><strong>Soir / Week‑end</strong></td><td>Après 19h ou sam./dim.</td><td>42 €/h</td><td><span class="pill">21 €/h</span></td></tr>
+</tbody></table></div><p class="mono" style="margin-top:8px">Les tarifs affichés sont TTC. Le crédit d’impôt de 50 % s’applique aux prestations SAP éligibles.</p></div></section>
+<section class="section" id="avis"><div class="container"><h2>Ils nous font confiance</h2><div class="card" style="padding:18px">
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+<div style="border:1px solid #e6eef8;border-radius:14px;padding:14px;background:#fff"><div style="font-weight:800;color:#183b63;margin-bottom:6px">Sophie, Rennes</div><div style="color:#355276">“Visites hebdo pour mon père + courses : sérieux, rassurant et ponctuel.”</div><div style="margin-top:8px"><span class="pill">★★★★★</span></div></div>
+<div style="border:1px solid #e6eef8;border-radius:14px;padding:14px;background:#fff"><div style="font-weight:800;color:#183b63;margin-bottom:6px">Marc, Cesson‑Sévigné</div><div style="color:#355276">“Montage d’étagères & tringles impeccables. Travail propre, tarif clair.”</div><div style="margin-top:8px"><span class="pill">★★★★★</span></div></div>
+<div style="border:1px solid #e6eef8;border-radius:14px;padding:14px;background:#fff"><div style="font-weight:800;color:#183b63;margin-bottom:6px">Claire, Chantepie</div><div style="color:#355276">“Jardinage léger au top : tonte + désherbage, résultat nickel.”</div><div style="margin-top:8px"><span class="pill">★★★★★</span></div></div>
+</div></div></div></section>
+<section class="section" id="contact"><div class="container"><div class="card" style="padding:18px"><h2>Contact</h2><p class="mono">Besoin d’un devis rapide ? Réponse sous 24h garantie.</p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 14px"><span class="pill">📞 07 68 75 76 35</span><span class="pill">📧 domuspremium35@gmail.com</span><span class="pill">SIRET : 904 510 716 00023</span></div>
+<form action="https://formspree.io/f/xovnjjen" method="POST"><input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div><label>Nom</label><input name="Nom" required style="width:100%;padding:12px;border-radius:12px;border:1px solid #e0ebf9"></div>
+<div><label>Téléphone</label><input name="Téléphone" style="width:100%;padding:12px;border-radius:12px;border:1px solid #e0ebf9"></div></div>
+<div style="margin-top:12px"><label>Email</label><input name="_replyto" type="email" required style="width:100%;padding:12px;border-radius:12px;border:1px solid #e0ebf9"></div>
+<div style="margin-top:12px"><label>Votre besoin</label><textarea name="Message" required style="width:100%;min-height:120px;padding:12px;border-radius:12px;border:1px solid #e0ebf9" placeholder="Décrivez votre demande (bricolage, jardinage, visites, courses…)"></textarea></div>
+<input type="hidden" name="_subject" value="Demande devis — Domus Premium"><input type="hidden" name="_next" value="https://domuspremium.fr/index.html?success=1">
+<div style="margin-top:14px;display:flex;gap:10px;align-items:center"><button class="btn btn-primary" type="submit">Envoyer la demande</button><span class="mono" style="font-size:12px">Formulaire sécurisé via HTTPS.</span></div>
+</form></div></div></section></main>
+<footer><div class="container footgrid"><div style="display:flex;gap:14px;align-items:center">
+<img src="/assets/logo.png" alt="Logo Domus Premium" style="width:40px;height:40px;border-radius:10px;background:#fff;padding:4px;border:1px solid #e6eef8">
+<div><div style="font-weight:800;color:#183b63">Domus Premium</div><div style="color:#355276">Toujours la même personne • Flexibilité • Transparence</div>
+<div class="sap-banner" style="margin-top:8px"><img src="/assets/logo-sap.jpg" alt="Logo officiel Services à la personne"><a class="mono" href="https://www.service-public.fr/particuliers/vosdroits/F12" target="_blank" rel="noopener">Crédit d’impôt de 50 % — En savoir plus</a></div></div></div>
+<div style="text-align:right"><div class="mono">Tél : 07 68 75 76 35 — Email : domuspremium35@gmail.com</div><div class="mono">SIRET : 904 510 716 00023 — <a href="/mentions-legales.html">Mentions légales</a></div></div></div></footer>
+<script type="application/ld+json">{{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Domus Premium","url":"https://domuspremium.fr","telephone":"+33 7 68 75 76 35","email":"domuspremium35@gmail.com","address":{{"@type":"PostalAddress","addressLocality":"Rennes","addressCountry":"FR"}},"areaServed":["Rennes","Ille-et-Vilaine"],"priceRange":"€€","description":"Services à la personne à Rennes : petits travaux & bricolage, jardinage léger, assistance & visites seniors, courses & aide administrative. Prestations éligibles au crédit d'impôt 50 %, services accessoires possibles (≤ 30 % CA).","aggregateRating":{{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"12"}},"openingHoursSpecification":[{{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:30","closes":"19:00"}}]}}</script>
+</body></html>
