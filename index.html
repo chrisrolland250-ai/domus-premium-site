@@ -13,19 +13,19 @@
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-<div id="msg">✅ Votre message a bien été envoyé. Nous vous répondrons sous 24h.</div>
+<div id="msg" hidden>✅ Votre message a bien été envoyé. Nous vous répondrons sous 24h.</div>
 
 
 
-<header class="header" style="flex-wrap:wrap">
-  <div style="display:flex;align-items:center;gap:16px">
-    <picture>
-      <source srcset="assets/img/logo_domus_transparent.webp" type="image/webp">
-      <img src="assets/img/logo_domus_transparent.png" alt="Logo Domus Premium" width="140" height="140">
-    </picture>
-    <div class="title" style="font-size:1.5rem">DOMUS PREMIUM</div>
-  </div>
+
+<header class="header" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+  <picture>
+    <source srcset="assets/img/logo_domus_transparent.webp" type="image/webp">
+    <img src="assets/img/logo_domus_transparent.png" alt="Domus Premium" style="width:160px;height:auto">
+  </picture>
+  <div class="title" style="font-size:1.6rem;color:#0b2a44">DOMUS PREMIUM</div>
 </header>
+
 
 
 
@@ -78,7 +78,7 @@
   <div class="contact">
     <p><strong>Téléphone : </strong><a href="tel:+33768757635">07 68 75 76 35</a><br>
        <strong>Email : </strong><a href="mailto:domuspremium35@gmail.com">domuspremium35@gmail.com</a></p>
-    <form action="index.html" method="get" novalidate>
+    <form action="/" method="get" novalidate>
       <label for="name">Nom</label>
       <input id="name" name="name" required>
       <label for="email">Email</label>
