@@ -243,31 +243,49 @@
       </div>
     </section>
 
-    <section id="contact" class="section dark">
-      <div class="container contact-grid">
-        <div>
-          <h2>Contact</h2>
-          <p>Une question, un devis&nbsp;? Réponse sous 24&nbsp;h.</p>
-          <ul class="contact-list">
-            <li><strong>Tél.</strong> <a href="tel:+33768757635">07&nbsp;68&nbsp;75&nbsp;76&nbsp;35</a></li>
-            <li><strong>Email</strong> <a href="mailto:domuspremium35@gmail.com">domuspremium35@gmail.com</a></li>
-            <li><strong>Horaires</strong> Lun‑Sam 8h30–19h</li>
-          </ul>
-        </div>
-        <form class="contact-form" action="mailto:domuspremium35@gmail.com" method="post" enctype="text/plain">
-          <label>Votre nom
-            <input type="text" name="Nom" required>
-          </label>
-          <label>Votre e‑mail
-            <input type="email" name="Email" required>
-          </label>
-          <label>Message
-            <textarea name="Message" rows="5" placeholder="Décrivez votre besoin"></textarea>
-          </label>
-          <button class="btn btn-gold" type="submit">Envoyer</button>
-        </form>
-      </div>
-    </section>
+   <section id="contact" class="section dark">
+  <div class="container contact-grid">
+    <div>
+      <h2>Contact</h2>
+      <p>Une question, un devis ? Réponse sous 24 h.</p>
+      <ul class="contact-list">
+        <li><strong>Tél.</strong> <a href="tel:+33768757635">07 68 75 76 35</a></li>
+        <li><strong>Email</strong> <a href="mailto:domuspremium35@gmail.com">domuspremium35@gmail.com</a></li>
+        <li><strong>Horaires</strong> Lun-Sam 8h30–19h</li>
+      </ul>
+    </div>
+    <form class="contact-form" action="https://formspree.io/f/xovnjjen" method="POST" id="contactForm">
+      <input type="hidden" name="_subject" value="Nouveau message – Domus Premium">
+      <!-- Redirection possible : ajoute _redirect si besoin -->
+      <!-- <input type="hidden" name="_redirect" value="https://domuspremium.fr/merci.html"> -->
+      
+      <label>Votre nom
+        <input type="text" name="Nom" required>
+      </label>
+      <label>Votre e-mail
+        <input type="email" name="Email" required>
+      </label>
+      <label>Message
+        <textarea name="Message" rows="5" placeholder="Décrivez votre besoin" required></textarea>
+      </label>
+      
+      <!-- Honeypot anti-spam -->
+      <label style="display:none;">Ne pas remplir
+        <input type="text" name="company" tabindex="-1" autocomplete="off">
+      </label>
+      
+      <!-- Consentement RGPD -->
+      <label style="display:block; font-weight:400; margin-top:6px;">
+        <input type="checkbox" name="Consentement" required>
+        J’accepte que mes données soient utilisées pour répondre à ma demande.
+      </label>
+      
+      <button class="btn btn-gold" type="submit">Envoyer</button>
+      <p id="formMsg" class="tiny" style="margin-top:10px;"></p>
+    </form>
+  </div>
+</section>
+
   </main>
 
   <footer class="site-footer">
