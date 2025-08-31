@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Domus Premium – Services à la personne à Rennes & alentours (petits travaux, jardinage, aide seniors)</title>
+  <meta name="description" content="Interventions rapides à Rennes & alentours : petits travaux, jardinage léger, assistance seniors, courses. 28 €/h TTC, 14 €/h après crédit d’impôt (SAP). Réponse sous 24h.">
+  <link rel="icon" href="favicon.ico">
+  <meta property="og:title" content="Domus Premium – Services à la personne à Rennes & alentours">
+  <meta property="og:description" content="Petits travaux, jardinage, assistance, courses. 14 €/h après crédit d’impôt (SAP).">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/logo_transparent.png">
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    body {
+      background-color: #ffffff; /* fond blanc */
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Style général pour le header */
+    header.header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    header.header img {
+      width: 180px;
+      height: auto;
+      max-width: 100%;
+    }
+
+    header.header span {
+      font-size: 1.6rem;
+      color: #7BBF8F;
+      font-weight: 500;
+    }
+
+    @media (min-width: 768px) {
+      header.header {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      header.header img {
+        width: 250px;
+      }
+
+      header.header span {
+        font-size: 2rem;
+      }
+    }
+  </style>
+
+  <header class="header">
+    <div>
+      <picture>
+        <source srcset="assets/img/logo_domus_transparent.webp" type="image/webp">
+        <img src="assets/img/logo_domus_transparent.png" alt="Logo Domus Premium">
+      </picture>
+    </div>
+    <div>
+      <span>Besoin d’aide à domicile ? On s’occupe de tout !</span>
+    </div>
+  </header>
+</head>
+<body>
+<div id="msg" hidden>✅ Votre message a bien été envoyé. Nous vous répondrons sous 24h.</div>
+<section class="hero section">
+  <h1 style="text-align: center;">Services à la personne – Rennes & alentours</h1>
+  <p class="lead">Petits travaux &amp; bricolage, jardinage léger, aide aux seniors, courses et accompagnement administratif. <strong>*Éligible au crédit d’impôt de 50%</strong> (SAP). À partir de <strong>28 € / h TTC</strong> soit <strong>14 € / h après crédit d’impôt</strong>.</p>
+  <p>
+    <a class="btn btn-primary" href="#contact">Demander un devis</a>
+    <a class="btn" href="tel:+33768757635">📞 07&nbsp;68&nbsp;75&nbsp;76&nbsp;35</a>
+    <a class="btn" href="mailto:domuspremium35@gmail.com">✉️ domuspremium35@gmail.com</a>
+  </p>
+</section>
+<section style="width:80%;margin-top:-10px;margin-left:auto;margin-right:auto;">
+  <img src="assets/img/image_bandeau/image_bandeau_new.png" alt="Image centrée" style="display:block; margin:0 auto; width:80%; max-width:750px; height:auto;">
+</section>
+<section class="section" style="margin-top:-10px; margin-bottom:-10px;">
+  <h2>Prestations</h2>
+  <div class="grid">
+    <article class="card">
+      <h3>Petits travaux &amp; bricolage *</h3>
+      <ul class="inline">
+        <li>Montage, fixation (étagère, tringle, cadre…) — intervention &lt; 2h *</li>
+        <li>Remise en état simple, petites réparations *</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3>Jardinage léger *</h3>
+      <ul class="inline">
+        <li>Tonte, désherbage, arrosage, entretien léger *</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3>Aide &amp; visites seniors *</h3>
+      <ul class="inline">
+        <li>Courses, aide administrative, accompagnement *</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3>Conciergerie</h3>
+      <ul class="inline">
+        <li>Surveillance ponctuelle, gestion basique</li>
+      </ul>
+    </article>
+  </div>
+</section>
+<section id="contact" class="section" style="margin-top:-10px; margin-bottom:-10px;">
+  <h2>Contact</h2>
+  <div class="contact">
+    <p><strong>Téléphone : </strong><a href="tel:+33768757635">07 68 75 76 35</a><br>
+       <strong>Email : </strong><a href="mailto:domuspremium35@gmail.com">domuspremium35@gmail.com</a></p>
+    <form action="/" method="get" novalidate>
+      <label for="name">Nom</label>
+      <input id="name" name="name" required>
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required>
+      <label for="message">Votre besoin</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+      <input type="hidden" name="sent" value="1">
+      <input type="submit" value="Envoyer">
+      <p class="small">En cliquant sur “Envoyer”, vous acceptez d’être recontacté(e) par Domus Premium. Nous répondons sous 24&nbsp;h.</p>
+    </form>
+  </div>
+</section>
+<footer class="footer">
+  © 2025 Domus Premium – Rennes & alentours. SIREN 904 510 716. &middot; <a href="mentions-legales.html">Mentions légales</a>
+  <br><img src="assets/img/logo_sap.jpg" alt="SAP" width="90" height="64" loading="lazy">
+</footer>
+<script>
+(function(){
+  const ok = new URLSearchParams(location.search).get('sent') === '1';
+  if (ok) document.getElementById('msg').style.display = 'block';
+})();
+</script>
+</body>
+</html>
