@@ -1,0 +1,7 @@
+body{font-family:sans-serif;margin:0;padding:0}
+.container{max-width:800px;margin:0 auto;padding:20px}
+.section.dark{background:#0e2a47;color:#fff;padding:40px 20px}
+label{display:block;margin:10px 0}
+input,textarea{width:100%;padding:8px;margin-top:4px}
+.btn{padding:10px 16px;border:none;border-radius:4px;cursor:pointer}
+.btn-gold{background:#c8a046;color:#0e2a47;font-weight:bold}
