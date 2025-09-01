@@ -76,3 +76,59 @@ h1{font-size:clamp(2rem,5vw,3rem)}h2{font-size:clamp(1.6rem,3.6vw,2.2rem)}h3{fon
   .contact-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
 }
+
+/* === Tarifs Table Styled === */
+#tarifs table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+  font-size: 0.95rem;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+#tarifs th, #tarifs td {
+  border: 1px solid #e0e6f0;
+  padding: 12px;
+  text-align: center;
+}
+#tarifs th {
+  background: #f0f4fa;
+  color: var(--navy);
+  font-weight: 700;
+}
+#tarifs tr:nth-child(even) td {
+  background: #fafcff;
+}
+#tarifs tr:hover td {
+  background: #f5f9ff;
+}
+#tarifs p.note-table {
+  font-size: 0.85rem;
+  margin-top: 10px;
+  color: var(--muted);
+  text-align: center;
+}
+@media (max-width: 700px) {
+  #tarifs table, #tarifs thead, #tarifs tbody, #tarifs th, #tarifs td, #tarifs tr {
+    display: block;
+    width: 100%;
+  }
+  #tarifs tr { margin-bottom: 12px; box-shadow: var(--shadow); border-radius: 8px; overflow:hidden; }
+  #tarifs td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+  #tarifs td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    font-weight: 700;
+    color: var(--navy);
+    text-align: left;
+  }
+  #tarifs th { display: none; }
+}
