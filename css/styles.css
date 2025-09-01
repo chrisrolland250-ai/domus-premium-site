@@ -44,17 +44,7 @@ h3{font-size:1.2rem; margin:.4rem 0 .4rem}
   padding:14px 0;
 }
 .brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); font-weight:700}
-.brand img {
-  height:80px;
-  width:auto;
-}
-
-@media (max-width: 600px) {
-  .brand img {
-    height:60px;  /* plus petit sur mobile */
-  }
-}
-
+.brand img{height:40px; width:auto; border-radius:8px}
 .site-header nav{display:flex; gap:18px; align-items:center}
 .site-header nav a{color:var(--ink); text-decoration:none; font-weight:600}
 .site-header nav a:hover{color:var(--navy)}
