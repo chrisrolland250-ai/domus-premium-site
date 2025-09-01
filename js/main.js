@@ -6,19 +6,19 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!form) return;
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (msg){ msg.textContent = "Envoi en cours…"; msg.style.color = "#bcd0ea"; }
+    if (msg){ msg.textContent = "Envoi en cours…"; msg.style.color = "#2a4a74"; }
     try{
       const res = await fetch(form.action, { method:"POST", headers:{ "Accept":"application/json" }, body: new FormData(form) });
       if(res.ok){
-        if (msg){ msg.textContent = "Merci ! Votre message a bien été envoyé."; msg.style.color = "#8be28f"; }
+        if (msg){ msg.textContent = "Merci ! Votre message a bien été envoyé."; msg.style.color = "#2e7d32"; }
         form.reset();
       }else{
         let err="Une erreur est survenue.";
         try{ const out = await res.json(); if(out.errors) err = out.errors.map(e=>e.message).join(", "); }catch{}
-        if (msg){ msg.textContent = "Échec de l’envoi : " + err; msg.style.color = "#ffb4b4"; }
+        if (msg){ msg.textContent = "Échec de l’envoi : " + err; msg.style.color = "#c62828"; }
       }
     }catch(error){
-      if (msg){ msg.textContent = "Impossible d’envoyer le message. Vérifiez votre connexion."; msg.style.color = "#ffb4b4"; }
+      if (msg){ msg.textContent = "Impossible d’envoyer le message. Vérifiez votre connexion."; msg.style.color = "#c62828"; }
     }
   });
 });

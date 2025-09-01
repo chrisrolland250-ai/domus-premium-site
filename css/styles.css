@@ -28,7 +28,7 @@ body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial;color:var(-
 .ticks li:before{content:"✔";position:absolute;left:0;color:var(--gold)}
 .note{color:var(--muted);font-size:.9rem;margin-top:10px}
 .section{padding:64px 0}
-.section.dark{background:linear-gradient(180deg,var(--navy),var(--navy-2));color:#e8eef6}
+.section.dark{background:linear-gradient(180deg,var(--navy),var(--navy-2));color:#ffffff}
 .section.dark h2{color:#fff}
 .section-lead{color:var(--muted);margin:0 0 24px}
 h1,h2,h3{font-family:"Playfair Display",Georgia,serif;line-height:1.2;margin:.2rem 0 .8rem}
@@ -62,11 +62,11 @@ h1{font-size:clamp(2rem,5vw,3rem)}h2{font-size:clamp(1.6rem,3.6vw,2.2rem)}h3{fon
 .contact-form label{display:block;font-weight:700;margin:8px 0 6px}
 .contact-form input,.contact-form textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #264a73;background:#0e2440;color:#fff}
 .contact-form button{margin-top:10px}
-.site-footer{background:#0c2036;color:#bcd0ea;padding:28px 0}
+.site-footer{background:#0c2036;color:#e6edf7;padding:28px 0}
 .footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:18px;align-items:center}
 .foot-brand img{height:36px;width:auto;border-radius:6px;display:block;margin-bottom:8px}
 .foot-links{list-style:none;padding:0;margin:0;display:grid;gap:8px}
-.foot-links a{color:#bcd0ea;text-decoration:none}.foot-links a:hover{color:#fff}
+.foot-links a{color:#e6edf7;text-decoration:none}.foot-links a:hover{color:#fff}
 .foot-legal p{margin:.2rem 0}
 @media (max-width:1000px){
   .hero-grid{grid-template-columns:1fr}
@@ -172,3 +172,9 @@ h1{font-size:clamp(2rem,5vw,3rem)}h2{font-size:clamp(1.6rem,3.6vw,2.2rem)}h3{fon
 /* Make images never overflow and keep rounded corners everywhere */
 img{ max-width: 100%; height: auto; }
 .hero-art img, .card, .bubble, .gallery img{ border-radius: var(--radius); }
+
+/* Improve contrast for text on dark sections and footer */
+.section.dark a{color:var(--gold)}
+.section.dark a:hover{filter:brightness(1.1)}
+.site-footer a{color:#e6edf7}
+.site-footer a:hover{color:var(--gold)}
