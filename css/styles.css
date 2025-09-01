@@ -132,3 +132,43 @@ h1{font-size:clamp(2rem,5vw,3rem)}h2{font-size:clamp(1.6rem,3.6vw,2.2rem)}h3{fon
   }
   #tarifs th { display: none; }
 }
+
+
+/* ===== Responsive enhancements for desktop & mobile ===== */
+
+/* Large desktop: widen container a bit */
+@media (min-width: 1280px){
+  .container{ max-width: 1200px; }
+  .hero { padding-top: 72px; padding-bottom: 56px; }
+  .brand img{ height: 130px; }
+}
+
+/* Tablet & mobile adjustments */
+@media (max-width: 900px){
+  .nav{ flex-wrap: wrap; row-gap: 10px; }
+  .site-header nav{ flex-basis: 100%; flex-wrap: wrap; gap: 12px; }
+  .brand span{ font-size: 1.4rem; }
+  .brand img{ height: 90px; }
+  .hero-grid{ grid-template-columns: 1fr; gap: 22px; }
+  .hero-copy{ order: 2; text-align: left; }
+  .hero-art{ order: 1; }
+  .lead{ font-size: 1.05rem; }
+  .ticks{ grid-template-columns: 1fr; }
+  .cards{ grid-template-columns: 1fr; }
+}
+
+/* Small phones */
+@media (max-width: 520px){
+  .container{ padding: 0 14px; }
+  .brand img{ height: 70px; }
+  .brand span{ display: none; } /* conserve l'espace et simplifie l'entête sur petit écran */
+  .btn{ padding: 10px 14px; font-size: .95rem; }
+  h1{ font-size: 1.6rem; line-height: 1.25; }
+  .lead{ font-size: 1rem; }
+  .section{ padding: 36px 0; }
+  footer .foot-grid{ grid-template-columns: 1fr; gap: 14px; }
+}
+
+/* Make images never overflow and keep rounded corners everywhere */
+img{ max-width: 100%; height: auto; }
+.hero-art img, .card, .bubble, .gallery img{ border-radius: var(--radius); }
