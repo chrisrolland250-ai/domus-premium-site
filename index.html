@@ -9,13 +9,20 @@
   <link rel="stylesheet" href="css/styles.css">
   <style>
     /* Garde-fous au cas où votre CSS ne couvre pas tout */
-    :root{--marine:#0e2240;--doré:#b8860b;--clair:#f5f7fa;--gris:#666;--noir:#111;--blanc:#fff}
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--noir);line-height:1.6;background:#fff}
-    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #eee}
-    .container{max-width:1100px;margin:0 auto;padding:0 16px}
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--noir);font-weight:700}
-    .brand img{height:70px;width:auto;border-radius:8px;display:block}
+   <style>
+  :root{--marine:#0e2240;--doré:#b8860b;--clair:#f5f7fa;--gris:#666;--noir:#111;--blanc:#fff}
+  body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--noir);line-height:1.6;background:#fff}
+  header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #eee}
+  .container{max-width:1100px;margin:0 auto;padding:0 16px}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--noir);font-weight:700}
+    .brand img{height:100px;width:auto; border-radius:8px;display:block; }
+     @media (max-width:600px){.brand img{height:60px;} }
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px}
+  nav a{text-decoration:none;font-weight:600;color:var(--noir)}
+  nav a:hover{color:var(--marine)}
+  ...
+</style>
     nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px}
     nav a{text-decoration:none;font-weight:600;color:var(--noir)}
     nav a:hover{color:var(--marine)}
