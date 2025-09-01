@@ -4,91 +4,49 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Domus Premium – Services à la personne à Rennes & alentours</title>
-  <meta name="description" content="Petits travaux, jardinage léger, assistance seniors, courses. 28 €/h TTC, 14 €/h après crédit d’impôt (SAP). Réponse rapide à Rennes & alentours.">
+  <meta name="description" content="Petits travaux, jardinage léger, assistance seniors et courses à Rennes & alentours. 28 €/h TTC (14 €/h après crédit d’impôt).">
   <link rel="icon" href="favicon.ico">
-  <meta property="og:title" content="Domus Premium – Services à la personne à Rennes & alentours">
-  <meta property="og:description" content="Petits travaux, jardinage, assistance seniors, courses. 14 €/h après crédit d’impôt (SAP).">
-  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/styles.css">
   <style>
-    :root{
-      --marine:#0e2240;
-      --doré:#b8860b;
-      --clair:#f5f7fa;
-      --gris:#666;
-      --noir:#111;
-      --blanc:#fff;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--noir);
-      line-height:1.6;
-      background:#ffffff;
-    }
-    header{
-      position:sticky; top:0; z-index:50;
-      background:var(--blanc);
-      border-bottom:1px solid #eee;
-    }
-    .container{max-width:1100px; margin:0 auto; padding:0 16px}
-    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
-    .brand{display:flex; align-items:center; gap:12px}
-    .brand img{height:64px; width:auto; display:block}
-    .brand h1{font-size:18px; margin:0; color:var(--marine); font-weight:700; letter-spacing:.3px}
-    nav ul{list-style:none; margin:0; padding:0; display:flex; gap:18px}
-    nav a{color:var(--noir); text-decoration:none; font-weight:600}
+    /* Safeguard styles in case css/styles.css is minimal */
+    :root{--marine:#0e2240;--doré:#b8860b;--clair:#f5f7fa;--gris:#666;--noir:#111;--blanc:#fff}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--noir);line-height:1.6;background:#fff}
+    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #eee}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:64px;width:auto;display:block}
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px}
+    nav a{text-decoration:none;font-weight:600;color:var(--noir)}
     nav a:hover{color:var(--doré)}
-
-    /* Hero */
-    .hero{
-      background:linear-gradient(180deg, #ffffff 0%, #ffffff 50%, var(--clair) 100%);
-      padding:48px 0 36px;
-    }
-    .hero-inner{display:grid; grid-template-columns:1.2fr .8fr; gap:28px; align-items:center}
-    .hero h2{font-size:28px; margin:0 0 10px; color:var(--marine)}
-    .hero p{margin:0 0 16px; color:var(--gris)}
-    .badge{display:inline-block; background:var(--marine); color:#fff; padding:6px 10px; border-radius:999px; font-size:12px; margin-bottom:10px}
-    .cta{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .btn{appearance:none; border:none; padding:12px 16px; border-radius:10px; font-weight:700; cursor:pointer}
-    .btn-primary{background:var(--marine); color:#fff}
-    .btn-outline{background:#fff; color:var(--marine); border:2px solid var(--marine)}
-    .tagline{font-weight:700; color:var(--noir)}
-
-    /* Prestations */
+    .hero{background:linear-gradient(180deg,#ffffff 0%,#ffffff 50%,var(--clair) 100%);padding:48px 0 36px}
+    .hero-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    .hero h2{font-size:28px;margin:0 0 10px;color:var(--marine)}
+    .badge{display:inline-block;background:var(--marine);color:#fff;padding:6px 10px;border-radius:999px;font-size:12px;margin-bottom:10px}
+    .btn{appearance:none;border:none;padding:12px 16px;border-radius:10px;font-weight:700;cursor:pointer}
+    .btn-primary{background:var(--marine);color:#fff}
+    .btn-outline{background:#fff;color:var(--marine);border:2px solid var(--marine)}
     section{padding:40px 0}
-    .section-title{font-size:24px; color:var(--marine); text-align:center; margin:0 0 24px}
-    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
-    .card{background:#fff; border:1px solid #eee; border-radius:14px; padding:16px}
-    .card h3{margin:0 0 8px; color:var(--marine); font-size:18px}
-    .card p{margin:0; color:var(--gris); font-size:14px}
-
-    /* Tarifs */
-    #tarifs .note{font-size:13px; color:#444; text-align:center; margin-top:10px}
-    table.tarifs{width:100%; border-collapse:collapse; margin-top:8px; background:#fff; border-radius:12px; overflow:hidden}
-    table.tarifs th, table.tarifs td{border:1px solid #eaeaea; padding:12px; text-align:center}
+    .section-title{font-size:24px;color:var(--marine);text-align:center;margin:0 0 24px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fff;border:1px solid #eee;border-radius:14px;padding:16px}
+    .card h3{margin:0 0 8px;color:var(--marine);font-size:18px}
+    .card p{margin:0;color:var(--gris);font-size:14px}
+    table.tarifs{width:100%;border-collapse:collapse;margin-top:8px;background:#fff;border-radius:12px;overflow:hidden}
+    table.tarifs th,table.tarifs td{border:1px solid #eaeaea;padding:12px;text-align:center}
     table.tarifs th{background:#f8f9fb}
-    .prix{font-weight:800; color:var(--noir)}
-    .prix small{display:block; font-weight:600; color:var(--gris)}
-    .pill{display:inline-block; padding:4px 10px; border-radius:999px; background:#fff3d6; color:#8a6400; font-weight:700; font-size:12px}
-
-    /* Argumentaire */
-    .bullets{display:grid; grid-template-columns:repeat(2,1fr); gap:16px}
-    .bullet{display:flex; gap:10px; align-items:flex-start}
-    .dot{width:10px; height:10px; background:var(--doré); border-radius:50%; margin-top:8px}
-
-    /* Footer */
-    footer{background:var(--marine); color:#fff; padding:24px 0; margin-top:30px}
-    footer a{color:#fff; text-decoration:none}
-    .footgrid{display:grid; grid-template-columns:1fr 1fr; gap:14px}
-    .credits{font-size:12px; opacity:.8}
-
-    @media (max-width:900px){
-      .hero-inner{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr}
-      .bullets{grid-template-columns:1fr}
-      .brand h1{display:none}
-    }
+    .prix{font-weight:800;color:var(--noir)}
+    .prix small{display:block;font-weight:600;color:var(--gris)}
+    .pill{display:inline-block;padding:4px 10px;border-radius:999px;background:#fff3d6;color:#8a6400;font-weight:700;font-size:12px}
+    .note{font-size:13px;color:#444;text-align:center;margin-top:10px}
+    .bullets{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .bullet{display:flex;gap:10px;align-items:flex-start}
+    .dot{width:10px;height:10px;background:var(--doré);border-radius:50%;margin-top:8px}
+    footer{background:var(--marine);color:#fff;padding:24px 0;margin-top:30px}
+    footer a{color:#fff;text-decoration:none}
+    .footgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .credits{font-size:12px;opacity:.8}
+    @media (max-width:900px){.hero-inner{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.bullets{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -96,8 +54,8 @@
 <header>
   <div class="container nav">
     <div class="brand">
-      <img src="assets/img/logo.png" alt="Domus Premium logo">
-      <h1>DOMUS PREMIUM</h1>
+      <img src="assets/logo.jpg" alt="Domus Premium logo">
+      <strong>DOMUS PREMIUM</strong>
     </div>
     <nav>
       <ul>
@@ -117,13 +75,14 @@
         <span class="badge">Rennes & alentours</span>
         <h2>Besoin d’aide à domicile ? <span class="tagline">Petit bricolage, entretien extérieur ou courses, on s’occupe de tout !</span></h2>
         <p>Services à la personne (SAP) — <strong>avantage fiscal 50 %</strong>. Toujours la même personne, un service de proximité fiable et rapide.</p>
-        <div class="cta">
+        <div class="cta" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
           <a class="btn btn-primary" href="#contact">Demander un devis</a>
           <a class="btn btn-outline" href="#tarifs">Voir nos tarifs</a>
         </div>
       </div>
       <div>
-        <img src="assets/img/hero-illustration.png" alt="Illustration Domus Premium" style="width:100%; border-radius:12px; border:1px solid #eee;">
+        <!-- If you have a banner image, replace the src below; otherwise this block stays empty -->
+        <!-- <img src="assets/img/image_bandeau/image_bandeau_new.png" alt="Illustration Domus Premium" style="width:100%;border-radius:12px;border:1px solid #eee;"> -->
       </div>
     </div>
   </section>
@@ -216,7 +175,7 @@
           Téléphone : <a href="tel:+33768757635">07 68 75 76 35</a></p>
           <p style="font-size:13px; color:#444">Interventions en journée. <em>Majoration</em> : +25 % soir/dimanche, +100 % jours fériés.</p>
         </div>
-        <form action="https://formspree.io/f/xdkgjqwe" method="POST" style="background:#fff; border:1px solid #eee; border-radius:12px; padding:14px">
+        <form action="#" method="POST" style="background:#fff; border:1px solid #eee; border-radius:12px; padding:14px">
           <label>Nom<br><input type="text" name="name" required style="width:100%; padding:10px; margin:6px 0; border:1px solid #ddd; border-radius:8px"></label>
           <label>Email<br><input type="email" name="email" required style="width:100%; padding:10px; margin:6px 0; border:1px solid #ddd; border-radius:8px"></label>
           <label>Message<br><textarea name="message" rows="4" required style="width:100%; padding:10px; margin:6px 0; border:1px solid #ddd; border-radius:8px"></textarea></label>
@@ -242,5 +201,6 @@
   </div>
 </footer>
 
+<script src="js/main.js"></script>
 </body>
 </html>
