@@ -5,3 +5,17 @@
 /* === Micro-mentions lisibilité renforcée === */
 .section.dark .note{color:#cfe0f6}
 .section.dark .table-note{color:#cfe0f6}
+
+
+/* === Lisibilité des micro‑mentions en section sombre === */
+.section.dark .tiny,
+.section.dark .privacy-note,
+.section.dark .table-note{
+  color:#cfe0f6;
+  opacity:1;
+}
+.section.dark .privacy-note a{
+  color:#fff;
+  text-decoration:underline;
+}
+
