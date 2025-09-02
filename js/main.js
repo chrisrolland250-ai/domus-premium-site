@@ -54,3 +54,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const form = event.target;
+  const formMsg = document.getElementById('formMsg');
+  formMsg.textContent = "⏳ Envoi en cours...";
+  formMsg.style.color = "#c8a046"; // doré
+
+  fetch(form.action, {
+    method: form.method,
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if (response.ok) {
+      formMsg.textContent = "✅ Merci, votre message a bien été envoyé !";
+      formMsg.style.color = "green";
+      form.reset();
+    } else {
+      response.json().then(data => {
+        formMsg.textContent = "❌ Une erreur est survenue. Merci de réessayer.";
+        formMsg.style.color = "red";
+      });
+    }
+  }).catch(error => {
+    formMsg.textContent = "❌ Impossible d’envoyer le message (connexion).";
+    formMsg.style.color = "red";
+  });
+  return false;
+}
