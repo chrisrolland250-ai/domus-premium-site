@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Assistance seniors">
+  <g fill="#C8A046">
+    <circle cx="32" cy="18" r="10"/>
+    <path d="M10 52c0-10 10-18 22-18s22 8 22 18v4H10v-4z"/>
+    <path d="M42 24c3-3 7-3 10 0 3 3 3 8 0 11l-10 10-10-10c-3-3-3-8 0-11s7-3 10 0z" opacity=".6"/>
+  </g>
+</svg>
