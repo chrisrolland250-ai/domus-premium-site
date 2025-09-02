@@ -87,7 +87,7 @@ h1{font-size:clamp(2rem, 3.2vw, 3rem)} h2{font-size:clamp(1.6rem, 2.2vw, 2.2rem)
 /* Contact */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
 .contact-list{list-style:none;padding:0;margin:14px 0}
-.contact-list a{color:#fff;text-decoration:underline;text-decoration-thickness:2px}
+
 .contact-form{background:#0f2844;border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
 .contact-form label{display:block;font-weight:700;margin:8px 0 6px}
 .contact-form input,.contact-form textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #264a73;background:#0e2440;color:#fff}
@@ -161,3 +161,27 @@ h1{font-size:clamp(2rem, 3.2vw, 3rem)} h2{font-size:clamp(1.6rem, 2.2vw, 2.2rem)
 
 
 .foot-links a:focus{outline:3px solid rgba(200,160,70,.35);outline-offset:2px}
+
+/* Amélioration visibilité numéro de téléphone */
+.contact-list a {
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+
+/* Amélioration visibilité numéro de téléphone */
+.contact-list a{
+  color: var(--gold);
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+.contact-list a:hover{
+  text-decoration: underline;
+}
