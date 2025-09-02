@@ -5,3 +5,32 @@
 /* === Micro-mentions lisibilité renforcée === */
 .section.dark .note{color:#cfe0f6}
 .section.dark .table-note{color:#cfe0f6}
+
+
+/* === Lisibilité des micro‑mentions en section sombre === */
+.section.dark .tiny,
+.section.dark .privacy-note,
+.section.dark .table-note{
+  color:#cfe0f6;
+  opacity:1;
+}
+.section.dark .privacy-note a{
+  color:#fff;
+  text-decoration:underline;
+}
+
+
+
+/* === FINAL VISIBILITY OVERRIDES (do not remove) === */
+.section.dark p.tiny,
+.section.dark p.privacy-note,
+.section.dark p.table-note{
+  color:#cfe0f6 !important;
+  opacity:1 !important;
+}
+.section.dark p.privacy-note a{
+  color:#ffffff !important;
+  text-decoration:underline;
+}
+/* End of overrides */
+
