@@ -62,7 +62,7 @@
 <div class="hero-copy">
 <h1>Simplifiez votre quotidien à <span class="highlight">Rennes &amp; alentours</span></h1>
 <p class="lead">
-            Petits travaux, jardinage, assistance aux seniors et aide administrative.<br/>
+            Petits travaux, jardinage, Aide ponctuelle après maladie ou accident (invalidité temporaire) et aide administrative.<br/>
             Toujours la même personne, un service de proximité <strong>fiable, rapide et premium</strong>.
           </p>
 <ul class="ticks">
@@ -72,7 +72,7 @@
 </ul>
 <div class="cta">
 <a class="btn btn-gold" href="#contact">Demander un devis</a>
-<a class="btn btn-outline" href="tel:+33768757635">Appeler le 07 68 75 76 35</a>
+<a class="btn btn-outline" href="tel:+33768757635"><a href="tel:+33768757635">Appeler le 07 68 75 76 35</a></a>
 </div>
 <p class="note">*Selon éligibilité au dispositif fiscal en vigueur (article 199 sexdecies du CGI).</p>
 </div>
@@ -118,7 +118,7 @@
 <li>Évacuation légère des déchets verts...</li>
 </ul>
 </article>
-<!-- Assistance aux seniors -->
+<!-- Aide ponctuelle après maladie ou accident (invalidité temporaire) -->
 <article class="card">
 <div class="icon">
 <div class="icon-circle">
@@ -127,7 +127,7 @@
 </svg>
 </div>
 </div>
-<h3>Assistance aux seniors</h3>
+<h3>Aide ponctuelle après maladie ou accident (invalidité temporaire)</h3>
 <ul>
 <li>Petite aide au quotidien (hors soins)</li>
 <li>Accompagnement aux courses &amp; rendez-vous...</li>
@@ -190,7 +190,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Aide aux seniors, courses</td>
+<td>Aide ponctuelle (invalidité temporaire), courses</td>
 <td>28 € / h</td>
 <td>14 € / h</td>
 </tr>
@@ -202,7 +202,7 @@
 <tr>
 <td>Petits travaux &amp; bricolage (≤ 2 h)</td>
 <td>30€ / h forfait 1h (Rennes intra-muros)</td>
-<td>15 € / h</td>
+<td>16 € / h</td>
 </tr>
 <tr>
 <td>Forfait ½ journée (4 h)</td>
@@ -217,7 +217,7 @@
 </tbody>
 </table>
 </div>
-<p class="table-note">* Tous nos services sont éligibles au crédit d’impôt de 50 % (Services à la personne – SAP). Vous payez la moitié du prix indiqué après réduction fiscale.</p>
+<p class="table-note">* Certaines prestations ouvrent droit à un crédit d’impôt de 50 %, selon la législation en vigueur (article 199 sexdecies du CGI). Vous payez la moitié du prix indiqué après réduction fiscale.</p>
 </div>
 <!-- /Tableau tarifs -->
 </div>
@@ -300,10 +300,10 @@
 <form   class="contact-form" id="contactForm" method="POST" onsubmit="return handleSubmit(event)" data-emailjs-service="service_4358zpr" data-emailjs-template="template_5mfkcwg" data-emailjs-public="C-1wgNtnyKGkvubaH">
 <input name="_subject" type="hidden" value="Nouveau message – Domus Premium"/>
 <label>Votre nom
-            <input name="Nom" required="" type="text"/>
+            <input name="Nom" required="" type="text"/ autocomplete="name">
 </label>
 <label>Votre e-mail
-            <input name="email" required="" type="email"/>
+            <input name="email" required="" type="email"/ autocomplete="email">
 </label>
 <label>Message
             <textarea name="Message" placeholder="Décrivez votre besoin" required="" rows="5"></textarea>
@@ -346,10 +346,10 @@ Services à la personne à Rennes &amp; alentours (50 % crédit d’impôt selon
 <script defer="" src="js/main.js"></script>
 
   <!-- EmailJS SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function(){
-      try { emailjs.init({ publicKey: "C-1wgNtnyKGkvubaH", blockHeadless: true }); } catch(e) { console.warn("EmailJS init:", e); }
+      try { emailjs.init("C-1wgNtnyKGkvubaH"); } catch(e) { console.warn("EmailJS init:", e); }
     });
   </script>
 </body>
