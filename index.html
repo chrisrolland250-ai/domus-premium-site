@@ -346,10 +346,10 @@ Services à la personne à Rennes &amp; alentours (50 % crédit d’impôt selon
 <script defer="" src="js/main.js"></script>
 
   <!-- EmailJS SDK -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function(){
-      try { emailjs.init("C-1wgNtnyKGkvubaH"); } catch(e) { console.warn("EmailJS init:", e); }
+      try { emailjs.init({ publicKey: "C-1wgNtnyKGkvubaH", blockHeadless: true }); } catch(e) { console.warn("EmailJS init:", e); }
     });
   </script>
 </body>

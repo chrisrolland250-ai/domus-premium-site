@@ -57,7 +57,9 @@ function handleSubmit(event) {
 }
 
 
-// EmailJS submit handler with redirect to merci.html
+
+
+// EmailJS submit handler (v4) with detailed error reporting
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById('contactForm');
   const msg = document.getElementById('formMsg');
@@ -67,13 +69,14 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     if (msg) { msg.textContent = "Envoi en cours…"; msg.style.color = "#bcd0ea"; }
 
-    // honeypot
+    // Honeypot
     const honey = form.querySelector('input[name="company"]');
     if (honey && honey.value.trim() !== "") {
       if (msg) { msg.textContent = "Envoi bloqué (anti-spam)."; msg.style.color = "#ffb4b4"; }
       return false;
     }
 
+    // Collect payload expected by your template
     const getVal = (name) => {
       const el = form.querySelector(`[name="${name}"]`);
       return el ? (el.type === "checkbox" ? (el.checked ? "on" : "off") : el.value.trim()) : "";
@@ -90,10 +93,14 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     try {
-      await emailjs.send("service_4358zpr", "template_5mfkcwg", payload);
+      const res = await emailjs.send("service_4358zpr", "template_5mfkcwg", payload);
+      // Success → redirect
       window.location.href = "merci.html";
     } catch (err) {
-      if (msg) { msg.textContent = "❌ Impossible d’envoyer le message. Vérifiez votre configuration EmailJS."; msg.style.color = "#ffb4b4"; }
+      // Show precise error
+      let text = "❌ Impossible d’envoyer le message.";
+      if (err && err.text) text += " " + err.text;
+      if (msg) { msg.textContent = text; msg.style.color = "#ffb4b4"; }
       console.error("EmailJS error:", err);
     }
   });
