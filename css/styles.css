@@ -34,3 +34,10 @@
 }
 /* End of overrides */
 
+
+
+/* === Mobile comfort & a11y additions === */
+button, .btn, a.btn { min-height: 44px; min-width: 44px; }
+a[href^="tel:"] { text-decoration: none; font-weight: 600; }
+:focus-visible { outline: 3px solid rgba(212,175,55,.6); outline-offset: 2px; }
+img[loading="lazy"] { content-visibility: auto; }
