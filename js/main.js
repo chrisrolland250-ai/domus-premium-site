@@ -5,35 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Formspree AJAX submit
-(() => {
-  const form = document.getElementById('contactForm');
-  const msg = document.getElementById('formMsg');
-  if (!form) return;
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (msg) { msg.textContent = "Envoi en cours…"; msg.style.color = "#bcd0ea"; }
-
-    try {
-      const res = await fetch(form.action, {
-        method: "POST",
-        headers: { "Accept": "application/json" },
-        body: new FormData(form)
-      });
-      if (res.ok) {
-        if (msg) { msg.textContent = "Merci ! Votre message a bien été envoyé."; msg.style.color = "#8be28f"; }
-        form.reset();
-      } else {
-        let err = "Une erreur est survenue.";
-        try { const out = await res.json(); if (out.errors) err = out.errors.map(e => e.message).join(", "); } catch {}
-        if (msg) { msg.textContent = "Échec de l’envoi : " + err; msg.style.color = "#ffb4b4"; }
-      }
-    } catch {
-      if (msg) { msg.textContent = "Impossible d’envoyer le message. Vérifiez votre connexion."; msg.style.color = "#ffb4b4"; }
-    }
-  });
-})();
-
 // Menu burger (responsive)
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.querySelector(".nav-toggle");
@@ -84,3 +55,46 @@ function handleSubmit(event) {
   });
   return false;
 }
+
+
+// EmailJS submit handler with redirect to merci.html
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById('contactForm');
+  const msg = document.getElementById('formMsg');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (msg) { msg.textContent = "Envoi en cours…"; msg.style.color = "#bcd0ea"; }
+
+    // honeypot
+    const honey = form.querySelector('input[name="company"]');
+    if (honey && honey.value.trim() !== "") {
+      if (msg) { msg.textContent = "Envoi bloqué (anti-spam)."; msg.style.color = "#ffb4b4"; }
+      return false;
+    }
+
+    const getVal = (name) => {
+      const el = form.querySelector(`[name="${name}"]`);
+      return el ? (el.type === "checkbox" ? (el.checked ? "on" : "off") : el.value.trim()) : "";
+    };
+
+    const payload = {
+      from_name: getVal("Nom") || getVal("name") || "Visiteur",
+      reply_to:  getVal("email"),
+      message:   getVal("Message") || getVal("message"),
+      phone:     getVal("Téléphone") || getVal("telephone") || getVal("phone") || "",
+      consent:   getVal("Consentement"),
+      subject:   "Nouveau message – Domus Premium",
+      site:      window.location.hostname
+    };
+
+    try {
+      await emailjs.send("service_4358zpr", "template_5mfkcwg", payload);
+      window.location.href = "merci.html";
+    } catch (err) {
+      if (msg) { msg.textContent = "❌ Impossible d’envoyer le message. Vérifiez votre configuration EmailJS."; msg.style.color = "#ffb4b4"; }
+      console.error("EmailJS error:", err);
+    }
+  });
+});
