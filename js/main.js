@@ -1,23 +1,5 @@
 // Footer year
-document.addEventListener("DOMContentLoaded", () => {
-  const y = document.getElementById('year');
-  if (y) y.textContent = new Date().getFullYear();
-});
-
-// Formspree AJAX submit
-// Menu burger (responsive)
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.querySelector(".nav-toggle");
-  const nav = document.getElementById("primary-nav");
-  if (!toggle || !nav) return;
-
-  toggle.addEventListener("click", () => {
-    const isOpen = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!isOpen));
-    nav.classList.toggle("is-open", !isOpen);
-  });
-
-  // Fermer au clic d’un lien
+// Fermer au clic d’un lien
   nav.querySelectorAll("a").forEach(a => {
     a.addEventListener("click", () => {
       toggle.setAttribute("aria-expanded", "false");
@@ -58,6 +40,10 @@ function handleSubmit(event) {
 
 
 // EmailJS submit handler with redirect to merci.html
+});
+
+
+// EmailJS submit handler (clean)
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById('contactForm');
   const msg = document.getElementById('formMsg');
@@ -67,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     if (msg) { msg.textContent = "Envoi en cours…"; msg.style.color = "#bcd0ea"; }
 
-    // honeypot
+    // Honeypot
     const honey = form.querySelector('input[name="company"]');
     if (honey && honey.value.trim() !== "") {
       if (msg) { msg.textContent = "Envoi bloqué (anti-spam)."; msg.style.color = "#ffb4b4"; }
