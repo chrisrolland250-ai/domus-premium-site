@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact – Domus Premium</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Contact – Domus Premium</h1>
+    <p>Interventions à Rennes et alentours</p>
+  </header>
+
+  <main class="container">
+    <form class="card" action="send.php" method="POST">
+      <div class="grid">
+        <label>Votre nom
+          <input type="text" name="from_name" required>
+        </label>
+        <label>Votre email
+          <input type="email" name="reply_to" required>
+        </label>
+      </div>
+
+      <label>Téléphone (facultatif)
+        <input type="tel" name="phone">
+      </label>
+
+      <label>Sujet
+        <input type="text" name="subject" required>
+      </label>
+
+      <label>Votre message
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+
+      <!-- Honeypot anti-bots -->
+      <input type="text" name="website" tabindex="-1" autocomplete="off"
+             class="hp" aria-hidden="true">
+
+      <button type="submit">Envoyer</button>
+      <p class="form-note">En cliquant sur « Envoyer », vous acceptez d’être recontacté(e) par Domus Premium.</p>
+    </form>
+  </main>
+
+  <a href="https://wa.me/33763433549?text=Bonjour%20Domus%20Premium,%20je%20souhaite%20avoir%20des%20informations."
+     class="whatsapp-float" target="_blank" rel="noopener"
+     aria-label="Discuter sur WhatsApp avec Domus Premium">💬</a>
+</body>
+</html>
