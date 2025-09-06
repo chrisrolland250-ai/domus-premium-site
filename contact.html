@@ -13,7 +13,7 @@
   </header>
 
   <main class="container">
-    <form class="card" action="send.php" method="POST">
+    <form class="card" id="contact-form" novalidate>
       <div class="grid">
         <label>Votre nom
           <input type="text" name="from_name" required>
@@ -35,17 +35,59 @@
         <textarea name="message" rows="6" required></textarea>
       </label>
 
-      <!-- Honeypot anti-bots -->
-      <input type="text" name="website" tabindex="-1" autocomplete="off"
-             class="hp" aria-hidden="true">
+      <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
 
-      <button type="submit">Envoyer</button>
-      <p class="form-note">En cliquant sur « Envoyer », vous acceptez d’être recontacté(e) par Domus Premium.</p>
+      <button id="contact-submit" type="submit">Envoyer</button>
+      <p id="contact-status" class="form-note" aria-live="polite"></p>
     </form>
   </main>
 
-  <a href="https://wa.me/33763433549?text=Bonjour%20Domus%20Premium,%20je%20souhaite%20avoir%20des%20informations."
-     class="whatsapp-float" target="_blank" rel="noopener"
-     aria-label="Discuter sur WhatsApp avec Domus Premium">💬</a>
+  <script>
+  (function(){
+    const form = document.getElementById('contact-form');
+    const btn  = document.getElementById('contact-submit');
+    const note = document.getElementById('contact-status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const fd = new FormData(form);
+      const payload = {
+        from_name: fd.get('from_name'),
+        reply_to: fd.get('reply_to'),
+        phone: fd.get('phone') || '',
+        subject: fd.get('subject') || '',
+        message: fd.get('message'),
+        website: fd.get('website') || '',
+        ts: Date.now()
+      };
+
+      btn.disabled = true;
+      if (note) note.textContent = 'Envoi en cours…';
+
+      try {
+        const res = await fetch('/.netlify/functions/send-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (res.ok) {
+          window.location.href = '/merci.html';
+        } else if (res.status === 422) {
+          note.textContent = 'Champs requis manquants.';
+          btn.disabled = false;
+        } else {
+          note.textContent = 'Erreur serveur, réessayez plus tard.';
+          btn.disabled = false;
+        }
+      } catch (err) {
+        console.error(err);
+        note.textContent = 'Impossible de contacter le serveur.';
+        btn.disabled = false;
+      }
+    });
+  })();
+  </script>
 </body>
 </html>

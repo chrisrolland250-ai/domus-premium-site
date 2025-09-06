@@ -4,110 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Merci – Domus Premium</title>
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#0b1f36">
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
-  <style>
-    :root {
-      --bg: #0b1f36;
-      --card: #0e2747;
-      --text: #ffffff;
-      --muted: #cfe2ff;
-      --accent-start: #f3d67b;
-      --accent-end: #d4af37;
-      --whatsapp: #25D366;
-      --whatsapp-hover: #1ebe5d;
-    }
-    html, body { height: 100%; }
-    body {
-      display: grid;
-      place-items: center;
-      min-height: 100vh;
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-    main.card {
-      background: var(--card);
-      padding: 32px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.2);
-      width: min(560px, 92vw);
-      text-align: center;
-    }
-    h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(24px, 3vw, 32px);
-      margin: 0 0 10px;
-      letter-spacing: .2px;
-    }
-    p { line-height: 1.6; color: var(--muted); margin: 0; }
-    .btn {
-      display: inline-block;
-      margin-top: 18px;
-      padding: 10px 16px;
-      border-radius: 10px;
-      text-decoration: none;
-      color: #0b1f36;
-      background: linear-gradient(180deg, var(--accent-start), var(--accent-end));
-      font-weight: 600;
-      transition: transform .15s ease, filter .15s ease;
-    }
-    .btn:focus-visible, .whatsapp-float:focus-visible {
-      outline: 3px solid #ffd666;
-      outline-offset: 3px;
-      border-radius: 12px;
-    }
-    .btn:hover { transform: translateY(-1px); filter: brightness(1.03); }
-    .btn:active { transform: translateY(0); }
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
-      background-color: var(--whatsapp);
-      color: #fff;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      text-decoration: none;
-      font-size: 0;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-      z-index: 100;
-      transition: transform .15s ease, background-color .15s ease;
-    }
-    .whatsapp-float:hover { background-color: var(--whatsapp-hover); transform: translateY(-1px); }
-    .whatsapp-icon { width: 30px; height: 30px; display: block; }
-    @media (prefers-reduced-motion: reduce) {
-      .btn, .whatsapp-float { transition: none; }
-    }
-  </style>
 </head>
 <body>
-  <main class="card" role="main">
+  <main class="card">
     <h1>Merci pour votre message ✨</h1>
-    <p>
-      Votre demande a bien été envoyée à <strong>Domus Premium</strong>.<br>
-      Nous revenons vers vous sous 24&nbsp;h (hors dimanches et jours fériés).
-    </p>
-    <a class="btn" href="index.html" rel="prev">← Revenir au site</a>
+    <p>Votre demande a bien été envoyée à <strong>Domus Premium</strong>.<br/>
+    Nous revenons vers vous sous 24 h (hors dimanches et jours fériés).</p>
+    <a class="btn" href="index.html">← Revenir au site</a>
   </main>
-
-  <a href="https://wa.me/33763433549?text=Bonjour%20Domus%20Premium,%20je%20souhaite%20avoir%20des%20informations."
-     class="whatsapp-float" target="_blank" rel="noopener"
-     aria-label="Discuter sur WhatsApp avec Domus Premium">
-    <svg class="whatsapp-icon" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-      <path d="M19.11 17.19c-.27-.14-1.57-.77-1.81-.86-.24-.1-.41-.14-.58.14-.17.27-.66.86-.81 1.03-.15.17-.3.2-.56.07-.27-.14-1.12-.41-2.13-1.31-.79-.7-1.32-1.57-1.47-1.83-.15-.27-.02-.42.11-.55.12-.12.27-.31.41-.47.14-.17.18-.27.27-.45.09-.17.05-.34-.02-.48-.07-.14-.58-1.39-.79-1.9-.21-.51-.42-.44-.58-.44h-.5c-.17 0-.45.07-.69.34-.24.27-.9.87-.9 2.12 0 1.25.92 2.46 1.05 2.63.12.17 1.81 2.8 4.39 3.84.61.25 1.08.4 1.45.51.61.19 1.17.16 1.61.1.49-.07 1.57-.64 1.79-1.25.22-.61.22-1.13.15-1.25-.06-.12-.24-.2-.5-.34zM16.02 3.2c-7.1 0-12.86 5.75-12.86 12.85 0 2.27.59 4.48 1.72 6.43L3 29l6.71-1.76c1.87 1.02 3.98 1.56 6.3 1.56 7.1 0 12.86-5.75 12.86-12.85S23.12 3.2 16.02 3.2zm0 23.3c-2.07 0-4.02-.55-5.72-1.6l-.41-.24-3.98 1.04 1.06-3.88-.26-.4c-1.07-1.73-1.63-3.72-1.63-5.77 0-6.02 4.9-10.92 10.93-10.92 6.02 0 10.92 4.9 10.92 10.92 0 6.02-4.9 10.92-10.92 10.92z"/>
-    </svg>
-  </a>
-
-  <noscript>JavaScript est désactivé. Votre message a bien été envoyé.</noscript>
 </body>
 </html>

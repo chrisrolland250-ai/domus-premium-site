@@ -1,6 +1,6 @@
 <?php
 // -------------------- CONFIG --------------------
-$to = "contact@domuspremium.fr"; // <-- remplace par ton email de réception
+$to = "domuspremium35@gmail.com"; // <-- remplace par ton email de réception
 $domain_from = "domuspremium.fr"; // utilisé pour l'adresse From technique
 $redirect_ok = "merci.html";      // page de redirection en cas de succès
 // ------------------------------------------------
