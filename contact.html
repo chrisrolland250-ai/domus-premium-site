@@ -14,90 +14,39 @@
 
   <main class="container">
     <form action="https://formspree.io/f/xgvlrzvw" method="POST" class="card">
-  <div class="grid">
-    <label>Votre nom
-      <input type="text" name="name" required>
-    </label>
-    <label>Votre email
-      <input type="email" name="email" required>
-    </label>
-  </div>
-  <label>Téléphone (facultatif)
-    <input type="tel" name="phone">
-  </label>
-  <label>Sujet
-    <input type="text" name="subject">
-  </label>
-  <label>Votre message
-    <textarea name="message" rows="6" required></textarea>
-  </label>
-  <!-- Honeypot -->
-  <input type="text" name="_gotcha" style="display:none;">
-  <!-- Redirection -->
-  <input type="hidden" name="_redirect" value="https://domuspremium.fr/merci.html">
-  <button type="submit" class="btn btn-gold">Envoyer</button>
-  <p class="form-note">En cliquant sur « Envoyer », vous acceptez d’être recontacté(e) par Domus Premium.</p>
-</form>
+      <div class="grid">
+        <label>Votre nom
+          <input type="text" name="name" required>
+        </label>
+        <label>Votre email
+          <input type="email" name="email" required>
+        </label>
+      </div>
+      <label>Téléphone (facultatif)
+        <input type="tel" name="phone">
+      </label>
+      <label>Sujet
+        <input type="text" name="subject">
+      </label>
+      <label>Votre message
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+      <!-- Honeypot -->
+      <input type="text" name="_gotcha" style="display:none;">
+      <!-- Redirection -->
+      <input type="hidden" name="_redirect" value="https://domuspremium.fr/merci.html">
+      <button type="submit" class="btn btn-gold">Envoyer</button>
+      <p class="form-note">En cliquant sur « Envoyer », vous acceptez d’être recontacté(e) par Domus Premium.</p>
+    </form>
   </main>
 
-  <script>
-  (function(){
-    const form = document.getElementById('contact-form');
-    const btn  = document.getElementById('contact-submit');
-    const note = document.getElementById('contact-status');
+  <!-- Bouton WhatsApp flottant -->
+  <a href="https://wa.me/33743633549?text=Bonjour%20Domus%20Premium,%20je%20souhaite%20avoir%20des%20informations."
+     class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Discuter sur WhatsApp avec Domus Premium">💬</a>
 
-    // 👉 TEMPORAIRE : si la page n'est pas servie par Netlify,
-    // on force l'endpoint absolu du sous-domaine Netlify
-    const isOnNetlify = location.host.endsWith('.netlify.app');
-    const ENDPOINT = isOnNetlify
-      ? '/.netlify/functions/send-email'
-      : 'https://sparkling-gelato-c10523.netlify.app/.netlify/functions/send-email';
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const fd = new FormData(form);
-      const payload = {
-        from_name: fd.get('from_name'),
-        reply_to: fd.get('reply_to'),
-        phone: fd.get('phone') || '',
-        subject: fd.get('subject') || '',
-        message: fd.get('message'),
-        website: fd.get('website') || '',
-        ts: Date.now()
-      };
-
-      btn.disabled = true;
-      if (note) note.textContent = 'Envoi en cours…';
-
-      try {
-        const res = await fetch(ENDPOINT, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
-
-        console.log('send-email status:', res.status);
-
-        if (res.ok) {
-          window.location.href = '/merci.html';
-        } else if (res.status === 422) {
-          note.textContent = 'Champs requis manquants.';
-          btn.disabled = false;
-        } else if (res.status === 405) {
-          note.textContent = '405: mauvaise URL/méthode (vérifie l’endpoint).';
-          btn.disabled = false;
-        } else {
-          note.textContent = 'Erreur serveur (' + res.status + ').';
-          btn.disabled = false;
-        }
-      } catch (err) {
-        console.error(err);
-        note.textContent = 'Impossible de contacter le serveur.';
-        btn.disabled = false;
-      }
-    });
-  })();
-  </script>
+  <style>
+  .whatsapp-float{position:fixed;width:60px;height:60px;bottom:20px;right:20px;background:#25D366;color:#fff;border-radius:50%;text-align:center;font-size:28px;box-shadow:2px 2px 5px rgba(0,0,0,.3);z-index:100;display:flex;justify-content:center;align-items:center;text-decoration:none}
+  .whatsapp-float:hover{background:#1ebe5d}
+  </style>
 </body>
 </html>
