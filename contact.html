@@ -13,33 +13,31 @@
   </header>
 
   <main class="container">
-    <form class="card" id="contact-form" novalidate>
-      <div class="grid">
-        <label>Votre nom
-          <input type="text" name="from_name" required>
-        </label>
-        <label>Votre email
-          <input type="email" name="reply_to" required>
-        </label>
-      </div>
-
-      <label>Téléphone (facultatif)
-        <input type="tel" name="phone">
-      </label>
-
-      <label>Sujet
-        <input type="text" name="subject" required>
-      </label>
-
-      <label>Votre message
-        <textarea name="message" rows="6" required></textarea>
-      </label>
-
-      <input type="text" name="website" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true">
-
-      <button id="contact-submit" type="submit">Envoyer</button>
-      <p id="contact-status" class="form-note" aria-live="polite"></p>
-    </form>
+    <form action="https://formspree.io/f/xgvlrzvw" method="POST" class="card">
+  <div class="grid">
+    <label>Votre nom
+      <input type="text" name="name" required>
+    </label>
+    <label>Votre email
+      <input type="email" name="email" required>
+    </label>
+  </div>
+  <label>Téléphone (facultatif)
+    <input type="tel" name="phone">
+  </label>
+  <label>Sujet
+    <input type="text" name="subject">
+  </label>
+  <label>Votre message
+    <textarea name="message" rows="6" required></textarea>
+  </label>
+  <!-- Honeypot -->
+  <input type="text" name="_gotcha" style="display:none;">
+  <!-- Redirection -->
+  <input type="hidden" name="_redirect" value="https://domuspremium.fr/merci.html">
+  <button type="submit" class="btn btn-gold">Envoyer</button>
+  <p class="form-note">En cliquant sur « Envoyer », vous acceptez d’être recontacté(e) par Domus Premium.</p>
+</form>
   </main>
 
   <script>
