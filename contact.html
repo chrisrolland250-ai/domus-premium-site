@@ -48,6 +48,13 @@
     const btn  = document.getElementById('contact-submit');
     const note = document.getElementById('contact-status');
 
+    // 👉 TEMPORAIRE : si la page n'est pas servie par Netlify,
+    // on force l'endpoint absolu du sous-domaine Netlify
+    const isOnNetlify = location.host.endsWith('.netlify.app');
+    const ENDPOINT = isOnNetlify
+      ? '/.netlify/functions/send-email'
+      : 'https://sparkling-gelato-c10523.netlify.app/.netlify/functions/send-email';
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
@@ -66,19 +73,24 @@
       if (note) note.textContent = 'Envoi en cours…';
 
       try {
-        const res = await fetch('/.netlify/functions/send-email', {
+        const res = await fetch(ENDPOINT, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
         });
+
+        console.log('send-email status:', res.status);
 
         if (res.ok) {
           window.location.href = '/merci.html';
         } else if (res.status === 422) {
           note.textContent = 'Champs requis manquants.';
           btn.disabled = false;
+        } else if (res.status === 405) {
+          note.textContent = '405: mauvaise URL/méthode (vérifie l’endpoint).';
+          btn.disabled = false;
         } else {
-          note.textContent = 'Erreur serveur, réessayez plus tard.';
+          note.textContent = 'Erreur serveur (' + res.status + ').';
           btn.disabled = false;
         }
       } catch (err) {
