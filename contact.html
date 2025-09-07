@@ -13,31 +13,30 @@
   </header>
 
   <main class="container">
-    <form action="https://formspree.io/f/xgvlrzvw" method="POST" class="card">
-      <div class="grid">
-        <label>Votre nom
-          <input type="text" name="name" required>
-        </label>
-        <label>Votre email
-          <input type="email" name="email" required>
-        </label>
-      </div>
-      <label>Téléphone (facultatif)
-        <input type="tel" name="phone">
-      </label>
-      <label>Sujet
-        <input type="text" name="subject">
-      </label>
-      <label>Votre message
-        <textarea name="message" rows="6" required></textarea>
-      </label>
-      <!-- Honeypot -->
-      <input type="text" name="_gotcha" style="display:none;">
-      <!-- Redirection -->
-      <input type="hidden" name="_redirect" value="https://domuspremium.fr/merci.html">
-      <button type="submit" class="btn btn-gold">Envoyer</button>
-      <p class="form-note">En cliquant sur « Envoyer », vous acceptez d’être recontacté(e) par Domus Premium.</p>
-    </form>
+    <form action="https://formspree.io/f/xgvlrzvw" method="POST" class="contact-form">
+  <label>Votre nom
+    <input type="text" name="name" required>
+  </label>
+  <label>Votre e-mail
+    <input type="email" name="email" required>
+  </label>
+  <label>Téléphone (facultatif)
+    <input type="tel" name="phone">
+  </label>
+  <label>Sujet
+    <input type="text" name="subject">
+  </label>
+  <label>Message
+    <textarea name="message" rows="6" required></textarea>
+  </label>
+  <input type="text" name="_gotcha" style="display:none">
+  <input type="hidden" name="_redirect" value="https://www.domuspremium.fr/merci.html">
+  <button type="submit" class="btn btn-gold">Envoyer</button>
+  <p class="privacy-note tiny">
+    Les informations recueillies via ce formulaire sont utilisées uniquement pour répondre à votre demande.<br/>
+    Pour en savoir plus, consultez notre <a href="confidentialite.html">Politique de confidentialité</a>
+  </p>
+</form>
   </main>
 
   <!-- Bouton WhatsApp flottant -->
