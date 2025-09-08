@@ -45,3 +45,13 @@ img[loading="lazy"] { content-visibility: auto; }
 /* touch targets */
 .btn, a.btn, button, .nav a { min-height: 44px; padding-top:.6rem; padding-bottom:.6rem; }
 html { -webkit-text-size-adjust: 100%; }
+
+
+/* WhatsApp CTA */
+.btn-whatsapp{display:inline-block;padding:.75rem 1rem;border-radius:9999px;font-weight:600;text-decoration:none;background:#25D366;color:#fff;text-align:center}
+.btn-whatsapp:hover{filter:brightness(0.95)}
+.cta-stack{display:flex;flex-direction:column;gap:.5rem}
+@media (min-width:640px){.cta-stack{flex-direction:row}}
+.sap-note{opacity:.85;margin-top:.5rem}
+
+.form-msg{margin-top:.75rem;font-size:.95rem}
