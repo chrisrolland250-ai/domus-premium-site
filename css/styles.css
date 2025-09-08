@@ -45,3 +45,20 @@ img[loading="lazy"] { content-visibility: auto; }
 /* touch targets */
 .btn, a.btn, button, .nav a { min-height: 44px; padding-top:.6rem; padding-bottom:.6rem; }
 html { -webkit-text-size-adjust: 100%; }
+
+
+/* === Mobile optimisations (Domus Premium) === */
+:root { --container: 1100px; }
+html { box-sizing: border-box; }
+*,*::before,*::after { box-sizing: inherit; }
+img,video { max-width:100%; height:auto; display:block; }
+.container { width: min(100% - 32px, var(--container)); margin-inline:auto; }
+h1 { font-size: clamp(28px, 5vw, 44px); }
+h2 { font-size: clamp(22px, 4.2vw, 32px); }
+p, li { font-size: clamp(16px, 2.6vw, 18px); }
+.btn { display:inline-block; padding:14px 18px; border-radius:12px; text-decoration:none; }
+.section { padding: clamp(28px, 6vw, 64px) 0; }
+.grid { display:grid; gap:20px; }
+.grid-2 { grid-template-columns:repeat(2,1fr); }
+@media (max-width: 768px) { .grid-2 { grid-template-columns:1fr; } }
+
