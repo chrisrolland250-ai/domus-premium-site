@@ -34,7 +34,7 @@
 <meta content="Petits travaux, jardinage, assistance seniors et aide administrative à Rennes et alentours. 28 €/h TTC (14 €/h après crédit d’impôt SAP). Devis sous 24h." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap&display=swap" rel="stylesheet"/>
 <link as="image" href="assets/hero.webp" imagesizes="(max-width: 768px) 100vw, 50vw" imagesrcset="assets/hero.webp 1200w" rel="preload"/>
 <link href="css/styles.min.css" rel="stylesheet"/>
 <meta content="Domus Premium – Services à la personne à Rennes &amp; alentours" property="og:title"/>
@@ -59,12 +59,16 @@
     "url": "https://domuspremium.fr"
   }
   </script>
-<link href="assets/favicon.png" rel="icon" type="image/png"/><link href="site.webmanifest" rel="manifest"/><link href="assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/><link as="font" crossorigin="anonymous" href="https://fonts.gstatic.com/s/inter/v12/UcCO3Fwr0vQ.ttf" rel="preload" type="font/woff2"/><link href="https://domuspremium.fr" rel="canonical"/><meta content="#0b1f36" name="theme-color"/></head>
+<link href="assets/favicon.png" rel="icon" type="image/png"/><link href="site.webmanifest" rel="manifest"/><link href="assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/><link as="font" crossorigin="anonymous" href="https://fonts.gstatic.com/s/inter/v12/UcCO3Fwr0vQ.ttf" rel="preload" type="font/woff2"/><link href="https://domuspremium.fr" rel="canonical"/><meta content="#0b1f36" name="theme-color"/><link rel="preload" as="image" href="assets/logo.webp">
+</head>
 <body>
 <header class="site-header">
 <div class="container nav">
 <a class="brand" href="#top">
-<picture><source srcset="assets/logo.webp" type="image/webp"/><picture><source srcset="assets/logo.webp" type="image/webp"/><picture><source srcset="assets/logo.webp" type="image/webp"/><img alt="Logo Domus Premium" height="120" loading="lazy" src="assets/logo.jpg" width="160"/></picture></picture></picture>
+<picture><source srcset="assets/logo.webp" type="image/webp"/><picture><source srcset="assets/logo.webp" type="image/webp"/><picture><source srcset="assets/logo.webp" type="image/webp"/><picture>
+<source type="image/webp" srcset="assets/logo.webp">
+<img alt="Logo Domus Premium" height="120" loading="lazy" src="assets/logo.jpg" width="160"/>
+</picture></picture></picture></picture>
 <span>Domus Premium</span>
 </a>
 <!-- Bouton burger mobile -->
@@ -103,7 +107,10 @@
 <p class="note">*Selon éligibilité au dispositif fiscal en vigueur (article 199 sexdecies du CGI).</p>
 </div>
 <div class="hero-art hero-overlay">
-<picture><source srcset="assets/hero.webp" type="image/webp"><picture><source srcset="assets/hero.webp" type="image/webp"/><img alt="Illustration Domus Premium sur smartphone" height="800" loading="lazy" src="assets/hero.png" width="1200"/></picture></source></picture>
+<picture><source srcset="assets/hero.webp" type="image/webp"><picture><source srcset="assets/hero.webp" type="image/webp"/><picture>
+<source type="image/webp" srcset="assets/hero.webp">
+<img alt="Illustration Domus Premium sur smartphone" height="800" loading="lazy" data-src="\1" width="1200"/>
+</picture></picture></source></picture>
 </div>
 </div>
 </section>
@@ -354,7 +361,10 @@ Services à la personne à Rennes &amp; alentours (50 % crédit d’impôt selon
 <footer class="site-footer">
 <div class="container footer-grid">
 <div class="foot-brand">
-<picture><source srcset="assets/logo.webp" type="image/webp"><picture><source srcset="assets/logo.webp" type="image/webp"/><img alt="Logo Domus Premium" height="36" loading="lazy" src="assets/logo.jpg" width="120"/></picture></source></picture>
+<picture><source srcset="assets/logo.webp" type="image/webp"><picture><source srcset="assets/logo.webp" type="image/webp"/><picture>
+<source type="image/webp" srcset="assets/logo.webp">
+<img alt="Logo Domus Premium" height="36" loading="lazy" data-src="\1" width="120"/>
+</picture></picture></source></picture>
 <p>Services à la personne – Rennes &amp; alentours</p>
 </div>
 <ul class="foot-links">
@@ -371,7 +381,7 @@ Services à la personne à Rennes &amp; alentours (50 % crédit d’impôt selon
 </footer>
 <script defer="" src="js/main.js"></script>
 <!-- EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function(){
       try { emailjs.init("C-1wgNtnyKGkvubaH"); } catch(e) { console.warn("EmailJS init:", e); }
@@ -402,5 +412,6 @@ Services à la personne à Rennes &amp; alentours (50 % crédit d’impôt selon
   background-color: #1ebe5d;
 }
 </style>
+<script src="/assets/js/lazy-observer.js" defer></script>
 </body>
 </html>

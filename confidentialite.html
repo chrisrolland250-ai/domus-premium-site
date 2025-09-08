@@ -33,12 +33,16 @@
 <title>Politique de confidentialité – Domus Premium</title>
 <meta content="noindex,follow" name="robots"/>
 <link href="css/styles.min.css" rel="stylesheet"/>
-<meta content="#0b1f36" name="theme-color"/><link href="assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/><link href="assets/favicon.png" rel="icon" type="image/png"/><link href="site.webmanifest" rel="manifest"/></head>
+<meta content="#0b1f36" name="theme-color"/><link href="assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/><link href="assets/favicon.png" rel="icon" type="image/png"/><link href="site.webmanifest" rel="manifest"/><link rel="preload" as="image" href="assets/logo.webp">
+</head>
 <body>
 <header class="site-header">
 <div class="container nav">
 <a class="brand" href="index.html">
-<picture><source srcset="assets/logo.webp" type="image/webp"/><img alt="Logo Domus Premium" height="120" src="assets/logo.jpg" width="160"/></picture>
+<picture><source srcset="assets/logo.webp" type="image/webp"/><picture>
+<source type="image/webp" srcset="assets/logo.webp">
+<img loading="lazy" alt="Logo Domus Premium" height="120" src="assets/logo.jpg" width="160"/>
+</picture></picture>
 <span>Domus Premium</span>
 </a>
 <nav class="nav-links"><a href="index.html">Retour au site</a></nav>
@@ -115,5 +119,11 @@
   background-color: #1ebe5d;
 }
 </style>
+<script src="/assets/js/lazy-observer.js" defer></script>
+
+<script>
+if('serviceWorker'in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('/service-worker.js'));}
+</script>
+
 </body>
 </html>
