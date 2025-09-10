@@ -157,36 +157,6 @@
 <span class="badge">Entreprise déclarée SAP</span>
 <span class="badge">Paiement sécurisé</span>
 </div>
-
-<!-- Bloc prestations détaillées (✅ / ❌) -->
-<div class="prestations-grid">
-  <div class="prestations-col ok">
-    <h3>✅ Nos prestations</h3>
-    <ul>
-      <li>Montage de meubles, étagères, tringles, luminaires</li>
-      <li>Petites réparations (poignées, joints silicone, quincaillerie)</li>
-      <li>Peinture intérieure légère et retouches</li>
-      <li>Pose de cadres, miroirs, accessoires de décoration</li>
-      <li>Jardinage léger : tonte, désherbage, taille simple</li>
-      <li>Nettoyage de terrasses et allées</li>
-      <li>Courses de proximité &amp; accompagnement</li>
-      <li>Aide administrative simple (classement, démarches, organisation)</li>
-      <li>Aide ponctuelle après maladie ou accident (hors soins)</li>
-    </ul>
-  </div>
-
-  <div class="prestations-col no">
-    <h3>❌ Travaux exclus</h3>
-    <ul>
-      <li>Plomberie (installation, réparation réseaux eau/gaz)</li>
-      <li>Électricité (installation, câblage, mise aux normes)</li>
-      <li>Maçonnerie, gros œuvre, isolation lourde</li>
-      <li>Toiture, couverture, zinguerie</li>
-      <li>Menuiserie structurelle (portes, fenêtres, charpente)</li>
-      <li>Travaux nécessitant une <strong>assurance décennale</strong></li>
-    </ul>
-  </div>
-</div>
 </div>
 </section>
 <section class="section dark" id="tarifs">
@@ -406,39 +376,5 @@ Services à la personne à Rennes &amp; alentours (50 % crédit d’impôt selon
   background-color: #1ebe5d;
 }
 </style>
-
-<style>
-.prestations-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-top: 30px;
-}
-.prestations-col h3 {
-  font-size: 1.2rem;
-  margin-bottom: 12px;
-}
-.prestations-col ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.prestations-col ul li {
-  margin-bottom: 8px;
-  line-height: 1.5;
-}
-.prestations-col.ok ul li::before {
-  content: "✅ ";
-}
-.prestations-col.no ul li::before {
-  content: "❌ ";
-}
-@media (max-width: 768px) {
-  .prestations-grid {
-    grid-template-columns: 1fr;
-  }
-}
-</style>
-
 </body>
 </html>
