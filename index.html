@@ -50,7 +50,6 @@
 <a href="#tarifs">Tarifs</a>
 <a href="#zone">Zone</a>
 <a href="#faq">FAQ</a>
-<a href="realisations.html">Nos réalisations</a>
 <a class="btn btn-gold" href="#contact">Contact</a>
 </nav>
 </div>
@@ -270,6 +269,94 @@
 </div>
 </div>
 </section>
+
+<section class="section" id="realisations">
+  <div class="container">
+    <h2>Nos réalisations</h2>
+    <p class="section-lead">Quelques exemples concrets : avant / après et chantiers terminés.</p>
+    <div class="gallery-inline">
+      <!-- Mur -->
+      <a href="assets/realisations/avant-apres-mur-1080.webp" class="gi" aria-label="Agrandir Avant / Après – Mur rénové">
+        <picture>
+          <source type="image/webp"
+            srcset="assets/realisations/avant-apres-mur-480.webp 480w, assets/realisations/avant-apres-mur-768.webp 768w, assets/realisations/avant-apres-mur-1080.webp 1080w"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+          <img src="assets/realisations/avant-apres-mur-480.webp" alt="Avant / Après – Mur rénové" width="1080" height="1080" loading="lazy" decoding="async">
+        </picture>
+      </a>
+      <!-- Escalier -->
+      <a href="assets/realisations/avant-apres-escalier-1080.webp" class="gi" aria-label="Agrandir Avant / Après – Escalier">
+        <picture>
+          <source type="image/webp"
+            srcset="assets/realisations/avant-apres-escalier-480.webp 480w, assets/realisations/avant-apres-escalier-768.webp 768w, assets/realisations/avant-apres-escalier-1080.webp 1080w"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+          <img src="assets/realisations/avant-apres-escalier-480.webp" alt="Avant / Après – Escalier" width="1080" height="1080" loading="lazy" decoding="async">
+        </picture>
+      </a>
+      <!-- Jardin -->
+      <a href="assets/realisations/avant-apres-jardin-1080.webp" class="gi" aria-label="Agrandir Avant / Après – Jardin">
+        <picture>
+          <source type="image/webp"
+            srcset="assets/realisations/avant-apres-jardin-480.webp 480w, assets/realisations/avant-apres-jardin-768.webp 768w, assets/realisations/avant-apres-jardin-1080.webp 1080w"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+          <img src="assets/realisations/avant-apres-jardin-480.webp" alt="Avant / Après – Jardin" width="1080" height="1080" loading="lazy" decoding="async">
+        </picture>
+      </a>
+      <!-- Cuve -->
+      <a href="assets/realisations/realisation-cuve-eau-1080.webp" class="gi" aria-label="Agrandir Installation cuve et enrouleur">
+        <picture>
+          <source type="image/webp"
+            srcset="assets/realisations/realisation-cuve-eau-480.webp 480w, assets/realisations/realisation-cuve-eau-768.webp 768w, assets/realisations/realisation-cuve-eau-1080.webp 1080w"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw">
+          <img src="assets/realisations/realisation-cuve-eau-480.webp" alt="Installation cuve et enrouleur" width="1080" height="1080" loading="lazy" decoding="async">
+        </picture>
+      </a>
+    </div>
+  </div>
+
+  <!-- Lightbox ultra-légère -->
+  <div id="lb" class="lb" aria-hidden="true"><img alt=""><button class="lb-close" aria-label="Fermer">✕</button></div>
+</section>
+
+<style>
+  /* Galerie responsive, zero JS framework */
+  .gallery-inline{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:14px;
+  }
+  @media (max-width:1024px){ .gallery-inline{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:640px){ .gallery-inline{grid-template-columns:1fr;} }
+  .gallery-inline .gi{display:block;border-radius:12px;overflow:hidden;background:#0b1f36;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+  .gallery-inline img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:1/1}
+  /* Lightbox minimaliste */
+  .lb{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:9999;padding:18px}
+  .lb img{max-width:95vw;max-height:85vh;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+  .lb.show{display:flex}
+  .lb-close{position:absolute;top:14px;right:18px;background:#0b1f36;color:#fff;border:0;border-radius:10px;font-size:22px;line-height:1;padding:8px 12px;cursor:pointer}
+  /* Micro perf */
+  img[loading="lazy"]{content-visibility:auto}
+</style>
+<script>
+  // Lightbox vanilla minimal
+  (function(){
+    const lb = document.getElementById('lb');
+    const lbImg = lb.querySelector('img');
+    const closeBtn = lb.querySelector('.lb-close');
+    document.querySelectorAll('.gallery-inline a').forEach(a=>{
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        lbImg.src = this.getAttribute('href');
+        lb.classList.add('show');
+      });
+    });
+    closeBtn.addEventListener('click', ()=>{ lb.classList.remove('show'); lbImg.src=''; });
+    lb.addEventListener('click', (e)=>{ if(e.target===lb){ lb.classList.remove('show'); lbImg.src=''; } });
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ lb.classList.remove('show'); lbImg.src=''; } });
+  })();
+</script>
+
+
 <section class="section" id="faq">
 <div class="container">
 <h2>FAQ</h2>
