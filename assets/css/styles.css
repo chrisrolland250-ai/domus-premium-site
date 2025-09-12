@@ -1,0 +1,71 @@
+/* === Domus Premium - corrections 2025-09-12 === */
+
+/* Reset simple */
+* { box-sizing: border-box; }
+html { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+body { margin: 0; color: #111; line-height: 1.5; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+header, footer, section { padding: 16px; }
+.container { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+
+/* Navigation: remove numbering, add clean separators */
+.site-nav .menu { 
+  list-style: none; margin: 0; padding: 0; 
+  display: flex; flex-wrap: wrap; gap: 1rem; 
+}
+.site-nav .menu > li { position: relative; }
+.site-nav .menu > li + li::before {
+  content: "/";
+  margin-right: .5rem;
+  opacity: .5;
+}
+.site-nav .menu > li::marker { content: ""; }
+
+/* Footer menu */
+.menu-footer {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-wrap: wrap; gap: .75rem 1rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block; padding: 10px 16px; border-radius: 8px;
+  border: 1px solid #111; background: #111; color: #fff; font-weight: 600;
+}
+.btn:hover { opacity: .9; }
+
+/* Tables */
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 10px 12px; border-bottom: 1px solid #eee; vertical-align: top; }
+thead th { text-align: left; border-bottom: 2px solid #111; }
+
+/* Notes */
+.note { font-size: .95rem; color: #444; }
+.avantages { margin: 8px 0 0; }
+
+/* Contact list */
+.coordonnees { list-style: none; padding: 0; margin: 0; }
+.coordonnees li { margin: 4px 0; }
+
+/* Form - hide honeypot */
+.honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+label { display: block; margin: 8px 0 4px; }
+input[type="text"], input[type="email"], textarea { 
+  width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px;
+}
+textarea { min-height: 120px; }
+form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 640px) {
+  form .row { grid-template-columns: 1fr; }
+}
+
+/* Sections */
+#hero { background: #f7f7f7; padding: 32px 16px; }
+h1 { font-size: 1.9rem; margin: 0 0 8px; }
+h2 { font-size: 1.4rem; margin-top: 24px; }
+.small { font-size: .95rem; color: #444; }
+
+/* Images: reserve space to reduce CLS (sample) */
+img[width][height] { height: auto; }
