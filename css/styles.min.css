@@ -2,5 +2,3 @@
 /* touch targets */
 .btn, a.btn, button, .nav a { min-height: 44px; padding-top:.6rem; padding-bottom:.6rem; }
 html { -webkit-text-size-adjust: 100%; }
-
-.site-nav .menu > li::marker{content:"";}
