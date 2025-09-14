@@ -6,3 +6,12 @@ html { -webkit-text-size-adjust: 100%; }
 #realisations a,
 #realisations .caption,
 #realisations figure figcaption{color:#fff!important}
+
+/* Décalage pour éviter que le header masque les titres */
+:root { --header-h: 80px; }
+html { scroll-padding-top: var(--header-h); }
+section[id] { scroll-margin-top: var(--header-h); }
+
+@media (max-width: 640px){
+  :root { --header-h: 96px; }
+}
