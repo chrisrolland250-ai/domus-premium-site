@@ -2,8 +2,4 @@
 /* touch targets */
 .btn, a.btn, button, .nav a { min-height: 44px; padding-top:.6rem; padding-bottom:.6rem; }
 html { -webkit-text-size-adjust: 100%; }
-#realisations a,
-#realisations .caption,
-#realisations figure figcaption{color:#fff!important}
-:target{scroll-margin-top:80px}
-
+#faq details{background:#fff;border:1px solid rgba(0,0,0,.06);border-radius:12px;padding:14px 16px;margin:10px 0;box-shadow:var(--shadow)}#faq summary{cursor:pointer;font-weight:800;list-style:none}#faq summary::-webkit-details-marker{display:none}#faq .faq-body{margin-top:10px;color:#1d334a;line-height:1.5}
