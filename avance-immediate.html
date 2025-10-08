@@ -5,10 +5,18 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Avance immédiate — Domus Premium</title>
-  <meta name="description" content="Activez l’Avance Immédiate de crédit d’impôt avec Domus Premium. Nous vous accompagnons pas à pas, de l’inscription à la validation, pour ne payer que votre reste à charge.">
+  <meta name="description" content="Activez l’Avance Immédiate de crédit d’impôt avec Domus Premium. -50 % appliqué immédiatement sur vos prestations éligibles, on s’occupe des démarches.">
   <link rel="stylesheet" href="/assets/avance-immediate.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Bandeau supérieur -->
+  <div class="top-banner" role="status">
+    <div class="wrap">
+      <strong>Éligible à l’Avance immédiate</strong> — <span>-50 % appliqué tout de suite sur le montant éligible*</span>
+    </div>
+  </div>
+
   <header class="dp-header">
     <div class="wrap row">
       <a class="brand" href="/">
@@ -23,7 +31,7 @@
         <a href="/prestations.html">Prestations</a>
         <a href="/tarifs.html">Tarifs</a>
         <a class="current" href="/avance-immediate.html">Avance immédiate</a>
-        <a href="/contact.html">Contact</a>
+        <a class="cta" href="/contact.html">Contact</a>
       </nav>
     </div>
   </header>
@@ -33,20 +41,19 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div>
-          <h1>Payez seulement <span class="accent">50 %</span> de vos prestations,<br/>nous gérons le reste.</h1>
-          <p class="lead">Avec l’Avance Immédiate (URSSAF), votre crédit d’impôt de 50 % est appliqué directement : vous réglez uniquement votre reste à charge. <strong>Nous vous accompagnons pas à pas</strong> — on s’occupe des démarches et on vous explique tout, simplement.</p>
+          <h1>Simplifiez vos démarches&nbsp;: <span class="accent-chip">Avance immédiate</span> appliquée</h1>
+          <p class="lead">Votre crédit d’impôt de <strong>50 %</strong> est déduit immédiatement via l’URSSAF. Vous payez uniquement le <strong>reste à charge</strong>. On vous accompagne étape par étape, par la même personne.</p>
           <ul class="ticks">
             <li>Entreprise <strong>SAP</strong> déclarée</li>
-            <li>Un <strong>interlocuteur unique</strong>, joignable et réactif</li>
-            <li>Processus clair, <strong>sans paperasse inutile</strong></li>
+            <li><strong>Interlocuteur unique</strong> et joignable</li>
+            <li>Démarches <strong>claires et rapides</strong></li>
           </ul>
           <div class="cta-row">
             <a class="btn primary" href="#activer">Activer l’Avance immédiate</a>
-            <a class="btn outline" href="#comment">Comment ça marche ?</a>
+            <a class="btn ghost" href="#comment">Comment ça marche ?</a>
           </div>
           <p class="note xs">* Avantage fiscal selon éligibilité et plafonds en vigueur.</p>
         </div>
-        <!-- Carte réassurance -->
         <div class="card comfort">
           <div class="card-title">Votre confort, notre priorité</div>
           <ul class="comfort-list">
@@ -55,9 +62,9 @@
             <li><span class="i i-clock"></span> Activation rapide : on vous guide en 3 étapes</li>
           </ul>
           <div class="reassure">
-            <div class="sm">Besoin d’être rassuré ?</div>
+            <div class="sm">Une question ?</div>
             <div class="big">Appelez-nous au <a href="tel:0743633549">07&nbsp;43&nbsp;63&nbsp;35&nbsp;49</a></div>
-            <div class="xs muted">Du lundi au samedi, 9h–19h · Réponse sous 24h par e-mail</div>
+            <div class="xs muted">Lun–Sam, 9h–19h · Réponse sous 24h par e-mail</div>
           </div>
         </div>
       </div>
@@ -68,15 +75,15 @@
       <div class="wrap">
         <h2>Comment ça marche — simple et transparent</h2>
         <ol class="steps">
-          <li><strong>Inscription AICI</strong> — Nous créons votre profil auprès de l’URSSAF (avec votre accord).</li>
+          <li><strong>Inscription AICI</strong> — On vous crée un accès URSSAF avec votre accord.</li>
           <li><strong>Prestation</strong> — Intervention Domus Premium à la date convenue.</li>
-          <li><strong>Validation</strong> — Vous recevez un résumé et confirmez le montant côté URSSAF.</li>
-          <li><strong>Paiement</strong> — L’URSSAF applique automatiquement 50 % et prélève uniquement votre reste à charge.</li>
+          <li><strong>Validation</strong> — Vous confirmez le récapitulatif reçu.</li>
+          <li><strong>Prélèvement</strong> — L’URSSAF applique automatiquement 50 % et prélève uniquement votre reste à charge.</li>
         </ol>
 
         <!-- simulateur -->
         <div class="panel">
-          <div class="panel-title">Exemple chiffré</div>
+          <div class="panel-title">Simulateur rapide</div>
           <div class="grid-two">
             <div>
               <label class="label">Montant de la prestation (€)</label>
@@ -146,22 +153,10 @@
         <h2>On s’occupe de tout — dites-nous juste quand vous êtes disponible</h2>
         <form id="leadForm" class="form">
           <div class="grid">
-            <div class="field">
-              <label>Nom complet</label>
-              <input name="nom" placeholder="Ex. Marie Dupont" required />
-            </div>
-            <div class="field">
-              <label>Email</label>
-              <input name="email" type="email" placeholder="vous@exemple.fr" required />
-            </div>
-            <div class="field">
-              <label>Téléphone</label>
-              <input name="tel" type="tel" placeholder="07 43 63 35 49" />
-            </div>
-            <div class="field full">
-              <label>Votre besoin</label>
-              <textarea name="message" placeholder="Type de prestation, date, durée…"></textarea>
-            </div>
+            <div class="field"><label>Nom complet</label><input name="nom" placeholder="Ex. Marie Dupont" required /></div>
+            <div class="field"><label>Email</label><input name="email" type="email" placeholder="vous@exemple.fr" required /></div>
+            <div class="field"><label>Téléphone</label><input name="tel" type="tel" placeholder="07 43 63 35 49" /></div>
+            <div class="field full"><label>Votre besoin</label><textarea name="message" placeholder="Type de prestation, date, durée…"></textarea></div>
           </div>
           <div class="form-foot">
             <span class="note xs">En soumettant, vous acceptez le traitement de vos données pour établir votre devis et activer l’AICI si vous le souhaitez.</span>
