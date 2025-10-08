@@ -1,0 +1,19 @@
+{
+  "name": "Domus Premium",
+  "short_name": "Domus",
+  "icons": [
+    {
+      "src": "/assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0E2A47",
+  "background_color": "#F7F9FC",
+  "display": "standalone"
+}
