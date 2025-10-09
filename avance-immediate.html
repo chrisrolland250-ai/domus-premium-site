@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Avance Immédiate — Domus Premium (Rennes) | Payez 50 % aujourd’hui</title>
   <meta name="description" content="Activez l’Avance Immédiate URSSAF avec Domus Premium à Rennes : payez seulement 50 % de vos prestations SAP dès aujourd’hui. Activation gratuite et réversible.">
-  <link rel="stylesheet" href="aici-hotfix.css">
+  <link rel="stylesheet" href="aici-final.css">
 </head>
 <body>
 <main id="aici">
@@ -20,74 +20,6 @@
       </div>
       <div class="trust">
         <small>Entreprise SAP déclarée • Rennes & alentours • Réponse &lt; 24h</small>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="simulateur" aria-labelledby="simulateur-titre">
-    <div class="container grid two">
-      <div class="card" role="region" aria-live="polite">
-        <h2 id="simulateur-titre">Simulateur rapide</h2>
-        <p class="muted">Entrez un montant TTC avant avantage fiscal.</p>
-
-        <div class="field">
-          <label for="montant">Montant du devis / facture (€ TTC)</label>
-          <input type="number" inputmode="decimal" min="0" step="1" id="montant" placeholder="Ex. 180">
-        </div>
-
-        <div class="field chk">
-          <input type="checkbox" id="eligible" checked>
-          <label for="eligible">Je suis éligible à l’Avance Immédiate (Services à la personne)</label>
-        </div>
-
-        <div class="out" aria-live="polite">
-          <span>À payer aujourd’hui</span>
-          <strong id="a-payer">— €</strong>
-        </div>
-        <p class="note" id="note-sim">
-          Le montant final tient compte d’une avance de 50 % du crédit d’impôt (AICI URSSAF), sous réserve d’éligibilité et de plafonds.
-        </p>
-      </div>
-
-      <div class="card" role="region">
-        <h3>Pourquoi c’est intéressant ?</h3>
-        <div class="kpis">
-          <div class="kpi">−50 % à l’instant du paiement</div>
-          <div class="kpi">Aucune avance à faire</div>
-          <div class="kpi">Activation gratuite</div>
-        </div>
-        <ul class="list-steps">
-          <li>On vérifie ensemble votre éligibilité et on lance la demande AICI (1 min).</li>
-          <li>Vous validez la demande reçue par l’URSSAF.</li>
-          <li>Vos prochaines factures Domus Premium sont automatiquement réduites de 50 %.</li>
-          <li>Vous pouvez arrêter quand vous voulez.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="comment-ca-marche">
-    <div class="container grid two">
-      <div class="card">
-        <h2>Comment ça marche ?</h2>
-        <ol class="list-steps">
-          <li>On lance la demande d’Avance Immédiate (1 minute) avec vos coordonnées.</li>
-          <li>Vous recevez une notification de l’URSSAF et vous validez.</li>
-          <li>Vos factures Domus Premium sont automatiquement réduites de 50 %.</li>
-          <li>Vous pouvez arrêter à tout moment dans votre espace URSSAF.</li>
-        </ol>
-        <p class="note">Avance Immédiate = service officiel URSSAF. Gratuit, sans engagement, réversible.</p>
-      </div>
-      <div class="card">
-        <h3>Questions fréquentes (résumé)</h3>
-        <ul class="ul">
-          <li>Éligible si la prestation est “services à la personne” à votre domicile.</li>
-          <li>Plafonds & conditions URSSAF s’appliquent (crédit d’impôt art. 199 sexdecies CGI).</li>
-          <li>Non compatible avec toutes les situations (ex. hors domicile, certaines activités).</li>
-        </ul>
-        <div class="mt-12">
-          <a class="btn link" href="#faq">Voir la FAQ complète</a>
-        </div>
       </div>
     </div>
   </section>
@@ -124,69 +56,17 @@
             <span class="note" id="aici-help">Gratuit • Officiel URSSAF • Réversible à tout moment</span>
           </div>
         </form>
-      </div>
-    </div>
-  </section>
 
-  <section class="section" id="faq" aria-labelledby="faq-titre">
-    <div class="container">
-      <h2 id="faq-titre">FAQ — Avance Immédiate</h2>
-
-      <details>
-        <summary>Qui est éligible à l’Avance Immédiate ?</summary>
-        <div class="legal mt-8">
-          Les particuliers fiscaux français pour des prestations de <strong>services à la personne</strong> réalisées à leur domicile,
-          dans la limite des plafonds et selon l’article 199 sexdecies du CGI.
+        <div class="info-aici">
+          <p><strong>⚠️ Important :</strong> ce formulaire ne déclenche pas directement l’activation de l’Avance Immédiate auprès de l’URSSAF.</p>
+          <p>Les informations transmises permettent simplement à <strong>Domus Premium</strong> de préparer votre demande.<br>
+          Après réception, nous créons la demande sur la plateforme officielle de l’URSSAF. Vous recevrez ensuite un e-mail ou SMS de l’URSSAF pour <strong>valider l’activation</strong> depuis votre espace particulier AICI.</p>
+          <p class="note">L’Avance Immédiate est un service officiel et gratuit de l’URSSAF. Vous restez libre d’activer ou de désactiver ce dispositif à tout moment.</p>
         </div>
-      </details>
-
-      <details>
-        <summary>Comment s’active l’Avance Immédiate ?</summary>
-        <div class="legal mt-8">
-          Domus Premium initie la demande, vous la validez via l’URSSAF (notification e-mail/SMS).
-          Dès validation, les factures éligibles sont automatiquement minorées de 50 %.
-        </div>
-      </details>
-
-      <details>
-        <summary>Est-ce que je peux arrêter quand je veux ?</summary>
-        <div class="legal mt-8">
-          Oui. Vous pouvez résilier à tout moment depuis votre espace URSSAF. C’est gratuit et réversible.
-        </div>
-      </details>
-
-      <details>
-        <summary>CESU (ou tickets CESU) et Avance Immédiate, c’est compatible ?</summary>
-        <div class="legal mt-8">
-          Selon la nature des CESU et le cadre contractuel. On vous guide pour choisir le mode de paiement optimal et conforme
-          (AICI, CESU, CB, virement).
-        </div>
-      </details>
-
-      <details>
-        <summary>Quelles prestations sont exclues ?</summary>
-        <div class="legal mt-8">
-          Les prestations non éligibles aux services à la personne (travaux hors domicile, activités non listées SAP, etc.)
-          ne bénéficient pas de l’AICI.
-        </div>
-      </details>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="card legal">
-        <strong>Informations légales</strong><br>
-        Domus Premium — Services à la personne (SAP) déclarés. Crédit d’impôt de 50 % selon l’article 199 sexdecies du Code général des impôts,
-        sous réserve d’éligibilité, de plafonds et de validation URSSAF.<br>
-        L’Avance Immédiate (AICI) est un service de l’URSSAF permettant l’imputation immédiate de l’avantage fiscal.
-        Activation gratuite et réversible.<br>
-        Données personnelles : traitement limité à la gestion des demandes AICI et des prestations. Consultez notre politique de confidentialité.
       </div>
     </div>
   </section>
 </main>
-
-<script src="aici-hotfix.js"></script>
+<script src="aici-final.js"></script>
 </body>
 </html>
