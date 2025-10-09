@@ -5,19 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Avance Immédiate — Domus Premium (Rennes) | Payez 50 % aujourd’hui</title>
   <meta name="description" content="Activez l’Avance Immédiate URSSAF avec Domus Premium à Rennes : payez seulement 50 % de vos prestations SAP dès aujourd’hui. Activation gratuite et réversible.">
-  <link rel="preload" href="assets/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="aici-hotfix.css">
 </head>
 <body>
-  <!-- HERO -->
+<main id="aici">
   <section class="hero" role="banner">
-    <div class="section">
+    <div class="container">
       <span class="badge ok">Avance immédiate de crédit d’impôt</span>
-      <h1>Payez seulement <u>50&nbsp;%</u> dès aujourd’hui avec l’Avance Immédiate</h1>
+      <h1>Payez seulement <u>50&nbsp;%</u> dès aujourd’hui</h1>
       <p>Domus Premium s’occupe de tout, l’URSSAF applique automatiquement votre crédit d’impôt (services à la personne). Activation simple, gratuite et réversible.</p>
       <div class="cta-row">
-        <a class="btn" href="#activation" aria-label="Activer l’Avance Immédiate maintenant">Activer maintenant</a>
-        <a class="btn btn-secondary" href="#comment-ca-marche" aria-label="Voir comment ça marche">Comment ça marche</a>
+        <a class="btn primary" href="#activation" aria-label="Activer l’Avance Immédiate maintenant">Activer maintenant</a>
+        <a class="btn outline" href="#comment-ca-marche" aria-label="Voir comment ça marche">Comment ça marche</a>
       </div>
       <div class="trust">
         <small>Entreprise SAP déclarée • Rennes & alentours • Réponse &lt; 24h</small>
@@ -25,50 +24,50 @@
     </div>
   </section>
 
-  <!-- SIMULATEUR -->
-  <section class="section grid grid-2" id="simulateur" aria-labelledby="simulateur-titre">
-    <div class="card" role="region" aria-live="polite">
-      <h2 id="simulateur-titre">Simulateur rapide</h2>
-      <p class="muted">Entrez un montant TTC avant avantage fiscal.</p>
+  <section class="section" id="simulateur" aria-labelledby="simulateur-titre">
+    <div class="container grid two">
+      <div class="card" role="region" aria-live="polite">
+        <h2 id="simulateur-titre">Simulateur rapide</h2>
+        <p class="muted">Entrez un montant TTC avant avantage fiscal.</p>
 
-      <div class="field">
-        <label for="montant">Montant du devis / facture (€ TTC)</label>
-        <input type="number" inputmode="decimal" min="0" step="1" id="montant" placeholder="Ex. 180">
+        <div class="field">
+          <label for="montant">Montant du devis / facture (€ TTC)</label>
+          <input type="number" inputmode="decimal" min="0" step="1" id="montant" placeholder="Ex. 180">
+        </div>
+
+        <div class="field chk">
+          <input type="checkbox" id="eligible" checked>
+          <label for="eligible">Je suis éligible à l’Avance Immédiate (Services à la personne)</label>
+        </div>
+
+        <div class="out" aria-live="polite">
+          <span>À payer aujourd’hui</span>
+          <strong id="a-payer">— €</strong>
+        </div>
+        <p class="note" id="note-sim">
+          Le montant final tient compte d’une avance de 50 % du crédit d’impôt (AICI URSSAF), sous réserve d’éligibilité et de plafonds.
+        </p>
       </div>
 
-      <div class="field chk">
-        <input type="checkbox" id="eligible" checked>
-        <label for="eligible">Je suis éligible à l’Avance Immédiate (Services à la personne)</label>
+      <div class="card" role="region">
+        <h3>Pourquoi c’est intéressant ?</h3>
+        <div class="kpis">
+          <div class="kpi">−50 % à l’instant du paiement</div>
+          <div class="kpi">Aucune avance à faire</div>
+          <div class="kpi">Activation gratuite</div>
+        </div>
+        <ul class="list-steps">
+          <li>On vérifie ensemble votre éligibilité et on lance la demande AICI (1 min).</li>
+          <li>Vous validez la demande reçue par l’URSSAF.</li>
+          <li>Vos prochaines factures Domus Premium sont automatiquement réduites de 50 %.</li>
+          <li>Vous pouvez arrêter quand vous voulez.</li>
+        </ul>
       </div>
-
-      <div class="out" aria-live="polite">
-        <span>À payer aujourd’hui</span>
-        <strong id="a-payer">— €</strong>
-      </div>
-      <p class="note" id="note-sim">
-        Le montant final tient compte d’une avance de 50 % du crédit d’impôt (AICI URSSAF), sous réserve d’éligibilité et de plafonds.
-      </p>
-    </div>
-
-    <div class="card" role="region">
-      <h3>Pourquoi c’est intéressant ?</h3>
-      <div class="kpis">
-        <div class="kpi">−50 % à l’instant du paiement</div>
-        <div class="kpi">Aucune avance à faire</div>
-        <div class="kpi">Activation gratuite</div>
-      </div>
-      <ul class="list-steps">
-        <li>On vérifie ensemble votre éligibilité et on lance la demande AICI (1 min).</li>
-        <li>Vous validez la demande reçue par l’URSSAF.</li>
-        <li>Vos prochaines factures Domus Premium sont automatiquement réduites de 50 %.</li>
-        <li>Vous pouvez arrêter quand vous voulez.</li>
-      </ul>
     </div>
   </section>
 
-  <!-- COMMENT CA MARCHE -->
   <section class="section" id="comment-ca-marche">
-    <div class="grid grid-2">
+    <div class="container grid two">
       <div class="card">
         <h2>Comment ça marche ?</h2>
         <ol class="list-steps">
@@ -87,103 +86,107 @@
           <li>Non compatible avec toutes les situations (ex. hors domicile, certaines activités).</li>
         </ul>
         <div class="mt-12">
-          <a class="btn btn-secondary" href="#faq">Voir la FAQ complète</a>
+          <a class="btn link" href="#faq">Voir la FAQ complète</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ACTIVATION -->
   <section class="section" id="activation" aria-labelledby="activation-titre">
-    <div class="card">
-      <h2 id="activation-titre">Activer l’Avance Immédiate</h2>
-      <p>Remplissez ce court formulaire. Nous vous guidons pas à pas (1 minute).</p>
+    <div class="container">
+      <div class="card">
+        <h2 id="activation-titre">Activer l’Avance Immédiate</h2>
+        <p>Remplissez ce court formulaire. Nous vous guidons pas à pas (1 minute).</p>
 
-      <form action="/send-aici" method="post" class="grid grid-2" aria-describedby="aici-help">
-        <div class="field">
-          <label for="nom">Nom / Prénom</label>
-          <input id="nom" name="nom" autocomplete="name" required>
-        </div>
-        <div class="field">
-          <label for="email">E-mail</label>
-          <input id="email" name="email" type="email" autocomplete="email" required>
-        </div>
-        <div class="field">
-          <label for="tel">Téléphone</label>
-          <input id="tel" name="tel" type="tel" autocomplete="tel" required>
-        </div>
-        <div class="field">
-          <label for="cp">Code postal (lieu de l’intervention)</label>
-          <input id="cp" name="cp" inputmode="numeric" pattern="[0-9]{5}" placeholder="35000" required>
-        </div>
-        <div class="field full">
-          <label for="message">Votre besoin (optionnel)</label>
-          <input id="message" name="message" placeholder="Ex. taille de haie, petit bricolage…">
-        </div>
-        <div class="full row">
-          <button class="btn btn-secondary" type="submit">Envoyer ma demande</button>
-          <span class="note" id="aici-help">Gratuit • Officiel URSSAF • Réversible à tout moment</span>
-        </div>
-      </form>
+        <form action="/send-aici" method="post" class="grid two" aria-describedby="aici-help">
+          <div class="field">
+            <label for="nom">Nom / Prénom</label>
+            <input id="nom" name="nom" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="tel">Téléphone</label>
+            <input id="tel" name="tel" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="field">
+            <label for="cp">Code postal (lieu de l’intervention)</label>
+            <input id="cp" name="cp" inputmode="numeric" pattern="[0-9]{5}" placeholder="35000" required>
+          </div>
+          <div class="field full">
+            <label for="message">Votre besoin (optionnel)</label>
+            <input id="message" name="message" placeholder="Ex. taille de haie, petit bricolage…">
+          </div>
+          <div class="full row">
+            <button class="btn primary" type="submit">Envoyer ma demande</button>
+            <span class="note" id="aici-help">Gratuit • Officiel URSSAF • Réversible à tout moment</span>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 
-  <!-- FAQ -->
   <section class="section" id="faq" aria-labelledby="faq-titre">
-    <h2 id="faq-titre">FAQ — Avance Immédiate</h2>
+    <div class="container">
+      <h2 id="faq-titre">FAQ — Avance Immédiate</h2>
 
-    <details>
-      <summary>Qui est éligible à l’Avance Immédiate ?</summary>
-      <div class="legal mt-8">
-        Les particuliers fiscaux français pour des prestations de <strong>services à la personne</strong> réalisées à leur domicile,
-        dans la limite des plafonds et selon l’article 199 sexdecies du CGI.
-      </div>
-    </details>
+      <details>
+        <summary>Qui est éligible à l’Avance Immédiate ?</summary>
+        <div class="legal mt-8">
+          Les particuliers fiscaux français pour des prestations de <strong>services à la personne</strong> réalisées à leur domicile,
+          dans la limite des plafonds et selon l’article 199 sexdecies du CGI.
+        </div>
+      </details>
 
-    <details>
-      <summary>Comment s’active l’Avance Immédiate ?</summary>
-      <div class="legal mt-8">
-        Domus Premium initie la demande, vous la validez via l’URSSAF (notification e-mail/SMS).
-        Dès validation, les factures éligibles sont automatiquement minorées de 50 %.
-      </div>
-    </details>
+      <details>
+        <summary>Comment s’active l’Avance Immédiate ?</summary>
+        <div class="legal mt-8">
+          Domus Premium initie la demande, vous la validez via l’URSSAF (notification e-mail/SMS).
+          Dès validation, les factures éligibles sont automatiquement minorées de 50 %.
+        </div>
+      </details>
 
-    <details>
-      <summary>Est-ce que je peux arrêter quand je veux ?</summary>
-      <div class="legal mt-8">
-        Oui. Vous pouvez résilier à tout moment depuis votre espace URSSAF. C’est gratuit et réversible.
-      </div>
-    </details>
+      <details>
+        <summary>Est-ce que je peux arrêter quand je veux ?</summary>
+        <div class="legal mt-8">
+          Oui. Vous pouvez résilier à tout moment depuis votre espace URSSAF. C’est gratuit et réversible.
+        </div>
+      </details>
 
-    <details>
-      <summary>CESU (ou tickets CESU) et Avance Immédiate, c’est compatible ?</summary>
-      <div class="legal mt-8">
-        Selon la nature des CESU et le cadre contractuel. On vous guide pour choisir le mode de paiement optimal et conforme
-        (AICI, CESU, CB, virement).
-      </div>
-    </details>
+      <details>
+        <summary>CESU (ou tickets CESU) et Avance Immédiate, c’est compatible ?</summary>
+        <div class="legal mt-8">
+          Selon la nature des CESU et le cadre contractuel. On vous guide pour choisir le mode de paiement optimal et conforme
+          (AICI, CESU, CB, virement).
+        </div>
+      </details>
 
-    <details>
-      <summary>Quelles prestations sont exclues ?</summary>
-      <div class="legal mt-8">
-        Les prestations non éligibles aux services à la personne (travaux hors domicile, activités non listées SAP, etc.)
-        ne bénéficient pas de l’AICI.
-      </div>
-    </details>
-  </section>
-
-  <!-- LEGAL -->
-  <section class="section">
-    <div class="card legal">
-      <strong>Informations légales</strong><br>
-      Domus Premium — Services à la personne (SAP) déclarés. Crédit d’impôt de 50 % selon l’article 199 sexdecies du Code général des impôts,
-      sous réserve d’éligibilité, de plafonds et de validation URSSAF.<br>
-      L’Avance Immédiate (AICI) est un service de l’URSSAF permettant l’imputation immédiate de l’avantage fiscal.
-      Activation gratuite et réversible.<br>
-      Données personnelles : traitement limité à la gestion des demandes AICI et des prestations. Consultez notre politique de confidentialité.
+      <details>
+        <summary>Quelles prestations sont exclues ?</summary>
+        <div class="legal mt-8">
+          Les prestations non éligibles aux services à la personne (travaux hors domicile, activités non listées SAP, etc.)
+          ne bénéficient pas de l’AICI.
+        </div>
+      </details>
     </div>
   </section>
 
-  <script src="script.js"></script>
+  <section class="section">
+    <div class="container">
+      <div class="card legal">
+        <strong>Informations légales</strong><br>
+        Domus Premium — Services à la personne (SAP) déclarés. Crédit d’impôt de 50 % selon l’article 199 sexdecies du Code général des impôts,
+        sous réserve d’éligibilité, de plafonds et de validation URSSAF.<br>
+        L’Avance Immédiate (AICI) est un service de l’URSSAF permettant l’imputation immédiate de l’avantage fiscal.
+        Activation gratuite et réversible.<br>
+        Données personnelles : traitement limité à la gestion des demandes AICI et des prestations. Consultez notre politique de confidentialité.
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="aici-hotfix.js"></script>
 </body>
 </html>
