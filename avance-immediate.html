@@ -1,227 +1,108 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Avance immédiate — Domus Premium</title>
-  <meta name="description" content="Activez l’Avance Immédiate de crédit d’impôt avec Domus Premium. Nous vous accompagnons pas à pas, de l’inscription à la validation, pour ne payer que votre reste à charge.">
-  <link rel="stylesheet" href="assets/avance-immediate.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avance Immédiate — Domus Premium (Rennes) | Payez 50 % aujourd’hui</title>
+  <meta name="description" content="Activez l’Avance Immédiate URSSAF avec Domus Premium à Rennes : payez seulement 50 % de vos prestations SAP dès aujourd’hui. Activation gratuite et réversible.">
+  <link rel="stylesheet" href="aici-brand-exact.css">
 </head>
 <body>
-  <header class="dp-header">
-    <div class="wrap row">
-      <a class="brand" href="/">
-        <div class="logo">DP</div>
-        <div class="brand-text">
-          <strong>Domus Premium</strong>
-          <span>Services à la personne — Rennes & alentours</span>
-        </div>
-      </a>
-      <nav class="nav">
-        <a href="/">Accueil</a>
-        <a href="/prestations.html">Prestations</a>
-        <a href="/tarifs.html">Tarifs</a>
-        <a class="current" href="/avance-immediate.html">Avance immédiate</a>
-        <a href="/contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <h1>Payez seulement <span class="accent">50 %</span> de vos prestations,<br/>nous gérons le reste.</h1>
-          <p class="lead">Avec l’Avance Immédiate (URSSAF), votre crédit d’impôt de 50 % est appliqué directement : vous réglez uniquement votre reste à charge. <strong>Nous vous accompagnons pas à pas</strong> — on s’occupe des démarches et on vous explique tout, simplement.</p>
-          <ul class="ticks">
-            <li>Entreprise <strong>SAP</strong> déclarée</li>
-            <li>Un <strong>interlocuteur unique</strong>, joignable et réactif</li>
-            <li>Processus clair, <strong>sans paperasse inutile</strong></li>
-          </ul>
-          <div class="cta-row">
-            <a class="btn primary" href="#activer">Activer l’Avance immédiate</a>
-            <a class="btn outline" href="#comment">Comment ça marche ?</a>
-          </div>
-          <p class="note xs">* Avantage fiscal selon éligibilité et plafonds en vigueur.</p>
-        </div>
-        <div class="card comfort">
-          <div class="card-title">Votre confort, notre priorité</div>
-          <ul class="comfort-list">
-            <li><span class="i i-shield"></span> Données sécurisées & confidentialité respectée (RGPD)</li>
-            <li><span class="i i-hands"></span> Accompagnement 100 % humain, par la même personne</li>
-            <li><span class="i i-clock"></span> Activation rapide : on vous guide en 3 étapes</li>
-          </ul>
-          <div class="reassure">
-            <div class="sm">Besoin d’être rassuré ?</div>
-            <div class="big">Appelez-nous au <a href="tel:0743633549">07&nbsp;43&nbsp;63&nbsp;35&nbsp;49</a></div>
-            <div class="xs muted">Du lundi au samedi, 9h–19h · Réponse sous 24h par e‑mail</div>
-          </div>
-        </div>
+<main id="aici">
+  <section class="hero" role="banner">
+    <div class="container">
+      <span class="badge ok">Avance immédiate de crédit d’impôt</span>
+      <h1>Payez seulement <u>50&nbsp;%</u> dès aujourd’hui</h1>
+      <p>Domus Premium s’occupe de tout, l’URSSAF applique automatiquement votre crédit d’impôt (services à la personne). Activation simple, gratuite et réversible.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#activation">Activer maintenant</a>
+        <a class="btn ghost" href="#comment-ca-marche">Comment ça marche</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- COMMENT ÇA MARCHE -->
-    <section id="comment" class="section">
-      <div class="wrap">
-        <h2>Comment ça marche — simple et transparent</h2>
-        <ol class="steps">
-          <li><strong>Inscription AICI</strong> — Nous créons votre profil auprès de l’URSSAF (avec votre accord).</li>
-          <li><strong>Prestation</strong> — Intervention Domus Premium à la date convenue.</li>
-          <li><strong>Validation</strong> — Vous recevez un résumé et confirmez le montant côté URSSAF.</li>
-          <li><strong>Paiement</strong> — L’URSSAF applique automatiquement 50 % et prélève uniquement votre reste à charge.</li>
+  <section class="section" id="comment-ca-marche">
+    <div class="container grid two">
+      <div class="card">
+        <h2>Comment ça marche ?</h2>
+        <ol class="list-steps">
+          <li>On lance la demande d’Avance Immédiate (1 minute) avec vos coordonnées.</li>
+          <li>Vous recevez une notification de l’URSSAF et vous validez.</li>
+          <li>Vos factures Domus Premium sont automatiquement réduites de 50 %.</li>
+          <li>Vous pouvez arrêter à tout moment dans votre espace URSSAF.</li>
         </ol>
-        <div class="panel">
-          <div class="panel-title">Exemple chiffré</div>
-          <div class="grid-two">
-            <div>
-              <label class="label">Montant de la prestation (€)</label>
-              <input id="montant" type="number" value="180" min="0" class="input" />
-            </div>
-            <div class="res-box">
-              <div class="row"><span>Total</span><strong id="total">180,00 €</strong></div>
-              <div class="row"><span>Crédit d'impôt (50 %)</span><strong id="credit">- 90,00 €</strong></div>
-              <hr />
-              <div class="row big"><span>Reste à charge</span><strong id="reste" class="accent-text">90,00 €</strong></div>
-            </div>
-          </div>
-          <p class="xs muted">Sous réserve d’éligibilité au dispositif. Certaines prestations peuvent être exclues.</p>
+        <p class="note">Avance Immédiate = service officiel URSSAF. Gratuit, sans engagement, réversible.</p>
+      </div>
+      <div class="card">
+        <h3>Pourquoi c’est intéressant ?</h3>
+        <div class="kpis">
+          <div class="kpi">−50 % immédiat</div>
+          <div class="kpi">Aucune avance</div>
+          <div class="kpi">Activation gratuite</div>
         </div>
-      </div>
-    </section>
-
-    <!-- PRESTATIONS ÉLIGIBLES -->
-    <section class="section alt">
-      <div class="wrap">
-        <h2>Prestations éligibles les plus courantes</h2>
-        <div class="cards four">
-          <div class="card">
-            <div class="card-sub">Aide ponctuelle</div>
-            <p class="muted">Aide au quotidien (hors soins), courses, accompagnement rassurant.</p>
-          </div>
-          <div class="card">
-            <div class="card-sub">Aide administrative</div>
-            <p class="muted">Démarches simples, classement, prises de rendez-vous, organisation.</p>
-          </div>
-          <div class="card">
-            <div class="card-sub">Petits travaux</div>
-            <p class="muted">Montage, fixations, réglages (≤ 2 h). Minimum 1 h sur Rennes.</p>
-          </div>
-          <div class="card">
-            <div class="card-sub">Jardinage léger</div>
-            <p class="muted">Tonte, désherbage, petites tailles. (Hors évacuation volumineuse.)</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BLOCS RASSURANCE -->
-    <section class="section trust">
-      <div class="wrap trust-grid">
-        <div class="trust-card">
-          <div class="icon i-badge"></div>
-          <div class="title">Entreprise SAP déclarée</div>
-          <p>Factures conformes, mentions légales & respect du cadre fiscal.</p>
-        </div>
-        <div class="trust-card">
-          <div class="icon i-heart"></div>
-          <div class="title">Relation de confiance</div>
-          <p>La même personne vous accompagne et intervient chez vous.</p>
-        </div>
-        <div class="trust-card">
-          <div class="icon i-shield"></div>
-          <div class="title">Sécurité & RGPD</div>
-          <p>Données chiffrées, confidentialité et transparence totale.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- AVIS CLIENTS -->
-    <section class="section">
-      <div class="wrap">
-        <h2>Ils nous font confiance</h2>
-        <div class="testis">
-          <div class="testi">
-            <div class="stars">★★★★★</div>
-            <p>“Très pro, rassurant du début à la fin. Tout a été très clair pour l’Avance immédiate.”</p>
-            <div class="name">— M. F., Rennes</div>
-          </div>
-          <div class="testi">
-            <div class="stars">★★★★★</div>
-            <p>“On voit que c’est carré et humain. Enfin quelqu’un de fiable sur Rennes.”</p>
-            <div class="name">— Mme B., Cesson-Sévigné</div>
-          </div>
-          <div class="testi">
-            <div class="stars">★★★★★</div>
-            <p>“On a compris tout de suite le reste à charge. Je recommande sans hésiter.”</p>
-            <div class="name">— L. R., Saint-Grégoire</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FORMULAIRE -->
-    <section id="activer" class="section">
-      <div class="wrap narrow">
-        <h2>On s’occupe de tout — dites-nous juste quand vous êtes disponible</h2>
-        <form id="leadForm" class="form">
-          <div class="grid">
-            <div class="field">
-              <label>Nom complet</label>
-              <input name="nom" placeholder="Ex. Marie Dupont" required />
-            </div>
-            <div class="field">
-              <label>Email</label>
-              <input name="email" type="email" placeholder="vous@exemple.fr" required />
-            </div>
-            <div class="field">
-              <label>Téléphone</label>
-              <input name="tel" type="tel" placeholder="07 43 63 35 49" />
-            </div>
-            <div class="field full">
-              <label>Votre besoin</label>
-              <textarea name="message" placeholder="Type de prestation, date, durée…"></textarea>
-            </div>
-          </div>
-          <div class="form-foot">
-            <span class="note xs">En soumettant, vous acceptez le traitement de vos données pour établir votre devis et activer l’AICI si vous le souhaitez.</span>
-            <button class="btn primary">Être rappelé(e)</button>
-          </div>
-        </form>
-        <p id="feedback" class="feedback">Merci ! Nous vous recontactons sous 24 h.</p>
-        <p class="xs muted center">Ou contactez-nous directement : <a href="mailto:domuspremium35@gmail.com">domuspremium35@gmail.com</a> · <a href="tel:0743633549">07&nbsp;43&nbsp;63&nbsp;35&nbsp;49</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="dp-footer">
-    <div class="wrap foot-grid">
-      <div>
-        <div class="brand"><div class="logo">DP</div><div class="brand-title">Domus Premium</div></div>
-        <p class="muted">Entreprise de proximité — Rennes & alentours.</p>
-      </div>
-      <div>
-        <div class="foot-title">Navigation</div>
-        <ul class="list">
-          <li><a href="/">Accueil</a></li>
-          <li><a href="/prestations.html">Prestations</a></li>
-          <li><a href="/tarifs.html">Tarifs</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="foot-title">Ressources</div>
-        <ul class="list">
-          <li><a href="/mentions.html">Mentions légales</a></li>
-          <li><a href="/rgpd.html">Confidentialité & RGPD</a></li>
+        <ul class="ul">
+          <li>Éligible si la prestation est “services à la personne” à votre domicile.</li>
+          <li>Plafonds & conditions URSSAF (art. 199 sexdecies CGI).</li>
+          <li>Non compatible avec toutes les situations (ex. hors domicile).</li>
         </ul>
       </div>
     </div>
-    <div class="tiny">© <span id="year"></span> Domus Premium — Tous droits réservés</div>
-  </footer>
+  </section>
 
-  <script src="assets/avance-immediate.js"></script>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <section class="section" id="simulateur" aria-labelledby="simulateur-titre">
+    <div class="container grid two">
+      <div class="card" role="region" aria-live="polite">
+        <h2 id="simulateur-titre">Simulateur rapide</h2>
+        <p class="muted">Entrez un montant TTC avant avantage fiscal.</p>
+        <div class="field">
+          <label for="montant">Montant du devis / facture (€ TTC)</label>
+          <input type="number" inputmode="decimal" min="0" step="1" id="montant" placeholder="Ex. 180">
+        </div>
+        <div class="field chk">
+          <input type="checkbox" id="eligible" checked>
+          <label for="eligible">Je suis éligible à l’Avance Immédiate (Services à la personne)</label>
+        </div>
+        <div class="out" aria-live="polite">
+          <span>À payer aujourd’hui</span><strong id="a-payer">— €</strong>
+        </div>
+        <p class="note" id="note-sim">Le montant final tient compte d’une avance de 50 % (URSSAF), sous réserve d’éligibilité et de plafonds.</p>
+      </div>
+
+      <div class="card" role="region">
+        <h3>Exemples</h3>
+        <div class="examples">
+          <div><span>110 €</span><strong>→ 55 €</strong></div>
+          <div><span>180 €</span><strong>→ 90 €</strong></div>
+          <div><span>300 €</span><strong>→ 150 €</strong></div>
+        </div>
+        <p class="note">Exemples à titre indicatif. Le montant exact est calculé ci-contre.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="activation" aria-labelledby="activation-titre">
+    <div class="container">
+      <div class="card">
+        <h2 id="activation-titre">Activer l’Avance Immédiate</h2>
+        <p>Remplissez ce court formulaire. Nous vous guidons pas à pas (1 minute).</p>
+        <form action="/send-aici" method="post" class="grid two" aria-describedby="aici-help">
+          <div class="field"><label for="nom">Nom / Prénom</label><input id="nom" name="nom" autocomplete="name" required></div>
+          <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field"><label for="tel">Téléphone</label><input id="tel" name="tel" type="tel" autocomplete="tel" required></div>
+          <div class="field"><label for="cp">Code postal (lieu de l’intervention)</label><input id="cp" name="cp" inputmode="numeric" pattern="[0-9]{5}" placeholder="35000" required></div>
+          <div class="field full"><label for="message">Votre besoin (optionnel)</label><input id="message" name="message" placeholder="Ex. taille de haie, petit bricolage…"></div>
+          <div class="full row"><button class="btn primary" type="submit">Envoyer ma demande</button><span class="note" id="aici-help">Gratuit • Officiel URSSAF • Réversible à tout moment</span></div>
+        </form>
+        <div class="info-aici">
+          <p><strong>⚠️ Important :</strong> ce formulaire ne déclenche pas directement l’activation de l’Avance Immédiate auprès de l’URSSAF.</p>
+          <p>Les informations transmises permettent simplement à <strong>Domus Premium</strong> de préparer votre demande.<br>
+          Après réception, nous créons la demande sur la plateforme officielle de l’URSSAF. Vous recevrez ensuite un e-mail ou SMS de l’URSSAF pour <strong>valider l’activation</strong> depuis votre espace particulier AICI.</p>
+          <p class="note">L’Avance Immédiate est un service officiel et gratuit de l’URSSAF. Vous restez libre d’activer ou de désactiver ce dispositif à tout moment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="aici-brand-exact.js"></script>
 </body>
 </html>
