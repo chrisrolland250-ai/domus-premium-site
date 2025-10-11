@@ -81,7 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     try {
-      await emailjs.send("service_4358zpr", "template_5mfkcwg", payload);
       window.location.href = "merci.html";
     } catch (err) {
       if (msg) { msg.textContent = "❌ Impossible d’envoyer le message (EmailJS). Vérifiez la configuration."; msg.style.color = "#ffb4b4"; }
