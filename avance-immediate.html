@@ -137,6 +137,7 @@
 </div>
 </div>
 </section>
+<section id="faq-aici" class="card" style="background:#fff;border-radius:16px;padding:24px 28px;box-shadow:0 8px 30px rgba(0,0,0,.06);margin:18px 0;"><h2 style="margin:0 0 8px;font-size:22px;">FAQ — Avance Immédiate : toutes les réponses</h2><details><summary style="cursor:pointer;font-weight:600;">Délais d’activation</summary><div style="margin-top:8px;color:#364152;">Création dossier sous 24h ouvrées, validation URSSAF en ~1 min.</div></details><details><summary style="cursor:pointer;font-weight:600;">Éligibilité des prestations</summary><div style="margin-top:8px;color:#364152;">Prestations SAP listées URSSAF (ménage, garde d’enfants à domicile, jardinage courant…). Confirmation au devis.</div></details><details><summary style="cursor:pointer;font-weight:600;">Plafonds & réduction</summary><div style="margin-top:8px;color:#364152;">Réduction 50% dans la limite des plafonds annuels des SAP.</div></details><details><summary style="cursor:pointer;font-weight:600;">Documents</summary><div style="margin-top:8px;color:#364152;">Pièce d’identité et parfois IBAN.</div></details><details><summary style="cursor:pointer;font-weight:600;">Rien reçu de l’URSSAF</summary><div style="margin-top:8px;color:#364152;">Vérifier Spam / attendre 10–15 min / nous contacter.</div></details><details><summary style="cursor:pointer;font-weight:600;">Arrêt d’AICI</summary><div style="margin-top:8px;color:#364152;">Désactivation possible à tout moment depuis votre espace URSSAF.</div></details></section>
 <!-- COMMENT ÇA MARCHE -->
 <section class="section" id="comment">
 <div class="wrap">
@@ -237,6 +238,7 @@
 <div class="wrap narrow">
 <h2>On s’occupe de tout — dites-nous juste quand vous êtes disponible</h2>
 <div id="contactFormAnchor" style="position:relative; top:-1px; height:1px;"></div>
+<section id="etapes-aici" class="card" style="background:#fff;border-radius:16px;padding:24px 28px;box-shadow:0 8px 30px rgba(0,0,0,.06);margin:28px 0;"><h2 style="margin:0 0 8px;font-size:24px;">Comment ça marche — Avance Immédiate en 3 étapes</h2><ol style="margin:12px 0 0;color:#364152;"><li><strong>Nous créons votre dossier URSSAF</strong> (sous 24h ouvrées).</li><li>Vous recevez un <strong>e‑mail/SMS URSSAF</strong> et <strong>validez l’activation</strong> (≈1 min).</li><li><strong>Réduction automatique 50%</strong> sur vos prochaines factures éligibles.</li></ol></section>
 <form class="form"    id="contactForm"    method="GET" data-emailjs-public="C-1wgNtnyKGkvubaH"   action="/avance-immediate.html#contactForm" ><input type="hidden" name="form" value="avance_immediate">
 <input type="hidden" name="_next" value="merci-avance-immediate.html">
 <input name="_redirect" type="hidden" value="/merci.html"/><input name="_template" type="hidden" value="table"/><input name="_subject" type="hidden" value="Domus Premium — Demande Avance Immédiate"/>
@@ -523,6 +525,39 @@ window.__goMerciAI__ = function(){ try{ window.location.href = "merci-avance-imm
     });
   }
   if (document.readyState === "loading"){ document.addEventListener('DOMContentLoaded', init); } else { init(); }
+})();
+</script>
+
+
+<script>
+/*NAV_REWIRE_AIMMEDIATE*/
+(function(){
+  function norm(a){
+    if(!a) return;
+    const t = (a.textContent || "").trim().toLowerCase();
+    if(a.dataset && a.dataset.nav){
+      switch(a.dataset.nav){
+        case "accueil": a.href="/index.html"; return;
+        case "prestations": a.href="/index.html#prestations"; return;
+        case "tarifs": a.href="/index.html#tarifs"; return;
+        case "faq": a.href="/index.html#faq"; return;
+        case "contact": a.href="/index.html#contact"; return;
+      }
+    }
+    if (t === "accueil" || t === "home") a.href="/index.html";
+    else if (t.indexOf("prestation") !== -1) a.href = "/index.html#prestations";
+    else if (t.indexOf("tarif") !== -1) a.href = "/index.html#tarifs";
+    else if (t.indexOf("faq") !== -1) a.href = "/index.html#faq";
+    else if (t.indexOf("contact") !== -1) a.href = "/index.html#contact";
+    a.setAttribute("target","_self");
+  }
+  function run(){
+    var header = document.querySelector("header") || document.body;
+    var nav = header.querySelectorAll("nav a, .nav-links a, header a, .menu a");
+    nav.forEach(norm);
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);
+  else run();
 })();
 </script>
 
