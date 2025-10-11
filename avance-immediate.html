@@ -139,7 +139,7 @@
     </section>
 
     <!-- COMMENT ÇA MARCHE -->
-    <section id="comment" class="section">
+    <section id="comment" class="section howto">
       <div class="wrap">
         <h2>Comment ça marche — simple et transparent</h2>
         <ol class="steps">
@@ -261,6 +261,7 @@
             </div>
           </div>
           <div class="form-foot">
+<div id="formMsg" class="xs" style="margin-right:12px;"></div>
             <span class="note xs">En soumettant, vous acceptez le traitement de vos données pour établir votre devis et activer l’AICI si vous le souhaitez.</span>
             <button class="btn primary">Être rappelé(e)</button>
           </div>
@@ -302,5 +303,48 @@
 
 <a class="dp-call-sticky" href="tel:+33743633549" aria-label="Appeler Domus Premium">Appeler</a>
 
+<!-- EmailJS SDK for Avance Immédiate -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  try { emailjs.init("C-1wgNtnyKGkvubaH"); } catch(e) { console.warn("EmailJS init:", e); }
+
+  const form = document.getElementById('leadForm');
+  const msg  = document.getElementById('formMsg');
+  if (!form) return;
+
+  function getValByName(n){ const el=form.querySelector('[name="'+n+'"]'); return el?el.value.trim():""; }
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    if (msg){ msg.textContent = "Envoi en cours…"; msg.style.color = "#bcd0ea"; }
+
+    // honeypot (optional) if you add <input name="company" class="hp">
+    const honey = form.querySelector('input[name="company"]');
+    if (honey && honey.value.trim() !== ""){
+      if (msg){ msg.textContent = "Envoi bloqué (anti-spam)."; msg.style.color = "#ffb4b4"; }
+      return false;
+    }
+
+    const payload = {
+      from_name: getValByName("nom") || "Visiteur",
+      reply_to:  getValByName("email"),
+      message:   getValByName("message"),
+      phone:     getValByName("tel"),
+      consent:   "Avance Immédiate",
+      subject:   "Nouveau lead Avance Immédiate – Domus Premium",
+      site:      window.location.hostname
+    };
+
+    try{
+      await emailjs.send("service_4358zpr", "template_5mfkcwg", payload);
+      window.location.href = "merci.html";
+    }catch(err){
+      if (msg){ msg.textContent = "❌ Envoi impossible pour le moment. Réessayez plus tard ou appelez-nous."; msg.style.color = "#ffb4b4"; }
+      console.error("EmailJS error:", err);
+    }
+  });
+});
+</script>
 </body>
 </html>
