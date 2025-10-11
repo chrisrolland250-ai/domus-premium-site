@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Avance Immédiate — Domus Premium (Rennes) | Payez 50 % aujourd’hui</title>
   <meta name="description" content="Activez l’Avance Immédiate URSSAF avec Domus Premium à Rennes : payez seulement 50 % de vos prestations SAP dès aujourd’hui. Activation gratuite et réversible.">
-  <link rel="stylesheet" href="aici-formspree.css">
+  <link rel="stylesheet" href="aici-brand-exact.css">
 </head>
 <body>
 <main id="aici">
@@ -15,8 +15,8 @@
       <h1>Payez seulement <u>50&nbsp;%</u> dès aujourd’hui</h1>
       <p>Domus Premium s’occupe de tout, l’URSSAF applique automatiquement votre crédit d’impôt (services à la personne). Activation simple, gratuite et réversible.</p>
       <div class="cta-row">
-        <a class="btn primary" href="#activation" aria-label="Activer l’Avance Immédiate maintenant">Activer maintenant</a>
-        <a class="btn ghost" href="#comment-ca-marche" aria-label="Voir comment ça marche">Comment ça marche</a>
+        <a class="btn primary" href="#activation">Activer maintenant</a>
+        <a class="btn ghost" href="#comment-ca-marche">Comment ça marche</a>
       </div>
     </div>
   </section>
@@ -28,7 +28,7 @@
         <ol class="list-steps">
           <li>On lance la demande d’Avance Immédiate (1 minute) avec vos coordonnées.</li>
           <li>Vous recevez une notification de l’URSSAF et vous validez.</li>
-          <li>Vos prochaines factures Domus Premium sont automatiquement réduites de 50 %.</li>
+          <li>Vos factures Domus Premium sont automatiquement réduites de 50 %.</li>
           <li>Vous pouvez arrêter à tout moment dans votre espace URSSAF.</li>
         </ol>
         <p class="note">Avance Immédiate = service officiel URSSAF. Gratuit, sans engagement, réversible.</p>
@@ -56,7 +56,7 @@
         <p class="muted">Entrez un montant TTC avant avantage fiscal.</p>
         <div class="field">
           <label for="montant">Montant du devis / facture (€ TTC)</label>
-          <input type="number" inputmode="decimal" min="0" step="1" id="montant" name="montant" placeholder="Ex. 180">
+          <input type="number" inputmode="decimal" min="0" step="1" id="montant" placeholder="Ex. 180">
         </div>
         <div class="field chk">
           <input type="checkbox" id="eligible" checked>
@@ -85,11 +85,7 @@
       <div class="card">
         <h2 id="activation-titre">Activer l’Avance Immédiate</h2>
         <p>Remplissez ce court formulaire. Nous vous guidons pas à pas (1 minute).</p>
-
-        <form action="https://formspree.io/f/xgvlrzvw" method="POST" class="grid two" aria-describedby="aici-help">
-          <input type="hidden" name="_subject" value="Domus Premium — Demande Avance Immédiate">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_redirect" value="/merci.html">
+        <form action="/send-aici" method="post" class="grid two" aria-describedby="aici-help">
           <div class="field"><label for="nom">Nom / Prénom</label><input id="nom" name="nom" autocomplete="name" required></div>
           <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
           <div class="field"><label for="tel">Téléphone</label><input id="tel" name="tel" type="tel" autocomplete="tel" required></div>
@@ -97,7 +93,6 @@
           <div class="field full"><label for="message">Votre besoin (optionnel)</label><input id="message" name="message" placeholder="Ex. taille de haie, petit bricolage…"></div>
           <div class="full row"><button class="btn primary" type="submit">Envoyer ma demande</button><span class="note" id="aici-help">Gratuit • Officiel URSSAF • Réversible à tout moment</span></div>
         </form>
-
         <div class="info-aici">
           <p><strong>⚠️ Important :</strong> ce formulaire ne déclenche pas directement l’activation de l’Avance Immédiate auprès de l’URSSAF.</p>
           <p>Les informations transmises permettent simplement à <strong>Domus Premium</strong> de préparer votre demande.<br>
@@ -108,6 +103,6 @@
     </div>
   </section>
 </main>
-<script src="aici-formspree.js"></script>
+<script src="aici-brand-exact.js"></script>
 </body>
 </html>
