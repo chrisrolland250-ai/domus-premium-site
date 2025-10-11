@@ -117,3 +117,23 @@ h2{font:700 30px/1.2 'Playfair Display','Inter',ui-sans-serif;margin:0}
 .list{list-style:none;padding:0;margin:0;display:grid;gap:8px;color:var(--muted)}
 .tiny{text-align:center;font-size:12px;color:var(--muted);padding:0 0 24px}
 .center{text-align:center}
+
+
+/* --- Sticky Call Button (mobile only) --- */
+@media (max-width: 640px){
+  .dp-call-sticky{
+    position: fixed;
+    right: 16px;
+    bottom: 20px;
+    display: inline-block;
+    padding: 12px 16px;
+    border-radius: 9999px;
+    text-decoration: none;
+    background: #0b1f36;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(0,0,0,.25);
+    z-index: 1200;
+  }
+  .dp-call-sticky:active{ transform: translateY(1px); }
+}
