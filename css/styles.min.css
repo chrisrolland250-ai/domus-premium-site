@@ -1,5 +1,3 @@
-/* Active state for current page in nav */
-nav a.active{ text-decoration:underline; opacity:.92 }
 
 /* --- FIX ancres + anti-bande blanche --- */
 /* 1) Offset d’ancre = hauteur du header */

@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const msg = document.getElementById('formMsg');
   if (!form) return;
 
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (msg) { msg.textContent = "Envoi en cours…"; msg.style.color = "#bcd0ea"; }
 
@@ -86,12 +87,10 @@ document.addEventListener("DOMContentLoaded", () => {
       consent:   getVal("Consentement"),
       subject:   "Nouveau message – Domus Premium",
       site:      window.location.hostname
-    ,
-  form_name: "Contact",
-  subject: "Nouveau message Contact – Domus Premium"
-};
+    };
 
     try {
+      await emailjs.send("service_4358zpr", "template_5mfkcwg", payload);
       window.location.href = "merci.html";
     } catch (err) {
       if (msg) { msg.textContent = "❌ Impossible d’envoyer le message. Vérifiez votre configuration EmailJS."; msg.style.color = "#ffb4b4"; }
