@@ -84,7 +84,7 @@
 }
 </script>
 </head>
-<body>
+<body class="ai--accent">
   <header class="dp-header">
     <div class="wrap row">
       <a class="brand" href="index.html">
@@ -153,7 +153,7 @@
           <div class="grid-two">
             <div>
               <label class="label">Montant de la prestation (€)</label>
-              <input id="montant" type="number" value="180" min="0" class="input" / name="montant">
+              <input id="montant" type="number" value="180" min="0" class="input" />
             </div>
             <div class="res-box">
               <div class="row"><span>Total</span><strong id="total">180,00 €</strong></div>
@@ -241,10 +241,7 @@
     <section id="activer" class="section">
       <div class="wrap narrow">
         <h2>On s’occupe de tout — dites-nous juste quand vous êtes disponible</h2>
-        <form method="POST" action="https://formspree.io/f/xgvlrzvw" id="leadForm" class="form">
-<input type="hidden" name="form_name" value="Avance Immédiate">
-<input type="hidden" name="_next" value="https://www.domuspremium.fr/merci.html">
-<input type="hidden" name="_subject" value="Avance Immédiate – Domus Premium">
+        <form id="leadForm" class="form">
           <div class="grid">
             <div class="field">
               <label>Nom complet</label>
@@ -267,7 +264,7 @@
             <span class="note xs">En soumettant, vous acceptez le traitement de vos données pour établir votre devis et activer l’AICI si vous le souhaitez.</span>
             <button class="btn primary">Être rappelé(e)</button>
           </div>
-        <button type="submit" class="button">Envoyer</button></form>
+        </form>
         <p id="feedback" class="feedback">Merci ! Nous vous recontactons sous 24 h.</p>
         <p class="xs muted center">Ou contactez-nous directement : <a href="mailto:domuspremium35@gmail.com">domuspremium35@gmail.com</a> · <a href="tel:+33743633549">07&nbsp;43&nbsp;63&nbsp;35&nbsp;49</a></p>
       </div>
