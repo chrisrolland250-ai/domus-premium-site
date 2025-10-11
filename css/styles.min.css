@@ -1,9 +1,14 @@
-/* --- Domus Premium: header & anchor fixes --- */
+body{padding-top:0}
+.site-header,.dp-header{padding-top:calc(env(safe-area-inset-top,0px) + 0px)}
+html,body{background:#0b1f36}
+.site-header::before,.dp-header::before{content:none!important}
+.site-header,.dp-header{background:#0b1f36}
+/* --- Anti-whitebar & centered anchors --- */
 html,body{margin:0;padding:0}
 :root{--headerH:clamp(56px,8vh,88px)}
 @media (max-width:640px){:root{--headerH:64px}}
 @media (min-width:1024px){:root{--headerH:80px}}
-html{scroll-behavior:smooth;scroll-padding-top:var(--headerH)}
+html{scroll-padding-top:var(--headerH);scroll-behavior:smooth}
 section[id],main [id]{scroll-margin-top:var(--headerH)}
 .site-header,.dp-header{margin-top:0;border-top:0;padding-top:0}
 .site-header{position:sticky;top:0;z-index:1000}
