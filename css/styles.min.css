@@ -58,3 +58,11 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,'Noto 
   }
   .dp-call-sticky:active{ transform: translateY(1px); }
 }
+
+/* --- FAQ consistency & mobile polish --- */
+#faq details{margin:12px 0;padding:8px 0;border-bottom:1px solid rgba(0,0,0,.08)}
+#faq summary{list-style:none;cursor:pointer;font-weight:600}
+#faq summary::-webkit-details-marker{display:none}
+#faq details p{margin:.5rem 0 0}
+summary:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+@media (max-width:640px){#faq summary{padding-right:4px}}
