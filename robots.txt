@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.domuspremium.fr/sitemap.xml
+Sitemap: https://domuspremium.fr/sitemap.xml

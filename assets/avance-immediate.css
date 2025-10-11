@@ -1,39 +1,3 @@
-
-/* --- Avance Immédiate: align visuals with main site --- */
-:root{--brand:#0b1f36;--brand-2:#102a4a;--text-on-brand:#fff}
-.ai--accent .site-header,.ai--accent .dp-header{background:var(--brand)}
-.ai--accent .site-header a,.ai--accent .dp-header a{color:var(--text-on-brand)}
-.ai--accent .site-header a:hover,.ai--accent .dp-header a:hover{text-decoration:underline}
-
-/* Accent sections: first + last block in main */
-.ai--accent main>section:first-of-type{background:var(--brand);color:var(--text-on-brand)}
-.ai--accent main>section:last-of-type{background:var(--brand-2);color:var(--text-on-brand)}
-
-/* Cards/buttons contrast inside accent blocks */
-.ai--accent main>section:first-of-type a.button,
-.ai--accent main>section:last-of-type a.button,
-.ai--accent main>section:first-of-type button,
-.ai--accent main>section:last-of-type button{
-  background:#ffffff;color:#0b1f36;border:0;border-radius:10px;padding:.7rem 1rem;font-weight:600
-}
-.ai--accent .card{background:#ffffff;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.08)}
-.ai--accent .card h3{color:#0b1f36}
-
-/* Spacing & rounded corners for accent blocks */
-.ai--accent main>section:first-of-type,
-.ai--accent main>section:last-of-type{
-  padding-top:clamp(24px,4vw,56px);
-  padding-bottom:clamp(24px,4vw,56px);
-  border-radius:16px;
-}
-
-/* Ensure no white gap above header + nice anchor offset (already present but safe here) */
-html,body{margin:0;padding:0}
-html{scroll-behavior:smooth}
-:root{--headerH:clamp(56px,8vh,88px)}
-html{scroll-padding-top:var(--headerH)}
-section[id],main [id]{scroll-margin-top:var(--headerH)}
-
 body{padding-top:0}
 .site-header,.dp-header{padding-top:calc(env(safe-area-inset-top,0px) + 0px)}
 html,body{background:#0b1f36}
