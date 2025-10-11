@@ -84,28 +84,25 @@
 }
 </script>
 </head>
-<body class="ai--accent">
-  <header class="site-header">
-<div class="container nav">
-<a class="brand" href="#top">
-<picture><source srcset="assets/logo.webp" type="image/webp"/><picture><source srcset="assets/logo.webp" type="image/webp"/><picture><source srcset="assets/logo.webp" type="image/webp"/><img alt="Logo Domus Premium" height="120" loading="lazy" src="assets/logo.jpg" width="160"/></picture></picture></picture>
-<span>Domus Premium</span>
-</a>
-<!-- Bouton burger mobile -->
-<button aria-controls="primary-nav" aria-expanded="false" aria-label="Ouvrir le menu" class="nav-toggle">
-<span></span><span></span><span></span>
-</button>
-<nav class="nav-links" id="primary-nav">
-<a href="#services">Prestations</a>
-<a href="#tarifs">Tarifs</a>
-
-<a href="#realisations">Nos réalisations</a>
-<a href="#apropos">À propos</a>
-<a href="#faq">FAQ</a>
-<a class="btn btn-gold" href="#contact">Contact</a>
-</nav>
-</div>
-</header>
+<body>
+  <header class="dp-header">
+    <div class="wrap row">
+      <a class="brand" href="index.html">
+        <div class="logo">DP</div>
+        <div class="brand-text">
+          <strong>Domus Premium</strong>
+          <span>Services à la personne — Rennes & alentours</span>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="prestations.html">Prestations</a>
+        <a href="tarifs.html">Tarifs</a>
+        <a class="current" href="avance-immediate.html">Avance immédiate</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <main>
     <!-- HERO -->
@@ -142,7 +139,7 @@
     </section>
 
     <!-- COMMENT ÇA MARCHE -->
-    <section id="comment" class="section howto">
+    <section id="comment" class="section">
       <div class="wrap">
         <h2>Comment ça marche — simple et transparent</h2>
         <ol class="steps">
@@ -264,7 +261,6 @@
             </div>
           </div>
           <div class="form-foot">
-<div id="formMsg" class="xs" style="margin-right:12px;"></div>
             <span class="note xs">En soumettant, vous acceptez le traitement de vos données pour établir votre devis et activer l’AICI si vous le souhaitez.</span>
             <button class="btn primary">Être rappelé(e)</button>
           </div>
@@ -306,48 +302,5 @@
 
 <a class="dp-call-sticky" href="tel:+33743633549" aria-label="Appeler Domus Premium">Appeler</a>
 
-<!-- EmailJS SDK for Avance Immédiate -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function(){
-  try { emailjs.init("C-1wgNtnyKGkvubaH"); } catch(e) { console.warn("EmailJS init:", e); }
-
-  const form = document.getElementById('leadForm');
-  const msg  = document.getElementById('formMsg');
-  if (!form) return;
-
-  function getValByName(n){ const el=form.querySelector('[name="'+n+'"]'); return el?el.value.trim():""; }
-
-  form.addEventListener('submit', async function(e){
-    e.preventDefault();
-    if (msg){ msg.textContent = "Envoi en cours…"; msg.style.color = "#bcd0ea"; }
-
-    // honeypot (optional) if you add <input name="company" class="hp">
-    const honey = form.querySelector('input[name="company"]');
-    if (honey && honey.value.trim() !== ""){
-      if (msg){ msg.textContent = "Envoi bloqué (anti-spam)."; msg.style.color = "#ffb4b4"; }
-      return false;
-    }
-
-    const payload = {
-      from_name: getValByName("nom") || "Visiteur",
-      reply_to:  getValByName("email"),
-      message:   getValByName("message"),
-      phone:     getValByName("tel"),
-      consent:   "Avance Immédiate",
-      subject:   "Nouveau lead Avance Immédiate – Domus Premium",
-      site:      window.location.hostname
-    };
-
-    try{
-      await emailjs.send("service_4358zpr", "template_5mfkcwg", payload);
-      window.location.href = "merci.html";
-    }catch(err){
-      if (msg){ msg.textContent = "❌ Envoi impossible pour le moment. Réessayez plus tard ou appelez-nous."; msg.style.color = "#ffb4b4"; }
-      console.error("EmailJS error:", err);
-    }
-  });
-});
-</script>
 </body>
 </html>
