@@ -234,7 +234,7 @@
 <section class="section" id="activer">
 <div class="wrap narrow">
 <h2>On s’occupe de tout — dites-nous juste quand vous êtes disponible</h2>
-<form class="form"   id="contactForm"   method="POST" data-emailjs-public="C-1wgNtnyKGkvubaH" ><input type="hidden" name="form" value="avance_immediate">
+<form class="form"    id="contactForm"    method="POST" data-emailjs-public="C-1wgNtnyKGkvubaH" ><input type="hidden" name="form" value="avance_immediate">
 <input type="hidden" name="_next" value="/merci.html">
 <input name="_redirect" type="hidden" value="/merci.html"/><input name="_template" type="hidden" value="table"/><input name="_subject" type="hidden" value="Nouveau message – Domus Premium"/>
 <div class="grid">
@@ -264,6 +264,7 @@
   <input type="text" name="company" autocomplete="off" tabindex="-1"/>
 </label>
 <p id="formMsg" class="form-msg" aria-live="polite"></p>
+<input type="hidden" name="source" value="Avance immédiate">
 </form>
 <p class="feedback" id="feedback">Merci ! Nous vous recontactons sous 24 h.</p>
 <p class="xs muted center">Ou contactez-nous directement : <button type="submit" >domuspremium35@gmail.com</button> · <a href="tel:+33743633549">07 43 63 35 49</a></p>
@@ -391,19 +392,5 @@
   ]
 }</script>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script src="js/main.js" defer></script>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  try {
-    if (window.emailjs && emailjs.init) {
-      var form = document.getElementById('contactForm') || document.getElementById('immediateForm');
-      var pub = form && form.getAttribute('data-emailjs-public');
-      if (pub) { emailjs.init(pub); }
-    }
-  } catch (e) { console.warn('EmailJS init error:', e); }
-});
-</script>
-
 </body>
 </html>
