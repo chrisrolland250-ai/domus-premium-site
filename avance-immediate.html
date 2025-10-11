@@ -237,8 +237,8 @@
 <div class="wrap narrow">
 <h2>On s’occupe de tout — dites-nous juste quand vous êtes disponible</h2>
 <div id="contactFormAnchor" style="position:relative; top:-1px; height:1px;"></div>
-<form class="form"   id="contactForm"   method="GET" data-emailjs-public="C-1wgNtnyKGkvubaH"  action="/avance-immediate.html#contactForm" ><input type="hidden" name="form" value="avance_immediate">
-<input type="hidden" name="_next" value="/merci.html">
+<form class="form"    id="contactForm"    method="GET" data-emailjs-public="C-1wgNtnyKGkvubaH"   action="/avance-immediate.html#contactForm" ><input type="hidden" name="form" value="avance_immediate">
+<input type="hidden" name="_next" value="merci-avance-immediate.html">
 <input name="_redirect" type="hidden" value="/merci.html"/><input name="_template" type="hidden" value="table"/><input name="_subject" type="hidden" value="Domus Premium — Demande Avance Immédiate"/>
 <div class="grid">
 <div class="field">
@@ -260,7 +260,7 @@
 </div>
 <div class="form-foot">
 <span class="note xs">En soumettant, vous acceptez le traitement de vos données pour établir votre devis et activer l’AICI si vous le souhaitez.</span>
-<button class="btn primary">Être rappelé(e)</button>
+<button id="aiSubmit" type="button" class="btn primary">Être rappelé(e)</button>
 </div>
 <p id="formMsgAI" class="form-msg" aria-live="polite"></p>
 </form>
@@ -285,9 +285,9 @@
 <div class="foot-title">Navigation</div>
 <ul class="list">
 <li><a href="/">Accueil</a></li>
-<li><a href="/#prestations">Prestations</a></li>
-<li><a href="/#tarifs">Tarifs</a></li>
-<li><a href="/#contact">Contact</a></li>
+<li><a href="/index.html#prestations">Prestations</a></li>
+<li><a href="/index.html#tarifs">Tarifs</a></li>
+<li><a href="/index.html#contact">Contact</a></li>
 </ul>
 </div>
 <div>
@@ -452,6 +452,76 @@ document.addEventListener('DOMContentLoaded', function(){
   }
   if (location.hash) { setTimeout(function(){ goto(location.hash); }, 150); }
   window.addEventListener('hashchange', function(){ goto(location.hash); });
+})();
+</script>
+
+
+<script>/*MERCI_AI_REDIRECT_HELPER*/
+window.__goMerciAI__ = function(){ try{ window.location.href = "merci-avance-immediate.html"; }catch(e){} };
+</script>
+
+
+<script>/*AI_SUBMIT_HANDLER_V3*/
+(function(){
+  function $(sel, ctx){ return (ctx||document).querySelector(sel); }
+  function val(names, form){
+    for (var i=0;i<names.length;i++){
+      var el = form.querySelector('[name="'+names[i]+'"]');
+      if (el && el.value != null) return el.value;
+    }
+    return "";
+  }
+  function init(){
+    var form = document.getElementById('contactForm') || document.querySelector('form');
+    if (!form) return;
+    form.addEventListener('submit', function(e){ e.preventDefault(); return false; });
+    var btn = document.getElementById('aiSubmit') || form.querySelector('button[type="submit"], button:not([type])');
+    if (btn){ btn.setAttribute('type', 'button'); }
+    var msg = document.getElementById('formMsgAI') || document.getElementById('formMsg');
+
+    function show(t, ok){
+      if (!msg) return;
+      msg.textContent = t;
+      msg.style.color = ok ? "#16a34a" : "#ef4444";
+    }
+
+    async function send(){
+      try {
+        if (msg){ msg.textContent = "Envoi en cours…"; msg.style.color = "#3b82f6"; }
+        var honey = form.querySelector('[name="company"]');
+        if (honey && honey.value.trim() !== ""){ show("Envoi bloqué (anti-spam).", false); return; }
+        var pub = form.getAttribute('data-emailjs-public');
+        if (!pub) throw new Error("Clé publique EmailJS absente (data-emailjs-public).");
+        if (window.emailjs && emailjs.init){ emailjs.init(pub); }
+
+        var payload = {
+          Nom:          val(["Nom","name"], form),
+          email:        val(["email","Email"], form),
+          Telephone:    val(["Telephone","tel","phone"], form) || "",
+          Message:      val(["Message","message"], form),
+          Consentement: form.querySelector('[name="Consentement"]') && form.querySelector('[name="Consentement"]').checked ? "oui" : "non",
+          subject:      val(["_subject"], form) || "Demande — Avance immédiate (Domus Premium)",
+          source:       val(["source"], form) || "Avance immédiate",
+          site:         window.location.hostname,
+          cp:           val(["cp"], form)
+        };
+
+        await emailjs.send("service_4358zpr", "template_dlyytl2", payload);
+        show("✅ Merci, votre message a bien été envoyé !", true);
+        try { form.reset(); } catch(_){}
+        window.location.href = "merci-avance-immediate.html";
+      } catch (err){
+        console.error("EmailJS error:", err);
+        show("❌ Impossible d’envoyer le message (EmailJS). " + ((err && (err.text || err.message)) || ""), false);
+      }
+    }
+
+    if (btn){ btn.addEventListener('click', function(e){ e.preventDefault(); send(); }); }
+    form.addEventListener('keydown', function(e){
+      if (e.key === 'Enter' && !e.shiftKey){ e.preventDefault(); send(); }
+    });
+  }
+  if (document.readyState === "loading"){ document.addEventListener('DOMContentLoaded', init); } else { init(); }
 })();
 </script>
 
