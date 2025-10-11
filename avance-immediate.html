@@ -82,11 +82,13 @@
   }
 }
 </script>
+
+<style>#contactForm{scroll-margin-top:120px}</style>
 </head>
 <body>
 <header class="dp-header">
 <div class="wrap row">
-<a class="brand" href="/index.html">
+<a class="brand" href="/">
 <div class="logo">DP</div>
 <div class="brand-text">
 <strong>Domus Premium</strong>
@@ -94,11 +96,11 @@
 </div>
 </a>
 <nav class="nav">
-<a href="/index.html">Accueil</a>
-<a href="/index.html#prestations">Prestations</a>
-<a href="/index.html#tarifs">Tarifs</a>
+<a href="/">Accueil</a>
+<a href="/#prestations">Prestations</a>
+<a href="/#tarifs">Tarifs</a>
 <a class="current" href="avance-immediate.html">Avance immédiate</a>
-<a href="/index.html#contact">Contact</a>
+<a href="/#contact">Contact</a>
 </nav>
 </div>
 </header>
@@ -234,9 +236,9 @@
 <section class="section" id="activer">
 <div class="wrap narrow">
 <h2>On s’occupe de tout — dites-nous juste quand vous êtes disponible</h2>
-<form class="form"  id="immediateForm"  method="POST" data-emailjs-public="C-1wgNtnyKGkvubaH" action="#" ><input type="hidden" name="form" value="avance_immediate">
-<input type="hidden" name="_next" value="merci-avance-immediate.html">
-<input name="_redirect" type="hidden" value="/merci-avance-immediate.html"/><input name="_template" type="hidden" value="table"/><input name="_subject" type="hidden" value="Domus Premium — Demande Avance Immédiate"/>
+<form class="form"   id="contactForm"   method="GET" data-emailjs-public="C-1wgNtnyKGkvubaH"  action="/avance-immediate.html#contactForm" ><input type="hidden" name="form" value="avance_immediate">
+<input type="hidden" name="_next" value="/merci.html">
+<input name="_redirect" type="hidden" value="/merci.html"/><input name="_template" type="hidden" value="table"/><input name="_subject" type="hidden" value="Domus Premium — Demande Avance Immédiate"/>
 <div class="grid">
 <div class="field">
 <label>Nom complet</label>
@@ -281,10 +283,10 @@
 <div>
 <div class="foot-title">Navigation</div>
 <ul class="list">
-<li><a href="/index.html">Accueil</a></li>
-<li><a href="/index.html#prestations">Prestations</a></li>
-<li><a href="/index.html#tarifs">Tarifs</a></li>
-<li><a href="/index.html#contact">Contact</a></li>
+<li><a href="/">Accueil</a></li>
+<li><a href="/#prestations">Prestations</a></li>
+<li><a href="/#tarifs">Tarifs</a></li>
+<li><a href="/#contact">Contact</a></li>
 </ul>
 </div>
 <div>
@@ -388,5 +390,42 @@
 }</script>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script src="js/main.js" defer></script>
+
+<script>
+(function anchorScrollToTarget(){
+  function goto(id){
+    var el = document.getElementById(id);
+    if(!el) return;
+    // Try native scroll first
+    el.scrollIntoView({behavior: "smooth", block: "start"});
+    // Extra offset for sticky header (adjust if your header height differs)
+    setTimeout(function(){ window.scrollBy(0, -120); }, 300);
+    // Optional focus to bring it in view for screen readers
+    try { el.setAttribute('tabindex','-1'); el.focus({preventScroll:true}); } catch(e){}
+  }
+  if (location.hash){
+    var id = location.hash.replace(/^#/, '');
+    // If id is "contact" legacy or "form", redirect to contactForm
+    if (id.toLowerCase() === "contact") id = "contactForm";
+    if (id) setTimeout(function(){ goto(id); }, 100);
+  }
+  // Also listen to in-page hash changes
+  window.addEventListener('hashchange', function(){
+    var id = location.hash.replace(/^#/, '');
+    if (id.toLowerCase() === "contact") id = "contactForm";
+    goto(id);
+  });
+})();
+</script>
+
+
+<script>/*defensiveSubmitCancel*/
+document.addEventListener('DOMContentLoaded', function(){
+  var f = document.getElementById('contactForm');
+  if(!f) return;
+  f.addEventListener('submit', function(e){ e.preventDefault(); return false; });
+});
+</script>
+
 </body>
 </html>
