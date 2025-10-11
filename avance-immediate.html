@@ -234,32 +234,55 @@
 <section class="section" id="activer">
 <div class="wrap narrow">
 <h2>On s’occupe de tout — dites-nous juste quand vous êtes disponible</h2>
-<form class="form"  id="immediateForm"  method="POST" data-emailjs-public="C-1wgNtnyKGkvubaH" action="#" ><input type="hidden" name="form" value="avance_immediate">
-<input type="hidden" name="_next" value="/merci.html">
-<input name="_redirect" type="hidden" value="/merci.html"/><input name="_template" type="hidden" value="table"/><input name="_subject" type="hidden" value="Domus Premium — Demande Avance Immédiate"/>
-<div class="grid">
-<div class="field">
-<label>Nom complet</label>
-<input name="nom" placeholder="Ex. Marie Dupont" required=""/>
-</div>
-<div class="field">
-<label>Email</label>
-<input name="email" placeholder="vous@exemple.fr" required="" type="email"/>
-</div>
-<div class="field">
-<label>Téléphone</label>
-<input name="tel" placeholder="07 43 63 35 49" type="tel"/>
-</div><div class="field"><label for="cp">Code postal (lieu de l’intervention)</label><input id="cp" inputmode="numeric" name="cp" pattern="[0-9]{5}" placeholder="35000" required=""/></div>
-<div class="field full">
-<label>Votre besoin</label>
-<textarea name="message" placeholder="Type de prestation, date, durée…"></textarea>
-</div>
-</div>
-<div class="form-foot">
-<span class="note xs">En soumettant, vous acceptez le traitement de vos données pour établir votre devis et activer l’AICI si vous le souhaitez.</span>
-<button class="btn primary">Être rappelé(e)</button>
-</div>
-<p id="formMsgAI" class="form-msg" aria-live="polite"></p>
+<form id="contactForm"
+      method="POST"
+      action="javascript:void(0)"
+      onsubmit="return false;"
+      data-emailjs-public="C-1wgNtnyKGkvubaH"
+      class="form"
+      style="max-width:680px">
+
+  <input type="hidden" name="_subject" value="Demande — Avance immédiate (Domus Premium)">
+  <input type="hidden" name="source" value="Avance immédiate">
+
+  <div class="grid">
+    <div class="field">
+      <label>Nom complet</label>
+      <input name="Nom" placeholder="Ex. Marie Dupont" required>
+    </div>
+    <div class="field">
+      <label>Email</label>
+      <input name="email" type="email" placeholder="vous@exemple.fr" required>
+    </div>
+    <div class="field">
+      <label>Téléphone</label>
+      <input name="Telephone" type="tel" placeholder="07 43 63 35 49">
+    </div>
+    <div class="field">
+      <label for="cp">Code postal (lieu de l’intervention)</label>
+      <input id="cp" name="cp" inputmode="numeric" pattern="[0-9]{5}" placeholder="35000" required>
+    </div>
+    <div class="field full">
+      <label>Votre besoin</label>
+      <textarea name="Message" placeholder="Type de prestation, date, durée…" rows="5" required></textarea>
+    </div>
+  </div>
+
+  <!-- Honeypot anti-spam -->
+  <div style="display:none">
+    <input type="text" name="company" tabindex="-1" autocomplete="off">
+  </div>
+
+  <label style="display:block; margin:.5rem 0;">
+    <input type="checkbox" name="Consentement" required>
+    J’accepte que mes données soient utilisées pour répondre à ma demande.
+  </label>
+
+  <div class="form-foot">
+    <span class="note xs">En soumettant, vous acceptez le traitement de vos données pour établir votre devis et activer l’AICI si vous le souhaitez.</span>
+    <button class="btn primary" id="aiSubmit" type="submit">Être rappelé(e)</button>
+  </div>
+  <p id="formMsgAI" class="form-msg" aria-live="polite"></p>
 </form>
 <p class="feedback" id="feedback">Merci ! Nous vous recontactons sous 24 h.</p>
 <p class="xs muted center">Ou contactez-nous directement : <button type="submit" >domuspremium35@gmail.com</button> · <a href="tel:+33743633549">07 43 63 35 49</a></p>
@@ -297,7 +320,6 @@
 </div>
 <div class="tiny">© <span id="year"></span> Domus Premium — Tous droits réservés</div>
 </footer>
-<script src="assets/avance-immediate.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 <a aria-label="Appeler Domus Premium" class="dp-call-sticky" href="tel:+33743633549">Appeler</a>
 <script src="../assets/lazyload-helper.js"></script><script type="application/ld+json">{
@@ -387,6 +409,68 @@
   ]
 }</script>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script src="js/main.js" defer></script>
+<script>
+(function(){
+  var form = document.getElementById('contactForm');
+  var btn  = document.getElementById('aiSubmit');
+  var msg  = document.getElementById('formMsgAI');
+
+  if (!form || !btn) return;
+
+  form.addEventListener('submit', function(e){ e.preventDefault(); });
+
+  function val(names){
+    for (var i=0; i<names.length; i++){
+      var el = form.querySelector('[name="'+names[i]+'"]');
+      if (el && el.value != null) return el.value;
+    }
+    return "";
+  }
+
+  async function sendEmail(){
+    try {
+      if (msg){ msg.textContent = "Envoi en cours…"; msg.style.color = "#3b82f6"; }
+      // Honeypot
+      var honey = form.querySelector('[name="company"]');
+      if (honey && honey.value.trim() !== ""){
+        if (msg){ msg.textContent = "Envoi bloqué (anti-spam)."; msg.style.color = "#ef4444"; }
+        return;
+      }
+
+      var pub = form.getAttribute('data-emailjs-public');
+      if (!pub) throw new Error("Clé publique EmailJS absente (data-emailjs-public).");
+      if (window.emailjs && emailjs.init){ emailjs.init(pub); }
+
+      var payload = {
+        Nom:          val(["Nom","name"]),
+        email:        val(["email","Email"]),
+        Telephone:    val(["Telephone","tel","phone"]) || "",
+        Message:      val(["Message","message"]),
+        Consentement: form.querySelector('[name="Consentement"]') && form.querySelector('[name="Consentement"]').checked ? "oui" : "non",
+        subject:      val(["_subject"]) || "Demande — Avance immédiate (Domus Premium)",
+        source:       val(["source"]) || "Avance immédiate",
+        site:         window.location.hostname,
+        cp:           val(["cp"])
+      };
+
+      await emailjs.send("service_4358zpr", "template_dlyytl2", payload);
+      if (msg){ msg.textContent = "✅ Merci, votre message a bien été envoyé !"; msg.style.color = "#16a34a"; }
+      form.reset();
+      window.location.href = "merci.html";
+    } catch (err){
+      console.error("EmailJS error:", err);
+      if (msg){
+        msg.textContent = "❌ Impossible d’envoyer le message (EmailJS). " + ((err && (err.text || err.message)) || "");
+        msg.style.color = "#ef4444";
+      }
+    }
+  }
+
+  btn.addEventListener('click', function(e){
+    e.preventDefault();
+    sendEmail();
+  });
+})();
+</script>
 </body>
 </html>
