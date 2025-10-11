@@ -88,7 +88,7 @@
 <body>
 <header class="dp-header">
 <div class="wrap row">
-<a class="brand" href="/">
+<a class="brand" href="#contactForm">
 <div class="logo">DP</div>
 <div class="brand-text">
 <strong>Domus Premium</strong>
@@ -96,11 +96,11 @@
 </div>
 </a>
 <nav class="nav">
-<a href="/">Accueil</a>
-<a href="/#prestations">Prestations</a>
-<a href="/#tarifs">Tarifs</a>
-<a class="current" href="avance-immediate.html">Avance immédiate</a>
-<a href="/#contact">Contact</a>
+<a href="#contactForm">Accueil</a>
+<a href="#contactForm">Prestations</a>
+<a href="#contactForm">Tarifs</a>
+<a class="current" href="#contactForm">Avance immédiate</a>
+<a href="#contactForm">Contact</a>
 </nav>
 </div>
 </header>
@@ -117,7 +117,7 @@
 <li>Processus clair, <strong>sans paperasse inutile</strong></li>
 </ul>
 <div class="cta-row">
-<a class="btn primary" href="#activer">Activer l’Avance immédiate</a>
+<a class="btn primary" href="#contactForm">Activer l’Avance immédiate</a>
 <a class="btn outline" href="#comment">Comment ça marche ?</a>
 </div>
 <p class="note xs">* Avantage fiscal selon éligibilité et plafonds en vigueur.</p>
@@ -236,6 +236,7 @@
 <section class="section" id="activer">
 <div class="wrap narrow">
 <h2>On s’occupe de tout — dites-nous juste quand vous êtes disponible</h2>
+<div id="contactFormAnchor" style="position:relative; top:-1px; height:1px;"></div>
 <form class="form"   id="contactForm"   method="GET" data-emailjs-public="C-1wgNtnyKGkvubaH"  action="/avance-immediate.html#contactForm" ><input type="hidden" name="form" value="avance_immediate">
 <input type="hidden" name="_next" value="/merci.html">
 <input name="_redirect" type="hidden" value="/merci.html"/><input name="_template" type="hidden" value="table"/><input name="_subject" type="hidden" value="Domus Premium — Demande Avance Immédiate"/>
@@ -425,6 +426,33 @@ document.addEventListener('DOMContentLoaded', function(){
   if(!f) return;
   f.addEventListener('submit', function(e){ e.preventDefault(); return false; });
 });
+</script>
+
+
+<script>/*anchorEnhanceV2*/
+(function(){
+  function targetEl(){
+    return document.getElementById('contactForm') || document.querySelector('form[id*="contact"]');
+  }
+  function goto(hash){
+    var id = (hash||'').replace(/^#/, '');
+    if(!id) return;
+    var wanted = id.toLowerCase();
+    if (['contact', 'contactform', 'form', 'activer'].includes(wanted)) {
+      var el = targetEl();
+      if (el) {
+        el.scrollIntoView({behavior:'smooth', block:'start'});
+        setTimeout(function(){ window.scrollBy(0, -140); }, 250);
+        try { el.setAttribute('tabindex','-1'); el.focus({preventScroll:true}); } catch(e){}
+      }
+    } else {
+      var el2 = document.getElementById(id);
+      if (el2) el2.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  }
+  if (location.hash) { setTimeout(function(){ goto(location.hash); }, 150); }
+  window.addEventListener('hashchange', function(){ goto(location.hash); });
+})();
 </script>
 
 </body>
