@@ -1,4 +1,66 @@
 
+/* --- Avance Immédiate • HERO like home --- */
+:root{--brand:#0b1f36;--gold:#e8cc80;--gold-strong:#d6b55a;--text:#0b1f36}
+
+.ai--accent .hero-home{
+  position:relative;
+  background:#ffffff !important;
+  color:var(--text) !important;
+}
+
+.ai--accent .hero-home::after{
+  content:"";
+  position:absolute; left:0; right:0; bottom:-1px; height:120px;
+  background:linear-gradient(180deg, rgba(232,204,128,0.24) 0%, rgba(232,204,128,0.14) 60%, rgba(255,255,255,0) 100%);
+  -webkit-clip-path: polygon(0 0, 100% 25%, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 25%, 100% 100%, 0% 100%);
+  pointer-events:none;
+}
+
+/* Right card (info panel) like home: white card + soft shadow + radius */
+.ai--accent .hero-home .card,
+.ai--accent .hero-home .panel,
+.ai--accent .hero-home .box{
+  background:#ffffff; border-radius:18px;
+  box-shadow: 0 24px 60px rgba(11,31,54,.18);
+  border:1px solid rgba(11,31,54,.08);
+}
+
+/* List markers & links in hero */
+.ai--accent .hero-home li::marker{ color:var(--gold-strong); }
+.ai--accent .hero-home a{ color:var(--text); text-decoration: underline; }
+.ai--accent .hero-home a:visited{ color:var(--text); }
+
+/* Buttons like home */
+.ai--accent .hero-home .btn-primary,
+.ai--accent .hero-home a.button.btn-primary{
+  display:inline-block;
+  background: var(--gold-strong);
+  color:#0b1f36;
+  border: 0;
+  font-weight:700;
+  padding:.9rem 1.2rem;
+  border-radius:9999px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.15);
+}
+
+.ai--accent .hero-home .btn-secondary{
+  display:inline-block;
+  background: #f4ead4;
+  color:#0b1f36;
+  border: 0;
+  font-weight:700;
+  padding:.9rem 1.2rem;
+  border-radius:9999px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+/* Ensure spacing matches home */
+.ai--accent .hero-home{ padding-top:64px; padding-bottom:64px; }
+.ai--accent .hero-home h1{ margin: 0 0 16px; }
+.ai--accent .hero-home p{ margin: 0 0 12px; }
+
+
 /* --- Avance Immédiate: 100% identical to home (fine details) --- */
 .ai--accent .container,.ai--accent .wrap{max-width:1200px;margin:0 auto;padding:0 20px;}
 .ai--accent a.button,.ai--accent button{padding:.75rem 1.1rem;border-radius:12px;font-weight:600;}
