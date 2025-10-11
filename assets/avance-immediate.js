@@ -28,7 +28,7 @@
       var body = encodeURIComponent(
         'Nom: '+(data.nom||'')+'\nEmail: '+(data.email||'')+'\nTéléphone: '+(data.tel||'')+'\nMessage: '+(data.message||'')
       );
-      window.location.href = 'mailto:domuspremium35@gmail.com?subject=Activation AICI&body=' + body;
+      window. + body;
     });
   }
 

@@ -561,13 +561,11 @@
 <p>Une question, un devis ? Réponse sous 24 h.</p>
 <ul class="contact-list">
 <li><strong>Tél.</strong> <a aria-label="Appeler Domus Premium au 07 43 63 35 49" href="tel:+33743633549">07 43 63 35 49</a></li>
-<li><strong>Email</strong> <button type="submit">domuspremium35@gmail.com</button></li>
+<li><strong>Email</strong> <a href="mailto:domuspremium35@gmail.com">domuspremium35@gmail.com</a></li>
 <li><strong>Horaires</strong> Lun-Ven 8h30–19h fermé Sam-dim</li>
 </ul>
 </div>
-<form class="contact-form" data-emailjs-public="C-1wgNtnyKGkvubaH" data-emailjs-service="service_4358zpr" data-emailjs-template="template_5mfkcwg" id="contactForm" method="POST" action="https://formspree.io/f/xgvlrzvw"><input type="hidden" name="_next" value="/domus-premium-site-main/merci.html">
-<input type="hidden" name="source" value="Avance immédiate">
-
+<form class="contact-form" data-emailjs-public="C-1wgNtnyKGkvubaH" data-emailjs-service="service_4358zpr" data-emailjs-template="template_5mfkcwg" id="contactForm" method="POST" onsubmit="return handleSubmit(event)">
 <input name="_subject" type="hidden" value="Nouveau message – Domus Premium"/>
 <label>Votre nom
             <input autocomplete="name" name="Nom" required="" type="text"/>
