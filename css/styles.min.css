@@ -1,4 +1,25 @@
 
+/* --- FIX ancres + anti-bande blanche --- */
+/* 1) Offset d’ancre = hauteur du header */
+:root{ --headerH: 72px; }
+@media (max-width: 768px){ :root{ --headerH: 66px; } }
+html{ scroll-behavior: smooth; scroll-padding-top: var(--headerH); }
+[id]{ scroll-margin-top: var(--headerH); }
+main > section{ scroll-margin-top: var(--headerH); }
+/* 2) Anti “bande blanche” entre sections (margin collapsing) */
+main > section{
+  border-top: 1px solid transparent;
+  padding-top: 1px;
+  margin-top: 0;
+}
+main > section + section{ margin-top: 0; }
+main > section > :first-child{ margin-top: 0; }
+/* Header sticky (sécurisé) */
+.site-header, .dp-header{ position: sticky; top: 0; z-index: 1000; }
+/* Reset global */
+html, body{ margin:0; padding:0; }
+
+
 /* --- Header contact button: unified look across pages --- */
 header .btn-contact,
 header a.button-contact,
