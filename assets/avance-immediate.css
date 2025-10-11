@@ -1,4 +1,101 @@
 
+/* --- Avance Immédiate: 100% identical to home (fine details) --- */
+.ai--accent .container,.ai--accent .wrap{max-width:1200px;margin:0 auto;padding:0 20px;}
+.ai--accent a.button,.ai--accent button{padding:.75rem 1.1rem;border-radius:12px;font-weight:600;}
+.ai--accent nav ul{gap:16px;align-items:center} 
+.ai--accent nav a{text-decoration:none}
+.ai--accent nav a:hover{text-decoration:underline}
+.ai--accent img[alt*="logo" i]{height:40px;width:auto}
+.ai--accent footer{padding-top:56px;padding-bottom:56px}
+
+
+/* --- Avance Immédiate: pixel-perfect match with home --- */
+:root{--headerH:72px}
+
+/* Anchor offset & smooth scroll identical */
+html{scroll-padding-top:var(--headerH);scroll-behavior:smooth}
+section[id],main [id]{scroll-margin-top:var(--headerH)}
+
+/* Header height & alignment */
+.ai--accent .site-header,.ai--accent .dp-header{
+  min-height:72px;
+  display:flex;align-items:center;
+}
+
+/* Section rhythm identical */
+.ai--accent main>section{
+  padding-top:64px;
+  padding-bottom:64px;
+}
+
+/* Hero height like home */
+.ai--accent main>section:first-of-type{
+  min-height:520px;
+  display:flex;align-items:center;
+}
+
+/* Typography scale identical to home */
+.ai--accent h1{font-size:1.8rem;line-height:1.2;margin:0 0 .6em}
+.ai--accent h2{font-size:1.2rem;line-height:1.25;margin:0 0 .6em}
+
+/* --- Avance Immédiate: EXACT same scheme as home --- */
+:root{--brand:#0b1f36;--text-on-brand:#fff}
+
+/* Header & nav (blue) */
+.ai--accent .site-header, .ai--accent .dp-header{
+  background:var(--brand)!important; color:var(--text-on-brand);
+}
+.ai--accent .site-header a, .ai--accent .dp-header a{ color:var(--text-on-brand) }
+.ai--accent .site-header a:hover, .ai--accent .dp-header a:hover{ text-decoration:underline }
+
+/* First section under header: white like home */
+.ai--accent main>section:first-of-type{
+  background:#ffffff; color:#0b1f36;
+}
+
+/* "Comment ça marche": BLUE like home bands */
+.ai--accent section.howto{
+  background:var(--brand)!important; color:var(--text-on-brand);
+}
+.ai--accent section.howto a.button,
+.ai--accent section.howto button{ background:#ffffff; color:#0b1f36; border:0; }
+
+/* Footer band: BLUE like home */
+.ai--accent footer{
+  background:var(--brand)!important; color:var(--text-on-brand);
+}
+.ai--accent footer a{ color:#ffffff }
+.ai--accent footer a:hover{ text-decoration:underline }
+/* --- Avance Immédiate: accessibility-first color reset (AA+) --- */
+:root{--brand:#0b1f36;--brand-2:#0b1f36;--text:#0b1f36;--bg:#ffffff;--bg-soft:#eef3f9;--on-brand:#ffffff}
+
+/* Base text on white for readability */
+.ai--accent{background:var(--bg);color:var(--text)}
+.ai--accent p, .ai--accent li{color:var(--text)}
+
+/* Header/Navigation: brand blue */
+.ai--accent .site-header, .ai--accent .dp-header{background:var(--brand)!important;color:var(--on-brand)}
+.ai--accent .site-header a, .ai--accent .dp-header a{color:var(--on-brand)}
+.ai--accent .site-header a:hover, .ai--accent .dp-header a:hover{text-decoration:underline}
+
+/* First section just under header: stay white */
+.ai--accent main>section:first-of-type{background:#fff;color:var(--text)}
+
+/* "Comment ça marche": soft-tinted panel (not full dark) */
+
+.ai--accent section.howto .card{background:#fff}
+.ai--accent section.howto a.button,.ai--accent section.howto button{background:var(--brand);color:#fff;border:0}
+
+/* Footer band: brand blue */
+.ai--accent footer{background:var(--brand)!important;color:var(--on-brand)}
+.ai--accent footer a{color:#fff}
+
+/* Remove any logo color inversion on dark backgrounds */
+.ai--accent img[alt*="logo" i]{filter:none}
+
+/* Ensure comfortable base typography */
+.ai--accent body, .ai--accent main{font-size:16px;line-height:1.6}
+
 /* --- Avance Immédiate: harmony with home (typography + spacing) --- */
 :root{--brand:#0b1f36;--brand-2:#0c2036;--text-on-brand:#fff}
 
@@ -46,7 +143,7 @@
 .ai--accent main>section:first-of-type{background:#ffffff;color:#0b1f36}
 
 /* "Comment ça marche" section in blue */
-.ai--accent section.howto{background:var(--brand)!important;color:var(--text-on-brand)}
+
 .ai--accent section.howto a.button,.ai--accent section.howto button{background:#fff;color:#0b1f36}
 
 /* Last band (with the menu) in blue: style footer to match */
