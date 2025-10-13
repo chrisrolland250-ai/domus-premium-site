@@ -303,7 +303,7 @@
 </div>
 <div class="tiny">© <span id="year"></span> Domus Premium — Tous droits réservés</div>
 </footer>
-<script src="assets/avance-immediate.js"></script>
+<script src="/assets/avance-immediate.js"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 <a aria-label="Appeler Domus Premium" class="dp-call-sticky" href="tel:+33743633549">Appeler</a>
 <script src="js/lazyload-helper.js"></script><script type="application/ld+json">{
@@ -561,5 +561,29 @@ window.__goMerciAI__ = function(){ try{ window.location.href = "merci-avance-imm
 })();
 </script>
 
+
+<script>
+/* SIMULATEUR AICI DOMUS PREMIUM — FALLBACK INLINE */
+(function(){
+  const m = document.getElementById('montant');
+  if (!m) return;
+  function fmt(x){return Number(x).toFixed(2).replace('.', ',')+' €';}
+  function update(){
+    const raw = (m.value || '').toString().replace(/\s/g,'').replace(',', '.');
+    let t = parseFloat(raw);
+    if (!isFinite(t) || isNaN(t) || t < 0) t = 0;
+    const c = t / 2;
+    const r = t - c;
+    const total = document.getElementById('total');
+    const credit = document.getElementById('credit');
+    const reste = document.getElementById('reste');
+    if (total)  total.textContent  = fmt(t);
+    if (credit) credit.textContent = '- ' + fmt(c);
+    if (reste)  reste.textContent  = fmt(r);
+  }
+  ['input','change','keyup'].forEach(evt => m.addEventListener(evt, update));
+  update();
+})();
+</script>
 </body>
 </html>
