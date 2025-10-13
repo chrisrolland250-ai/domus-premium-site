@@ -4,16 +4,12 @@
   var m = document.getElementById('montant');
   function fmt(x){ return Number(x).toFixed(2).replace('.', ',') + ' €'; }
   function update(){
-    var raw = (m.value || "").toString().replace(/\s/g,"").replace(",", ".");
-    var t = parseFloat(raw);
-    if (!isFinite(t) || isNaN(t) || t < 0) t = 0;
-    var c = t / 2;
-    var r = t - c;
+    var t = parseFloat(m.value || 0), c = t/2, r = t - c;
     document.getElementById('total').textContent = fmt(t);
     document.getElementById('credit').textContent = '- ' + fmt(c);
     document.getElementById('reste').textContent = fmt(r);
   }
-  if(m){ ['input','change','keyup'].forEach(evt => m.addEventListener(evt, update)); update(); }
+  if(m){ m.addEventListener('input', update); update(); }
 
   // Formulaire -> essaie l'API; sinon fallback email
   var form = document.getElementById('leadForm'), feedback = document.getElementById('feedback');
