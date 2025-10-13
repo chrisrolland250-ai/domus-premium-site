@@ -5,7 +5,10 @@ html,body{background:#0b1f36}
 .site-header,.dp-header{background:#0b1f36}
 /* --- Anti-whitebar & centered anchors --- */
 html,body{margin:0;padding:0}
-:root{--headerH:clamp(56px,8vh,88px)}
+:root{--headerH:clamp(56px,8vh,88px)
+  --primary:#3b82f6; --primary-2:#2563eb;
+}
+
 @media (max-width:640px){:root{--headerH:64px}}
 @media (min-width:1024px){:root{--headerH:80px}}
 html{scroll-padding-top:var(--headerH);scroll-behavior:smooth}
@@ -38,9 +41,9 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'
 
 /* Buttons */
 .btn{display:inline-grid;place-items:center;height:44px;padding:0 18px;border-radius:12px;font-weight:700;border:1px solid transparent;text-decoration:none;transition:all .15s ease}
-.btn.primary{background:var(--navy);color:#fff}
+.btn.primary{background:var(--primary);color:#fff}
 .btn.primary:hover{background:var(--ink);box-shadow:0 6px 18px rgba(14,42,71,.25)}
-.btn.ghost{background:transparent;color:var(--navy);border-color:var(--navy)}
+.btn.ghost{background:transparent;color:var(--primary);border-color:var(--primary)}
 .btn.ghost:hover{border-color:var(--gold);color:var(--gold)}
 
 /* Hero */
@@ -48,7 +51,7 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'
 .hero-grid{display:grid;gap:32px;grid-template-columns:1fr}
 @media(min-width:1000px){.hero-grid{grid-template-columns:1.1fr .9fr}}
 .hero-title{font:700 44px/1.15 'Playfair Display','Inter',ui-sans-serif;margin:0 0 8px}
-.accent{color:var(--navy)}
+.accent{color:var(--primary)}
 .lead{font-size:18px;color:var(--muted);margin:10px 0 0}
 .ticks{list-style:none;padding:0;margin:16px 0;display:grid;gap:6px}
 .ticks li::before{content:'✔';color:var(--gold);margin-right:8px}
@@ -72,7 +75,7 @@ h2{font:700 30px/1.2 'Playfair Display','Inter',ui-sans-serif;margin:0}
 .res-box{background:#eef3f8;border:1px solid #d5e1ec;border-radius:12px;padding:12px}
 .row{display:flex;justify-content:space-between;align-items:center;margin:4px 0}
 .row.big{font-size:18px;font-weight:700}
-.accent-text{color:var(--navy)}
+.accent-text{color:var(--primary)}
 
 /* Grids */
 .cards{margin-top:20px;display:grid;gap:16px}
@@ -137,3 +140,21 @@ h2{font:700 30px/1.2 'Playfair Display','Inter',ui-sans-serif;margin:0}
   }
   .dp-call-sticky:active{ transform: translateY(1px); }
 }
+
+
+/* Brand harmonization with homepage */
+.dp-header{background:var(--navy); color:#fff;}
+.dp-header .brand, .dp-header .brand *{color:#fff}
+.dp-header a{color:#eaf2ff}
+.dp-header a.current{color:#fff; font-weight:700}
+.dp-header .logo{background:rgba(255,255,255,.12); color:#fff}
+
+.hero{background:linear-gradient(180deg, var(--navy) 0%, rgba(14,42,71,0.92) 38%, #ffffff 38%); padding-top:32px}
+.hero h1, .hero .lead, .hero .ticks li{color:#fff}
+.hero .btn.outline{border-color:#fff; color:#fff}
+.hero .btn.outline:hover{background:rgba(255,255,255,.1)}
+
+.section.alt{background:#f7faff}
+.res-box{background:#eef4ff; border-color:#d7e5ff}
+a{color:var(--primary)}
+.btn.primary:hover{filter:brightness(0.95)}
