@@ -36,11 +36,27 @@
   <meta name="theme-color" content="#0b1f36"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
-  <link rel="shortcut icon" href="/assets/icons/favicon.ico">
-  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=202510142116">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png?v=202510142116">
+  <link rel="shortcut icon" href="/assets/icons/favicon.ico?v=202510142116">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=202510142116">
   <link rel="manifest" href="/manifest.webmanifest">
+
+<script>
+(function(){try{
+  var v='202510142116';
+  var sel=['link[rel="icon"]','link[rel="shortcut icon"]','link[rel*="apple-touch-icon"]'];
+  sel.forEach(function(s){document.querySelectorAll(s).forEach(function(l){
+    var href=l.getAttribute('href'); if(!href) return;
+    // don't re-bust data URIs / http(s)
+    if(/^https?:/i.test(href) || href.startsWith('data:')) return;
+    var u=new URL(href, location.origin);
+    u.searchParams.set('v', v);
+    l.setAttribute('href', u.pathname + '?' + u.searchParams.toString());
+  });});
+}catch(e){}})();
+</script>
+
 </head>
 <body>
   <header class="hero">
