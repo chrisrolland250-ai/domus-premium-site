@@ -24,23 +24,23 @@
   <link rel="canonical" href="https://www.domuspremium.fr/avance-immediate.html"/>
 
   <style>
-    /* Harmonisation locale si besoin */
     .ai-hero .lead { max-width: 62ch; }
     .ai-hero .ticks { margin: 1rem 0 1.25rem; }
-    .ai-bullet { display:flex; gap:.5rem; align-items:center; }
-    .ai-bullet svg { width:18px; height:18px; }
     .ai-panel { background:#fff; border-radius:16px; box-shadow:0 10px 28px rgba(0,0,0,.08); padding:20px; }
     .ai-grid { display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; align-items:start; }
     @media (max-width: 960px){ .ai-grid{ grid-template-columns:1fr; } }
     .ai-calc .row{ display:flex; justify-content:space-between; gap:12px; }
     .ai-calc .row.big{ font-size:1.2rem; font-weight:700; }
-    .ai-faq details{ background:#fff; border-radius:12px; padding:12px 14px; box-shadow:0 6px 18px rgba(0,0,0,.06); }
-    .ai-faq details + details{ margin-top:10px; }
-    .ai-note { color:#6b7280; font-size:.9rem; }
+    .ai-note, .ai-small { color:#6b7280; font-size:.9rem; }
+    .ai-info { background:#0b1f36; color:#fff; border-radius:14px; padding:18px 20px; }
+    .ai-info h3{ margin:0 0 .5rem 0; font-size:1.125rem; }
+    .ai-info ul{ margin:.35rem 0 0 1rem; }
+    .ai-inline { display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; }
+    .ai-chip { display:inline-block; background:#fff; color:#0b1f36; border-radius:999px; padding:6px 10px; font-size:.9rem; border:1px solid rgba(255,255,255,.25) }
+    .ai-legal { font-size:.85rem; color:#6b7280; }
   </style>
 </head>
 <body>
-  <!-- Header (copied from index style) -->
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="/index.html#top">
@@ -68,7 +68,6 @@
   </header>
 
   <main id="top">
-    <!-- HERO -->
     <section class="hero ai-hero">
       <div class="gold-wave" aria-hidden="true"></div>
       <div class="hero-overlay" aria-hidden="true"></div>
@@ -77,7 +76,8 @@
         <div class="hero-copy">
           <h1>Payez seulement <span class="highlight">50&nbsp;%</span>, on gère le reste.</h1>
           <p class="lead">
-            Avec l’<strong>Avance Immédiate</strong> (Urssaf), votre crédit d’impôt de 50&nbsp;% est appliqué directement : vous réglez uniquement votre <strong>reste à charge</strong>. Nous vous accompagnons de A à Z, simplement.
+            Avec l’<strong>Avance Immédiate</strong> (Urssaf), votre crédit d’impôt de 50&nbsp;% est appliqué directement : vous réglez uniquement votre <strong>reste à charge</strong>.
+            Un dispositif <strong>optionnel et gratuit</strong> pour le client.
           </p>
           <ul class="ticks">
             <li>Entreprise <abbr title="Services à la personne">SAP</abbr> déclarée</li>
@@ -88,10 +88,10 @@
             <a href="#activer" class="btn btn-gold">Activer l’Avance Immédiate</a>
             <a href="#comment" class="btn btn-outline">Comment ça marche ?</a>
           </div>
-          <p class="note">*Avantage fiscal selon éligibilité et plafonds en vigueur (art. 199 sexdecies du CGI).</p>
+          <p class="ai-small">Activation et validations sur <a href="https://particulier.urssaf.fr" target="_blank" rel="noopener">particulier.urssaf.fr</a>.</p>
         </div>
 
-        <aside class="ai-panel">
+        <aside class="ai-panel" aria-label="Exemple chiffré">
           <h3 style="margin-top:0">Exemple chiffré</h3>
           <div class="ai-calc">
             <label class="label" for="montant">Montant de la prestation (€)</label>
@@ -102,16 +102,30 @@
             <hr/>
             <div class="row big"><span>Reste à charge</span><strong id="reste">90,00 €</strong></div>
           </div>
-          <p class="ai-note">Sous réserve d’éligibilité aux SAP et aux plafonds fiscaux.</p>
-          <div class="badges" style="margin-top:.5rem">
-            <span class="badge">SAP déclarée</span>
-            <span class="badge">Sécurité & RGPD</span>
+          <div class="ai-legal" style="margin-top:10px">
+            <p>* Avantage fiscal selon éligibilité et plafonds en vigueur (art. 199 sexdecies du CGI). Plafond annuel de base : <strong>12&nbsp;000 €</strong> (majorations possibles selon situation).</p>
+          </div>
+          <div class="ai-inline" style="margin-top:.5rem">
+            <span class="ai-chip">Optionnel & gratuit</span>
+            <span class="ai-chip">Demandes de paiement</span>
+            <span class="ai-chip">RGPD</span>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- Process -->
+    <section class="section">
+      <div class="container ai-info" role="note" aria-label="Informations importantes">
+        <h3>À retenir</h3>
+        <ul>
+          <li>Après chaque intervention réalisée, nous soumettons une <strong>demande de paiement</strong> via l’Urssaf ; vous la <strong>validez</strong> ensuite dans votre espace <a href="https://particulier.urssaf.fr" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;">particulier.urssaf.fr</a>.</li>
+          <li>Le dispositif est <strong>optionnel et gratuit</strong> pour le client.</li>
+          <li>Le crédit d’impôt est de <strong>50 %</strong>, dans la limite d’un plafond annuel de base de <strong>12 000 €</strong> (plafond majorable selon la situation fiscale).</li>
+          <li>Les <strong>prestations sont effectuées avant</strong> l’envoi de la demande de paiement.</li>
+        </ul>
+      </div>
+    </section>
+
     <section class="section" id="comment">
       <div class="container">
         <h2>Avance Immédiate : simple et transparent</h2>
@@ -124,34 +138,33 @@
           <div class="step">
             <span class="step-num">2</span>
             <h3>Activation</h3>
-            <p>Vous recevez un e‑mail/SMS de l’Urssaf : validez l’activation (≈ 1 min).</p>
+            <p>Vous recevez un e‑mail/SMS de l’Urssaf ; <strong>activez</strong> votre compte sur <a href="https://particulier.urssaf.fr" target="_blank" rel="noopener">particulier.urssaf.fr</a> (≈ 1 min).</p>
           </div>
           <div class="step">
             <span class="step-num">3</span>
             <h3>Validation des demandes</h3>
-            <p>Après chaque intervention, vous validez la demande : <strong>-50 %</strong> appliqués automatiquement.</p>
+            <p>Après chaque intervention, une <strong>demande de paiement</strong> est émise ; vous la <strong>validez</strong> dans votre espace pour appliquer automatiquement les <strong>-50 %</strong>.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ courte -->
     <section class="section ai-faq" id="faq-aici">
       <div class="container">
         <h2>FAQ — Avance Immédiate</h2>
-        <details><summary>Qui est éligible ?</summary><p>Les particuliers fiscaux en France pour des prestations éligibles réalisées à domicile (cadre SAP).</p></details>
+        <details><summary>Qui est éligible ?</summary><p>Les particuliers fiscalement domiciliés en France pour des prestations éligibles réalisées à domicile (cadre SAP).</p></details>
         <details><summary>Combien de temps pour activer ?</summary><p>Création sous 24 h ouvrées, validation Urssaf en ~1 minute.</p></details>
         <details><summary>Puis-je arrêter ?</summary><p>Oui, activation/désactivation possibles à tout moment depuis votre espace Urssaf.</p></details>
       </div>
     </section>
 
-    <!-- Formulaire -->
     <section class="section" id="activer">
       <div class="container">
         <h2>On s’occupe de tout — dites‑nous quand vous êtes disponible</h2>
         <form id="contactForm" class="contact-form" method="POST" onsubmit="return handleAISubmit(event)"
               data-emailjs-public="C-1wgNtnyKGkvubaH" data-emailjs-service="service_4358zpr" data-emailjs-template="template_dlyytl2">
           <input type="hidden" name="_subject" value="Demande — Avance Immédiate (Domus Premium)"/>
+          <input type="hidden" name="source" value="Avance immédiate"/>
           <label>Nom complet
             <input name="Nom" required type="text" placeholder="Ex. Marie Dupont"/>
           </label>
@@ -182,7 +195,6 @@
     </section>
   </main>
 
-  <!-- Footer (same visual language) -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="foot-brand">
@@ -207,7 +219,6 @@
     </div>
   </footer>
 
-  <!-- Scripts du site -->
   <script defer src="js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
@@ -255,7 +266,6 @@
       return false;
     }
 
-    // Mini simulateur
     (function(){
       const m = document.getElementById('montant');
       if(!m) return;
@@ -275,11 +285,9 @@
       update();
     })();
 
-    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
-  <!-- Bouton WhatsApp flottant (cohérent avec l'index) -->
   <a class="whatsapp-float" target="_blank" rel="noopener noreferrer"
      href="https://wa.me/33743633549?text=Bonjour%20Domus%20Premium,%20je%20souhaite%20des%20informations%20sur%20l%27Avance%20Immedi%C3%Aate.">💬</a>
 </body>
