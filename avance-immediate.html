@@ -1,590 +1,286 @@
 
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Avance immédiate — Domus Premium</title>
-<link href="https://www.domuspremium.fr/avance-immediate.html" rel="canonical"/>
-<meta content="Avance immédiate — Domus Premium" property="og:title"/>
-<meta content="Activez l’Avance Immédiate de crédit d’impôt avec Domus Premium. Nous vous accompagnons pas à pas, de l’inscription à la validation, pour ne payer que votre reste à charge." property="og:description"/>
-<meta content="https://www.domuspremium.fr/avance-immediate.html" property="og:url"/>
-<meta content="website" property="og:type"/>
-<meta content="https://www.domuspremium.fr/assets/hero.webp" property="og:image"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Activez l’Avance Immédiate de crédit d’impôt avec Domus Premium. Nous vous accompagnons pas à pas, de l’inscription à la validation, pour ne payer que votre reste à charge." name="description"/>
-<link href="assets/avance-immediate.css" rel="stylesheet"/>
-<script type="application/ld+json">
-/* LocalBusiness JSON-LD */
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Domus Premium",
-  "url": "https://www.domuspremium.fr/",
-  "image": "https://www.domuspremium.fr/assets/og-share.jpg",
-  "logo": "https://www.domuspremium.fr/assets/logo.webp",
-  "telephone": "+33 7 43 63 35 49",
-  "email": "contact@domuspremium.fr",
-  "priceRange": "€€",
-  "description": "Services à la personne à Rennes et alentours : petit bricolage, jardinage léger, entretien extérieur. Devis sous 24 h. Éligible au crédit d’impôt (SAP).",
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Rennes"
-    },
-    {
-      "@type": "City",
-      "name": "Vezin-le-Coquet"
-    },
-    {
-      "@type": "AdministrativeArea",
-      "name": "Ille-et-Vilaine"
-    }
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Rennes",
-    "addressRegion": "Bretagne",
-    "postalCode": "35000",
-    "addressCountry": "FR"
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "08:30",
-      "closes": "19:00"
-    }
-  ],
-  "sameAs": [
-    "https://share.google/5NTabJTIDEnw5lOYZ"
-  ]
-}
-</script>
-<script type="application/ld+json">
-/* WebSite JSON-LD */
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "url": "https://www.domuspremium.fr/",
-  "name": "Domus Premium",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "https://www.domuspremium.fr/?q={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
-}
-</script>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Avance Immédiate — Domus Premium</title>
+  <meta name="description" content="Activez l’Avance Immédiate (Urssaf) avec Domus Premium : 50 % de crédit d’impôt appliqué immédiatement, vous ne payez que le reste à charge."/>
 
-<style>#contactForm{scroll-margin-top:120px}</style>
+  <!-- Fonts & CSS (reuse site styles) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/styles.min.css"/>
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Domus Premium"/>
+  <meta property="og:title" content="Avance Immédiate — Domus Premium"/>
+  <meta property="og:description" content="Activez l’Avance Immédiate avec Domus Premium. 50 % de crédit d’impôt déduit immédiatement."/>
+  <meta property="og:image" content="https://www.domuspremium.fr/assets/og/accueil-1200x630.jpg"/>
+
+  <link rel="icon" type="image/png" href="assets/favicon.png"/>
+  <link rel="canonical" href="https://www.domuspremium.fr/avance-immediate.html"/>
+
+  <style>
+    /* Harmonisation locale si besoin */
+    .ai-hero .lead { max-width: 62ch; }
+    .ai-hero .ticks { margin: 1rem 0 1.25rem; }
+    .ai-bullet { display:flex; gap:.5rem; align-items:center; }
+    .ai-bullet svg { width:18px; height:18px; }
+    .ai-panel { background:#fff; border-radius:16px; box-shadow:0 10px 28px rgba(0,0,0,.08); padding:20px; }
+    .ai-grid { display:grid; grid-template-columns: 1.1fr .9fr; gap:28px; align-items:start; }
+    @media (max-width: 960px){ .ai-grid{ grid-template-columns:1fr; } }
+    .ai-calc .row{ display:flex; justify-content:space-between; gap:12px; }
+    .ai-calc .row.big{ font-size:1.2rem; font-weight:700; }
+    .ai-faq details{ background:#fff; border-radius:12px; padding:12px 14px; box-shadow:0 6px 18px rgba(0,0,0,.06); }
+    .ai-faq details + details{ margin-top:10px; }
+    .ai-note { color:#6b7280; font-size:.9rem; }
+  </style>
 </head>
 <body>
-<header class="dp-header">
-<div class="wrap row">
-<a class="brand" href="#contactForm">
-<div class="logo">DP</div>
-<div class="brand-text">
-<strong>Domus Premium</strong>
-<span>Services à la personne — Rennes &amp; alentours</span>
-</div>
-</a>
-<nav class="nav">
-<a href="#contactForm">Accueil</a>
-<a href="#contactForm">Prestations</a>
-<a href="#contactForm">Tarifs</a>
-<a class="current" href="#contactForm">Avance immédiate</a>
-<a href="#contactForm">Contact</a>
-</nav>
-</div>
-</header>
-<main>
-<!-- HERO -->
-<section class="hero">
-<div class="wrap hero-grid">
-<div>
-<h1>Payez seulement <span class="accent">50 %</span> de vos prestations,<br/>nous gérons le reste.</h1>
-<p class="lead">Avec l’Avance Immédiate (URSSAF), votre crédit d’impôt de 50 % est appliqué directement : vous réglez uniquement votre reste à charge. <strong>Nous vous accompagnons pas à pas</strong> — on s’occupe des démarches et on vous explique tout, simplement.</p>
-<ul class="ticks">
-<li>Entreprise <strong>SAP</strong> déclarée</li>
-<li>Un <strong>interlocuteur unique</strong>, joignable et réactif</li>
-<li>Processus transparent ; <strong>démarches simplifiées</strong></li>
-</ul>
-<div class="cta-row">
-<a class="btn primary" href="#contactForm">Activer l’Avance immédiate</a>
-<a class="btn outline" href="#comment">Comment ça marche ?</a>
-</div>
-<p class="note xs">* Avantage fiscal selon éligibilité et plafonds en vigueur.</p>
-<p class="xs muted">Service <strong>mis en place par l’Urssaf et la Direction générale des Finances publiques (DGFiP)</strong>.</p>
-</div>
-<div class="card comfort">
-<div class="card-title">Votre confort, notre priorité</div>
-<ul class="comfort-list">
-<li><span class="i i-shield"></span> Données sécurisées &amp; confidentialité respectée (RGPD)</li>
-<li><span class="i i-hands"></span> Accompagnement 100 % humain, par la même personne</li>
-<li><span class="i i-clock"></span> Activation rapide : on vous guide en 3 étapes</li>
-</ul>
-<div class="reassure">
-<div class="sm">Besoin d’être rassuré ?</div>
-<div class="big">Appelez-nous au <a href="tel:+33743633549">07 43 63 35 49</a></div>
-<div class="xs muted">Du lundi au Vendredi, 8h–18h · Réponse sous 24h par e‑mail</div>
-</div>
-</div>
-</div>
-</section>
-<section id="faq-aici" class="card" style="background:#fff;border-radius:16px;padding:24px 28px;box-shadow:0 8px 30px rgba(0,0,0,.06);margin:18px 0;"><h2 style="margin:0 0 8px;font-size:22px;">FAQ — Avance Immédiate : toutes les réponses</h2><details><summary style="cursor:pointer;font-weight:600;">Délais d’activation</summary><div style="margin-top:8px;color:#364152;">Création dossier sous 24h ouvrées, validation URSSAF en ~1 min.</div></details><details><summary style="cursor:pointer;font-weight:600;">Éligibilité des prestations</summary><div style="margin-top:8px;color:#364152;">Prestations SAP listées URSSAF (ménage, garde d’enfants à domicile, jardinage courant…). Confirmation au devis.</div></details><details><summary style="cursor:pointer;font-weight:600;">Plafonds & réduction</summary><div style="margin-top:8px;color:#364152;">Réduction 50% dans la limite des plafonds annuels des SAP.</div></details><details><summary style="cursor:pointer;font-weight:600;">Documents</summary><div style="margin-top:8px;color:#364152;">Pièce d’identité et parfois IBAN.</div></details><details><summary style="cursor:pointer;font-weight:600;">Rien reçu de l’URSSAF</summary><div style="margin-top:8px;color:#364152;">Vérifier Spam / attendre 10–15 min / nous contacter.</div></details><details><summary style="cursor:pointer;font-weight:600;">Arrêt d’AICI</summary><div style="margin-top:8px;color:#364152;">Désactivation possible à tout moment depuis votre espace URSSAF.</div></details></section>
-<!-- COMMENT ÇA MARCHE -->
-<section class="section" id="comment">
-<div class="wrap">
-<h2>Comment ça marche — simple et transparent</h2>
-<ol class="steps">
-<li><strong>Inscription AICI</strong> — Nous créons votre profil auprès de l’URSSAF (avec votre accord).</li>
-<li><strong>Prestation</strong> — Intervention Domus Premium à la date convenue.</li>
-<li><strong>Activation de votre compte</strong> — Vous <strong>activez votre compte</strong> sur le <strong>site dédié</strong> (espace particulier AICI de l’Urssaf) via le lien reçu (e‑mail/SMS).</li>
-<li><strong>Validation des demandes</strong> — Vous recevez ensuite les demandes de paiement émises par Domus Premium dans votre espace et disposez de <strong>48&nbsp;heures</strong> pour les valider. L’Urssaf applique alors automatiquement les <strong>50&nbsp;%</strong> de l’avantage fiscal ; vous ne payez que le reste à charge.</li>
-</ol>
-<div class="panel">
-<div class="panel-title">Exemple chiffré</div>
-<div class="grid-two">
-<div>
-<label class="label" for="montant">Montant de la prestation (€)</label>
-<input class="input" id="montant" min="0" type="number" value="180"/>
-</div>
-<div class="res-box">
-<div class="row"><span>Total</span><strong id="total">180,00 €</strong></div>
-<div class="row"><span>Crédit d'impôt (50 %)</span><strong id="credit">- 90,00 €</strong></div>
-<hr/>
-<div class="row big"><span>Reste à charge</span><strong class="accent-text" id="reste">90,00 €</strong></div>
-</div>
-</div>
-<p class="xs muted">Sous réserve d’éligibilité au dispositif. Certaines prestations peuvent être exclues.</p>
-</div>
-</div>
-</section>
-<!-- PRESTATIONS ÉLIGIBLES -->
-<section class="section alt">
-<div class="wrap">
-<h2>Prestations éligibles les plus courantes</h2>
-<div class="cards four">
-<div class="card">
-<div class="card-sub">Aide ponctuelle</div>
-<p class="muted">Aide au quotidien (hors soins), courses, accompagnement rassurant.</p>
-</div>
-<div class="card">
-<div class="card-sub">Aide administrative</div>
-<p class="muted">Démarches simples, classement, prises de rendez-vous, organisation.</p>
-</div>
-<div class="card">
-<div class="card-sub">Petits travaux</div>
-<p class="muted">Montage, fixations, réglages (≤ 2 h). Minimum 1 h sur Rennes.</p>
-</div>
-<div class="card">
-<div class="card-sub">Jardinage léger</div>
-<p class="muted">Tonte, désherbage, petites tailles. (Hors évacuation volumineuse.)</p>
-</div>
-</div>
-</div>
-</section>
-<!-- BLOCS RASSURANCE -->
-<section class="section trust">
-<div class="wrap trust-grid">
-<div class="trust-card">
-<div class="icon i-badge"></div>
-<div class="title">Entreprise SAP déclarée</div>
-<p>Factures conformes, mentions légales &amp; respect du cadre fiscal.</p>
-</div>
-<div class="trust-card">
-<div class="icon i-heart"></div>
-<div class="title">Relation de confiance</div>
-<p>La même personne vous accompagne et intervient chez vous.</p>
-</div>
-<div class="trust-card">
-<div class="icon i-shield"></div>
-<div class="title">Sécurité &amp; RGPD</div>
-<p>Données chiffrées, confidentialité et transparence totale.</p>
-</div>
-</div>
-</section>
-<!-- AVIS CLIENTS -->
-<section class="section">
-<div class="wrap">
-<h2>Ils nous font confiance</h2>
-<div class="testis">
-<div class="testi">
-<div class="stars">★★★★★</div>
-<p>“Très pro, rassurant du début à la fin. Tout a été très clair pour l’Avance immédiate.”</p>
-<div class="name">— M. F., Rennes</div>
-</div>
-<div class="testi">
-<div class="stars">★★★★★</div>
-<p>“On voit que c’est carré et humain. Enfin quelqu’un de fiable sur Rennes.”</p>
-<div class="name">— Mme B., Cesson-Sévigné</div>
-</div>
-<div class="testi">
-<div class="stars">★★★★★</div>
-<p>“On a compris tout de suite le reste à charge. Je recommande sans hésiter.”</p>
-<div class="name">— L. R., Saint-Grégoire</div>
-</div>
-</div>
-</div>
-</section>
-<!-- FORMULAIRE -->
-<section class="section" id="activer">
-<div class="wrap narrow">
-<h2>On s’occupe de tout — dites-nous juste quand vous êtes disponible</h2>
-<div id="contactFormAnchor" style="position:relative; top:-1px; height:1px;"></div>
-<section id="etapes-aici" class="card" style="background:#fff;border-radius:16px;padding:24px 28px;box-shadow:0 8px 30px rgba(0,0,0,.06);margin:28px 0;"><h2 style="margin:0 0 8px;font-size:24px;">Comment ça marche — Avance Immédiate en 3 étapes</h2><ol style="margin:12px 0 0;color:#364152;"><li><strong>Nous créons votre dossier URSSAF</strong> (sous 24h ouvrées).</li><li>Vous recevez un <strong>e‑mail/SMS URSSAF</strong> et <strong>validez l’activation</strong> (≈1 min).</li><li><strong>Réduction automatique 50%</strong> sur vos prochaines factures éligibles.</li></ol></section>
-<form class="form"    id="contactForm"    method="GET" data-emailjs-public="C-1wgNtnyKGkvubaH"   action="/avance-immediate.html#contactForm" ><input type="hidden" name="form" value="avance_immediate">
-<input type="hidden" name="_next" value="merci-avance-immediate.html">
-<input name="_redirect" type="hidden" value="/merci.html"/><input name="_template" type="hidden" value="table"/><input name="_subject" type="hidden" value="Domus Premium — Demande Avance Immédiate"/>
-<div class="grid">
-<div class="field">
-<label>Nom complet</label>
-<input name="nom" placeholder="Ex. Marie Dupont" required=""/>
-</div>
-<div class="field">
-<label>Email</label>
-<input name="email" placeholder="vous@exemple.fr" required="" type="email"/>
-</div>
-<div class="field">
-<label>Téléphone</label>
-<input name="tel" placeholder="07 43 63 35 49" type="tel"/>
-</div><div class="field"><label for="cp">Code postal (lieu de l’intervention)</label><input id="cp" inputmode="numeric" name="cp" pattern="[0-9]{5}" placeholder="35000" required=""/></div>
-<div class="field full">
-<label>Votre besoin</label>
-<textarea name="message" placeholder="Type de prestation, date, durée…"></textarea>
-</div>
-</div>
-<div class="form-foot">
-<span class="note xs">En soumettant, vous acceptez le traitement de vos données pour établir votre devis et activer l’AICI si vous le souhaitez.</span>
-<button id="aiSubmit" type="button" class="btn primary">Être rappelé(e)</button>
-</div>
-<p id="formMsgAI" class="form-msg" aria-live="polite"></p>
-</form>
-<p class="feedback" id="feedback">Merci ! Nous vous recontactons sous 24 h.</p>
-<p class="xs muted center">Ou contactez-nous directement : <button type="submit" >domuspremium35@gmail.com</button> · <a href="tel:+33743633549">07 43 63 35 49</a></p>
+  <!-- Header (copied from index style) -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/index.html#top">
+        <picture>
+          <source srcset="assets/logo.webp" type="image/webp"/>
+          <img src="assets/logo.jpg" width="160" height="120" loading="lazy" alt="Logo Domus Premium"/>
+        </picture>
+        <span>Domus Premium</span>
+      </a>
 
-<div class="info-aici">
-<p><strong>⚠️ Important :</strong> ce formulaire ne déclenche pas directement l’activation de l’Avance Immédiate auprès de l’URSSAF.</p>
-<p>Les informations transmises permettent simplement à <strong>Domus Premium</strong> de préparer votre demande.<br/>
-  Après réception, nous créons la demande sur la plateforme officielle de l’URSSAF. Vous recevrez ensuite un e-mail ou SMS de l’URSSAF pour <strong>valider l’activation</strong> depuis votre espace particulier AICI.</p>
-<p class="note">L’Avance Immédiate est un service officiel et gratuit de l’Urssaf, mis en place avec la DGFiP. Ce dispositif est <strong>non obligatoire</strong> et vous pouvez l’activer ou le désactiver à tout moment.</p>
-</div></div>
-</section>
-</main>
-<footer class="dp-footer">
-<div class="wrap foot-grid">
-<div>
-<div class="brand"><div class="logo">DP</div><div class="brand-title">Domus Premium</div></div>
-<p class="muted">Entreprise de proximité — Rennes &amp; alentours.</p>
-</div>
-<div>
-<div class="foot-title">Navigation</div>
-<ul class="list">
-<li><a href="/index.html">Accueil</a></li>
-<li class="nav-ai"><a href="/avance-immediate.html">Avance immédiate</a></li>
-<li><a href="/index.html#prestations">Prestations</a></li>
-<li><a href="/index.html#tarifs">Tarifs</a></li>
-<li><a href="/index.html#contact">Contact</a></li>
-</ul>
-</div>
-<div>
-<div class="foot-title">Ressources</div>
-<ul class="list">
-<li><a href="/mentions.html">Mentions légales</a></li>
-<li><a href="/rgpd.html">Confidentialité &amp; RGPD</a></li>
-</ul>
-</div>
-</div>
-<div class="tiny">© <span id="year"></span> Domus Premium — Tous droits réservés</div>
-</footer>
-<script src="/assets/avance-immediate.js"></script>
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-<a aria-label="Appeler Domus Premium" class="dp-call-sticky" href="tel:+33743633549">Appeler</a>
-<script src="js/lazyload-helper.js"></script><script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "name": "Domus Premium",
-  "url": "https://www.domuspremium.fr/",
-  "telephone": "+33 7 43 63 35 49",
-  "areaServed": [
-    "Rennes",
-    "Cesson-Sévigné",
-    "Saint-Grégoire",
-    "Chantepie",
-    "Betton",
-    "Pacé"
-  ],
-  "priceRange": "€€",
-  "image": "https://www.domuspremium.fr/assets/logo.png",
-  "serviceType": [
-    "Jardinage",
-    "Bricolage",
-    "Nettoyage extérieur",
-    "Petits travaux"
-  ],
-  "knowsAbout": [
-    "Services à la personne",
-    "Avance Immédiate URSSAF",
-    "Crédit d'impôt 50%"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Rennes",
-    "addressRegion": "Bretagne",
-    "postalCode": "35000",
-    "addressCountry": "FR"
-  },
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday"
-      ],
-      "opens": "08:00",
-      "closes": "19:00"
-    }
-  ]
-}</script><script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Qu’est-ce que l’Avance Immédiate ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "C’est un service officiel de l’URSSAF qui vous permet de bénéficier immédiatement de l’avantage fiscal de 50 % sur les services à la personne éligibles."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qui est éligible ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Les particuliers fiscaux français, pour des prestations réalisées à leur domicile et éligibles aux services à la personne, dans la limite des plafonds en vigueur."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment activer l’Avance Immédiate ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Domus Premium initie la demande dans l’espace professionnel URSSAF. Vous recevez ensuite un e-mail/SMS de l’URSSAF pour valider l’activation depuis votre espace particulier."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Puis-je arrêter le dispositif ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Oui, l’Avance Immédiate est gratuite et réversible à tout moment depuis votre espace URSSAF."
-      }
-    }
-  ]
-}</script>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script src="js/main.js" defer></script>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-controls="primary-nav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
 
-<script>
-(function anchorScrollToTarget(){
-  function goto(id){
-    var el = document.getElementById(id);
-    if(!el) return;
-    // Try native scroll first
-    el.scrollIntoView({behavior: "smooth", block: "start"});
-    // Extra offset for sticky header (adjust if your header height differs)
-    setTimeout(function(){ window.scrollBy(0, -120); }, 300);
-    // Optional focus to bring it in view for screen readers
-    try { el.setAttribute('tabindex','-1'); el.focus({preventScroll:true}); } catch(e){}
-  }
-  if (location.hash){
-    var id = location.hash.replace(/^#/, '');
-    // If id is "contact" legacy or "form", redirect to contactForm
-    if (id.toLowerCase() === "contact") id = "contactForm";
-    if (id) setTimeout(function(){ goto(id); }, 100);
-  }
-  // Also listen to in-page hash changes
-  window.addEventListener('hashchange', function(){
-    var id = location.hash.replace(/^#/, '');
-    if (id.toLowerCase() === "contact") id = "contactForm";
-    goto(id);
-  });
-})();
-</script>
+      <nav id="primary-nav" class="nav-links">
+        <a href="/index.html#services">Prestations</a>
+        <a href="/index.html#tarifs">Tarifs</a>
+        <a href="/avance-immediate.html" class="active">Avance immédiate</a>
+        <a href="/index.html#realisations">Nos réalisations</a>
+        <a href="/index.html#apropos">À propos</a>
+        <a href="/index.html#faq">FAQ</a>
+        <a class="btn btn-gold" href="/index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
 
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero ai-hero">
+      <div class="gold-wave" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
 
-<script>/*defensiveSubmitCancel*/
-document.addEventListener('DOMContentLoaded', function(){
-  var f = document.getElementById('contactForm');
-  if(!f) return;
-  f.addEventListener('submit', function(e){ e.preventDefault(); return false; });
-});
-</script>
+      <div class="container ai-grid">
+        <div class="hero-copy">
+          <h1>Payez seulement <span class="highlight">50&nbsp;%</span>, on gère le reste.</h1>
+          <p class="lead">
+            Avec l’<strong>Avance Immédiate</strong> (Urssaf), votre crédit d’impôt de 50&nbsp;% est appliqué directement : vous réglez uniquement votre <strong>reste à charge</strong>. Nous vous accompagnons de A à Z, simplement.
+          </p>
+          <ul class="ticks">
+            <li>Entreprise <abbr title="Services à la personne">SAP</abbr> déclarée</li>
+            <li>Un <strong>interlocuteur unique</strong>, réactif</li>
+            <li>Démarches <strong>claires & simplifiées</strong></li>
+          </ul>
+          <div class="cta">
+            <a href="#activer" class="btn btn-gold">Activer l’Avance Immédiate</a>
+            <a href="#comment" class="btn btn-outline">Comment ça marche ?</a>
+          </div>
+          <p class="note">*Avantage fiscal selon éligibilité et plafonds en vigueur (art. 199 sexdecies du CGI).</p>
+        </div>
 
+        <aside class="ai-panel">
+          <h3 style="margin-top:0">Exemple chiffré</h3>
+          <div class="ai-calc">
+            <label class="label" for="montant">Montant de la prestation (€)</label>
+            <input id="montant" class="input" type="number" min="0" value="180" style="width:100%;padding:.65rem .75rem;border-radius:10px;border:1px solid #e5e7eb"/>
+            <div style="height:12px"></div>
+            <div class="row"><span>Total</span><strong id="total">180,00 €</strong></div>
+            <div class="row"><span>Crédit d’impôt (50 %)</span><strong id="credit">- 90,00 €</strong></div>
+            <hr/>
+            <div class="row big"><span>Reste à charge</span><strong id="reste">90,00 €</strong></div>
+          </div>
+          <p class="ai-note">Sous réserve d’éligibilité aux SAP et aux plafonds fiscaux.</p>
+          <div class="badges" style="margin-top:.5rem">
+            <span class="badge">SAP déclarée</span>
+            <span class="badge">Sécurité & RGPD</span>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-<script>/*anchorEnhanceV2*/
-(function(){
-  function targetEl(){
-    return document.getElementById('contactForm') || document.querySelector('form[id*="contact"]');
-  }
-  function goto(hash){
-    var id = (hash||'').replace(/^#/, '');
-    if(!id) return;
-    var wanted = id.toLowerCase();
-    if (['contact', 'contactform', 'form', 'activer'].includes(wanted)) {
-      var el = targetEl();
-      if (el) {
-        el.scrollIntoView({behavior:'smooth', block:'start'});
-        setTimeout(function(){ window.scrollBy(0, -140); }, 250);
-        try { el.setAttribute('tabindex','-1'); el.focus({preventScroll:true}); } catch(e){}
-      }
-    } else {
-      var el2 = document.getElementById(id);
-      if (el2) el2.scrollIntoView({behavior:'smooth', block:'start'});
-    }
-  }
-  if (location.hash) { setTimeout(function(){ goto(location.hash); }, 150); }
-  window.addEventListener('hashchange', function(){ goto(location.hash); });
-})();
-</script>
+    <!-- Process -->
+    <section class="section" id="comment">
+      <div class="container">
+        <h2>Avance Immédiate : simple et transparent</h2>
+        <div class="steps">
+          <div class="step">
+            <span class="step-num">1</span>
+            <h3>Création du dossier</h3>
+            <p>Avec votre accord, nous créons votre dossier dans l’espace Urssaf.</p>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <h3>Activation</h3>
+            <p>Vous recevez un e‑mail/SMS de l’Urssaf : validez l’activation (≈ 1 min).</p>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <h3>Validation des demandes</h3>
+            <p>Après chaque intervention, vous validez la demande : <strong>-50 %</strong> appliqués automatiquement.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- FAQ courte -->
+    <section class="section ai-faq" id="faq-aici">
+      <div class="container">
+        <h2>FAQ — Avance Immédiate</h2>
+        <details><summary>Qui est éligible ?</summary><p>Les particuliers fiscaux en France pour des prestations éligibles réalisées à domicile (cadre SAP).</p></details>
+        <details><summary>Combien de temps pour activer ?</summary><p>Création sous 24 h ouvrées, validation Urssaf en ~1 minute.</p></details>
+        <details><summary>Puis-je arrêter ?</summary><p>Oui, activation/désactivation possibles à tout moment depuis votre espace Urssaf.</p></details>
+      </div>
+    </section>
 
-<script>/*MERCI_AI_REDIRECT_HELPER*/
-window.__goMerciAI__ = function(){ try{ window.location.href = "merci-avance-immediate.html"; }catch(e){} };
-</script>
+    <!-- Formulaire -->
+    <section class="section" id="activer">
+      <div class="container">
+        <h2>On s’occupe de tout — dites‑nous quand vous êtes disponible</h2>
+        <form id="contactForm" class="contact-form" method="POST" onsubmit="return handleAISubmit(event)"
+              data-emailjs-public="C-1wgNtnyKGkvubaH" data-emailjs-service="service_4358zpr" data-emailjs-template="template_dlyytl2">
+          <input type="hidden" name="_subject" value="Demande — Avance Immédiate (Domus Premium)"/>
+          <label>Nom complet
+            <input name="Nom" required type="text" placeholder="Ex. Marie Dupont"/>
+          </label>
+          <label>Votre e‑mail
+            <input name="email" required type="email" placeholder="vous@exemple.fr"/>
+          </label>
+          <label>Téléphone
+            <input name="Telephone" type="tel" placeholder="07 43 63 35 49"/>
+          </label>
+          <label>Code postal de l’intervention
+            <input name="cp" inputmode="numeric" pattern="[0-9]{5}" placeholder="35000" required/>
+          </label>
+          <label>Votre besoin
+            <textarea name="Message" rows="5" placeholder="Type de prestation, date, durée…"></textarea>
+          </label>
+          <label style="display:none;">Ne pas remplir
+            <input name="company" type="text" tabindex="-1" autocomplete="off"/>
+          </label>
+          <label style="display:block; font-weight:400; margin-top:6px;">
+            <input type="checkbox" name="Consentement" required/>
+            J’accepte que mes données soient utilisées pour répondre à ma demande.
+          </label>
+          <button class="btn btn-gold" type="submit">Être rappelé(e)</button>
+          <p class="tiny" id="formMsg" style="margin-top:10px;"></p>
+        </form>
+        <p class="ai-note">Ce formulaire ne déclenche pas l’activation automatique : après réception, nous créons la demande dans l’espace Urssaf puis vous validez depuis votre espace particulier.</p>
+      </div>
+    </section>
+  </main>
 
+  <!-- Footer (same visual language) -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="foot-brand">
+        <picture>
+          <source srcset="assets/logo.webp" type="image/webp"/>
+          <img src="assets/logo.jpg" width="120" height="36" loading="lazy" alt="Logo Domus Premium"/>
+        </picture>
+        <p>Services à la personne – Rennes & alentours</p>
+      </div>
+      <ul class="foot-links">
+        <li><a href="/index.html#services">Prestations</a></li>
+        <li><a href="/index.html#tarifs">Tarifs</a></li>
+        <li><a href="/avance-immediate.html">Avance immédiate</a></li>
+        <li><a href="/index.html#faq">FAQ</a></li>
+        <li><a href="/index.html#contact">Contact</a></li>
+        <li><a href="mentions.html">Mentions légales</a></li>
+        <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+      </ul>
+      <div class="foot-legal">
+        <p>© <span id="year"></span> Domus Premium – Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
 
-<script>/*AI_SUBMIT_HANDLER_V3*/
-(function(){
-  function $(sel, ctx){ return (ctx||document).querySelector(sel); }
-  function val(names, form){
-    for (var i=0;i<names.length;i++){
-      var el = form.querySelector('[name="'+names[i]+'"]');
-      if (el && el.value != null) return el.value;
-    }
-    return "";
-  }
-  function init(){
-    var form = document.getElementById('contactForm') || document.querySelector('form');
-    if (!form) return;
-    form.addEventListener('submit', function(e){ e.preventDefault(); return false; });
-    var btn = document.getElementById('aiSubmit') || form.querySelector('button[type="submit"], button:not([type])');
-    if (btn){ btn.setAttribute('type', 'button'); }
-    var msg = document.getElementById('formMsgAI') || document.getElementById('formMsg');
-
-    function show(t, ok){
-      if (!msg) return;
-      msg.textContent = t;
-      msg.style.color = ok ? "#16a34a" : "#ef4444";
-    }
-
-    async function send(){
-      try {
-        if (msg){ msg.textContent = "Envoi en cours…"; msg.style.color = "#3b82f6"; }
-        var honey = form.querySelector('[name="company"]');
-        if (honey && honey.value.trim() !== ""){ show("Envoi bloqué (anti-spam).", false); return; }
-        var pub = form.getAttribute('data-emailjs-public');
-        if (!pub) throw new Error("Clé publique EmailJS absente (data-emailjs-public).");
-        if (window.emailjs && emailjs.init){ emailjs.init(pub); }
-
-        var payload = {
-          Nom:          val(["Nom","name"], form),
-          email:        val(["email","Email"], form),
-          Telephone:    val(["Telephone","tel","phone"], form) || "",
-          Message:      val(["Message","message"], form),
-          Consentement: form.querySelector('[name="Consentement"]') && form.querySelector('[name="Consentement"]').checked ? "oui" : "non",
-          subject:      val(["_subject"], form) || "Demande — Avance immédiate (Domus Premium)",
-          source:       val(["source"], form) || "Avance immédiate",
-          site:         window.location.hostname,
-          cp:           val(["cp"], form)
-        };
-
-        await emailjs.send("service_4358zpr", "template_dlyytl2", payload);
-        show("✅ Merci, votre message a bien été envoyé !", true);
-        try { form.reset(); } catch(_){}
-        window.location.href = "merci-avance-immediate.html";
-      } catch (err){
-        console.error("EmailJS error:", err);
-        show("❌ Impossible d’envoyer le message (EmailJS). " + ((err && (err.text || err.message)) || ""), false);
-      }
-    }
-
-    if (btn){ btn.addEventListener('click', function(e){ e.preventDefault(); send(); }); }
-    form.addEventListener('keydown', function(e){
-      if (e.key === 'Enter' && !e.shiftKey){ e.preventDefault(); send(); }
+  <!-- Scripts du site -->
+  <script defer src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+      try { emailjs.init("C-1wgNtnyKGkvubaH"); } catch(e) { console.warn("EmailJS init:", e); }
     });
-  }
-  if (document.readyState === "loading"){ document.addEventListener('DOMContentLoaded', init); } else { init(); }
-})();
-</script>
 
+    function handleAISubmit(e){
+      e.preventDefault();
+      const form = e.target;
+      const msg = document.getElementById('formMsg');
+      const honey = form.querySelector('[name="company"]');
+      if(honey && honey.value.trim() !== ""){ msg.textContent = "Envoi bloqué (anti-spam)."; msg.style.color = "#ef4444"; return false; }
 
-<script>
-/*NAV_REWIRE_AIMMEDIATE*/
-(function(){
-  function norm(a){
-    if(!a) return;
-    const t = (a.textContent || "").trim().toLowerCase();
-    if(a.dataset && a.dataset.nav){
-      switch(a.dataset.nav){
-        case "accueil": a.href="/index.html"; return;
-        case "prestations": a.href="/index.html#prestations"; return;
-        case "tarifs": a.href="/index.html#tarifs"; return;
-        case "faq": a.href="/index.html#faq"; return;
-        case "contact": a.href="/index.html#contact"; return;
-      }
+      const payload = {
+        Nom: form.Nom.value || "",
+        email: form.email.value || "",
+        Telephone: form.Telephone.value || "",
+        Message: form.Message.value || "",
+        Consentement: form.Consentement && form.Consentement.checked ? "oui" : "non",
+        subject: form.querySelector('[name="_subject"]')?.value || "Demande — Avance Immédiate",
+        source: "Avance immédiate",
+        site: window.location.hostname,
+        cp: form.cp.value || ""
+      };
+
+      msg.textContent = "Envoi en cours…";
+      msg.style.color = "#3b82f6";
+
+      emailjs.send(form.dataset.emailjsService || "service_4358zpr",
+                   form.dataset.emailjsTemplate || "template_dlyytl2",
+                   payload)
+        .then(function(){
+          msg.textContent = "✅ Merci, votre message a bien été envoyé !";
+          msg.style.color = "#16a34a";
+          try { form.reset(); } catch(_) {}
+          window.location.href = "merci-avance-immediate.html";
+        })
+        .catch(function(err){
+          console.error(err);
+          msg.textContent = "❌ Impossible d’envoyer le message (EmailJS).";
+          msg.style.color = "#ef4444";
+        });
+
+      return false;
     }
-    if (t === "accueil" || t === "home") a.href="/index.html";
-    else if (t.indexOf("prestation") !== -1) a.href = "/index.html#prestations";
-    else if (t.indexOf("tarif") !== -1) a.href = "/index.html#tarifs";
-    else if (t.indexOf("faq") !== -1) a.href = "/index.html#faq";
-    else if (t.indexOf("contact") !== -1) a.href = "/index.html#contact";
-    a.setAttribute("target","_self");
-  }
-  function run(){
-    var header = document.querySelector("header") || document.body;
-    var nav = header.querySelectorAll("nav a, .nav-links a, header a, .menu a");
-    nav.forEach(norm);
-  }
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run);
-  else run();
-})();
-</script>
 
+    // Mini simulateur
+    (function(){
+      const m = document.getElementById('montant');
+      if(!m) return;
+      function fmt(x){ return Number(x).toFixed(2).replace('.', ',') + ' €'; }
+      function update(){
+        let t = parseFloat((m.value||'').toString().replace(/\s/g,'').replace(',', '.'));
+        if (!isFinite(t) || isNaN(t) || t < 0) t = 0;
+        const c = t/2, r = t - c;
+        const total = document.getElementById('total');
+        const credit = document.getElementById('credit');
+        const reste = document.getElementById('reste');
+        if (total) total.textContent = fmt(t);
+        if (credit) credit.textContent = '- ' + fmt(c);
+        if (reste) reste.textContent = fmt(r);
+      }
+      ['input','change','keyup'].forEach(evt => m.addEventListener(evt, update));
+      update();
+    })();
 
-<script>
-/* SIMULATEUR AICI DOMUS PREMIUM — FALLBACK INLINE */
-(function(){
-  const m = document.getElementById('montant');
-  if (!m) return;
-  function fmt(x){return Number(x).toFixed(2).replace('.', ',')+' €';}
-  function update(){
-    const raw = (m.value || '').toString().replace(/\s/g,'').replace(',', '.');
-    let t = parseFloat(raw);
-    if (!isFinite(t) || isNaN(t) || t < 0) t = 0;
-    const c = t / 2;
-    const r = t - c;
-    const total = document.getElementById('total');
-    const credit = document.getElementById('credit');
-    const reste = document.getElementById('reste');
-    if (total)  total.textContent  = fmt(t);
-    if (credit) credit.textContent = '- ' + fmt(c);
-    if (reste)  reste.textContent  = fmt(r);
-  }
-  ['input','change','keyup'].forEach(evt => m.addEventListener(evt, update));
-  update();
-})();
-</script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Bouton WhatsApp flottant (cohérent avec l'index) -->
+  <a class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+     href="https://wa.me/33743633549?text=Bonjour%20Domus%20Premium,%20je%20souhaite%20des%20informations%20sur%20l%27Avance%20Immedi%C3%Aate.">💬</a>
 </body>
 </html>
