@@ -137,6 +137,11 @@
   border-color: #0b1f36 !important;
 }
 </style>
+  <meta name="theme-color" content="#0b1f36"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png"/>
+  <link rel="manifest" href="/manifest.webmanifest"/>
 </head>
 <body>
   <header class="site-header">
@@ -260,22 +265,22 @@
 
             <div>
               <label for="nom">Nom complet</label>
-              <input id="nom" name="Nom" required type="text" placeholder="Ex. Marie Dupont"/>
+              <input id="nom" name="Nom" required type="text" placeholder="Ex. Marie Dupont" autocomplete="name">
             </div>
 
             <div>
               <label for="email">Votre e-mail</label>
-              <input id="email" name="email" required type="email" placeholder="vous@exemple.fr"/>
+              <input id="email" name="email" required type="email" placeholder="vous@exemple.fr" autocomplete="email">
             </div>
 
             <div>
               <label for="tel">Téléphone</label>
-              <input id="tel" name="Telephone" type="tel" placeholder="07 43 63 35 49"/>
+              <input id="tel" name="Telephone" type="tel" placeholder="07 43 63 35 49" autocomplete="tel" inputmode="tel">
             </div>
 
             <div>
               <label for="cp">Code postal de l’intervention</label>
-              <input id="cp" name="cp" inputmode="numeric" pattern="[0-9]{5}" placeholder="35000" required/>
+              <input id="cp" name="cp" inputmode="numeric" pattern="[0-9]{5}" placeholder="35000" required autocomplete="postal-code">
             </div>
 
             <div>
@@ -329,7 +334,7 @@
   </footer>
 
   <script defer src="js/main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
   <script>
     document.addEventListener("DOMContentLoaded", function(){
       try { emailjs.init("C-1wgNtnyKGkvubaH"); } catch(e) { console.warn("EmailJS init:", e); }

@@ -64,7 +64,7 @@
 <title>Domus Premium</title>
 <!-- ... autres balises ... -->
 <!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FTXY42ZBNT"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FTXY42ZBNT" defer></script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -186,6 +186,11 @@
     }
   ]
 }</script>
+  <meta name="theme-color" content="#0b1f36"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png"/>
+  <link rel="manifest" href="/manifest.webmanifest"/>
 </head>
 <body>
 <header class="site-header">
@@ -613,7 +618,7 @@ Services à la personne à Rennes &amp; alentours (50 % crédit d’impôt selon
 </footer>
 <script defer="" src="js/main.js"></script>
 <!-- EmailJS SDK -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
 <script>
     document.addEventListener("DOMContentLoaded", function(){
       try { emailjs.init("C-1wgNtnyKGkvubaH"); } catch(e) { console.warn("EmailJS init:", e); }
@@ -645,5 +650,10 @@ Services à la personne à Rennes &amp; alentours (50 % crédit d’impôt selon
 }
 </style>
 <a aria-label="Appeler Domus Premium" class="dp-call-sticky" href="tel:+33743633549">Appeler</a>
-<script src="../assets/lazyload-helper.js"></script></body>
+<script src="../assets/lazyload-helper.js" defer></script></body>
+  <meta name="theme-color" content="#0b1f36"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png"/>
+  <link rel="manifest" href="/manifest.webmanifest"/>
 </head></html>
