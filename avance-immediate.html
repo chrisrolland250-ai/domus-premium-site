@@ -104,6 +104,20 @@
       display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:2px;
     }
     .tiny{ color:#6b7280; font-size:.9rem; }
+  
+/* --- Patch visibilité champ Code postal --- */
+#cp{
+  background:#ffffff !important;
+  color:#0b1f36 !important;
+  border:1.5px solid #e5e7eb !important;
+}
+#cp::placeholder{ color:#6b7280 !important; opacity:1; }
+#cp:focus{
+  outline:none;
+  border-color:#d4af37 !important;
+  box-shadow: 0 0 0 3px rgba(212,175,55,.2) !important;
+}
+
   </style>
 </head>
 <body>
