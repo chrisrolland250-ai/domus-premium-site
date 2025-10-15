@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       await emailjs.send("service_4358zpr", "template_dlyytl2", payload);
-      window.location.href = "merci.html";
+      window.location.href = "merci-avance-immediate.html";
     } catch (err) {
       if (msg) { msg.textContent = "❌ Impossible d’envoyer le message (EmailJS). Vérifiez la configuration."; msg.style.color = "#ffb4b4"; }
       console.error("EmailJS error (Avance Immédiate):", err);

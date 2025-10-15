@@ -253,9 +253,9 @@
       <div class="container">
         <h2>On s’occupe de tout — dites-nous quand vous êtes disponible</h2>
         <div class="contact-form-card">
-          <form id="contactForm" class="contact-form" method="POST" onsubmit="return handleAISubmit(event)"
+          <form id="aiciForm" class="contact-form" method="POST" onsubmit="return handleAISubmit(event)"
                 data-emailjs-public="C-1wgNtnyKGkvubaH" data-emailjs-service="service_4358zpr" data-emailjs-template="template_dlyytl2">
-            <input type="hidden" name="_subject" value="Demande — Avance Immédiate (Domus Premium)"/>
+            <input type="hidden" name="_subject" value="Demande Avance Immédiate – Domus Premium"/>
             <input type="hidden" name="source" value="Avance immédiate"/>
 
             <div>
@@ -297,7 +297,8 @@
               <button class="btn btn-gold" type="submit">Être rappelé(e)</button>
               <p class="tiny" id="formMsg"></p>
             </div>
-          </form>
+            <input type="hidden" name="form_type" value="aici">
+</form>
         </div>
         <p class="ai-note" style="margin-top:14px;">Ce formulaire ne déclenche pas l’activation automatique : après réception, nous créons la demande dans l’espace Urssaf puis vous validez depuis votre espace particulier.</p>
       </div>
