@@ -253,9 +253,9 @@
       <div class="container">
         <h2>On s’occupe de tout — dites-nous quand vous êtes disponible</h2>
         <div class="contact-form-card">
-          <form id="aiciForm" class="contact-form" method="POST" onsubmit="return handleAISubmit(event)"
+          <form id="contactForm" class="contact-form" method="POST" onsubmit="return handleAISubmit(event)"
                 data-emailjs-public="C-1wgNtnyKGkvubaH" data-emailjs-service="service_4358zpr" data-emailjs-template="template_dlyytl2">
-            <input type="hidden" name="_subject" value="Demande Avance Immédiate – Domus Premium"/>
+            <input type="hidden" name="_subject" value="Demande — Avance Immédiate (Domus Premium)"/>
             <input type="hidden" name="source" value="Avance immédiate"/>
 
             <div>
@@ -297,8 +297,7 @@
               <button class="btn btn-gold" type="submit">Être rappelé(e)</button>
               <p class="tiny" id="formMsg"></p>
             </div>
-            <input type="hidden" name="form_type" value="aici">
-</form>
+          </form>
         </div>
         <p class="ai-note" style="margin-top:14px;">Ce formulaire ne déclenche pas l’activation automatique : après réception, nous créons la demande dans l’espace Urssaf puis vous validez depuis votre espace particulier.</p>
       </div>
@@ -401,13 +400,10 @@
   <a class="whatsapp-float" target="_blank" rel="noopener noreferrer"
      href="https://wa.me/33743633549?text=Bonjour%20Domus%20Premium,%20je%20souhaite%20des%20informations%20sur%20l%27Avance%20Immedi%C3%Aate.">💬</a>
 
-  <!-- CTA fixes (Appeler + WhatsApp) -->
-  <a href="tel:+33743633549" class="call-cta" aria-label="Appeler Domus Premium">
-    📞 Appeler le 07 43 63 35 49
-  </a>
-  <a href="https://wa.me/33743633549?text=Bonjour%20Domus%20Premium%2C%20je%20souhaite%20des%20informations%20sur%20l%E2%80%99Avance%20Imm%C3%A9diate"
-     class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp">
-    <img src="assets/whatsapp.svg" alt="WhatsApp" width="28" height="28">
-  </a>
+  <!-- CTA copied from homepage -->
+  <a aria-label="Appeler Domus Premium au 07 43 63 35 49" class="btn btn-outline" href="tel:+33743633549">
+  Appeler le 07 43 63 35 49
+</a>
+  <a class="whatsapp-float" href="https://wa.me/33743633549?text=Bonjour%20Domus%20Premium,%20je%20souhaite%20avoir%20des%20informations." rel="noopener noreferrer" target="_blank">💬</a>
 </body>
 </html>

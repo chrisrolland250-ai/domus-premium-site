@@ -68,69 +68,17 @@ summary:focus-visible{outline:2px solid currentColor;outline-offset:2px}
 @media (max-width:640px){#faq summary{padding-right:4px}}
 
 
-/* === Domus Premium: Mobile side white-bands (gutters) fix === */
-html, body { margin: 0; padding: 0; }
-
-@media (max-width: 768px) {
-  html, body { overflow-x: hidden; }
-
-  .container, .wrapper, .content, .section, .main, .page, .page-inner, .site-content {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    max-width: 100% !important;
-  }
-
-  img, svg, video, canvas {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  header, .hero, .banner, footer, section {
-    border-radius: 0 !important;
-  }
+/* Ensure WhatsApp floating button visible on mobile */
+.whatsapp-float{
+  position: fixed;
+  right: 20px;
+  bottom: 88px; /* above call button */
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  z-index: 999;
 }
-
-/* === Fix overlap between "Appeler" CTA and WhatsApp === */
-@media (max-width: 768px) {
-  body { padding-bottom: calc(64px + 24px + env(safe-area-inset-bottom)); }
-
-  a[href^="tel:"].cta-call, 
-  a[href^="tel:"].call-cta {
-    position: fixed;
-    left: 16px;
-    right: 16px;
-    bottom: calc(16px + env(safe-area-inset-bottom));
-    min-height: 52px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 14px;
-    text-align: center;
-    z-index: 1000;
-    text-decoration: none;
-    background:#0a2b4e;
-    color:#fff;
-    font-weight:600;
-  }
-
-  .whatsapp-fab,
-  .whatsapp,
-  .wa-float,
-  a[href*="wa.me"],
-  a[href*="api.whatsapp.com"] {
-    position: fixed !important;
-    right: 20px !important;
-    bottom: calc(88px + env(safe-area-inset-bottom)) !important;
-    z-index: 999 !important;
-  }
-}
-
-/* === CTA always fixed on mobile (AICI page included) === */
-@media (max-width: 768px) {
-  .call-cta { position: fixed !important; left: 16px !important; right: 16px !important; bottom: calc(16px + env(safe-area-inset-bottom)) !important; z-index: 1000; }
-  .whatsapp-fab { position: fixed !important; right: 20px !important; bottom: calc(88px + env(safe-area-inset-bottom)) !important; z-index: 999; }
-}
-/* === End of mobile patches === */
