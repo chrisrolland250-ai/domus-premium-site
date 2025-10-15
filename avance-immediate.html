@@ -18,6 +18,7 @@
   <meta property="og:description" content="Activez l’Avance Immédiate avec Domus Premium. 50 % de crédit d’impôt déduit immédiatement."/>
   <meta property="og:image" content="https://www.domuspremium.fr/assets/og/accueil-1200x630.jpg"/>
 
+  <link rel="icon" type="image/png" href="assets/favicon.png"/>
   <link rel="canonical" href="https://www.domuspremium.fr/avance-immediate.html"/>
 
   <style>
@@ -136,30 +137,6 @@
   border-color: #0b1f36 !important;
 }
 </style>
-  <meta name="theme-color" content="#0b1f36"/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png?v=202510142116">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png?v=202510142116">
-  <link rel="shortcut icon" href="/assets/icons/favicon.ico?v=202510142116">
-  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png?v=202510142116">
-  <link rel="manifest" href="/manifest.webmanifest">
-
-<script>
-(function(){try{
-  var v='202510142116';
-  var sel=['link[rel="icon"]','link[rel="shortcut icon"]','link[rel*="apple-touch-icon"]'];
-  sel.forEach(function(s){document.querySelectorAll(s).forEach(function(l){
-    var href=l.getAttribute('href'); if(!href) return;
-    // don't re-bust data URIs / http(s)
-    if(/^https?:/i.test(href) || href.startsWith('data:')) return;
-    var u=new URL(href, location.origin);
-    u.searchParams.set('v', v);
-    l.setAttribute('href', u.pathname + '?' + u.searchParams.toString());
-  });});
-}catch(e){}})();
-</script>
-
 </head>
 <body>
   <header class="site-header">
@@ -283,22 +260,22 @@
 
             <div>
               <label for="nom">Nom complet</label>
-              <input id="nom" name="Nom" required type="text" placeholder="Ex. Marie Dupont" autocomplete="name">
+              <input id="nom" name="Nom" required type="text" placeholder="Ex. Marie Dupont"/>
             </div>
 
             <div>
               <label for="email">Votre e-mail</label>
-              <input id="email" name="email" required type="email" placeholder="vous@exemple.fr" autocomplete="email">
+              <input id="email" name="email" required type="email" placeholder="vous@exemple.fr"/>
             </div>
 
             <div>
               <label for="tel">Téléphone</label>
-              <input id="tel" name="Telephone" type="tel" placeholder="07 43 63 35 49" autocomplete="tel" inputmode="tel">
+              <input id="tel" name="Telephone" type="tel" placeholder="07 43 63 35 49"/>
             </div>
 
             <div>
               <label for="cp">Code postal de l’intervention</label>
-              <input id="cp" name="cp" inputmode="numeric" pattern="[0-9]{5}" placeholder="35000" required autocomplete="postal-code">
+              <input id="cp" name="cp" inputmode="numeric" pattern="[0-9]{5}" placeholder="35000" required/>
             </div>
 
             <div>
@@ -352,7 +329,7 @@
   </footer>
 
   <script defer src="js/main.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function(){
       try { emailjs.init("C-1wgNtnyKGkvubaH"); } catch(e) { console.warn("EmailJS init:", e); }
