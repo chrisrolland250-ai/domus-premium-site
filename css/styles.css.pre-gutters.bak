@@ -45,29 +45,3 @@ img[loading="lazy"] { content-visibility: auto; }
 /* touch targets */
 .btn, a.btn, button, .nav a { min-height: 44px; padding-top:.6rem; padding-bottom:.6rem; }
 html { -webkit-text-size-adjust: 100%; }
-
-
-/* === Domus Premium: Mobile side white-bands (gutters) fix === */
-html, body { margin: 0; padding: 0; }
-
-/* Prevent horizontal scroll; ensure full-bleed sections on small screens */
-@media (max-width: 768px) {
-  html, body { overflow-x: hidden; }
-  .container, .wrapper, .content, .section, .main, .page, .page-inner, .site-content {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-  /* Images should never overflow the viewport width */
-  img, svg, video, canvas {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-  /* Remove any accidental border radius that creates side gaps on blocks */
-  header, .hero, .banner, footer, section {
-    border-radius: 0 !important;
-  }
-}
-/* === End gutters fix === */
