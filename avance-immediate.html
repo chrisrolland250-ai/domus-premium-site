@@ -179,7 +179,7 @@
           <h1>Ne payez que votre reste à charge</h1>
 
     <div class="ai-badge" aria-label="Avance immédiate — un service proposé par l’Urssaf">
-      <img src="/assets/Urssaf_Baseline-RVB.jpg" alt="Urssaf — Avance immédiate">
+      <img src="/assets/Urssaf_Baseline-RVB.jpg" alt="Urssaf — Avance immédiate" loading="lazy" height="44">
       <div class="ai-badge-text">
         <strong>Avance immédiate</strong><br>
         <span>Un service proposé par l’Urssaf</span>
@@ -200,7 +200,7 @@
             <a href="#activer" class="btn btn-gold">Activer l’Avance Immédiate</a>
             <a href="#comment" class="btn btn-outline">Comment ça marche ?</a>
           </div>
-          <p class="ai-small">Activation et validations sur <a href="https://particulier.urssaf.fr" target="_blank" rel="noopener">particulier.urssaf.fr</a>.</p>
+          <p class="ai-small">Activation et validations sur <a href="https://particulier.urssaf.fr" target="_blank" rel="noopener noreferrer">particulier.urssaf.fr</a>.</p>
         </div>
 
         <aside class="ai-panel" aria-label="Exemple chiffré">
@@ -231,10 +231,11 @@
       <div class="container ai-info" role="note" aria-label="Informations importantes">
         <h3>À retenir</h3>
         <ul>
-          <li>Après chaque intervention réalisée, nous soumettons une <strong>demande de paiement</strong> via l’Urssaf ; vous la <strong>validez</strong> ensuite dans votre espace <a href="https://particulier.urssaf.fr" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;">particulier.urssaf.fr</a>.</li>
+          <li>Après chaque intervention réalisée, nous soumettons une <strong>demande de paiement</strong> via l’Urssaf ; vous la <strong>validez</strong> ensuite dans votre espace <a href="https://particulier.urssaf.fr" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:underline;">particulier.urssaf.fr</a>.</li>
           <li>Le dispositif est <strong>optionnel et gratuit</strong> pour le client.</li>
           <li>Le crédit d’impôt est de <strong>50 %</strong>, dans la limite d’un plafond annuel de base de <strong>12 000 €</strong> (plafond majorable selon la situation fiscale).</li>
           <li>Les <strong>prestations sont effectuées avant</strong> l’envoi de la demande de paiement.</li>
+<li><strong>Sécurité :</strong> Domus Premium ne vous demandera jamais vos <u>identifiants</u> ni <u>mots de passe</u> Urssaf.</li>
         </ul>
       </div>
     </section>
@@ -251,7 +252,7 @@
           <div class="step">
             <span class="step-num">2</span>
             <h3>Activation</h3>
-            <p>Vous recevez un e-mail/SMS de l’Urssaf ; <strong>activez</strong> votre compte sur <a href="https://particulier.urssaf.fr" target="_blank" rel="noopener">particulier.urssaf.fr</a> (≈ 1 min).</p>
+            <p>Vous recevez un e-mail/SMS de l’Urssaf ; <strong>activez</strong> votre compte sur <a href="https://particulier.urssaf.fr" target="_blank" rel="noopener noreferrer">particulier.urssaf.fr</a> (≈ 1 min).</p>
           </div>
           <div class="step">
             <span class="step-num">3</span>
@@ -274,22 +275,22 @@
 
             <div>
               <label for="nom">Nom complet</label>
-              <input id="nom" name="Nom" required type="text" placeholder="Ex. Marie Dupont"/>
+              <input id="nom" name="Nom" required type="text" placeholder="Ex. Marie Dupont"/ autocomplete="name">
             </div>
 
             <div>
               <label for="email">Votre e-mail</label>
-              <input id="email" name="email" required type="email" placeholder="vous@exemple.fr"/>
+              <input id="email" name="email" required type="email" placeholder="vous@exemple.fr"/ autocomplete="email">
             </div>
 
             <div>
               <label for="tel">Téléphone</label>
-              <input id="tel" name="Telephone" type="tel" placeholder="07 43 63 35 49"/>
+              <input id="tel" name="Telephone" type="tel" placeholder="07 43 63 35 49"/ autocomplete="tel" inputmode="tel" pattern="^(\+33|0)[1-9](\d{2}){4}$">
             </div>
 
             <div>
               <label for="cp">Code postal de l’intervention</label>
-              <input id="cp" name="cp" inputmode="numeric" pattern="[0-9]{5}" placeholder="35000" required/>
+              <input id="cp" name="cp" inputmode="numeric" pattern="[0-9]{5}" placeholder="35000" required/ autocomplete="postal-code">
             </div>
 
             <div>
@@ -322,7 +323,7 @@
   Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, 
   vous pouvez exercer vos droits d’accès, de rectification, d’opposition et de suppression des données vous concernant 
   en nous contactant à <a href="mailto:domuspremium35@gmail.com">domuspremium35@gmail.com</a>.  
-  Pour en savoir plus, consultez notre <a href="/confidentialite.html" target="_blank" rel="noopener">Politique de confidentialité</a>.
+  Pour en savoir plus, consultez notre <a href="/confidentialite.html" target="_blank" rel="noopener noreferrer">Politique de confidentialité</a>.
 </p>
 <!-- RGPD/URSSAF: paragraphe d'information ajouté automatiquement au-dessus de la note d'activation. -->
 <p class="ai-note" style="margin-top:14px;">Ce formulaire ne déclenche pas l’activation automatique : après réception, nous créons la demande dans l’espace Urssaf puis vous validez depuis votre espace particulier.</p>
