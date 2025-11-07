@@ -366,6 +366,11 @@
       e.preventDefault();
       const form = e.target;
       const msg = document.getElementById('formMsg');
+      // Guard against double submission
+      if (form.dataset.sending === '1') { return false; }
+      form.dataset.sending = '1';
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Envoi…'; }
       const honey = form.querySelector('[name="company"]');
       if(honey && honey.value.trim() !== ""){ msg.textContent = "Envoi bloqué (anti-spam)."; msg.style.color = "#ef4444"; return false; }
 
@@ -394,6 +399,7 @@
           window.location.href = "merci-avance-immediate.html";
         })
         .catch(function(err){
+          form.dataset.sending = ''; const submitBtn = form.querySelector('button[type="submit"]'); if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Être rappelé(e)'; }
           console.error(err);
           msg.textContent = "❌ Impossible d’envoyer le message (EmailJS).";
           msg.style.color = "#ef4444";
