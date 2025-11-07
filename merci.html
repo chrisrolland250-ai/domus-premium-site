@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Merci — Domus Premium</title>
+  <meta name="description" content="Merci pour votre message ! Un conseiller Domus Premium vous répondra sous 24 h.">
+  <link rel="stylesheet" href="css/styles.min.css">
+  <style>
+    body { font-family: Inter, sans-serif; margin:0; background:#fff; color:#0b1f36; text-align:center; }
+    header { background:#0b1f36; color:#fff; padding:60px 20px 40px; }
+    h1 { font-size:clamp(1.8rem, 3vw, 2.4rem); margin:0; }
+    p.lead { margin:12px 0 0; font-size:1.1rem; color:#e2e8f0; }
+    .box {
+      max-width:680px; margin:40px auto; background:#fff; padding:36px 28px;
+      border-radius:18px; box-shadow:0 6px 24px rgba(11,31,54,.08); text-align:left;
+    }
+    a.btn-primary {
+      display:inline-block; margin-top:14px; padding:12px 24px;
+      background:#0b1f36; color:#fff; border-radius:50px;
+      text-decoration:none; font-weight:600; transition:background .2s;
+    }
+    a.btn-primary:hover { background:#09223d; }
+    a.link { color:#0b1f36; margin-left:10px; font-weight:500; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Merci pour votre message 🙌</h1>
+    <p class="lead">Nous l’avons bien reçu. Un conseiller Domus Premium vous contactera sous peu.</p>
+  </header>
+
+  <main>
+    <div class="box">
+      <h2>Envie d’activer l’Avance Immédiate ?</h2>
+      <p>Si vous le souhaitez, vous pouvez dès maintenant transmettre votre demande d’<strong>Avance Immédiate (Urssaf)</strong>.
+      C’est gratuit et cela prend 2 minutes.</p>
+      <a href="avance-immediate.html#activer" class="btn-primary">Faire ma demande d’Avance Immédiate</a>
+      <a href="index.html" class="link">Retour à l’accueil</a>
+    </div>
+  </main>
+
+  <footer style="padding:20px 0; color:#6b7280;">
+    <p>© <span id="year"></span> Domus Premium — Tous droits réservés.</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
