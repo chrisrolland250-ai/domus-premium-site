@@ -6,11 +6,11 @@
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <title>Domus Premium – Services à la personne à Rennes &amp; alentours</title>
 <meta content="Petits travaux, jardinage, assistance seniors et aide administrative à Rennes et alentours. 28 €/h TTC (14 €/h après crédit d’impôt SAP). Devis sous 24h." name="description"/>
-<link href="https://fonts.googleapis.com" rel="noopener noreferrer preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="noopener noreferrer preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="noopener noreferrer stylesheet"/>
-<link as="image" href="assets/hero.webp" imagesizes="(max-width: 768px) 100vw, 50vw" imagesrcset="assets/hero.webp 1200w" rel="noopener noreferrer preload"/>
-<link href="css/styles.min.css" rel="noopener noreferrer stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link as="image" href="assets/hero.webp" imagesizes="(max-width: 768px) 100vw, 50vw" imagesrcset="assets/hero.webp 1200w" rel="preload"/>
+<link href="css/styles.min.css" rel="stylesheet"/>
 <meta content="Domus Premium – Services à la personne à Rennes &amp; alentours" property="og:title"/>
 <meta content="Petits travaux, jardinage, assistance seniors et aide administrative. 14 €/h après crédit d’impôt (SAP)." property="og:description"/>
 <meta content="website" property="og:type"/>
@@ -33,8 +33,8 @@
     "url": "https://domuspremium.fr"
   }
   </script>
-<link href="assets/favicon.png" rel="icon noopener noreferrer" type="image/png"/><link href="site.webmanifest" rel="manifest noopener noreferrer"/><link href="assets/apple-touch-icon.png" rel="apple-touch-icon noopener noreferrer" sizes="180x180"/><link as="font" crossorigin="anonymous" href="https://fonts.gstatic.com/s/inter/v12/UcCO3Fwr0vQ.ttf" rel="noopener noreferrer preload" type="font/woff2"/><meta content="#0b1f36" name="theme-color"/><meta content="Petits travaux, bricolage, jardinage léger, courses et aide administrative à Rennes. Devis sous 24 h, 50 % de crédit d’impôt (selon éligibilité)." name="description"/>
-<link href="https://www.domuspremium.fr/" rel="canonical noopener noreferrer"/>
+<link href="assets/favicon.png" rel="icon" type="image/png"/><link href="site.webmanifest" rel="manifest"/><link href="assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/><link as="font" crossorigin="anonymous" href="https://fonts.gstatic.com/s/inter/v12/UcCO3Fwr0vQ.ttf" rel="preload" type="font/woff2"/><link href="https://domuspremium.fr" rel="canonical"/><meta content="#0b1f36" name="theme-color"/><meta content="Petits travaux, bricolage, jardinage léger, courses et aide administrative à Rennes. Devis sous 24 h, 50 % de crédit d’impôt (selon éligibilité)." name="description"/>
+<link href="https://www.domuspremium.fr/" rel="canonical"/>
 <meta content="website" property="og:type"/>
 <meta content="Domus Premium" property="og:site_name"/>
 <meta content="Domus Premium — Services à la personne à Rennes &amp; alentours" property="og:title"/>
@@ -191,7 +191,7 @@
 <header class="site-header">
 <div class="container nav">
 <a class="brand" href="#top">
-<picture><source srcset="assets/logo.webp" type="image/webp"/><img alt="Logo Domus Premium" height="120" loading="lazy" src="assets/logo.jpg" width="160"/></picture>
+<picture><source srcset="assets/logo.webp" type="image/webp"/><picture><source srcset="assets/logo.webp" type="image/webp"/><picture><source srcset="assets/logo.webp" type="image/webp"/><img alt="Logo Domus Premium" height="120" loading="lazy" src="assets/logo.jpg" width="160"/></picture></picture></picture>
 <span>Domus Premium</span>
 </a>
 <!-- Bouton burger mobile -->
@@ -207,6 +207,41 @@
 <a class="btn btn-gold" href="/index.html#contact">Contact</a>
 </nav>
 </div>
+
+<!-- Domus Premium: avatar portrait (injected) -->
+<picture class="avatar" style="width:128px;height:128px;border-radius:50%;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.12);">
+  <source type="image/webp"
+          srcset="images/christophe-256.webp 256w,
+                  images/christophe-512.webp 512w,
+                  images/christophe-1024.webp 1024w"
+          sizes="(max-width: 640px) 96px, 128px">
+  <img src="images/christophe-512.jpg"
+       alt="Christophe Rolland – Domus Premium (Rennes)"
+       loading="lazy" width="128" height="128"
+       style="display:block;width:100%;height:100%;object-fit:cover;">
+</picture>
+
+
+<!-- Domus Premium: hero with portrait (injected) -->
+<section class="hero" style="padding:40px 20px;">
+  <div class="hero-inner" style="max-width:1100px;margin:0 auto;display:grid;gap:28px;grid-template-columns: 1.2fr .8fr;align-items:center;">
+    <div class="hero-text">
+      <h1 style="margin:0 0 12px;line-height:1.15;">Domus Premium – Services à la personne à Rennes</h1>
+      <p style="font-size:1.1rem;margin:0 0 10px;">Entretien, bricolage, petits travaux extérieurs. Intervention rapide sur Rennes & alentours.</p>
+      <ul style="margin:6px 0 16px;padding-left:18px;">
+        <li>✅ Devis gratuit</li>
+        <li>✅ Crédit d’impôt 50 % (éligible)</li>
+        <li>📞 07 68 75 76 35 · ✉️ domuspremium35@gmail.com</li>
+      </ul>
+      <a href="#contact" style="display:inline-block;padding:12px 18px;border-radius:10px;background:#0f6;color:#072;text-decoration:none;font-weight:700;">Demander un devis</a>
+    </div>
+    <picture class="hero-portrait" style="justify-self:center;width:min(380px, 70vw);aspect-ratio:1/1;border-radius:24px;overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,.16);">
+      <source type="image/webp" srcset="images/christophe-512.webp 512w, images/christophe-1024.webp 1024w" sizes="(max-width: 900px) 45vw, 380px">
+      <img src="images/christophe-512.jpg" alt="Christophe Rolland – Domus Premium" loading="eager" width="380" height="380" style="width:100%;height:100%;object-fit:cover;">
+    </picture>
+  </div>
+</section>
+
 </header>
 <main id="top">
 <section class="hero">
@@ -233,7 +268,7 @@
 <p class="note">*Selon éligibilité au dispositif fiscal en vigueur (article 199 sexdecies du CGI).</p>
 </div>
 <div class="hero-art hero-overlay">
-<picture><source srcset="assets/hero.webp" type="image/webp"/><img alt="Illustration Domus Premium sur smartphone" height="800" loading="lazy" src="assets/hero.png" width="1200"/></picture>
+<picture><source srcset="assets/hero.webp" type="image/webp"/><picture><source srcset="assets/hero.webp" type="image/webp"/><img alt="Illustration Domus Premium sur smartphone" height="800" loading="lazy" src="assets/hero.png" width="1200"/></picture></picture>
 </div>
 </div>
 </section>
@@ -497,7 +532,7 @@
         Aidez-nous à grandir en laissant un avis sur Google en 30 secondes.
       </p>
 <div style="display:flex;gap:.75rem;flex-wrap:wrap">
-<a href="https://share.google/t0bkg84a0TLYfkIuK" rel="nofollow noopener noreferrer" style="text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1rem;border-radius:9999px;background:#1a73e8;color:#fff;font-weight:600" target="_blank">
+<a href="https://share.google/t0bkg84a0TLYfkIuK" rel="noopener nofollow" style="text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;padding:.75rem 1rem;border-radius:9999px;background:#1a73e8;color:#fff;font-weight:600" target="_blank">
 <svg aria-hidden="true" fill="currentColor" height="18" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg">
 <path d="M12 2a10 10 0 1 0 10 10h-8v2h6a8 8 0 1 1-2.34-5.66L20 6.34A10 10 0 0 0 12 2z"></path>
 </svg>
@@ -581,18 +616,22 @@
 </label>
 <label style="display:block; font-weight:400; margin-top:6px;">
 <input name="Consentement" required="" type="checkbox"/>
-            J’accepte que mes données soient utilisées par <strong>Domus Premium</strong> pour répondre à ma demande, conformément à la réglementation en vigueur.
+            J’accepte que mes données soient utilisées pour répondre à ma demande.
           </label>
 <button aria-label="Envoyer le formulaire de contact" class="btn btn-gold" type="submit">Envoyer</button><p class="privacy-note tiny">Les informations recueillies via ce formulaire sont utilisées uniquement pour répondre à votre demande. Pour en savoir plus, consultez notre <a href="confidentialite.html">Politique de confidentialité</a></p>
 <p class="tiny" id="formMsg" style="margin-top:10px;"></p>
-</form>
+<input aria-label="Appeler Domus Premium au 07 43 63 35 49" name="_autoresponse" tel:+33743633549"="" type="hidden" value="Bonjour,
+
+Merci pour votre message. Nous revenons vers vous sous 24 h (hors dimanches et jours fériés). — Domus Premium
+Tél. &lt;a href="/>07 43 63 35 49
+Services à la personne à Rennes &amp; alentours (50 % crédit d’impôt selon éligibilité)</form>
 </div>
 </section>
 </main>
 <footer class="site-footer">
 <div class="container footer-grid">
 <div class="foot-brand">
-<picture><source srcset="assets/logo.webp" type="image/webp"/><img alt="Logo Domus Premium" height="36" loading="lazy" src="assets/logo.jpg" width="120"/></picture>
+<picture><source srcset="assets/logo.webp" type="image/webp"/><picture><source srcset="assets/logo.webp" type="image/webp"/><img alt="Logo Domus Premium" height="36" loading="lazy" src="assets/logo.jpg" width="120"/></picture></picture>
 <p>Services à la personne – Rennes &amp; alentours</p>
 </div>
 <ul class="foot-links">
@@ -607,8 +646,7 @@
 </div>
 <div class="foot-legal"></div>
 </footer>
-<script defer src="js/main.js"></script>
-<script>try{document.getElementById("year").textContent=new Date().getFullYear();}catch(e){}</script>
+<script defer="" src="js/main.js"></script>
 <!-- EmailJS SDK -->
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
@@ -645,28 +683,8 @@
 <script src="../assets/lazyload-helper.js"></script>
 <!-- Floating action buttons (global) -->
 <div aria-label="Actions rapides" class="fab-stack" role="group">
-<a aria-label="Écrire sur WhatsApp" class="fab-whatsapp" href="https://wa.me/33743633549?text=Bonjour%20Domus%20Premium%2C%20je%20souhaite%20des%20informations." rel="noopener noreferrer" target="_blank">💬</a>
+<a aria-label="Écrire sur WhatsApp" class="fab-whatsapp" href="https://wa.me/33743633549?text=Bonjour%20Domus%20Premium%2C%20je%20souhaite%20des%20informations." rel="noopener" target="_blank">💬</a>
 <a aria-label="Appeler Domus Premium au 07 43 63 35 49" class="fab-call" href="tel:+33743633549">Appeler</a>
 </div>
-<div id="cookie-banner" style="position:fixed;left:16px;right:16px;bottom:16px;background:#0b1f36;color:#fff;padding:12px 14px;border-radius:12px;display:none;z-index:9999;">
-  <p style="margin:0 0 8px 0;">Ce site n’utilise que des traceurs techniques indispensables (pas de cookies publicitaires).</p>
-  <button id="cookie-ok" style="background:#d4af37;color:#0b1f36;border:none;border-radius:999px;padding:8px 14px;font-weight:700;cursor:pointer;">OK</button>
-</div>
-<script>
-(function(){
-  try{
-    if(!localStorage.getItem('cookie-info')){
-      var b=document.getElementById('cookie-banner');
-      var ok=document.getElementById('cookie-ok');
-      if(b && ok){
-        b.style.display='block';
-        ok.addEventListener('click', function(){
-          localStorage.setItem('cookie-info','1');
-          b.remove();
-        });
-      }
-    }
-  }catch(e){}
-})();
-</script>
-</body></html>
+</body>
+</head></html>
