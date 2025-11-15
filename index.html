@@ -226,9 +226,11 @@
 </ul>
 <div class="cta">
 <a class="btn btn-gold" href="/index.html#contact">Demander un devis</a>
-<a aria-label="Appeler Domus Premium au 07 43 63 35 49" class="btn btn-outline" href="tel:+33743633549">
-  Appeler le 07 43 63 35 49
-</a>
+<div id="phone-section">
+  <a aria-label="Appeler Domus Premium au 07 43 63 35 49" class="btn btn-outline" href="tel:+33743633549">
+    Appeler le 07 43 63 35 49
+  </a>
+</div>
 </div>
 <p class="note">*Selon éligibilité au dispositif fiscal en vigueur (article 199 sexdecies du CGI).</p>
 </div>
@@ -660,13 +662,61 @@ Services à la personne à Rennes &amp; alentours (50 % crédit d’impôt selon
 .whatsapp-float:hover {
   background-color: #1ebe5d;
 }
+
+/* Bouton d'appel flottant bleu/doré */
+.dp-call-floating {
+  position: fixed;
+  bottom: 90px; /* au-dessus de la bulle WhatsApp */
+  right: 20px;
+  background: linear-gradient(135deg, #0B1F36 0%, #0B1F36 60%, #D4AF37 100%);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 14px 22px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 18px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+  transition: opacity .25s, transform .25s;
+  z-index: 99999;
+}
+.dp-call-floating:hover {
+  transform: scale(1.06);
+}
 </style>
-<a aria-label="Appeler Domus Premium" class="dp-call-sticky" href="tel:+33743633549">Appeler</a>
 <script src="../assets/lazyload-helper.js"></script>
 <!-- Floating action buttons (global) -->
 <div aria-label="Actions rapides" class="fab-stack" role="group">
 <a aria-label="Écrire sur WhatsApp" class="fab-whatsapp" href="https://wa.me/33743633549?text=Bonjour%20Domus%20Premium%2C%20je%20souhaite%20des%20informations." rel="noopener" target="_blank">💬</a>
-<a aria-label="Appeler Domus Premium au 07 43 63 35 49" class="fab-call" href="tel:+33743633549">Appeler</a>
 </div>
+<a aria-label="Appeler Domus Premium" class="dp-call-floating" href="tel:+33743633549">Appeler</a>
+
+<!-- Script : masque le bouton flottant quand la section téléphone est visible -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const phoneSection = document.querySelector("#phone-section");
+  const floatingCall = document.querySelector(".dp-call-floating");
+
+  if (!phoneSection || !floatingCall) return;
+
+  const toggleFloatingCall = () => {
+    const rect = phoneSection.getBoundingClientRect();
+    const visible = rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (visible) {
+      floatingCall.style.opacity = "0";
+      floatingCall.style.transform = "scale(0.7)";
+      floatingCall.style.pointerEvents = "none";
+    } else {
+      floatingCall.style.opacity = "1";
+      floatingCall.style.transform = "scale(1)";
+      floatingCall.style.pointerEvents = "auto";
+    }
+  };
+
+  toggleFloatingCall();
+  window.addEventListener("scroll", toggleFloatingCall);
+});
+</script>
+
 </body>
 </head></html>
