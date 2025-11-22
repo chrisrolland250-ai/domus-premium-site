@@ -1,1 +1,427 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domus Premium - Saisie & Suivi</title>
+<style>
+body { font-family: Arial, sans-serif; padding: 10px; background:#f5f5f5; margin:0; }
+h2, h3 { text-align:center; margin:10px 0; }
+.container { background:#fff; padding:12px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.05); margin-bottom:12px; }
+label { font-weight:bold; display:block; margin-top:8px; font-size:14px; }
+input, textarea, select { width:100%; padding:8px; margin-top:4px; border-radius:6px; border:1px solid #ccc; font-size:14px; box-sizing:border-box; }
+button { width:100%; padding:10px; background:#0b1f36; color:#fff; font-size:15px; border:none; border-radius:6px; margin-top:10px; }
+.small-btn { width:auto; padding:6px 10px; font-size:12px; margin-right:6px; margin-top:4px; }
+.section-title { font-size:16px; font-weight:bold; margin-bottom:6px; }
+#list .item { background:#fff; padding:8px; border-radius:8px; margin-bottom:8px; border-left:4px solid #0b1f36; font-size:13px; }
+.stats-row { display:flex; flex-wrap:wrap; gap:8px; }
+.stat-box { flex:1 1 45%; background:#fff; border-radius:8px; padding:8px; box-shadow:0 0 8px rgba(0,0,0,0.03); font-size:13px; }
+.badge { display:inline-block; padding:2px 6px; border-radius:12px; background:#0b1f36; color:#fff; font-size:11px; }
+nav { display:flex; gap:4px; margin-bottom:8px; position:sticky; top:0; background:#f5f5f5; padding-bottom:4px; z-index:10; }
+nav button { flex:1; padding:8px; font-size:13px; }
+nav button.active { background:#123766; }
+.hidden { display:none; }
+#loginOverlay { position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.65); display:flex; align-items:center; justify-content:center; z-index:100; }
+#loginBox { background:#fff; padding:16px; border-radius:10px; width:90%; max-width:320px; box-shadow:0 0 12px rgba(0,0,0,0.3); }
+#loginBox h3 { margin-top:0; text-align:center; }
+.info { font-size:12px; color:#555; margin-top:4px; }
+</style>
+</head>
+<body>
 
+<div id="loginOverlay">
+  <div id="loginBox">
+    <h3>Domus Premium – Accès</h3>
+    <p id="loginMessage" style="font-size:13px;"></p>
+    <label>Code PIN (4 chiffres)</label>
+    <input type="password" id="pinInput" maxlength="4" inputmode="numeric">
+    <button onclick="handleLogin()">Valider</button>
+    <p class="info">Le code est stocké uniquement sur cet appareil (localStorage).<br/>Safari / iCloud peuvent le synchroniser selon tes réglages, mais ce n'est pas garanti.</p>
+  </div>
+</div>
+
+<h2>Domus Premium – Saisie & Suivi</h2>
+
+<nav>
+  <button id="tabSaisieBtn" class="active" onclick="showTab('saisie')">Saisie chantier</button>
+  <button id="tabDevisBtn" onclick="showTab('devis')">Module devis</button>
+  <button id="tabClientsBtn" onclick="showTab('clients')">Suivi clients</button>
+  <button id="tabStatsBtn" onclick="showTab('stats')">CA & Marge</button>
+</nav>
+
+<!-- TAB 1 : SAISIE CHANTIER -->
+<div id="tabSaisie" class="tab">
+  <div class="container">
+    <div class="section-title">➕ Nouveau chantier</div>
+    <label>Date</label>
+    <input type="date" id="date">
+
+    <label>Client</label>
+    <input type="text" id="client">
+
+    <label>Chiffre d'affaires (€)</label>
+    <input type="number" id="ca" step="0.01">
+
+    <label>Fournitures (€)</label>
+    <input type="number" id="four" step="0.01">
+
+    <label>Remarques</label>
+    <textarea id="note"></textarea>
+
+    <button onclick="saveChantier()">Enregistrer le chantier</button>
+  </div>
+
+  <div class="container">
+    <div class="section-title">📋 Historique des chantiers (appareil)</div>
+    <div id="list"></div>
+    <button class="small-btn" onclick="exportCSV()">Exporter en CSV (Google Sheets)</button>
+    <button class="small-btn" style="background:#777;" onclick="clearAll()">Effacer tout (attention)</button>
+  </div>
+</div>
+
+<!-- TAB 2 : MODULE DEVIS -->
+<div id="tabDevis" class="tab hidden">
+  <div class="container">
+    <div class="section-title">🧮 Module devis Domus Premium</div>
+    <label>Taux horaire (€/h)</label>
+    <input type="number" id="dv_taux" value="30" step="1">
+
+    <label>Heures prévues</label>
+    <input type="number" id="dv_heures" value="7" step="0.5">
+
+    <label>Fournitures prévues (€)</label>
+    <input type="number" id="dv_four" value="150" step="1">
+
+    <label>Nom du client (optionnel)</label>
+    <input type="text" id="dv_client">
+
+    <button onclick="calcDevis()">Calculer le devis</button>
+
+    <div id="devisResult" style="margin-top:10px; font-size:14px;"></div>
+
+    <button class="small-btn" onclick="saveFromDevis()">Enregistrer comme chantier</button>
+  </div>
+</div>
+
+<!-- TAB 3 : CLIENTS -->
+<div id="tabClients" class="tab hidden">
+  <div class="container">
+    <div class="section-title">👥 Suivi clients</div>
+    <div id="clientsList" style="font-size:13px;"></div>
+  </div>
+</div>
+
+<!-- TAB 4 : STATS -->
+<div id="tabStats" class="tab hidden">
+  <div class="container">
+    <div class="section-title">📈 Suivi CA / Marge / Dépenses</div>
+    <div class="stats-row">
+      <div class="stat-box">
+        <div>Total CA</div>
+        <div id="st_ca" style="font-weight:bold;"></div>
+      </div>
+      <div class="stat-box">
+        <div>Total Fournitures</div>
+        <div id="st_four" style="font-weight:bold;"></div>
+      </div>
+      <div class="stat-box">
+        <div>Total Charges (21,2%)</div>
+        <div id="st_charges" style="font-weight:bold;"></div>
+      </div>
+      <div class="stat-box">
+        <div>Bénéfice net total</div>
+        <div id="st_benef" style="font-weight:bold;"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section-title">📆 Par mois</div>
+    <div id="statsByMonth" style="font-size:13px;"></div>
+    <p class="info">Pour une synchronisation Google Sheets, tu peux utiliser le CSV exporté dans l’onglet “Saisie chantier”, puis l’importer dans Google Sheets.</p>
+  </div>
+</div>
+
+<script>
+// --- LOGIN SIMPLE (PIN local) ---
+function initLogin() {
+  const pin = localStorage.getItem('domus_pin');
+  const msg = document.getElementById('loginMessage');
+  if (!pin) {
+    msg.textContent = "Définis ton code PIN Domus Premium pour sécuriser l'accès sur cet appareil.";
+  } else {
+    msg.textContent = "Entre ton code PIN pour accéder à l'application.";
+  }
+}
+function handleLogin() {
+  const pinStored = localStorage.getItem('domus_pin');
+  const pinInput = document.getElementById('pinInput').value.trim();
+  if (!pinStored) {
+    if (pinInput.length !== 4) {
+      alert("Choisis un code PIN de 4 chiffres.");
+      return;
+    }
+    localStorage.setItem('domus_pin', pinInput);
+    document.getElementById('loginOverlay').style.display = 'none';
+  } else {
+    if (pinInput === pinStored) {
+      document.getElementById('loginOverlay').style.display = 'none';
+    } else {
+      alert("Code incorrect.");
+    }
+  }
+}
+
+// --- NAVIGATION TABS ---
+function showTab(tab) {
+  document.getElementById('tabSaisie').classList.add('hidden');
+  document.getElementById('tabDevis').classList.add('hidden');
+  document.getElementById('tabClients').classList.add('hidden');
+  document.getElementById('tabStats').classList.add('hidden');
+  document.getElementById('tab' + capitalize(tab)).classList.remove('hidden');
+
+  document.getElementById('tabSaisieBtn').classList.remove('active');
+  document.getElementById('tabDevisBtn').classList.remove('active');
+  document.getElementById('tabClientsBtn').classList.remove('active');
+  document.getElementById('tabStatsBtn').classList.remove('active');
+
+  if (tab === 'saisie') document.getElementById('tabSaisieBtn').classList.add('active');
+  if (tab === 'devis') document.getElementById('tabDevisBtn').classList.add('active');
+  if (tab === 'clients') document.getElementById('tabClientsBtn').classList.add('active');
+  if (tab === 'stats') document.getElementById('tabStatsBtn').classList.add('active');
+
+  if (tab === 'clients') buildClientsView();
+  if (tab === 'stats') buildStats();
+}
+function capitalize(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
+
+// --- DATA ---
+function getData() {
+  return JSON.parse(localStorage.getItem('domus') || "[]");
+}
+function setData(data) {
+  localStorage.setItem('domus', JSON.stringify(data));
+}
+
+// --- SAISIE CHANTIER ---
+function saveChantier(){
+    let entry = {
+        type: "chantier",
+        date: document.getElementById('date').value,
+        client: document.getElementById('client').value,
+        ca: parseFloat(document.getElementById('ca').value || 0),
+        four: parseFloat(document.getElementById('four').value || 0),
+        note: document.getElementById('note').value
+    };
+    entry.charges = entry.ca * 0.212;
+    entry.benef = entry.ca - entry.four - entry.charges;
+
+    let data = getData();
+    data.push(entry);
+    setData(data);
+    clearChantierForm();
+    loadList();
+}
+function clearChantierForm(){
+    document.getElementById('date').value = "";
+    document.getElementById('client').value = "";
+    document.getElementById('ca').value = "";
+    document.getElementById('four').value = "";
+    document.getElementById('note').value = "";
+}
+function loadList(){
+    let data = getData();
+    let html = "";
+    data.forEach((e,i)=>{
+        if(e.type !== "chantier" && e.type !== "devis") return;
+        html += `
+        <div class="item">
+            <div><span class="badge">${e.type === "devis" ? "Devis" : "Chantier"}</span> <b>${e.date || ""} - ${e.client || ""}</b></div>
+            <div>CA: ${e.ca.toFixed(2)} €</div>
+            <div>Fournitures: ${e.four.toFixed(2)} €</div>
+            <div>Charges: ${e.charges.toFixed(2)} €</div>
+            <div>Bénéfice: <b>${e.benef.toFixed(2)} €</b></div>
+            ${e.note ? `<div>Note: ${e.note}</div>` : ""}
+        </div>`;
+    });
+    document.getElementById('list').innerHTML = html || "<em>Aucun chantier saisi pour l’instant.</em>";
+}
+
+// --- EXPORT CSV (pour Google Sheets) ---
+function exportCSV(){
+  let data = getData();
+  if(data.length === 0){
+    alert("Aucune donnée à exporter.");
+    return;
+  }
+  let rows = [["Type","Date","Client","CA","Fournitures","Charges","Benefice","Note"]];
+  data.forEach(e=>{
+    rows.push([
+      e.type || "",
+      e.date || "",
+      e.client || "",
+      e.ca || 0,
+      e.four || 0,
+      e.charges || 0,
+      e.benef || 0,
+      (e.note || "").replace(/\n/g," ")
+    ]);
+  });
+  let csv = rows.map(r=>r.join(";")).join("\n");
+  let blob = new Blob([csv], {type:"text/csv;charset=utf-8;"});
+  let url = URL.createObjectURL(blob);
+  let a = document.createElement("a");
+  a.href = url;
+  a.download = "domuspremium_export.csv";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+// --- CLEAR DATA ---
+function clearAll(){
+  if(confirm("Effacer toutes les données locales ?")){
+    localStorage.removeItem('domus');
+    loadList();
+  }
+}
+
+// --- MODULE DEVIS ---
+function calcDevis(){
+  let taux = parseFloat(document.getElementById('dv_taux').value || 0);
+  let heures = parseFloat(document.getElementById('dv_heures').value || 0);
+  let four = parseFloat(document.getElementById('dv_four').value || 0);
+
+  let ca_mo = taux * heures;
+  let total = ca_mo + four;
+  let credit = ca_mo * 0.5;
+  let reste = total - credit;
+  let charges = total * 0.212;
+  let benef = total - four - charges;
+
+  let html = `
+    <div><b>CA main-d'œuvre :</b> ${ca_mo.toFixed(2)} €</div>
+    <div><b>Total devis TTC :</b> ${total.toFixed(2)} €</div>
+    <div><b>Crédit d'impôt (50% MO) :</b> ${credit.toFixed(2)} €</div>
+    <div><b>Reste à charge client :</b> ${reste.toFixed(2)} €</div>
+    <div><b>Charges estimées (21,2%) :</b> ${charges.toFixed(2)} €</div>
+    <div><b>Bénéfice net estimé :</b> ${benef.toFixed(2)} €</div>
+    <p class="info">Tu peux recopier ces chiffres dans ton devis PDF ou Excel.</p>
+  `;
+  document.getElementById('devisResult').innerHTML = html;
+}
+
+function saveFromDevis(){
+  let taux = parseFloat(document.getElementById('dv_taux').value || 0);
+  let heures = parseFloat(document.getElementById('dv_heures').value || 0);
+  let four = parseFloat(document.getElementById('dv_four').value || 0);
+  let client = document.getElementById('dv_client').value;
+
+  let ca_mo = taux * heures;
+  let total = ca_mo + four;
+  let charges = total * 0.212;
+  let benef = total - four - charges;
+
+  let entry = {
+    type: "devis",
+    date: new Date().toISOString().slice(0,10),
+    client: client,
+    ca: total,
+    four: four,
+    charges: charges,
+    benef: benef,
+    note: "Enregistré depuis le module devis."
+  };
+  let data = getData();
+  data.push(entry);
+  setData(data);
+  alert("Enregistré dans l'historique (onglet Saisie chantier).");
+  loadList();
+}
+
+// --- SUIVI CLIENTS ---
+function buildClientsView(){
+  let data = getData();
+  let clients = {};
+  data.forEach(e=>{
+    if(!e.client) return;
+    if(!clients[e.client]) clients[e.client] = {ca:0, benef:0, nb:0};
+    clients[e.client].ca += e.ca || 0;
+    clients[e.client].benef += e.benef || 0;
+    clients[e.client].nb += 1;
+  });
+  let html = "";
+  let names = Object.keys(clients);
+  if(names.length === 0){
+    html = "<em>Aucun client enregistré pour l’instant.</em>";
+  } else {
+    names.sort();
+    names.forEach(name=>{
+      let c = clients[name];
+      html += `
+        <div class="item">
+          <b>${name}</b><br>
+          Chantiers : ${c.nb}<br>
+          CA total : ${c.ca.toFixed(2)} €<br>
+          Bénéfice total : ${c.benef.toFixed(2)} €
+        </div>`;
+    });
+  }
+  document.getElementById('clientsList').innerHTML = html;
+}
+
+// --- STATS ---
+function buildStats(){
+  let data = getData();
+  let totalCA = 0, totalFour = 0, totalCharges = 0, totalBenef = 0;
+  let months = {}; // key: YYYY-MM
+
+  data.forEach(e=>{
+    totalCA += e.ca || 0;
+    totalFour += e.four || 0;
+    totalCharges += e.charges || 0;
+    totalBenef += e.benef || 0;
+
+    if(e.date){
+      let key = e.date.slice(0,7); // YYYY-MM
+      if(!months[key]) months[key] = {ca:0, four:0, charges:0, benef:0};
+      months[key].ca += e.ca || 0;
+      months[key].four += e.four || 0;
+      months[key].charges += e.charges || 0;
+      months[key].benef += e.benef || 0;
+    }
+  });
+
+  document.getElementById('st_ca').textContent = totalCA.toFixed(2) + " €";
+  document.getElementById('st_four').textContent = totalFour.toFixed(2) + " €";
+  document.getElementById('st_charges').textContent = totalCharges.toFixed(2) + " €";
+  document.getElementById('st_benef').textContent = totalBenef.toFixed(2) + " €";
+
+  let html = "";
+  let keys = Object.keys(months).sort();
+  if(keys.length === 0){
+    html = "<em>Aucune donnée pour l’instant.</em>";
+  } else {
+    keys.forEach(k=>{
+      let m = months[k];
+      html += `
+        <div class="item">
+          <b>${k}</b><br>
+          CA : ${m.ca.toFixed(2)} €<br>
+          Fournitures : ${m.four.toFixed(2)} €<br>
+          Charges : ${m.charges.toFixed(2)} €<br>
+          Bénéfice : <b>${m.benef.toFixed(2)} €</b>
+        </div>`;
+    });
+  }
+  document.getElementById('statsByMonth').innerHTML = html;
+}
+
+// INIT
+initLogin();
+loadList();
+</script>
+
+</body>
+</html>
