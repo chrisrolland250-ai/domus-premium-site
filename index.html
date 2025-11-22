@@ -213,31 +213,32 @@
 
 
   <style>
-    /* Mise en page responsive de la section Mon histoire & Domus Premium */
-    @media (max-width: 768px) {
-      #apropos .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-      #apropos aside {
-        margin-right: 0 !important;
-        margin-bottom: 1.5rem;
-      }
-      #apropos img {
-        max-width: 220px;
-        height: auto;
-      }
+  /* Photo Mon histoire : version mobile + bureau */
+  @media (max-width: 768px) {
+    #apropos .container {
+      display: block;
     }
+    #apropos aside {
+      display: none !important;
+    }
+    #apropos .mobile-photo {
+      display: block;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    #apropos .mobile-photo img {
+      max-width: 220px;
+      height: auto;
+      border-radius: 999px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.18);
+    }
+  }
+  @media (min-width: 769px) {
+    #apropos .mobile-photo {
+      display: none;
+    }
+  }
   </style>
-
-
-<style>
-@media (max-width: 768px){
-  #apropos aside { display:none !important; }
-  #apropos .mobile-photo { display:block !important; }
-}
-</style>
 
 </head>
 <body>
@@ -294,6 +295,16 @@
 </section>
 <section class="section" id="apropos">
   <div class="container" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:2.5rem;">
+    <div class="mobile-photo">
+      <picture>
+        <source srcset="assets/christophe-about.webp" type="image/webp"/>
+        <img src="assets/christophe-about.png" alt="Christophe Rolland – Domus Premium" loading="lazy"/>
+      </picture>
+      <p style="margin-top:.75rem;font-size:.95rem;color:#111827;">
+        Christophe Rolland<br/>
+        <span style="font-size:.9rem;opacity:.85;">Fondateur de Domus Premium</span>
+      </p>
+    </div>
     <aside style="flex:0 0 260px;max-width:260px;margin-right:2.5rem;text-align:center;">
       <picture>
         <source srcset="assets/christophe-about.webp" type="image/webp"/>
