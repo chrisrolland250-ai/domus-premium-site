@@ -259,6 +259,36 @@
       }
     }
   </style>
+
+<style>
+.big-tax{
+  font-size:1.3rem;
+  font-weight:700;
+  color:#b58c1a;
+}
+.tax-badge{
+  display:inline-block;
+  background:#b58c1a;
+  color:white;
+  font-weight:700;
+  padding:0.5rem 1rem;
+  border-radius:10px;
+  margin:0.7rem 0 1rem;
+  font-size:1.05rem;
+}
+.tax-badge span{
+  font-weight:400;
+  font-size:0.9rem;
+}
+@media(max-width:768px){
+  .big-tax{font-size:1.15rem;}
+  .tax-badge{
+    font-size:0.95rem;
+    padding:0.45rem 0.85rem;
+  }
+}
+</style>
+
 </head>
 <body>
 <header class="site-header">
@@ -295,6 +325,11 @@
 <div class="hero-sap-logo">
   <img src="assets/logo-sap.webp" alt="Services à la personne (SAP)" loading="lazy"/>
 </div>
+
+<div class="tax-badge">
+  50% <span>crédit d’impôt</span>
+</div>
+
 <ul class="ticks">
 <li>Entreprise déclarée <abbr title="Services à la personne">SAP</abbr></li>
 <li><strong>50 %</strong> de réduction grâce au crédit d’impôt*</li>
