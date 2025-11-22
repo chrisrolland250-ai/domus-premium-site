@@ -275,17 +275,30 @@
 
 
   <style>
-    /* Ajustement de la bulle dorée sous les boutons (gold-wave) */
-    .hero .gold-wave{
-      inset:auto -40% -42% -40%;
-      background:radial-gradient(circle at 15% 120%, rgba(200,160,70,0.32) 0, rgba(200,160,70,0.12) 40%, rgba(200,160,70,0) 72%);
+  /* Ajustement précis de la bulle dorée (gold-wave) */
+  .hero .gold-wave {
+    position: absolute;
+    inset: auto -28% -56% -28% !important;
+    width: 420px !important;
+    height: 420px !important;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle at 30% 120%,
+      rgba(200,160,70,0.30) 0%,
+      rgba(200,160,70,0.18) 40%,
+      rgba(200,160,70,0) 75%
+    ) !important;
+    pointer-events: none;
+    z-index: 0 !important;
+  }
+
+  /* Sur mobile : bulle désactivée */
+  @media (max-width: 768px) {
+    .hero .gold-wave {
+      display: none !important;
     }
-    @media (max-width: 768px){
-      .hero .gold-wave{
-        display:none;
-      }
-    }
-  </style>
+  }
+</style>
 
 </head>
 <body>
