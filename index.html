@@ -273,6 +273,20 @@
     }
   </style>
 
+
+  <style>
+    /* Ajustement de la bulle dorée sous les boutons (gold-wave) */
+    .hero .gold-wave{
+      inset:auto -40% -42% -40%;
+      background:radial-gradient(circle at 15% 120%, rgba(200,160,70,0.32) 0, rgba(200,160,70,0.12) 40%, rgba(200,160,70,0) 72%);
+    }
+    @media (max-width: 768px){
+      .hero .gold-wave{
+        display:none;
+      }
+    }
+  </style>
+
 </head>
 <body>
 <header class="site-header">
