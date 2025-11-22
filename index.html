@@ -211,6 +211,26 @@
 }
 </style>
 
+
+  <style>
+    /* Mise en page responsive de la section Mon histoire & Domus Premium */
+    @media (max-width: 768px) {
+      #apropos .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #apropos aside {
+        margin-right: 0 !important;
+        margin-bottom: 1.5rem;
+      }
+      #apropos img {
+        max-width: 220px;
+        height: auto;
+      }
+    }
+  </style>
+
 </head>
 <body>
 <header class="site-header">
@@ -264,6 +284,29 @@
 </div>
 </div>
 </section>
+<section class="section" id="apropos">
+  <div class="container" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:2.5rem;">
+    <aside style="flex:0 0 260px;max-width:260px;margin-right:2.5rem;text-align:center;">
+      <picture>
+        <source srcset="assets/christophe-about.webp" type="image/webp"/>
+        <img src="assets/christophe-about.png" alt="Christophe Rolland – Domus Premium" loading="lazy" style="border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.18);display:block;"/>
+      </picture>
+      <p style="margin-top:.75rem;font-size:.95rem;color:#111827;">
+        Christophe Rolland<br/>
+        <span style="font-size:.9rem;opacity:.85;">Fondateur de Domus Premium</span>
+      </p>
+    </aside>
+    <div style="flex:1 1 260px;min-width:260px;">
+      <h2>Mon histoire &amp; Domus Premium</h2>
+      <p>Je m'appelle Christophe, et depuis toujours j’aime comprendre, réparer et construire. Enfant, je démontais mes jouets pour les remonter, puis je réparais des vélos et des motos. J’ai toujours aimé bricoler et redonner vie à ce qui ne fonctionne plus.</p>
+<p>Mon parcours s’est ensuite construit dans plusieurs métiers manuels : menuiserie, chauffage, plomberie, sanitaire, maçonnerie, construction de maisons, reconditionnement de palettes, puis aménagement intérieur et isolation. Chaque expérience m’a appris quelque chose, et surtout confirmé que j’aime aider et dépanner.</p>
+<p>Aujourd’hui, après de nombreuses années dans le salariat, j’ai décidé de créer Domus Premium, une entreprise familiale qui reflète mes valeurs : sérieux, honnêteté, proximité et goût du travail bien fait. C’est pour moi un retour à mes premiers amours, avec l’envie de mettre mes compétences et mon savoir-faire au service de ceux qui en ont vraiment besoin.</p>
+<p>Domus Premium est une entreprise à taille humaine, née de mes valeurs et de ma passion pour le travail bien fait : le bricolage, les finitions, le service et l’humain avant tout.</p>
+<p>Je crois profondément qu’on peut travailler dans ce qui nous passionne. Et Domus Premium est né de cette conviction.</p>
+    </div>
+  </div>
+</section>
+
 <section class="section" id="services">
 <div class="container">
 <h2>Nos prestations</h2>
@@ -547,34 +590,7 @@
 </div>
 </section>
 <!-- /Section: Laisser un avis Google -->
-<section class="section" id="apropos">
-<div class="container" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:2.5rem;">
-<div style="flex:1 1 260px;min-width:260px;">
-<h2>À propos de Domus Premium</h2><div class="mobile-photo"><picture><source srcset="assets/christophe-about.webp" type="image/webp"/><img alt="Christophe Rolland – Domus Premium" loading="lazy" src="assets/christophe-about.png"/></picture></div>
-<p><strong>Domus Premium</strong> est une <strong>entreprise familiale et à taille humaine</strong>, implantée à Rennes et ses environs.</p>
-<p>Nous accordons une grande importance à la <strong>relation humaine</strong> et à la <strong>confiance mutuelle</strong>, au-delà de la simple prestation.
-      Toujours le même intervenant, une meilleure compréhension de vos besoins et un vrai lien de proximité.</p>
-<ul>
-<li><strong>Ponctualité &amp; sérieux</strong> dans chaque prestation</li>
-<li><strong>Écoute &amp; transparence</strong> pour des devis clairs et sans surprise</li>
-<li><strong>Respect &amp; professionnalisme</strong> à chaque étape</li>
-</ul>
-<p>Grâce au cadre <strong>Services à la Personne (SAP)</strong>, vos prestations sont éligibles au
-         <strong>crédit d’impôt de 50 %</strong>.</p>
-<p class="about-closing"><em>Notre fierté : améliorer votre quotidien avec efficacité, simplicité et humanité.</em></p>
-</div>
-<aside style="flex:0 0 260px;max-width:260px;margin-left:auto;text-align:center;">
-<picture>
-<source srcset="assets/christophe-about.webp" type="image/webp"/>
-<img alt="Christophe Rolland – Domus Premium" loading="lazy" src="assets/christophe-about.png" style="width:100%;height:auto;border-radius:50%;box-shadow:0 8px 24px rgba(0,0,0,.18);background:#000;display:block;"/>
-</picture>
-<p style="margin-top:.75rem;font-size:.95rem;color:#111827;">
-        Christophe Rolland<br/>
-<span style="font-size:.9rem;opacity:.85;">Fondateur de Domus Premium</span>
-</p>
-</aside>
-</div>
-</section>
+
 <section class="section" id="faq">
 <div class="container">
 <h2>FAQ</h2>
