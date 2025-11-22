@@ -38,20 +38,32 @@
   </style>
 
   <style>
-    /* Mise en page responsive de la page Mon histoire */
-    @media (max-width: 768px) {
-      .about-grid {
-        flex-direction: column;
-        align-items: center;
-      }
-      .about-aside {
-        margin: 0 0 1.5rem 0 !important;
-      }
-      .about-aside img {
-        max-width: 220px;
-        height: auto;
-      }
+  /* Photo Mon histoire : version mobile + bureau (page dédiée) */
+  @media (max-width: 768px) {
+    .about-grid {
+      flex-direction: column;
+      align-items: center;
     }
+    .about-aside {
+      display: none !important;
+    }
+    .about-mobile-photo {
+      display: block;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .about-mobile-photo img {
+      max-width: 220px;
+      height: auto;
+      border-radius: 999px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.18);
+    }
+  }
+  @media (min-width: 769px) {
+    .about-mobile-photo {
+      display: none;
+    }
+  }
   </style>
 
 </head>
@@ -94,10 +106,22 @@
           les tâches du quotidien avec sérieux, simplicité et proximité.
         </p>
       </div>
+      </div>
     </section>
 
     <section class="about-section">
-      <div class="container about-grid">
+      <div class="container">
+        <div class="about-mobile-photo">
+          <picture>
+            <source srcset="assets/christophe-about.webp" type="image/webp"/>
+            <img src="assets/christophe-about.png" alt="Christophe Rolland – Domus Premium" loading="lazy"/>
+          </picture>
+          <p style="margin-top:.75rem;font-size:.95rem;color:#111827;text-align:center;">
+            Christophe Rolland<br/>
+            <span style="font-size:.9rem;opacity:.85;">Fondateur de Domus Premium</span>
+          </p>
+        </div>
+        <div class="about-grid">
         <div class="about-main">
           <h2>Mon histoire &amp; Domus Premium</h2>
           <p>Je m'appelle Christophe, et depuis toujours j’aime comprendre, réparer et construire. Enfant, je démontais mes jouets pour les remonter, puis je réparais des vélos et des motos. J’ai toujours aimé bricoler et redonner vie à ce qui ne fonctionne plus.</p>
