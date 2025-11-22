@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Domus Premium - Saisie & Suivi</title>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="apple-touch-icon.png">
 <style>
 body { font-family: Arial, sans-serif; padding: 10px; background:#f5f5f5; margin:0; }
 h2, h3 { text-align:center; margin:10px 0; }
@@ -49,28 +51,21 @@ nav button.active { background:#123766; }
   <button id="tabStatsBtn" onclick="showTab('stats')">CA & Marge</button>
 </nav>
 
-<!-- TAB 1 : SAISIE CHANTIER -->
 <div id="tabSaisie" class="tab">
   <div class="container">
     <div class="section-title">➕ Nouveau chantier</div>
     <label>Date</label>
     <input type="date" id="date">
-
     <label>Client</label>
     <input type="text" id="client">
-
     <label>Chiffre d'affaires (€)</label>
     <input type="number" id="ca" step="0.01">
-
     <label>Fournitures (€)</label>
     <input type="number" id="four" step="0.01">
-
     <label>Remarques</label>
     <textarea id="note"></textarea>
-
     <button onclick="saveChantier()">Enregistrer le chantier</button>
   </div>
-
   <div class="container">
     <div class="section-title">📋 Historique des chantiers (appareil)</div>
     <div id="list"></div>
@@ -79,31 +74,23 @@ nav button.active { background:#123766; }
   </div>
 </div>
 
-<!-- TAB 2 : MODULE DEVIS -->
 <div id="tabDevis" class="tab hidden">
   <div class="container">
     <div class="section-title">🧮 Module devis Domus Premium</div>
     <label>Taux horaire (€/h)</label>
     <input type="number" id="dv_taux" value="30" step="1">
-
     <label>Heures prévues</label>
     <input type="number" id="dv_heures" value="7" step="0.5">
-
     <label>Fournitures prévues (€)</label>
     <input type="number" id="dv_four" value="150" step="1">
-
     <label>Nom du client (optionnel)</label>
     <input type="text" id="dv_client">
-
     <button onclick="calcDevis()">Calculer le devis</button>
-
     <div id="devisResult" style="margin-top:10px; font-size:14px;"></div>
-
     <button class="small-btn" onclick="saveFromDevis()">Enregistrer comme chantier</button>
   </div>
 </div>
 
-<!-- TAB 3 : CLIENTS -->
 <div id="tabClients" class="tab hidden">
   <div class="container">
     <div class="section-title">👥 Suivi clients</div>
@@ -111,7 +98,6 @@ nav button.active { background:#123766; }
   </div>
 </div>
 
-<!-- TAB 4 : STATS -->
 <div id="tabStats" class="tab hidden">
   <div class="container">
     <div class="section-title">📈 Suivi CA / Marge / Dépenses</div>
@@ -134,7 +120,6 @@ nav button.active { background:#123766; }
       </div>
     </div>
   </div>
-
   <div class="container">
     <div class="section-title">📆 Par mois</div>
     <div id="statsByMonth" style="font-size:13px;"></div>
@@ -143,7 +128,6 @@ nav button.active { background:#123766; }
 </div>
 
 <script>
-// --- LOGIN SIMPLE (PIN local) ---
 function initLogin() {
   const pin = localStorage.getItem('domus_pin');
   const msg = document.getElementById('loginMessage');
@@ -171,8 +155,6 @@ function handleLogin() {
     }
   }
 }
-
-// --- NAVIGATION TABS ---
 function showTab(tab) {
   document.getElementById('tabSaisie').classList.add('hidden');
   document.getElementById('tabDevis').classList.add('hidden');
@@ -195,15 +177,12 @@ function showTab(tab) {
 }
 function capitalize(s){ return s.charAt(0).toUpperCase() + s.slice(1); }
 
-// --- DATA ---
 function getData() {
   return JSON.parse(localStorage.getItem('domus') || "[]");
 }
 function setData(data) {
   localStorage.setItem('domus', JSON.stringify(data));
 }
-
-// --- SAISIE CHANTIER ---
 function saveChantier(){
     let entry = {
         type: "chantier",
@@ -246,8 +225,6 @@ function loadList(){
     });
     document.getElementById('list').innerHTML = html || "<em>Aucun chantier saisi pour l’instant.</em>";
 }
-
-// --- EXPORT CSV (pour Google Sheets) ---
 function exportCSV(){
   let data = getData();
   if(data.length === 0){
@@ -278,16 +255,12 @@ function exportCSV(){
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
-
-// --- CLEAR DATA ---
 function clearAll(){
   if(confirm("Effacer toutes les données locales ?")){
     localStorage.removeItem('domus');
     loadList();
   }
 }
-
-// --- MODULE DEVIS ---
 function calcDevis(){
   let taux = parseFloat(document.getElementById('dv_taux').value || 0);
   let heures = parseFloat(document.getElementById('dv_heures').value || 0);
@@ -311,7 +284,6 @@ function calcDevis(){
   `;
   document.getElementById('devisResult').innerHTML = html;
 }
-
 function saveFromDevis(){
   let taux = parseFloat(document.getElementById('dv_taux').value || 0);
   let heures = parseFloat(document.getElementById('dv_heures').value || 0);
@@ -339,8 +311,6 @@ function saveFromDevis(){
   alert("Enregistré dans l'historique (onglet Saisie chantier).");
   loadList();
 }
-
-// --- SUIVI CLIENTS ---
 function buildClientsView(){
   let data = getData();
   let clients = {};
@@ -370,21 +340,17 @@ function buildClientsView(){
   }
   document.getElementById('clientsList').innerHTML = html;
 }
-
-// --- STATS ---
 function buildStats(){
   let data = getData();
   let totalCA = 0, totalFour = 0, totalCharges = 0, totalBenef = 0;
-  let months = {}; // key: YYYY-MM
-
+  let months = {};
   data.forEach(e=>{
     totalCA += e.ca || 0;
     totalFour += e.four || 0;
     totalCharges += e.charges || 0;
     totalBenef += e.benef || 0;
-
     if(e.date){
-      let key = e.date.slice(0,7); // YYYY-MM
+      let key = e.date.slice(0,7);
       if(!months[key]) months[key] = {ca:0, four:0, charges:0, benef:0};
       months[key].ca += e.ca || 0;
       months[key].four += e.four || 0;
@@ -392,12 +358,10 @@ function buildStats(){
       months[key].benef += e.benef || 0;
     }
   });
-
   document.getElementById('st_ca').textContent = totalCA.toFixed(2) + " €";
   document.getElementById('st_four').textContent = totalFour.toFixed(2) + " €";
   document.getElementById('st_charges').textContent = totalCharges.toFixed(2) + " €";
   document.getElementById('st_benef').textContent = totalBenef.toFixed(2) + " €";
-
   let html = "";
   let keys = Object.keys(months).sort();
   if(keys.length === 0){
@@ -417,8 +381,6 @@ function buildStats(){
   }
   document.getElementById('statsByMonth').innerHTML = html;
 }
-
-// INIT
 initLogin();
 loadList();
 </script>
