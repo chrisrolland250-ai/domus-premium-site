@@ -211,76 +211,6 @@
 }
 </style>
 
-
-  <style>
-  /* Photo Mon histoire : version mobile + bureau */
-  @media (max-width: 768px) {
-    #apropos .container {
-      display: block;
-    }
-    #apropos aside {
-      display: none !important;
-    }
-    #apropos .mobile-photo {
-      display: block;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    #apropos .mobile-photo img {
-      max-width: 220px;
-      height: auto;
-      border-radius: 999px;
-      box-shadow: 0 8px 24px rgba(0,0,0,.18);
-    }
-  }
-  @media (min-width: 769px) {
-    #apropos .mobile-photo {
-      display: none;
-    }
-  }
-  </style>
-
-
-  <style>
-    /* Ligne CTA + logo SAP */
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1.5rem;
-      margin-top: 1.2rem;
-    }
-    .cta-row .cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-    .sap-logo-hero {
-      text-align: center;
-    }
-    .sap-logo-hero img {
-      max-width: 150px;
-      height: auto;
-    }
-    @media (max-width: 768px) {
-      .cta-row {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .sap-logo-hero {
-        align-self: center;
-      }
-    }
-  </style>
-
-
-  <style>
-  /* Désactivation de la bulle dorée (gold-wave) pour garder les boutons lisibles */
-  .hero .gold-wave{
-    display:none !important;
-  }
-</style>
-
 </head>
 <body>
 <header class="site-header">
@@ -313,25 +243,18 @@
 <p class="lead">
             Petits travaux, jardinage, Aide ponctuelle après maladie ou accident (invalidité temporaire) et aide administrative.<br/>
             Toujours la même personne, un service de proximité <strong>fiable, rapide et premium</strong>.
-          
-</p>
-
+          </p>
 <ul class="ticks">
 <li>Entreprise déclarée <abbr title="Services à la personne">SAP</abbr></li>
 <li><strong>50 %</strong> de réduction grâce au crédit d’impôt*</li>
 <li>Devis clair sous 24 h</li>
 </ul>
-<div class="cta-row">
 <div class="cta">
 <a class="btn btn-gold" href="/index.html#contact">Demander un devis</a>
 <div id="phone-section">
 <a aria-label="Appeler Domus Premium au 07 43 63 35 49" class="btn btn-outline" href="tel:+33743633549">
     Appeler le 07 43 63 35 49
   </a>
-</div>
-<div class="sap-logo-hero" style="margin:0.8rem 0 0.6rem;text-align:center;">
-  <img src="assets/logo-sap.webp" alt="Services à la personne" style="max-width:150px;height:auto;image-rendering:auto;">
-</div>
 </div>
 </div>
 <p class="note">*Selon éligibilité au dispositif fiscal en vigueur (article 199 sexdecies du CGI).</p>
@@ -341,39 +264,6 @@
 </div>
 </div>
 </section>
-<section class="section" id="apropos">
-  <div class="container" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:2.5rem;">
-    <div class="mobile-photo">
-      <picture>
-        <source srcset="assets/christophe-about.webp" type="image/webp"/>
-        <img src="assets/christophe-about.png" alt="Christophe Rolland – Domus Premium" loading="lazy"/>
-      </picture>
-      <p style="margin-top:.75rem;font-size:.95rem;color:#111827;">
-        Christophe Rolland<br/>
-        <span style="font-size:.9rem;opacity:.85;">Fondateur de Domus Premium</span>
-      </p>
-    </div>
-    <aside style="flex:0 0 260px;max-width:260px;margin-right:2.5rem;text-align:center;">
-      <picture>
-        <source srcset="assets/christophe-about.webp" type="image/webp"/>
-        <img src="assets/christophe-about.png" alt="Christophe Rolland – Domus Premium" loading="lazy" style="border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.18);display:block;"/>
-      </picture>
-      <p style="margin-top:.75rem;font-size:.95rem;color:#111827;">
-        Christophe Rolland<br/>
-        <span style="font-size:.9rem;opacity:.85;">Fondateur de Domus Premium</span>
-      </p>
-    </aside>
-    <div style="flex:1 1 260px;min-width:260px;">
-      <h2>Mon histoire &amp; Domus Premium</h2>
-      <p>Je m'appelle Christophe, et depuis toujours j’aime comprendre, réparer et construire. Enfant, je démontais mes jouets pour les remonter, puis je réparais des vélos et des motos. J’ai toujours aimé bricoler et redonner vie à ce qui ne fonctionne plus.</p>
-<p>Mon parcours s’est ensuite construit dans plusieurs métiers manuels : menuiserie, chauffage, plomberie, sanitaire, maçonnerie, construction de maisons, reconditionnement de palettes, puis aménagement intérieur et isolation. Chaque expérience m’a appris quelque chose, et surtout confirmé que j’aime aider et dépanner.</p>
-<p>Aujourd’hui, après de nombreuses années dans le salariat, j’ai décidé de créer Domus Premium, une entreprise familiale qui reflète mes valeurs : sérieux, honnêteté, proximité et goût du travail bien fait. C’est pour moi un retour à mes premiers amours, avec l’envie de mettre mes compétences et mon savoir-faire au service de ceux qui en ont vraiment besoin.</p>
-<p>Domus Premium est une entreprise à taille humaine, née de mes valeurs et de ma passion pour le travail bien fait : le bricolage, les finitions, le service et l’humain avant tout.</p>
-<p>Je crois profondément qu’on peut travailler dans ce qui nous passionne. Et Domus Premium est né de cette conviction.</p>
-    </div>
-  </div>
-</section>
-
 <section class="section" id="services">
 <div class="container">
 <h2>Nos prestations</h2>
@@ -657,7 +547,34 @@
 </div>
 </section>
 <!-- /Section: Laisser un avis Google -->
-
+<section class="section" id="apropos">
+<div class="container" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:2.5rem;">
+<div style="flex:1 1 260px;min-width:260px;">
+<h2>À propos de Domus Premium</h2><div class="mobile-photo"><picture><source srcset="assets/christophe-about.webp" type="image/webp"/><img alt="Christophe Rolland – Domus Premium" loading="lazy" src="assets/christophe-about.png"/></picture></div>
+<p><strong>Domus Premium</strong> est une <strong>entreprise familiale et à taille humaine</strong>, implantée à Rennes et ses environs.</p>
+<p>Nous accordons une grande importance à la <strong>relation humaine</strong> et à la <strong>confiance mutuelle</strong>, au-delà de la simple prestation.
+      Toujours le même intervenant, une meilleure compréhension de vos besoins et un vrai lien de proximité.</p>
+<ul>
+<li><strong>Ponctualité &amp; sérieux</strong> dans chaque prestation</li>
+<li><strong>Écoute &amp; transparence</strong> pour des devis clairs et sans surprise</li>
+<li><strong>Respect &amp; professionnalisme</strong> à chaque étape</li>
+</ul>
+<p>Grâce au cadre <strong>Services à la Personne (SAP)</strong>, vos prestations sont éligibles au
+         <strong>crédit d’impôt de 50 %</strong>.</p>
+<p class="about-closing"><em>Notre fierté : améliorer votre quotidien avec efficacité, simplicité et humanité.</em></p>
+</div>
+<aside style="flex:0 0 260px;max-width:260px;margin-left:auto;text-align:center;">
+<picture>
+<source srcset="assets/christophe-about.webp" type="image/webp"/>
+<img alt="Christophe Rolland – Domus Premium" loading="lazy" src="assets/christophe-about.png" style="width:100%;height:auto;border-radius:50%;box-shadow:0 8px 24px rgba(0,0,0,.18);background:#000;display:block;"/>
+</picture>
+<p style="margin-top:.75rem;font-size:.95rem;color:#111827;">
+        Christophe Rolland<br/>
+<span style="font-size:.9rem;opacity:.85;">Fondateur de Domus Premium</span>
+</p>
+</aside>
+</div>
+</section>
 <section class="section" id="faq">
 <div class="container">
 <h2>FAQ</h2>
