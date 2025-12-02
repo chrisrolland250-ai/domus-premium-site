@@ -100,14 +100,3 @@ html { -webkit-text-size-adjust: 100%; }
   body{ padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
 }
 /* === End FABs === */
-
-.domus-sap-bloc {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin: 1.5rem 0;
-}
-.domus-sap-bloc img {
-    height: 70px;
-    width: auto;
-}
