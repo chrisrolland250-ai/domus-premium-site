@@ -121,3 +121,4 @@ summary:focus-visible{outline:2px solid currentColor;outline-offset:2px}
   body{ padding-bottom: calc(80px + env(safe-area-inset-bottom)); }
 }
 /* === End FABs === */
+@media(max-width:768px){.ai-hero .ai-grid{grid-template-columns:1fr;gap:1.75rem}.ai-hero .hero-copy{text-align:left}.ai-hero h1{font-size:1.7rem;line-height:1.2}.ai-hero .ai-badge{margin-bottom:1rem}.ai-hero .ticks{margin-bottom:1.5rem}.ai-panel{margin-top:0}.ai-urssaf-block{margin-top:2rem;padding:1.25rem 1.1rem;border-radius:12px;background:#f9fafb}.ai-urssaf-block h2{font-size:1.05rem;margin-bottom:.75rem}.ai-urssaf-block h3{font-size:.98rem;margin-top:.85rem}.ai-urssaf-block p{font-size:.9rem;margin-bottom:.6rem}.ai-hero .cta{display:flex;flex-direction:column;gap:.75rem}.ai-hero .cta .btn{width:100%;text-align:center}}
