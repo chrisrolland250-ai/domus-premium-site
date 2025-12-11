@@ -163,3 +163,63 @@ html { -webkit-text-size-adjust: 100%; }
     text-align: center;
   }
 }
+
+/* Bloc d'information légal sous les prestations */
+.services-legal {
+  margin-top: 2rem;
+  max-width: 900px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.services-legal p {
+  margin-bottom: 0.75rem;
+}
+
+.services-legal a {
+  text-decoration: underline;
+}
+
+/* FAQ crédit d'impôt */
+.faq {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.faq details {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
+}
+
+.faq summary {
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Ajustements mobiles */
+@media (max-width: 768px) {
+  .services-legal {
+    font-size: 0.9rem;
+    padding: 0 0.75rem;
+  }
+
+  .faq details {
+    padding: 0.85rem 1rem;
+  }
+}
