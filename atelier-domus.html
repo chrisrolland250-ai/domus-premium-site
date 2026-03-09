@@ -3,11 +3,8 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-  <title>Atelier Domus — meubles anciens remis au goût du jour | Domus Premium</title>
-  <meta name="description" content="Atelier Domus par Domus Premium : meubles anciens chinés, relookés et remis au goût du jour avec une présentation inspirée du vieux journal."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+  <title>Atelier Domus | Domus Premium</title>
+  <meta name="description" content="Le Journal de l’Atelier : le petit coin dédié aux meubles anciens remis au goût du jour. Une seconde vie, c’est possible !"/>
   <link rel="stylesheet" href="css/styles.min.css"/>
   <link rel="icon" type="image/png" href="assets/favicon.png"/>
   <link rel="manifest" href="site.webmanifest"/>
@@ -16,217 +13,55 @@
   <meta name="theme-color" content="#0b1f36"/>
   <meta property="og:type" content="website"/>
   <meta property="og:site_name" content="Domus Premium"/>
-  <meta property="og:title" content="Atelier Domus — meubles anciens remis au goût du jour"/>
-  <meta property="og:description" content="Une page Domus Premium au style journal ancien pour présenter des meubles chinés, relookés et proposés à la vente."/>
+  <meta property="og:title" content="Atelier Domus | Domus Premium"/>
+  <meta property="og:description" content="Le Journal de l’Atelier : le petit coin dédié aux meubles anciens remis au goût du jour. Une seconde vie, c’est possible !"/>
   <meta property="og:url" content="https://www.domuspremium.fr/atelier-domus.html"/>
-  <meta property="og:image" content="https://www.domuspremium.fr/assets/atelier/banc-journal-atelier-domus.webp"/>
+  <meta property="og:image" content="https://www.domuspremium.fr/assets/atelier/banc-journal-atelier-domus-crop.webp"/>
   <meta property="og:locale" content="fr_FR"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <style>
     :root{
-      --paper:#f4ecdd;
-      --paper-2:#efe4d1;
-      --paper-line:#d5c6ad;
-      --ink-soft:#2b2b2b;
-      --navy:#0e2a47;
-      --gold:#c8a046;
-      --gold-2:#e7c777;
-      --white:#fff;
-      --shadow:0 10px 30px rgba(8,22,44,.12);
+      --navy:#0b1f36;
+      --gold:#c9a24a;
+      --paper:#f4ead6;
+      --paper-edge:#d7c7a8;
+      --ink:#1f2a37;
+      --shadow:0 18px 44px rgba(11,31,54,.12);
     }
-    body{background:#f7f9fc;color:#0f2336}
-    .atelier-hero{
-      background:linear-gradient(180deg,#ffffff 0%, #f5f7fb 100%);
-      padding:56px 0 20px;
-    }
-    .atelier-hero-grid{
-      display:grid;
-      grid-template-columns:1fr 0.95fr;
-      gap:28px;
-      align-items:center;
-    }
-    .eyebrow{
-      display:inline-block;
-      padding:8px 14px;
-      border-radius:999px;
-      background:rgba(200,160,70,.13);
-      color:var(--navy);
-      font-weight:800;
-      letter-spacing:.04em;
-      text-transform:uppercase;
-      font-size:.8rem;
-      margin-bottom:14px;
-    }
-    .atelier-hero p{max-width:62ch}
-    .atelier-highlight{
-      color:var(--navy);
-      font-weight:700;
-      border-bottom:3px solid rgba(200,160,70,.45);
-    }
-    .hero-note{
-      background:#fff;
-      border-left:4px solid var(--gold);
+    body{background:linear-gradient(180deg,#f8fafc 0,#eef3f9 100%);color:var(--ink)}
+    .atelier-wrap{padding:40px 0 72px}
+    .atelier-intro{max-width:880px;margin:0 auto 28px;text-align:center}
+    .atelier-intro h1{margin-bottom:12px;color:var(--navy)}
+    .atelier-intro p{margin:0;font-size:clamp(1rem,1.5vw,1.18rem)}
+    .atelier-intro strong{color:var(--navy)}
+    .journal-frame{
+      max-width:980px;
+      margin:0 auto;
+      background:linear-gradient(180deg,var(--paper),#efe2ca);
+      border:1px solid var(--paper-edge);
+      border-radius:24px;
       box-shadow:var(--shadow);
-      border-radius:14px;
-      padding:14px 16px;
-      margin-top:18px;
-    }
-    .hero-art-card{
-      background:#fff;
-      border-radius:22px;
-      box-shadow:var(--shadow);
-      padding:14px;
-    }
-    .hero-art-card img{width:100%;height:auto;display:block;border-radius:16px}
-    .journal-shell{padding:16px 0 70px}
-    .journal-paper{
-      background:
-        radial-gradient(circle at top left, rgba(255,255,255,.35), transparent 22%),
-        linear-gradient(180deg,var(--paper),var(--paper-2));
-      border:1px solid var(--paper-line);
-      box-shadow:0 20px 40px rgba(14,42,71,.08);
-      border-radius:22px;
-      padding:34px 32px;
+      padding:18px;
       position:relative;
-      overflow:hidden;
     }
-    .journal-paper:before,
-    .journal-paper:after{
+    .journal-frame::before{
       content:"";
       position:absolute;
-      left:18px;
-      right:18px;
-      height:1px;
-      background:rgba(43,43,43,.18);
+      inset:10px;
+      border:1px solid rgba(31,42,55,.08);
+      border-radius:18px;
+      pointer-events:none;
     }
-    .journal-paper:before{top:16px}
-    .journal-paper:after{bottom:16px}
-    .journal-header{
-      text-align:center;
-      border-top:4px double rgba(43,43,43,.75);
-      border-bottom:4px double rgba(43,43,43,.75);
-      padding:18px 0 16px;
-      margin-bottom:24px;
-      color:var(--ink-soft);
-    }
-    .journal-header h1{
-      margin:0;
-      font-size:clamp(2rem,4.8vw,4rem);
-      text-transform:uppercase;
-      letter-spacing:.03em;
-    }
-    .journal-subline{
-      margin-top:10px;
-      display:flex;
-      justify-content:center;
-      gap:16px;
-      flex-wrap:wrap;
-      font-style:italic;
-      color:#514739;
-    }
-    .journal-grid{
-      display:grid;
-      grid-template-columns:1.3fr .7fr;
-      gap:28px;
-    }
-    .journal-article h2,
-    .journal-sidebar h3,
-    .news-card h3{
-      font-family:"Playfair Display", Georgia, serif;
-      color:var(--ink-soft);
-    }
-    .headline{
-      text-align:center;
-      border-bottom:2px solid rgba(43,43,43,.65);
-      padding-bottom:14px;
-      margin-bottom:22px;
-    }
-    .headline p{
-      margin:.4rem 0 0;
-      font-style:italic;
-      color:#5c5243;
-    }
-    .news-image{
-      margin:0;
-      border:1px solid rgba(43,43,43,.18);
-      background:rgba(255,255,255,.45);
-      padding:12px;
+    .journal-shot{
+      display:block;
+      width:100%;
+      height:auto;
       border-radius:14px;
+      box-shadow:0 10px 24px rgba(0,0,0,.08);
     }
-    .news-image img{width:100%;height:auto;display:block;border-radius:10px}
-    .caption{font-size:.95rem;color:#5d5445;margin-top:.7rem}
-    .dropcap:first-letter{
-      float:left;
-      font-size:3.1rem;
-      line-height:.9;
-      padding-right:8px;
-      font-family:"Playfair Display", Georgia, serif;
-    }
-    .sale-box,
-    .sidebar-box,
-    .news-card{
-      border:1px solid rgba(43,43,43,.22);
-      background:rgba(255,255,255,.34);
-      border-radius:16px;
-      padding:18px;
-    }
-    .sale-box{
-      margin-top:22px;
-      display:grid;
-      grid-template-columns:1fr auto;
-      gap:18px;
-      align-items:center;
-    }
-    .sale-box .label,
-    .sidebar-kicker{
-      font-size:.82rem;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-weight:800;
-      color:#6a5730;
-    }
-    .price-tag{
-      font-size:2.2rem;
-      font-family:"Playfair Display", Georgia, serif;
-      color:var(--navy);
-      white-space:nowrap;
-    }
-    .journal-btn{
-      display:inline-block;
-      padding:12px 18px;
-      border-radius:999px;
-      text-decoration:none;
-      background:linear-gradient(90deg,var(--gold-2),var(--gold));
-      color:var(--navy);
-      font-weight:800;
-      border:2px solid rgba(14,42,71,.08);
-    }
-    .journal-btn:hover{filter:brightness(1.04)}
-    .journal-sidebar{display:grid;gap:18px}
-    .small-list{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:10px}
-    .small-list li{padding-bottom:10px;border-bottom:1px dashed rgba(43,43,43,.18)}
-    .small-list li:last-child{border-bottom:0;padding-bottom:0}
-    .editor-note{margin-top:28px;color:#5a5042}
-    .atelier-strip{margin-top:34px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .news-card p{margin-bottom:0}
-    .faq-callout{
-      margin-top:28px;
-      background:linear-gradient(135deg,#0e2a47,#15365e);
-      color:#fff;
-      border-radius:22px;
-      padding:24px;
-      box-shadow:var(--shadow);
-    }
-    .faq-callout p{color:#e6edf7}
-    .faq-callout .btn-outline{border-color:rgba(255,255,255,.45)}
-    @media (max-width: 980px){
-      .atelier-hero-grid,.journal-grid,.atelier-strip{grid-template-columns:1fr}
-      .sale-box{grid-template-columns:1fr}
-    }
-    @media (max-width: 720px){
-      .journal-paper{padding:24px 18px}
-      .journal-header h1{font-size:2rem}
-      .journal-subline{font-size:.92rem}
+    @media (max-width:720px){
+      .atelier-wrap{padding:28px 0 56px}
+      .journal-frame{padding:12px;border-radius:18px}
     }
   </style>
 </head>
@@ -246,124 +81,22 @@
       <a href="/index.html#realisations">Nos réalisations</a>
       <a href="/index.html#apropos">À propos</a>
       <a href="/index.html#faq">FAQ</a>
-      <a href="/atelier-domus.html">Atelier Domus</a>
-<a class="btn btn-gold" href="/index.html#contact">Contact</a>
+      <a href="/atelier-domus.html" aria-current="page">Atelier Domus</a>
+      <a class="btn btn-gold" href="/index.html#contact">Contact</a>
     </nav>
   </div>
 </header>
 
 <main>
-  <section class="atelier-hero">
-    <div class="container atelier-hero-grid">
-      <div>
-        <span class="eyebrow">Nouvel onglet Domus Premium</span>
-        <h1>Atelier Domus</h1>
-        <p>Une rubrique dédiée aux <span class="atelier-highlight">meubles anciens remis au goût du jour</span>, avec l’univers Domus Premium et une mise en page inspirée des vieux journaux. L’objectif : raconter l’histoire du meuble, montrer sa transformation et proposer des pièces uniques à la vente.</p>
-        <div class="hero-note">
-          <strong>Concept :</strong> un meuble chiné, une transformation, un article. Chaque pièce peut être présentée avec ses photos avant / après, son histoire, ses finitions et son prix.
-        </div>
-      </div>
-      <div class="hero-art-card">
-        <img src="assets/atelier/banc-journal-atelier-domus.webp" alt="Maquette Atelier Domus style journal ancien avec banc coffre relooké" loading="eager"/>
-      </div>
-    </div>
-  </section>
-
-  <section class="journal-shell">
+  <section class="atelier-wrap">
     <div class="container">
-      <div class="journal-paper">
-        <div class="journal-header">
-          <h1>Le Journal de l’Atelier</h1>
-          <div class="journal-subline">
-            <span>Meubles chinés et transformés par Domus Premium</span>
-            <span>Édition n°1</span>
-            <span>Rennes &amp; alentours</span>
-          </div>
-        </div>
-
-        <div class="journal-grid">
-          <article class="journal-article">
-            <div class="headline">
-              <h2>Banc coffre ancien relooké</h2>
-              <p>Donner une seconde vie à un meuble d’antan sans perdre son caractère.</p>
-            </div>
-
-            <figure class="news-image">
-              <img src="assets/atelier/banc-journal-atelier-domus.webp" alt="Avant après style journal ancien d’un banc coffre relooké" loading="lazy"/>
-              <figcaption class="caption">Exemple de présentation Atelier Domus : photo avant, projection après, mise en récit et mise en vente.</figcaption>
-            </figure>
-
-            <p class="dropcap">Ce banc coffre ancien illustre parfaitement l’esprit de l’Atelier Domus : une base authentique, une ligne retravaillée et une présentation plus éditoriale pour valoriser le meuble. Le style journal ancien apporte un supplément d’âme tout en gardant les codes visuels de Domus Premium avec le bleu profond, les touches dorées et une lecture claire.</p>
-            <p>Cette page peut accueillir plusieurs meubles, chacun présenté comme une petite chronique : origine, idée de transformation, finitions prévues, dimensions, disponibilité et prix. Le concept fonctionne aussi bien pour des meubles à vendre que pour montrer le savoir-faire de Domus Premium auprès de clients qui voudraient faire relooker leur propre mobilier.</p>
-
-            <div class="sale-box">
-              <div>
-                <div class="label">Pièce unique · Exemple de fiche produit</div>
-                <h3 style="margin:.35rem 0 .3rem;">Banc coffre ancien rénové</h3>
-                <p style="margin:0;color:#5a5042;">Ponçage, teinte revisitée, style plus actuel et présentation premium pour le site.</p>
-              </div>
-              <div>
-                <div class="price-tag">210 €</div>
-                <a class="journal-btn" href="/index.html#contact">Réserver / demander des infos</a>
-              </div>
-            </div>
-
-            <p class="editor-note"><strong>À noter :</strong> ce premier visuel sert de maquette pour intégrer la rubrique au site. La structure est prête pour accueillir de vrais meubles, de vrais avant / après et des annonces renouvelées au fil des trouvailles.</p>
-          </article>
-
-          <aside class="journal-sidebar">
-            <div class="sidebar-box">
-              <div class="sidebar-kicker">L’esprit de la rubrique</div>
-              <h3>Pourquoi cette page fonctionne</h3>
-              <ul class="small-list">
-                <li>Elle crée une identité forte, différente d’une simple page catalogue.</li>
-                <li>Elle met en valeur les photos avant / après, très efficaces commercialement.</li>
-                <li>Elle peut aussi servir à vendre un service de relooking chez le client.</li>
-              </ul>
-            </div>
-
-            <div class="sidebar-box">
-              <div class="sidebar-kicker">Format conseillé</div>
-              <h3>Pour chaque meuble</h3>
-              <ul class="small-list">
-                <li>Titre de type article ou chronique.</li>
-                <li>1 photo avant, 1 photo après, 1 courte histoire.</li>
-                <li>Prix, dimensions, état, disponibilité.</li>
-                <li>Bouton de contact ou de réservation.</li>
-              </ul>
-            </div>
-
-            <div class="sidebar-box">
-              <div class="sidebar-kicker">Positionnement</div>
-              <h3>Domus Premium + brocante revisitée</h3>
-              <p style="margin-bottom:0; color:#5a5042;">Le rendu garde les codes Domus Premium, mais avec une ambiance papier ancien qui donne du cachet à la page et renforce la notion de pièce unique.</p>
-            </div>
-          </aside>
-        </div>
-
-        <div class="atelier-strip">
-          <div class="news-card">
-            <div class="sidebar-kicker">Chronique</div>
-            <h3>Avant / après</h3>
-            <p>Parfait pour Google Business, le site et les réseaux sociaux.</p>
-          </div>
-          <div class="news-card">
-            <div class="sidebar-kicker">Vente</div>
-            <h3>Pièces disponibles</h3>
-            <p>Une vitrine simple pour exposer les meubles relookés et leurs prix.</p>
-          </div>
-          <div class="news-card">
-            <div class="sidebar-kicker">Service</div>
-            <h3>Relooking sur demande</h3>
-            <p>Le client peut aussi demander la transformation de son propre meuble.</p>
-          </div>
-        </div>
+      <div class="atelier-intro">
+        <h1>Atelier Domus</h1>
+        <p><strong>Le Journal de l’Atelier</strong> : le petit coin dédié aux meubles anciens remis au goût du jour. <strong>Une seconde vie, c’est possible&nbsp;!</strong></p>
       </div>
 
-      <div class="faq-callout">
-        <h2>Vous souhaitez intégrer un meuble dans l’Atelier Domus ?</h2>
-        <p>Envoyez une photo, les dimensions et l’idée de rendu souhaité. Domus Premium peut étudier le relooking, la mise en valeur et la présentation sur le site.</p>
-        <a class="btn btn-outline" href="/index.html#contact">Demander un devis ou proposer un meuble</a>
+      <div class="journal-frame">
+        <img class="journal-shot" src="assets/atelier/banc-journal-atelier-domus-crop.webp" alt="Le Journal de l’Atelier, visuel rétro avant après d’un banc coffre ancien" loading="eager"/>
       </div>
     </div>
   </section>
