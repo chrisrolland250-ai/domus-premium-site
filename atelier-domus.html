@@ -28,12 +28,14 @@
 }
 body{background:linear-gradient(180deg,#f8fafc 0,#eef3f9 100%);color:var(--ink)}
 .atelier-hero{
-  height:52vh;
-  min-height:340px;
+  width:100%;
+  aspect-ratio:2048/688;
+  max-height:560px;
   background-image:url("assets/atelier/atelier-domus-hero-1600.webp");
-  background-size:cover;
+  background-size:contain; /* affiche l'image entière */
   background-position:center;
   background-repeat:no-repeat;
+  background-color:var(--navy);
   background-attachment:fixed;
   position:relative;
 }
@@ -71,7 +73,7 @@ body{background:linear-gradient(180deg,#f8fafc 0,#eef3f9 100%);color:var(--ink)}
 }
 .atelier-wrap{padding:34px 0 72px}
 @media (max-width:768px){
-  .atelier-hero{background-attachment:scroll;height:40vh;min-height:260px}
+  .atelier-hero{background-attachment:scroll;max-height:420px}
   .atelier-wrap{padding:26px 0 56px}
 }</style>
 </head>
