@@ -1,175 +1,226 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
-<title>Atelier Domus Premium | Domus Premium</title>
-<meta content="Atelier Domus Premium : relooking et seconde vie des meubles anciens. Découvrez les avant/après et les réalisations du mois." name="description"/>
-<link href="css/styles.min.css" rel="stylesheet"/>
-<link href="assets/favicon.png" rel="icon" type="image/png"/>
-<link href="site.webmanifest" rel="manifest"/>
-<link href="assets/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="https://www.domuspremium.fr/atelier-domus.html" rel="canonical"/>
-<meta content="#0b1f36" name="theme-color"/>
-<meta content="website" property="og:type"/>
-<meta content="Domus Premium" property="og:site_name"/>
-<meta content="Atelier Domus Premium | Domus Premium" property="og:title"/>
-<meta content="Atelier Domus Premium : relooking et seconde vie des meubles anciens. Découvrez les avant/après et les réalisations du mois." property="og:description"/>
-<meta content="https://www.domuspremium.fr/atelier-domus.html" property="og:url"/>
-<meta content="https://www.domuspremium.fr/assets/atelier/atelier-domus-hero-1600.webp" property="og:image"/>
-<meta content="fr_FR" property="og:locale"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<style>:root{
-  --navy:#0b1f36;
-  --gold:#c9a24a;
-  --ink:#1f2a37;
-  --shadow:0 18px 44px rgba(11,31,54,.12);
-}
-body{background:linear-gradient(180deg,#f8fafc 0,#eef3f9 100%);color:var(--ink)}
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <title>Atelier Domus Premium | Domus Premium</title>
+  <meta name="description" content="Atelier Domus Premium : relooking et seconde vie des meubles anciens. Découvrez les avant / après et les réalisations du mois."/>
+  <link rel="stylesheet" href="css/styles.min.css"/>
+  <link rel="icon" type="image/png" href="assets/favicon.png"/>
+  <link rel="manifest" href="site.webmanifest"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png"/>
+  <link rel="canonical" href="https://www.domuspremium.fr/atelier-domus.html"/>
+  <meta name="theme-color" content="#0b1f36"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Domus Premium"/>
+  <meta property="og:title" content="Atelier Domus Premium | Domus Premium"/>
+  <meta property="og:description" content="Atelier Domus Premium : relooking et seconde vie des meubles anciens. Découvrez les avant / après et les réalisations du mois."/>
+  <meta property="og:url" content="https://www.domuspremium.fr/atelier-domus.html"/>
+  <meta property="og:image" content="https://www.domuspremium.fr/assets/atelier/atelier-domus-hero-1600.webp"/>
+  <meta property="og:locale" content="fr_FR"/>
+  <meta name="twitter:card" content="summary_large_image"/>
 
+  <style>
+    :root{
+      --navy:#0b1f36;
+      --gold:#c9a24a;
+      --ink:#1f2a37;
+      --soft:#f8fafc;
+      --line:#e3e8ef;
+      --shadow:0 18px 44px rgba(11,31,54,.10);
+    }
 
-.atelier-hero .hero-inner{
-  position:relative;
-  height:100%;
-  display:flex;
-  align-items:flex-end;
-  padding:22px 0;
-}
-.atelier-hero h1{
-  margin:0;
-  color:#fff;
-  font-size:clamp(1.8rem,3.2vw,3rem);
-  letter-spacing:.2px;
-}
-.atelier-hero p{
-  margin:.35rem 0 0;
-  color:rgba(255,255,255,.9);
-  font-size:clamp(1rem,1.3vw,1.15rem);
-  max-width:70ch;
-}
-.atelier-hero .hero-card{
-  background:rgba(11,31,54,.55);
-  border:1px solid rgba(255,255,255,.15);
-  border-radius:18px;
-  padding:16px 18px;
-  backdrop-filter: blur(6px);
-  box-shadow:0 12px 28px rgba(0,0,0,.22);
-}
-.atelier-wrap{padding:34px 0 72px}
-@media (max-width:768px){
-  
-  .atelier-wrap{padding:26px 0 56px}
-}.atelier-hero{
-  width:100%;
-  position:relative;
-  background:var(--navy);
-  overflow:hidden;
-}
-.atelier-hero-img{
-  width:100%;
-  height:auto;
-  display:block;           /* garantit aucun recadrage */
-}
-.atelier-hero-content{
-  position:absolute;
-  left:50%;
-  bottom:22px;
-  transform:translateX(-50%);
-  width:min(980px, calc(100% - 32px));
-  padding:14px 16px;
-  border-radius:14px;
-  background:rgba(11,31,54,.62);
-  border:1px solid rgba(255,255,255,.14);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  color:#fff;
-}
-.atelier-hero-content h1{margin:0 0 6px;font-size:clamp(1.35rem,2.4vw,2.05rem);line-height:1.15}
-.atelier-hero-content p{margin:0;color:rgba(255,255,255,.88);font-size:.98rem}
-@media (max-width:720px){
-  /* Sur mobile, le bandeau est trop bas si on garde la hauteur "auto".
-     On lui donne une hauteur de viewport et on affiche l’image ENTIEREMENT (contain). */
-  .atelier-hero{height:52vh; min-height:320px; background:var(--navy);}
-  .atelier-hero picture{display:block; height:100%;}
-  .atelier-hero-img{height:100%; width:100%; object-fit:contain; background:var(--navy);}
+    body{
+      background:linear-gradient(180deg,#f8fafc 0,#eef3f9 100%);
+      color:var(--ink);
+    }
 
-  /* Le cartouche passe sous l’image pour ne pas masquer le visuel */
-  .atelier-hero-content{
-    position:static;
-    transform:none;
-    width:min(980px, calc(100% - 32px));
-    margin:-18px auto 0;
-    padding:12px 14px;
-  }
-  .atelier-hero-content p{font-size:.92rem}
-}
-.atelier-hero-content p{font-size:.92rem}
-}
+    .atelier-hero{
+      background:var(--navy);
+      width:100%;
+    }
 
-</style>
+    .atelier-hero picture,
+    .atelier-hero img{
+      display:block;
+      width:100%;
+    }
+
+    .atelier-hero img{
+      height:auto;
+    }
+
+    .atelier-wrap{
+      padding:34px 0 72px;
+    }
+
+    .atelier-panel,
+    .atelier-presentation,
+    .atelier-month{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      box-shadow:var(--shadow);
+      padding:28px 30px;
+      max-width:980px;
+      margin:0 auto 24px;
+    }
+
+    .atelier-panel h1,
+    .atelier-presentation h2,
+    .atelier-month h2{
+      margin:0 0 12px;
+      color:var(--navy);
+      line-height:1.15;
+    }
+
+    .atelier-panel h1{
+      font-size:clamp(2rem,3.2vw,3rem);
+      margin-bottom:8px;
+    }
+
+    .atelier-tagline{
+      margin:0 0 12px;
+      color:var(--gold);
+      font-weight:700;
+      font-size:clamp(1.05rem,1.6vw,1.25rem);
+    }
+
+    .atelier-panel .section-lead,
+    .atelier-month .section-lead{
+      margin:0;
+      color:#5f6f84;
+      font-size:clamp(1rem,1.3vw,1.08rem);
+      max-width:72ch;
+    }
+
+    .atelier-presentation p{
+      margin:0 0 14px;
+      color:#334155;
+      line-height:1.75;
+      font-size:1.02rem;
+    }
+
+    .atelier-presentation p:last-child{
+      margin-bottom:0;
+    }
+
+    .atelier-month{
+      margin-bottom:0;
+    }
+
+    .atelier-month .section-lead{
+      margin-bottom:0;
+    }
+
+    @media (max-width:768px){
+      .atelier-wrap{
+        padding:24px 0 56px;
+      }
+
+      .atelier-panel,
+      .atelier-presentation,
+      .atelier-month{
+        padding:22px 18px;
+        border-radius:18px;
+        margin-bottom:18px;
+      }
+
+      .atelier-panel h1{
+        font-size:2rem;
+      }
+
+      .atelier-presentation p{
+        font-size:1rem;
+        line-height:1.7;
+      }
+    }
+  </style>
 </head>
 <body>
-<header class="site-header">
-<div class="container nav">
-<a class="brand" href="/index.html#top">
-<picture><source srcset="assets/logo.webp" type="image/webp"/><img alt="Logo Domus Premium" height="120" loading="lazy" src="assets/logo.jpg" width="160"/></picture>
-<span>Domus Premium</span>
-</a>
-<button aria-controls="primary-nav" aria-expanded="false" aria-label="Ouvrir le menu" class="nav-toggle">
-<span></span><span></span><span></span>
-</button>
-<nav class="nav-links" id="primary-nav">
-<a href="/index.html#services">Prestations</a>
-<a href="/index.html#tarifs">Tarifs</a>
-<a href="/index.html#realisations">Nos réalisations</a>
-<a href="/index.html#apropos">À propos</a>
-<a href="/index.html#faq">FAQ</a>
-<a aria-current="page" href="/atelier-domus.html">Atelier Domus</a>
-<a class="btn btn-gold" href="/index.html#contact">Contact</a>
-</nav>
-</div>
-</header>
-<main>
-<section class="atelier-hero">
-  <picture>
-    <source type="image/webp" srcset="assets/atelier/atelier-domus-hero-1200.webp 1200w, assets/atelier/atelier-domus-hero-1600.webp 1600w, assets/atelier/atelier-domus-hero-2048.webp 2048w" sizes="100vw"/>
-    <img class="atelier-hero-img" src="assets/atelier/atelier-domus-hero-1600.jpg" alt="Atelier Domus Premium — avant / après restauration de meuble" loading="eager" decoding="async"/>
-  </picture>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="/index.html#top">
+        <picture>
+          <source srcset="assets/logo.webp" type="image/webp"/>
+          <img src="assets/logo.jpg" alt="Logo Domus Premium" width="160" height="120" loading="lazy"/>
+        </picture>
+        <span>Domus Premium</span>
+      </a>
 
-  <div class="atelier-hero-content">
-    <h1>Atelier Domus Premium</h1>
-    <p>Relooking et seconde vie des meubles anciens. Découvrez les avant / après et les réalisations du mois.</p>
-  </div>
-</section>
-<section class="atelier-wrap" id="realisations-mois">
-<div class="container">
-<h2>Réalisations du mois</h2>
-<p class="section-lead">Chaque mois, une sélection de transformations et de détails de finition.</p>
-<!-- Ajoute ici tes cartes / photos (avant-après, détails, etc.) -->
-</div>
-</section>
-</main>
-<footer class="site-footer">
-<div class="container footer-grid">
-<div class="foot-brand">
-<picture><source srcset="assets/logo.webp" type="image/webp"/><img alt="Logo Domus Premium" height="36" loading="lazy" src="assets/logo.jpg" width="120"/></picture>
-<p>Petits travaux, bricolage &amp; atelier mobilier – Rennes &amp; alentours</p>
-</div>
-<ul class="foot-links">
-<li><a href="/index.html#services">Prestations</a></li>
-<li><a href="/index.html#tarifs">Tarifs</a></li>
-<li><a href="/index.html#realisations">Nos réalisations</a></li>
-<li><a href="/atelier-domus.html">Atelier Domus</a></li>
-<li><a href="/index.html#contact">Contact</a></li>
-<li><a href="mentions.html">Mentions légales</a></li>
-<li><a href="confidentialite.html">Politique de confidentialité</a></li>
-</ul>
-<div class="foot-legal">
-<p>© <span id="year"></span> Domus Premium – Tous droits réservés.</p>
-</div>
-</div>
-</footer>
-<script defer="" src="js/main.js"></script>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-controls="primary-nav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="primary-nav">
+        <a href="/index.html#services">Prestations</a>
+        <a href="/index.html#tarifs">Tarifs</a>
+        <a href="/index.html#realisations">Nos réalisations</a>
+        <a href="/index.html#apropos">À propos</a>
+        <a href="/index.html#faq">FAQ</a>
+        <a href="/atelier-domus.html" aria-current="page">Atelier Domus</a>
+        <a class="btn btn-gold" href="/index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="atelier-hero">
+      <picture>
+        <source type="image/webp" srcset="assets/atelier/atelier-domus-hero-1200.webp 1200w, assets/atelier/atelier-domus-hero-1600.webp 1600w, assets/atelier/atelier-domus-hero-2048.webp 2048w" sizes="100vw"/>
+        <img src="assets/atelier/atelier-domus-hero-1600.jpg" alt="Atelier Domus Premium — avant / après restauration de meuble" loading="eager" decoding="async"/>
+      </picture>
+    </section>
+
+    <section class="atelier-wrap">
+      <div class="container">
+        <div class="atelier-panel">
+          <h1>Atelier Domus Premium</h1>
+          <p class="atelier-tagline">Une seconde vie, c’est possible !</p>
+          <p class="section-lead">Relooking et seconde vie des meubles anciens. Découvrez les avant / après et les réalisations du mois.</p>
+        </div>
+
+        <div class="atelier-presentation">
+          <h2>L’esprit de l’Atelier Domus Premium</h2>
+          <p>Atelier Domus Premium se construit autour d’une spécialisation claire : l’ébénisterie de rénovation et le relooking de haute qualité sur meubles en bois massif. Ici, l’objectif est de sublimer l’essence — noyer, chêne, merisier — pour retrouver le cachet d’origine et révéler le veinage, la matière et la finesse des assemblages.</p>
+          <p>Deux approches complémentaires guident l’atelier : côté conservation, un travail de soin, de respect de l’époque et de transmission — <em>la restauration qui révèle l’essence du bois noble</em>. Côté relooking, place à la transformation et à la personnalisation : jeux de contrastes (bois brut / peinture mate), lignes sobres, et styles Néo‑Rustique ou Brut Contemporain. Aujourd’hui, cette passion du bois est devenue une aventure commune avec ma femme : nous partageons le même goût du travail bien fait et l’envie de redonner une seconde vie aux meubles, et c’est ensemble que nous lançons l’activité Atelier Domus Premium, dans la continuité de l’exigence Domus Premium : un rendu durable, propre et soigné.</p>
+        </div>
+
+        <div class="atelier-month" id="realisations-mois">
+          <h2>Réalisations du mois</h2>
+          <p class="section-lead">Chaque mois, une sélection de transformations et de détails de finition.</p>
+          <!-- Ajoute ici tes cartes / photos de meubles restaurés -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="foot-brand">
+        <picture>
+          <source srcset="assets/logo.webp" type="image/webp"/>
+          <img src="assets/logo.jpg" alt="Logo Domus Premium" width="120" height="36" loading="lazy"/>
+        </picture>
+        <p>Petits travaux, bricolage &amp; atelier mobilier – Rennes &amp; alentours</p>
+      </div>
+
+      <ul class="foot-links">
+        <li><a href="/index.html#services">Prestations</a></li>
+        <li><a href="/index.html#tarifs">Tarifs</a></li>
+        <li><a href="/index.html#realisations">Nos réalisations</a></li>
+        <li><a href="/atelier-domus.html">Atelier Domus</a></li>
+        <li><a href="/index.html#contact">Contact</a></li>
+        <li><a href="mentions.html">Mentions légales</a></li>
+        <li><a href="confidentialite.html">Politique de confidentialité</a></li>
+      </ul>
+
+      <div class="foot-legal">
+        <p>© <span id="year"></span> Domus Premium – Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="js/main.js"></script>
 </body>
 </html>
