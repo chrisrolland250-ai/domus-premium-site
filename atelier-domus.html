@@ -27,23 +27,8 @@
   --shadow:0 18px 44px rgba(11,31,54,.12);
 }
 body{background:linear-gradient(180deg,#f8fafc 0,#eef3f9 100%);color:var(--ink)}
-.atelier-hero{
-  width:100%;
-  aspect-ratio:2048/688;
-  max-height:560px;
-  background-image:url("assets/atelier/atelier-domus-hero-1600.webp");
-  background-size:contain; /* affiche l'image entière */
-  background-position:center;
-  background-repeat:no-repeat;
-  background-color:var(--navy);
-  background-attachment:fixed;
-  position:relative;
-}
-.atelier-hero::after{
-  content:"";
-  position:absolute; inset:0;
-  background:linear-gradient(to bottom, rgba(0,0,0,.18), rgba(0,0,0,.28));
-}
+
+
 .atelier-hero .hero-inner{
   position:relative;
   height:100%;
@@ -73,9 +58,41 @@ body{background:linear-gradient(180deg,#f8fafc 0,#eef3f9 100%);color:var(--ink)}
 }
 .atelier-wrap{padding:34px 0 72px}
 @media (max-width:768px){
-  .atelier-hero{background-attachment:scroll;max-height:420px}
+  
   .atelier-wrap{padding:26px 0 56px}
-}</style>
+}.atelier-hero{
+  width:100%;
+  position:relative;
+  background:var(--navy);
+  overflow:hidden;
+}
+.atelier-hero-img{
+  width:100%;
+  height:auto;
+  display:block;           /* garantit aucun recadrage */
+}
+.atelier-hero-content{
+  position:absolute;
+  left:50%;
+  bottom:22px;
+  transform:translateX(-50%);
+  width:min(980px, calc(100% - 32px));
+  padding:14px 16px;
+  border-radius:14px;
+  background:rgba(11,31,54,.62);
+  border:1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color:#fff;
+}
+.atelier-hero-content h1{margin:0 0 6px;font-size:clamp(1.35rem,2.4vw,2.05rem);line-height:1.15}
+.atelier-hero-content p{margin:0;color:rgba(255,255,255,.88);font-size:.98rem}
+@media (max-width:720px){
+  .atelier-hero-content{bottom:14px;padding:12px 14px}
+  .atelier-hero-content p{font-size:.92rem}
+}
+
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -100,12 +117,15 @@ body{background:linear-gradient(180deg,#f8fafc 0,#eef3f9 100%);color:var(--ink)}
 </header>
 <main>
 <section class="atelier-hero">
-<div class="container hero-inner">
-<div class="hero-card">
-<h1>Atelier Domus Premium</h1>
-<p>Relooking et seconde vie des meubles anciens. Découvrez les avant / après et les réalisations du mois.</p>
-</div>
-</div>
+  <picture>
+    <source type="image/webp" srcset="assets/atelier/atelier-domus-hero-1200.webp 1200w, assets/atelier/atelier-domus-hero-1600.webp 1600w, assets/atelier/atelier-domus-hero-2048.webp 2048w" sizes="100vw"/>
+    <img class="atelier-hero-img" src="assets/atelier/atelier-domus-hero-1600.jpg" alt="Atelier Domus Premium — avant / après restauration de meuble" loading="eager" decoding="async"/>
+  </picture>
+
+  <div class="atelier-hero-content">
+    <h1>Atelier Domus Premium</h1>
+    <p>Relooking et seconde vie des meubles anciens. Découvrez les avant / après et les réalisations du mois.</p>
+  </div>
 </section>
 <section class="atelier-wrap" id="realisations-mois">
 <div class="container">
