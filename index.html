@@ -230,6 +230,88 @@
   }
 }
 </style>
+
+<style>
+  /* Atelier Domus Premium mention in hero */
+  .hero-atelier-pill{margin:.75rem 0 1.1rem;}
+  .hero-atelier-link{
+    display:inline-flex;
+    align-items:center;
+    gap:.55rem;
+    padding:.55rem .95rem;
+    border-radius:999px;
+    border:1px solid rgba(181,140,26,.55);
+    color:#0b1f36;
+    background:rgba(201,162,74,.10);
+    text-decoration:none;
+    font-weight:600;
+    line-height:1.2;
+    font-size:.98rem;
+  }
+  .hero-atelier-link:hover{background:rgba(201,162,74,.16);}
+  .hero-atelier-textlink{
+    color:#b58c1a;
+    font-weight:600;
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+  @media (max-width:768px){
+    .hero-atelier-pill{margin:.6rem 0 1rem;}
+    .hero-atelier-link{font-size:.96rem; padding:.55rem .9rem; width:100%; justify-content:center; text-align:center;}
+  }
+</style>
+
+
+<style>
+  /* Flash promo Atelier Domus Premium (Option A) */
+  .hero-flash{
+    margin:.65rem 0 1.1rem;
+    padding:.85rem .95rem;
+    border-radius:18px;
+    background:linear-gradient(135deg, rgba(11,31,54,.98), rgba(11,31,54,.86));
+    border:1px solid rgba(181,140,26,.55);
+    box-shadow:0 12px 28px rgba(0,0,0,.14);
+    display:flex;
+    align-items:center;
+    gap:.75rem;
+  }
+  .flash-badge{
+    display:inline-flex;
+    align-items:center;
+    padding:.28rem .6rem;
+    border-radius:999px;
+    background:#b58c1a;
+    color:#fff;
+    font-weight:800;
+    font-size:.85rem;
+    letter-spacing:.2px;
+    flex:0 0 auto;
+    animation:pulse 1.8s ease-in-out infinite;
+  }
+  .flash-link{
+    color:#fff;
+    font-weight:700;
+    text-decoration:none;
+    line-height:1.2;
+    flex:1 1 auto;
+  }
+  .flash-link:hover{ text-decoration:underline; text-underline-offset:3px; }
+  .flash-arrow{
+    color:#b58c1a;
+    font-size:1.8rem;
+    line-height:1;
+    flex:0 0 auto;
+  }
+  @keyframes pulse{
+    0%,100%{ transform:scale(1); filter:brightness(1); }
+    50%{ transform:scale(1.06); filter:brightness(1.06); }
+  }
+  @media (max-width:768px){
+    .hero-flash{padding:.85rem .9rem;}
+    .flash-arrow{font-size:1.6rem;}
+  }
+</style>
+
 </head>
 <body>
 <header class="site-header">
@@ -259,10 +341,28 @@
 <div class="container hero-grid">
 <div class="hero-copy">
 <h1>Petits travaux &amp; bricolage à <span class="highlight">Rennes &amp; alentours</span></h1>
-<p class="lead">
-            Petits travaux, montage, réparations, finitions et entretien extérieur.<br/>
-            Un interlocuteur unique pour des interventions <strong>propres, fiables et soignées</strong>.
-          </p>
+
+<div class="hero-atelier-pill">
+  <a href="/atelier-domus.html" class="hero-atelier-link" aria-label="Découvrir Atelier Domus Premium (relooking et restauration de meubles)">
+    Atelier Domus Premium <span aria-hidden="true">•</span> Relooking &amp; restauration de meubles
+  </a>
+</div>
+
+
+
+<div class="hero-flash">
+  <span class="flash-badge">Nouveau</span>
+  <a class="flash-link" href="/atelier-domus.html" aria-label="Découvrir Atelier Domus Premium — relooking et restauration de meubles">
+    Atelier Domus Premium — relooking &amp; restauration de meubles
+  </a>
+  <span class="flash-arrow" aria-hidden="true">›</span>
+</div>
+
+<p class="lead">Petits travaux, montage, réparations, finitions et entretien extérieur.<br/>
+            Un interlocuteur unique pour des interventions propres, fiables et soignées.
+            <br/>
+            Découvrez aussi notre atelier mobilier avec <a class="hero-atelier-textlink" href="/atelier-domus.html">Atelier Domus Premium</a>.
+</p>
 <ul class="ticks">
 <li>Petits travaux, montage &amp; finitions</li>
 <li>Devis clair sous 24 h</li>
