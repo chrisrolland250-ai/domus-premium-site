@@ -136,6 +136,42 @@
       }
     }
   </style>
+
+<style>
+  /* Réalisations du mois — Atelier Domus Premium */
+  .atelier-month-grid{
+    display:grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap:18px;
+    margin-top:16px;
+  }
+  .atelier-month-card{
+    margin:0;
+    background:#fff;
+    border:1px solid #e6e8ee;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 24px rgba(15,23,42,.06);
+  }
+  .atelier-month-link{display:block; text-decoration:none;}
+  .atelier-month-card img{width:100%; height:auto; display:block;}
+  .atelier-month-card figcaption{
+    padding:12px 14px;
+    color:#334155;
+    font-size:.98rem;
+    line-height:1.35;
+  }
+  .atelier-month-card .sold{
+    color:#b42318;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.4px;
+  }
+  @media (max-width: 900px){
+    .atelier-month-grid{grid-template-columns: 1fr;}
+  }
+</style>
+
 </head>
 <body>
   <header class="site-header">
@@ -189,7 +225,22 @@
         <div class="atelier-month" id="realisations-mois">
           <h2>Réalisations du mois</h2>
           <p class="section-lead">Chaque mois, une sélection de transformations et de détails de finition.</p>
-          <!-- Ajoute ici tes cartes / photos de meubles restaurés -->
+          
+<div class="atelier-month-grid">
+  <figure class="atelier-month-card">
+    <a class="atelier-month-link" href="assets/atelier/atelier-2026-04-banc-coffre-vendu-1024.webp" aria-label="Banc coffre ancien relooké — Avant / Après — Vendu (210 €)">
+      <picture>
+        <source type="image/webp"
+          srcset="assets/atelier/atelier-2026-04-banc-coffre-vendu-480.webp 480w, assets/atelier/atelier-2026-04-banc-coffre-vendu-800.webp 800w, assets/atelier/atelier-2026-04-banc-coffre-vendu-1024.webp 1024w"
+          sizes="(max-width: 768px) 92vw, 520px"/>
+        <img src="assets/atelier/atelier-2026-04-banc-coffre-vendu-800.jpg" alt="Banc coffre ancien — Avant / Après — Prix 210 € — Vendu" loading="lazy" decoding="async"/>
+      </picture>
+    </a>
+    <figcaption>Banc coffre ancien relooké — Prix : 210 € — <span class="sold">Vendu</span></figcaption>
+  </figure>
+</div>
+
+<!-- Ajoute ici tes cartes / photos de meubles restaurés -->
         </div>
       </div>
     </section>
